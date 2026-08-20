@@ -1,1 +1,26 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Splitright support: simple shared expense tracking for groups.">
+  <title>Splitright Support</title>
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2.5rem}h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-bottom:.25rem}p{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}.card{border:1px solid var(--line);border-radius:12px;padding:1.2rem;background:#fff}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright support</p>
+  <h1>Share expenses.<br>Keep it simple.</h1>
+  <p class="intro">Splitright helps friends, families and teams record shared expenses and settle up in one group. No account is required.</p>
+</header>
+<main>
+  <section aria-labelledby="start"><h2 id="start">Getting started</h2><div class="grid"><article class="card"><h3>1. Create or join</h3><p>Create a group or enter the group code shared by its members. A code is the access credential for that group—treat it like a password.</p></article><article class="card"><h3>2. Add expenses</h3><p>Choose who paid, who participated and the currency. Splitright calculates balances and settlements for the group.</p></article><article class="card"><h3>3. Settle up</h3><p>Review who owes whom and record settlements when your group pays back.</p></article></div></section>
+  <section aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><dl><dt>What are group codes?</dt><dd>Group codes grant access to a shared group. Anyone with a code may be able to view or change that group's content. Share codes only with intended participants; do not post them publicly.</dd><dt>How do currencies and rates work?</dt><dd>Expenses can use their entered currency. When conversion is needed, Splitright uses rates supplied by FXRatesAPI. Rates can change; check the displayed values before settling.</dd><dt>What happens without an internet connection?</dt><dd>Splitright keeps local data in AsyncStorage so the app can show your archive on your device. Changes that need the shared service require connectivity. Local copies are not a promise of recovery.</dd><dt>Is my group automatically deleted or exported?</dt><dd>No. There is currently no automatic retention schedule, group deletion, or data export feature. Do not rely on Splitright as your only record.</dd><dt>Which devices are supported?</dt><dd>Splitright currently supports iOS 16.4 and later. Android availability depends on the current published app build.</dd><dt>Can I use Splitright without an account?</dt><dd>Yes. There is currently no account or sign-in system. Access is based on the group code.</dd></dl></section>
+  <section aria-labelledby="troubleshooting"><h2 id="troubleshooting">Troubleshooting</h2><div class="band"><p><strong>Can’t join?</strong> Check the code character-by-character, ask the group owner for a current code, and check your connection.</p><p><strong>Balances look wrong?</strong> Check payer, participants, currency and exchange rate on each expense, then refresh.</p><p><strong>Missing local data?</strong> Avoid uninstalling or clearing app storage. Local archive data can be lost and is not guaranteed to be recoverable.</p></div></section>
+  <section aria-labelledby="contact"><h2 id="contact">Need more help?</h2><p>Email <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a>. For information about data and requests, read the <a href="splitright-privacy.html">Splitright privacy information</a>.</p></section>
+</main>
+<footer><p>Splitright Support</p><p><a href="splitright-privacy.html">Privacy information</a> · Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>
