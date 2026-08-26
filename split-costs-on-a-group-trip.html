@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to split costs on a group holiday: deposits, one card on the booking, sub-groups, currencies, and a worked example ending in the fewest payments.">
+  <title>How to split costs on a group trip</title>
+  <link rel="canonical" href="https://sleipner42.github.io/split-costs-on-a-group-trip.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://sleipner42.github.io/split-costs-on-a-group-trip.html">
+  <meta property="og:title" content="How to split costs on a group trip">
+  <meta property="og:description" content="Deposits and non-refundable bookings, expenses only some of the group shares, more than one currency, and a worked example for seven people ending in the minimal set of settle-up payments.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to split costs on a group trip">
+  <meta name="twitter:description" content="Deposits and non-refundable bookings, expenses only some of the group shares, more than one currency, and a worked example for seven people ending in the minimal set of settle-up payments.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do you split a holiday house when someone stays fewer nights?","acceptedAnswer":{"@type":"Answer","text":"Divide by person-nights rather than by people. Add up the nights each person actually sleeps there, divide the total cost by that number to get a cost per person-night, and multiply back out. Someone who stays two nights of six then pays a third of what a full-stay guest pays, and the shares still add up to the booking."}},
+    {"@type":"Question","name":"Which currency should you record a holiday expense in?","acceptedAnswer":{"@type":"Answer","text":"Record it in the currency it was actually paid in, with the amount printed on the receipt. That figure is a fact and never changes. Any conversion is an estimate applied afterwards, and if you convert by hand as you go you have destroyed the only number that can be checked later."}},
+    {"@type":"Question","name":"How do you handle an expense only some of the group shared?","acceptedAnswer":{"@type":"Answer","text":"Put the expense in the same list as everything else but set the participants to just the people involved. It affects only their balances, and it stays visible to the whole group, which is what stops a separate side-list forming that nobody reconciles."}},
+    {"@type":"Question","name":"What is the polite way to chase people for money after a trip?","acceptedAnswer":{"@type":"Answer","text":"Send the numbers to the whole group once, with a date and the payment details, so nobody is singled out and nobody has to ask what they owe. Chase individually and privately after that, assume the person forgot rather than refused, and be willing to accept a smaller round number to close a stale balance."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>How to split costs on a group trip</h1>
+  <p class="intro">Deposits, one person's card on the house booking, rounds of drinks, sub-groups, two currencies and a late arrival &mdash; and how to end the week with the fewest possible payments.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="moments"><h2 id="moments">The two moments when group trips go wrong</h2>
+    <p>Group trips do not slowly drift into financial confusion. They break in two specific places, months apart, and the two failures need different handling.</p>
+
+    <h3>The booking phase</h3>
+    <p>This is the expensive one, and it happens before anybody is in holiday mood. A house needs a deposit in February for a week in August, so one person puts their card down for four figures and waits half a year to be made whole. Flights are booked individually at different prices on different days. Somebody's booking is non-refundable from the moment it is made.</p>
+    <p>Three things prevent most of the damage. First, record booking payments the day they happen, in the same list you will use during the trip &mdash; not in a separate thread that has scrolled away by summer. The person who paid the deposit should be carrying a visible balance from February, not a private grudge.</p>
+    <p>Second, collect from people early rather than at the end. If the deposit is a third of the house, ask for a third from everyone now. It is not about cash flow so much as commitment: a person who has paid something is a person who is coming.</p>
+    <p>Third, and least comfortable, agree in advance what happens if someone drops out. Non-refundable means the money is gone, so the only question is who absorbs it: the person who cancelled, or the group. Decide it while the answer is hypothetical. The default that survives contact with reality is that whoever withdraws is liable for their own committed share and may recover it by finding a replacement, with the group free to be generous in genuinely difficult cases. Written down in one sentence in February, that costs nothing. Improvised in August, it ends friendships.</p>
+
+    <h3>The on-the-ground phase</h3>
+    <p>Here the amounts are small and the volume is high, which is the opposite problem. A round of drinks, three taxis, a supermarket trip, museum tickets for whoever felt like going, and a lunch where two people were not hungry. Nothing is worth arguing about individually, so nothing gets written down, and by Thursday nobody knows where they stand.</p>
+    <p>Set the threshold deliberately. Pick an amount &mdash; the price of a coffee, a round, whatever suits the group &mdash; and agree that anything under it is not tracked at all. Below that line, the effort of recording costs more than the imbalance it corrects, and rounds of drinks are the clearest case: over a week, buying rounds roughly evens out among people drinking similarly, and tracking each one turns a bar into an accounting exercise. Above the line, whoever pays enters it before they put their phone away.</p>
+    <p>The two habits that make the difference: enter an expense at the till rather than at the end of the day, and say who took part while you still remember. Shared groceries are the classic case where the participants list matters, because the person who is self-catering separately should not be in it.</p>
+  </section>
+
+  <section aria-labelledby="subgroups"><h2 id="subgroups">Sub-groups, children and couples</h2>
+    <p>Almost no trip splits everything among everyone. Four of seven go diving; two share a room with a supplement; one couple wants a single figure at the end.</p>
+    <p>The rule that keeps this manageable is that an expense has its own participant list, separate from the group's membership. The diving trip is entered once, shared by the four who went, and it moves only their balances. What you should not do is start a side conversation for the divers, because a second list is a list nobody reconciles, and the group has now lost the ability to check the total.</p>
+    <p>Children are usually handled as part of an adult rather than as members in their own right: the parent's participant share is doubled, or the child's costs are entered against the parent. Some things genuinely should not be shared equally &mdash; a child sleeping in a parent's room is not another person's worth of accommodation &mdash; so it is worth agreeing before the trip whether children count for the house, for meals, and for activities, and saying so plainly rather than leaving the organiser to guess.</p>
+    <p>A couple who want to settle as one unit have a choice. Either enter them as two participants and let them ignore the balance between themselves, which keeps every share arithmetically clean, or treat them as a single participant with a double share, which is tidier at settle-up but hides which of them paid for what. Both work; the first is more accurate, the second is what most couples actually want.</p>
+  </section>
+
+  <section aria-labelledby="currency"><h2 id="currency">When there is more than one currency</h2>
+    <p>Record every expense in the currency it was actually paid in, with the amount printed on the receipt. That number is a fact: it does not change, anyone can check it against a statement, and it is the only figure in the whole trip with no assumptions inside it. A converted figure is an estimate, and an estimate written down as though it were a receipt is a future argument.</p>
+    <p>What a card actually does is worth understanding, because people are usually surprised by it. When you pay in a currency other than your account's, the amount that lands on your statement is produced by the card network's rate at the time the transaction is processed, plus whatever margin or fee your own issuer adds. That means two people in the same restaurant, paying the same bill in the same currency on the same evening, can genuinely end up with different amounts on their statements, because they hold different cards. If you are offered the choice of being charged in your home currency at the terminal, that is a conversion performed by the merchant's provider rather than your card network, and the rate is usually worse.</p>
+    <p>So do not try to reconcile a group's expenses to anybody's bank statement, and do not invite the group to convert everything by hand at the end of the trip. Hand conversion fails for three reasons: people pick different rates, people pick different days, and the person doing the arithmetic is also a party to the result. Choose one rate source and one moment for the conversion, say which you used, apply it consistently, and treat every converted total as approximate. Then let the small differences go. Chasing the last few cents of an exchange-rate discrepancy costs more goodwill than the money is worth, and there is no rate that is objectively the right one.</p>
+    <p>One practical note: keep the trip's summary in the currency most of the spending happened in, not the organiser's home currency. It makes the numbers recognisable against the receipts everyone is holding.</p>
+  </section>
+
+  <section aria-labelledby="unowned"><h2 id="unowned">The organiser, and the things nobody wants afterwards</h2>
+    <p>Somebody spent evenings comparing houses, held a deposit for six months, made the bookings in their own name and answered forty messages. That work is real and almost never priced, and the usual outcome is that the organiser also ends up being the person who chases everyone for money, which is the least pleasant job on the trip.</p>
+    <p>You do not have to pay them, and most groups should not try. The two things that actually help cost nothing: let the organiser have first choice of room, and give the chasing job to somebody else. Splitting the roles matters more than the money &mdash; the person who booked the house should not also be the person sending reminders about it.</p>
+    <p>Then there are the shared items nobody wants to own afterwards: the cool box, the beach umbrella, the crate of firewood, the half-used bottles in the kitchen. Anything consumed is a normal shared expense. Anything durable needs an owner decided at purchase, not at the airport. Either one person buys it and keeps it uncharged, or the group splits it and it goes home with whoever wants it &mdash; in which case they either pay the others back a fraction or, more usually, everyone agrees it is not worth the arithmetic. Say which, once.</p>
+  </section>
+
+  <section aria-labelledby="worked"><h2 id="worked">A worked example</h2>
+    <p>Seven people take a house for six nights. Ana books the house on her own card. Gus can only come for the last two nights. Two expenses are shared by part of the group, and everything is recorded in euros.</p>
+    <p>The house costs &euro;1,140. Splitting it equally between seven would charge Gus for four nights he did not sleep there, so split it by person-nights instead: six people for six nights is 36 person-nights, plus Gus for two, giving 38. &euro;1,140 &divide; 38 = &euro;30 per person-night. A full stay is 6 &times; &euro;30 = &euro;180, and Gus owes 2 &times; &euro;30 = &euro;60. Six shares of &euro;180 plus &euro;60 is &euro;1,140 exactly.</p>
+    <div class="scroll">
+    <table>
+      <caption>The four expenses, &euro;1,555 in total.</caption>
+      <thead>
+        <tr><th scope="col">Expense</th><th scope="col">Paid by</th><th scope="col">Amount</th><th scope="col">Shared by</th><th scope="col">Each</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">House, 6 nights</th><td>Ana</td><td>&euro;1,140</td><td>All seven, by person-nights</td><td>&euro;180, Gus &euro;60</td></tr>
+        <tr><th scope="row">Groceries</th><td>Ben</td><td>&euro;210</td><td>All seven, equally</td><td>&euro;30</td></tr>
+        <tr><th scope="row">Boat trip</th><td>Cira</td><td>&euro;160</td><td>Cira, Dan, Eve, Finn</td><td>&euro;40</td></tr>
+        <tr><th scope="row">Airport taxi</th><td>Eve</td><td>&euro;45</td><td>Eve, Finn, Gus</td><td>&euro;15</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Now each person gets two numbers: what they paid out, and the total of their shares. The balance is the first minus the second.</p>
+    <div class="scroll">
+    <table>
+      <caption>Balances. A positive balance means the person is owed money.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Paid</th><th scope="col">Owes in shares</th><th scope="col">Balance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ana</th><td>&euro;1,140</td><td>&euro;210 (180 + 30)</td><td>+&euro;930</td></tr>
+        <tr><th scope="row">Ben</th><td>&euro;210</td><td>&euro;210 (180 + 30)</td><td>&euro;0</td></tr>
+        <tr><th scope="row">Cira</th><td>&euro;160</td><td>&euro;250 (180 + 30 + 40)</td><td>&minus;&euro;90</td></tr>
+        <tr><th scope="row">Dan</th><td>&euro;0</td><td>&euro;250 (180 + 30 + 40)</td><td>&minus;&euro;250</td></tr>
+        <tr><th scope="row">Eve</th><td>&euro;45</td><td>&euro;265 (180 + 30 + 40 + 15)</td><td>&minus;&euro;220</td></tr>
+        <tr><th scope="row">Finn</th><td>&euro;0</td><td>&euro;265 (180 + 30 + 40 + 15)</td><td>&minus;&euro;265</td></tr>
+        <tr><th scope="row">Gus</th><td>&euro;0</td><td>&euro;105 (60 + 30 + 15)</td><td>&minus;&euro;105</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The balances sum to zero: +930 &minus; 90 &minus; 250 &minus; 220 &minus; 265 &minus; 105 = 0. That check is not optional. If a group's balances do not sum to zero, money has been invented or lost somewhere in the list, and every figure below is wrong.</p>
+    <p>Reimbursed expense by expense, this trip is <strong>seventeen payments</strong>: six people pay Ana for the house, six pay Ben for the groceries, three pay Cira for the boat, two pay Eve for the taxi.</p>
+    <p>Netted down to balances it is <strong>five</strong>. Ana is the only person owed anything, so everyone below zero pays her: Finn &euro;265, Dan &euro;250, Eve &euro;220, Gus &euro;105 and Cira &euro;90. That totals &euro;930, which is exactly what Ana is owed, and every balance is now zero.</p>
+    <p>Two things in that result are worth noticing. Ben spent &euro;210 of his own money and neither pays nor receives anything, because his groceries and his shares cancel out &mdash; which looks wrong until you check it, and is exactly right. And Cira, who paid for the boat trip, still owes money, because what she paid was less than her own share of the week. Netting is not a judgement on who was generous; it is only the shortest route to zero. If people find it counter-intuitive, show them the balance table rather than arguing about the transfers. The general rule, and why it works, is in our <a href="split-expenses-without-an-account.html">guide to splitting expenses without accounts</a>.</p>
+  </section>
+
+  <section aria-labelledby="chasing"><h2 id="chasing">Chasing money without poisoning the friendship</h2>
+    <p>Almost everyone who has not paid has simply forgotten. Start from that assumption and most of this becomes easy.</p>
+    <p>Publish the numbers once, to the whole group, in one message: each person's balance, who to pay, the payment details and a date. Nobody is singled out, nobody has to ask what they owe, and nobody can claim not to have known. Do it while the trip is still fresh &mdash; the willingness to pay decays quickly, and a request three weeks later reads as an accusation where the same request on the Monday reads as admin.</p>
+    <p>After that, chase privately and individually. A public reminder aimed at one person is a punishment, and it will be remembered longer than the amount. One nudge, then one more, then a decision: if a balance is small and stale, offer to write it off or round it down and close the group. It is a legitimate trade, and treating a friendship as an account receivable costs more than the balance.</p>
+    <p>Two things reduce the need for any of this. Collect for the large commitments before the trip rather than after, because the difficult conversations are about the house deposit, not the taxi. And separate the roles: the person who fronted the money should not be the person asking for it back.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the tools this article describes, so read this section accordingly. Splitright is free, with no ads, no tracking, no accounts and no subscription. You create a group for the trip, share a six-character code, and everyone with the code opens the same group from their own phone &mdash; which matters for a trip, because the alternative is talking four people through a sign-up while standing at a check-in desk. It splits expenses equally, by exact amounts or by percentage, sets the participants per expense so a sub-group works, keeps a balance for each person, suggests a minimal set of settle-up payments like the five above, and supports 20 currencies. It runs on iPhone and iPad.</p>
+    <p>What it does not do: no CSV or PDF export and no receipt scanning, so there is no spreadsheet to hand round afterwards. It does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup, so keep anything you would be upset to lose somewhere else as well. And the group code is the credential: whoever holds it can open the group and edit it, there is no per-person login, and access cannot be withdrawn from one person, so send the code only to the people on the trip and treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If your group needs export, receipt photos or a permanent ledger, one of the other apps is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and why. For a shared flat rather than a trip, see <a href="split-rent-and-bills-with-housemates.html">splitting rent and bills with housemates</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>How do you split a holiday house when someone stays fewer nights?</dt>
+      <dd>Divide by person-nights rather than by people. Add up the nights each person actually sleeps there, divide the total cost by that number to get a cost per person-night, and multiply back out. Someone who stays two nights of six then pays a third of what a full-stay guest pays, and the shares still add up to the booking.</dd>
+      <dt>Which currency should you record a holiday expense in?</dt>
+      <dd>Record it in the currency it was actually paid in, with the amount printed on the receipt. That figure is a fact and never changes. Any conversion is an estimate applied afterwards, and if you convert by hand as you go you have destroyed the only number that can be checked later.</dd>
+      <dt>How do you handle an expense only some of the group shared?</dt>
+      <dd>Put the expense in the same list as everything else but set the participants to just the people involved. It affects only their balances, and it stays visible to the whole group, which is what stops a separate side-list forming that nobody reconciles.</dd>
+      <dt>What is the polite way to chase people for money after a trip?</dt>
+      <dd>Send the numbers to the whole group once, with a date and the payment details, so nobody is singled out and nobody has to ask what they owe. Chase individually and privately after that, assume the person forgot rather than refused, and be willing to accept a smaller round number to close a stale balance.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="split-rent-and-bills-with-housemates.html">Splitting rent and bills with housemates</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>

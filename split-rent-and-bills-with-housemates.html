@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fair ways to divide rent and bills in a flat share: equal shares, room area, ability to pay and room bidding, with worked examples and pro-rata bills.">
+  <title>How to split rent and bills with housemates</title>
+  <link rel="canonical" href="https://sleipner42.github.io/split-rent-and-bills-with-housemates.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://sleipner42.github.io/split-rent-and-bills-with-housemates.html">
+  <meta property="og:title" content="How to split rent and bills with housemates">
+  <meta property="og:description" content="The fair ways to divide rent when the rooms are not equal, the arithmetic for a room-area split and a room bid, pro-rata bills for a mid-quarter arrival, and what to agree in writing at the start of a tenancy.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to split rent and bills with housemates">
+  <meta name="twitter:description" content="The fair ways to divide rent when the rooms are not equal, the arithmetic for a room-area split and a room bid, pro-rata bills for a mid-quarter arrival, and what to agree in writing at the start of a tenancy.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How should housemates split rent when the rooms are different sizes?","acceptedAnswer":{"@type":"Answer","text":"The most common method is to charge each room in proportion to its floor area, with the shared space divided equally on top. Measure each private room, split the remaining area by the number of people, and apply each person's total share of the flat to the rent. It is a defensible starting point rather than a correct answer, because area does not capture light, noise or an en-suite."}},
+    {"@type":"Question","name":"How do you split a quarterly bill when someone moved in halfway through?","acceptedAnswer":{"@type":"Answer","text":"Count person-days rather than people. Work out how many days each person was in the flat during the billing period, add them up, divide the bill by that total to get a cost per person-day, and multiply back out. The shares add up to the bill and nobody pays for days before they arrived."}},
+    {"@type":"Question","name":"Should a couple sharing one room pay one share or two?","acceptedAnswer":{"@type":"Answer","text":"There is no objectively right answer. Rent is paid for space, which argues for one share for one room; bills follow consumption, which argues for two. A common compromise is to charge the room as one share of the rent and count two people for the utilities. What matters is that it is agreed before anyone moves in."}},
+    {"@type":"Question","name":"Who owns the shared vacuum cleaner when someone moves out?","acceptedAnswer":{"@type":"Answer","text":"Decide it when the item is bought, not when someone leaves. Either the buyer keeps the item and nobody else is charged, or the cost is split and whoever keeps it buys the others out at an agreed fraction of the price. Splitting the cost and leaving ownership undefined is what causes the argument."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>How to split rent and bills with housemates</h1>
+  <p class="intro">The methods people use to divide rent when the rooms are not equal, the arithmetic behind each one, and how to handle the bills that refuse to divide neatly.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="why"><h2 id="why">Why dividing by the number of people breaks down</h2>
+    <p>An equal split is the natural first move, and in a flat where the rooms are genuinely alike it is also the last move you need. The problem is that most flat shares are not like that, and the differences are not small.</p>
+    <p>One room is half again as big as the next. One has an en-suite, so nobody else queues for it. One faces a main road and gets the noise. A couple share the largest room, so two people are paying one share and using two people's worth of hot water. One housemate works away three nights a week and is essentially subsidising the others' occupancy. Another works from home and has the heating on from nine until six while everybody else is out of the building.</p>
+    <p>None of that makes an equal split invalid. It makes it a choice with a known cost, and the cost is usually paid by one specific person who slowly starts to resent it. Pick a method deliberately, say out loud what it ignores, and agree it before the first standing order goes out.</p>
+  </section>
+
+  <section aria-labelledby="methods"><h2 id="methods">Four ways to divide the rent</h2>
+    <p>The examples below all use the same flat: total rent &pound;1,720 a month, three housemates &mdash; Ada, Bo and Cem &mdash; and a floor area of 82&nbsp;m&sup2;, of which the three private bedrooms account for 18, 14 and 11&nbsp;m&sup2; and the remaining 39&nbsp;m&sup2; is kitchen, bathroom, hall and living room.</p>
+
+    <h3>Equal shares</h3>
+    <p>&pound;1,720 divided by three is &pound;573.33 each, with one penny left over that somebody has to absorb. It takes no negotiation, it needs no measuring, and it makes the standing orders identical, which is worth more than people expect.</p>
+    <p>Its weakness is obvious: the person in the 11&nbsp;m&sup2; room pays the same as the person in the 18&nbsp;m&sup2; room. That is tolerable when the rooms are close in size, or when the small-room occupant chose it knowingly in exchange for something else &mdash; the parking space, or first refusal on the next room to free up.</p>
+
+    <h3>By room area</h3>
+    <p>The most widely used method for unequal rooms. Two decisions produce two different answers, so be explicit about which one you are using.</p>
+    <p><strong>Private area only.</strong> Divide the rent in proportion to bedroom size alone: each person's room area over the total private area of 43&nbsp;m&sup2;. That is 18/43, 14/43 and 11/43 of &pound;1,720, giving &pound;720, &pound;560 and &pound;440. Clean, but it implies that the shared space is worth nothing, so the largest room carries the whole cost of a kitchen everyone uses equally.</p>
+    <p><strong>Private area plus an equal share of the shared space.</strong> Divide the 39&nbsp;m&sup2; of shared space three ways &mdash; 13&nbsp;m&sup2; each &mdash; add it to each private room, and take that over the full 82&nbsp;m&sup2;.</p>
+    <div class="scroll">
+    <table>
+      <caption>Rent &pound;1,720. Private room area plus 13&nbsp;m&sup2; each of shared space, over 82&nbsp;m&sup2; total.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Room</th><th scope="col">+ shared</th><th scope="col">Share of flat</th><th scope="col">Rent</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>18&nbsp;m&sup2;</td><td>31&nbsp;m&sup2;</td><td>31/82 = 37.80%</td><td>&pound;650.24</td></tr>
+        <tr><th scope="row">Bo</th><td>14&nbsp;m&sup2;</td><td>27&nbsp;m&sup2;</td><td>27/82 = 32.93%</td><td>&pound;566.34</td></tr>
+        <tr><th scope="row">Cem</th><td>11&nbsp;m&sup2;</td><td>24&nbsp;m&sup2;</td><td>24/82 = 29.27%</td><td>&pound;503.42</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Note the spread: including the shared space pulls the three figures towards each other, because a large slice of what everyone pays for is space they hold in common. The unrounded figures are &pound;650.2439, &pound;566.3415 and &pound;503.4146, which round to a total of &pound;1,719.99 &mdash; a penny short. Give the odd penny to the largest remainder, here Cem, and the three shares add back to exactly &pound;1,720. That is the same rounding rule described in our <a href="split-expenses-without-an-account.html">guide to splitting expenses without accounts</a>, and it matters every month rather than once.</p>
+    <p>The honest weakness of any area method is that area is a proxy. It does not price an en-suite, a balcony, a north-facing window, the room next to the boiler, or the fact that one bedroom is the only one you can fit a desk in. Measuring feels objective and quietly smuggles in a value judgement.</p>
+
+    <h3>By ability to pay</h3>
+    <p>Set the shares in proportion to income, or simply agree that the person on a graduate salary pays less than the person who has been qualified for a decade. Among close friends and couples this is often the arrangement that actually holds, because it tracks what people can sustain rather than what they consume.</p>
+    <p>The weaknesses: it requires people to disclose income, which not everyone will do accurately or willingly; it goes stale, because somebody's pay rise turns an agreement into a grievance and nobody enjoys reopening it; and it detaches price from what you get, so the person paying most may also be in the smallest room, which is easy to accept in month one and harder in month fourteen.</p>
+
+    <h3>The bid method</h3>
+    <p>Instead of arguing about what each room is worth in the abstract, everyone privately writes down what each room is worth <em>to them</em>: a monthly figure per room. You then allocate the rooms in whatever combination makes the total of the bids as large as possible, which puts each person in the room they value most relative to the others. If the winning bids add up to more than the rent, the surplus is divided equally and taken off each person's bid.</p>
+    <div class="scroll">
+    <table>
+      <caption>Bids in pounds per month. Each person values every room.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Room A (18&nbsp;m&sup2;)</th><th scope="col">Room B (14&nbsp;m&sup2;)</th><th scope="col">Room C (11&nbsp;m&sup2;)</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>760</td><td>580</td><td>420</td></tr>
+        <tr><th scope="row">Bo</th><td>700</td><td>620</td><td>440</td></tr>
+        <tr><th scope="row">Cem</th><td>820</td><td>540</td><td>380</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>With three people there are six possible allocations, and you can check them by hand. Cem in A, Bo in B, Ada in C totals 820 + 620 + 420 = &pound;1,860, and no other arrangement beats it &mdash; Ada in A, Bo in B, Cem in C comes to 1,760, and Ada in B, Bo in C, Cem in A to 1,840. So the winning allocation is not the one where each person takes the room they bid highest on; it is the one where the group as a whole gives up the least.</p>
+    <p>The bids total &pound;1,860 against rent of &pound;1,720, a surplus of &pound;140, or &pound;46.67 each. Subtract that from each winning bid: Cem pays 820 &minus; 46.67 = &pound;773.33, Bo pays 620 &minus; 46.67 = &pound;573.33, and Ada pays 420 &minus; 46.66 = &pound;373.34. The three add to exactly &pound;1,720. If the bids had totalled less than the rent, the shortfall is shared the same way and everyone pays more than they bid, which is a signal that the flat is expensive rather than that the method failed.</p>
+    <p>This is the only method that uses information the others throw away: how much each person actually cares. Its weaknesses are that everyone must bid honestly and simultaneously &mdash; anyone who learns another bid first can game it &mdash; that the arithmetic gets tedious beyond four rooms, and that it feels adversarial at the moment a household is trying to start on good terms.</p>
+
+    <div class="band">
+      <p><strong>No method here is objectively correct.</strong> Each one encodes a different theory of what rent buys: space, consumption, capacity, or preference. What makes a split fair in practice is that everybody understood it and agreed to it while they still had the option to walk away. A slightly crude formula everyone signed up to beats an elegant one imposed on the person in the small room.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="bills"><h2 id="bills">The bills that do not divide evenly</h2>
+    <p>Rent is the easy part, because it is one number that arrives on the same day every month. The recurring bills are where flat-share accounting actually goes wrong.</p>
+
+    <h3>A quarterly bill and a mid-quarter arrival</h3>
+    <p>A water bill of &pound;184 covers 1 July to 30 September &mdash; 92 days. Two housemates were there throughout; the third moved in on 16 August, so they were present for 16 days of August plus all 30 of September, 46 days in total.</p>
+    <p>Count person-days rather than people. Total person-days are 92 + 92 + 46 = 230, so the cost per person-day is &pound;184 &divide; 230 = &pound;0.80.</p>
+    <div class="scroll">
+    <table>
+      <caption>Water bill &pound;184 for a 92-day quarter, pro-rated by person-days at &pound;0.80 each.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Days present</th><th scope="col">Share</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>92</td><td>&pound;73.60</td></tr>
+        <tr><th scope="row">Bo</th><td>92</td><td>&pound;73.60</td></tr>
+        <tr><th scope="row">Cem (from 16 August)</th><td>46</td><td>&pound;36.80</td></tr>
+        <tr><th scope="row">Total</th><td>230</td><td>&pound;184.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Two details keep this defensible. Decide once whether the day someone arrives counts as a day for them, and use the same convention every time. And accept that person-days measure occupancy, not consumption: the housemate who was away for a fortnight still had a fridge running. Pro-rating by days is the closest cheap approximation, not the truth.</p>
+
+    <h3>A bill in one person's name</h3>
+    <p>Utilities usually sit with whoever signed up, and that person is carrying a real cost that never appears in the split: they are lending the household the money for six weeks, their credit record is on the line if it goes unpaid, and they are the one who spends forty minutes on the phone when the meter reading is wrong.</p>
+    <p>Do not solve that with gratitude. Either rotate which accounts sit in whose name so the burden is shared, or agree that the account holder is not chased for their own share until the others have paid theirs, or attach a small standing amount to the job. Whatever you choose, log the bill as an expense that person paid on behalf of the household on the day they paid it, so the tally shows them as owed rather than relying on anyone remembering.</p>
+
+    <h3>Deposits</h3>
+    <p>A deposit is not a shared cost. It is money each person will get back, and treating it like a bill is the commonest source of a bad exit. Keep it out of the running tally and record who paid what into it; if one person fronted all of it, that is a loan with a clear repayment event, not an expense.</p>
+    <p>When somebody leaves mid-tenancy, the incoming housemate normally buys out their deposit share directly, without the money passing through the household pot. Any deduction the landlord makes at the end has to be attributed to whoever caused it, or split &mdash; much easier if you agreed the principle at the start and took photographs on day one.</p>
+
+    <h3>The shared vacuum cleaner</h3>
+    <p>Somebody buys a &pound;90 vacuum cleaner, splits it three ways at &pound;30 each, and eighteen months later moves out with it in the boot of the car. Both sides feel wronged and both are right, because the household bought an asset and never decided who owned it.</p>
+    <p>Pick a rule when the item is bought and write it down. Either the buyer keeps it and nobody else pays &mdash; correct for anything they would have bought anyway &mdash; or the cost is split and the item belongs to the flat, with whoever takes it on the way out buying the others' shares at an agreed fraction of the price. Which rule you pick matters far less than having one.</p>
+  </section>
+
+  <section aria-labelledby="tally"><h2 id="tally">Keeping a tally nobody has to trust</h2>
+    <p>Memory is the weak link. Six weeks after the event, two people sincerely remember different versions of who paid for the boiler service, and neither is lying. The fix is not better memories, it is writing things down at the moment of payment, in a place everyone can read.</p>
+    <p>Three properties make a household tally work. Everyone can see it, so nothing depends on one person's records. Every entry says who paid, how much, what for and on what date, because a figure without a date cannot be reconciled against a bank statement. And it is written when the money moves rather than reconstructed at the end of the month.</p>
+    <p>Any of the tools in our <a href="split-expenses-without-an-account.html">guide to splitting expenses without accounts</a> will do: a shared spreadsheet, a pinned message thread, or an app that keeps the balances for you. For a household the case for a spreadsheet is stronger than for a holiday, because it runs for years and you may want a formula for the room percentages. The case against is that somebody has to maintain it, and household tallies die when their maintainer gets bored.</p>
+  </section>
+
+  <section aria-labelledby="settle"><h2 id="settle">Settle periodically, not perfectly</h2>
+    <p>The instinct is to bring every balance to zero every month. In a household that is more work than it is worth, because next month somebody will pay for the internet again and the same transfers will run in the same direction.</p>
+    <p>Let balances accumulate and clear them on a schedule &mdash; monthly if the amounts are large, quarterly if they are small &mdash; with two standing exceptions: anybody may ask to settle at any time, and you always settle in full before somebody moves out. Rent itself is better kept out of the tally: separate standing orders straight to the landlord or the lead tenant keep the largest number in the household out of the argument.</p>
+    <p>When you do settle, net the balances rather than reimbursing bill by bill, so money moves only from the people below zero to the people above it. The arithmetic, and why it produces the fewest payments, is in the <a href="split-expenses-without-an-account.html">guide</a>.</p>
+  </section>
+
+  <section aria-labelledby="start"><h2 id="start">What to write down at the start of a tenancy</h2>
+    <p>Ten minutes with a shared document on the first evening prevents most of what goes wrong later. This is a practical checklist between housemates and <strong>not legal advice</strong>; your tenancy agreement and your local law decide what is actually enforceable, and for anything contested you should get proper advice.</p>
+    <ul>
+      <li>Which method sets the rent shares, the numbers it produced, and what would trigger recalculating it &mdash; a rent rise, a room swap, a new housemate.</li>
+      <li>The exact monthly figure each person pays, to whom, and on which date.</li>
+      <li>Which bills are shared, how each is divided, and whose name each account is in.</li>
+      <li>The convention for someone arriving or leaving mid-period, including whether the arrival day counts.</li>
+      <li>Who paid what into the deposit, and that it is a repayment and not an expense.</li>
+      <li>How shared purchases are handled and who owns them afterwards.</li>
+      <li>Where the tally lives and how often you settle up.</li>
+      <li>What happens to a room if someone leaves early: who finds the replacement, and who covers the rent until they do.</li>
+      <li>The guest rule, in numbers rather than adjectives &mdash; how many nights before a regular visitor starts contributing to bills.</li>
+    </ul>
+    <p>Date it, and have everyone confirm it in the group chat. It is not a contract; it is a record of what you all thought you had agreed, which is the thing that turns out to be missing.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the tools this article describes, so read this section as such. Splitright is a free app for shared expenses: no ads, no tracking, no accounts, no subscription. You create a group for the flat, share a six-character code, and everyone with the code opens the same group. It splits expenses equally, by exact amounts or by percentage &mdash; which is the setting that carries a room-area or bid-based rent split &mdash; keeps a running balance per person, suggests a minimal set of settle-up payments, and supports 20 currencies. It runs on iPhone and iPad.</p>
+    <p>What it does not do: no CSV or PDF export, and no receipt scanning, so it will not produce a statement for a landlord dispute. It does not move money; it tells you the amounts and you pay however you already do. And it is not a backup, so it should not be your only record of a year of household bills. The group code is the credential: whoever holds it can open the group and change it, there is no per-person login, and access cannot be revoked for one housemate. For a flat share that is usually acceptable, but it means the code should be treated like a key to the front door, and it is the reason you should keep the deposit paperwork somewhere else.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If a spreadsheet suits your household better, use one. Our <a href="splitright-vs.html">comparison with the other expense-splitting apps</a> says where they win &mdash; several handle long-running shared households with more features than we do &mdash; and the <a href="split-costs-on-a-group-trip.html">guide to splitting costs on a group trip</a> covers the travel case, which has different problems.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>How should housemates split rent when the rooms are different sizes?</dt>
+      <dd>The most common method is to charge each room in proportion to its floor area, with the shared space divided equally on top. Measure each private room, split the remaining area by the number of people, and apply each person's total share of the flat to the rent. It is a defensible starting point rather than a correct answer, because area does not capture light, noise or an en-suite.</dd>
+      <dt>How do you split a quarterly bill when someone moved in halfway through?</dt>
+      <dd>Count person-days rather than people. Work out how many days each person was in the flat during the billing period, add them up, divide the bill by that total to get a cost per person-day, and multiply back out. The shares add up to the bill and nobody pays for days before they arrived.</dd>
+      <dt>Should a couple sharing one room pay one share or two?</dt>
+      <dd>There is no objectively right answer. Rent is paid for space, which argues for one share for one room; bills follow consumption, which argues for two. A common compromise is to charge the room as one share of the rent and count two people for the utilities. What matters is that it is agreed before anyone moves in.</dd>
+      <dt>Who owns the shared vacuum cleaner when someone moves out?</dt>
+      <dd>Decide it when the item is bought, not when someone leaves. Either the buyer keeps the item and nobody else is charged, or the cost is split and whoever keeps it buys the others out at an agreed fraction of the price. Splitting the cost and leaving ownership undefined is what causes the argument.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p><p class="note">This page is practical guidance between housemates, not legal advice.</p></footer>
+</body>
+</html>
