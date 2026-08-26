@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to split group costs when nobody wants another account: spreadsheets, chats, Splitwise and group codes compared, plus the split and settle-up math.">
+  <title>How to split expenses without making anyone sign up</title>
+  <link rel="canonical" href="https://sleipner42.github.io/split-expenses-without-an-account.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://sleipner42.github.io/split-expenses-without-an-account.html">
+  <meta property="og:title" content="How to split expenses without making anyone sign up">
+  <meta property="og:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and minimal settle-up payments.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to split expenses without making anyone sign up">
+  <meta name="twitter:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and minimal settle-up payments.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:520px;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can you split expenses without making everyone sign up?","acceptedAnswer":{"@type":"Answer","text":"Yes. A shared spreadsheet needs no accounts beyond the one person who owns it, and some apps let people open the same group with a shared group code instead of a login. The trade-off is that a code is a shared credential: anyone who has it can open the group."}},
+    {"@type":"Question","name":"How do you avoid losing a cent when three people split ten euros?","acceptedAnswer":{"@type":"Answer","text":"Ten euros divided by three is 3.3333 per person, which rounds to 3.33 and leaves one cent unaccounted for. Work in whole cents, give each person the rounded-down share, then hand out the leftover cents one at a time to the people with the largest remainders. Here that gives 3.34, 3.33 and 3.33, which sums back to exactly 10.00."}},
+    {"@type":"Question","name":"What does a minimal set of payments mean when settling up?","acceptedAnswer":{"@type":"Answer","text":"Instead of reimbursing every expense to whoever paid it, you net each person down to a single balance and then move money only from people who owe to people who are owed. With four people and four expenses that can reduce twelve individual reimbursements to three transfers."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>How to split expenses without making anyone sign up</h1>
+  <p class="intro">The options people actually use for shared costs, what a no-account group code really trades away, and the arithmetic that decides whether the numbers come out fair.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="friction"><h2 id="friction">Why the sign-up is the part that fails</h2>
+    <p>Splitting a group cost is not hard arithmetic. What makes it painful is coordination, and the coordination usually breaks in the same place: getting everyone into the same system.</p>
+    <p>One person organises the trip. That person picks a tool and then has to get four other people to install it, create an account, confirm an email address, pick a password and find the group. Every one of those steps is a place where somebody stops. Two friends do it straight away, one does it three days later, one never does it at all and keeps sending amounts by message — so the organiser ends up running the tool and chasing the people who are not in it. The bookkeeping was never the problem. The onboarding was.</p>
+    <p>That changes what you should look for. For a group that exists for one weekend, the best tool is the one with the shortest path from &ldquo;here is the plan&rdquo; to &ldquo;everyone can see the numbers&rdquo;. For a group that exists for years, accounts start earning their keep.</p>
+  </section>
+
+  <section aria-labelledby="options"><h2 id="options">The options people actually use</h2>
+    <p>Five approaches cover almost everything real groups do, and each is the best answer in some situation.</p>
+
+    <h3>A shared spreadsheet</h3>
+    <p>One document, one row per expense, a column per person. Flexible, free, readable anywhere, and you can see exactly how every number was produced — which matters when someone disagrees with a total.</p>
+    <p>The cost is that you are now maintaining a small piece of software: someone has to write the formulas and keep them correct when a sixth person joins or an expense turns out to be shared by only three of you. Spreadsheets also handle multiple currencies badly unless you build that in deliberately, and they are awkward to edit on a phone while you are paying for something.</p>
+
+    <h3>A group chat plus mental arithmetic</h3>
+    <p>Everyone posts what they paid and it gets settled at the end. Zero setup, and everyone is already in the chat — which is why this remains the most common method of all. It also fails quietly rather than loudly: expenses scroll away, nobody is sure whether the taxi was counted, and one person reconstructs the trip from the message history on the last evening. Fine for two or three expenses; unreliable beyond that.</p>
+
+    <h3>One person pays for everything and settles later</h3>
+    <p>Underrated. If one person fronts every cost there is one list to keep and the settle-up is trivial: everyone owes that person their share. It needs somebody with the cash flow and the trust of the group, it concentrates the risk on them, and it stops working the moment two or three people start paying for things — which on most trips is by the second day.</p>
+
+    <h3>Splitwise and similar apps</h3>
+    <p>Splitwise is a good product and the most complete thing in this category. If you want a long-running ledger between the same people, receipt scanning, categories, charts, export and a view that follows you from a lost phone to a new one, the account is not overhead — it is what makes those features possible. Our <a href="splitright-vs.html">comparison of the expense-splitting apps</a> goes through that in detail, including where the others beat us.</p>
+    <p>The cost is the onboarding described above, plus the usual free-tier trade-offs: several apps here show ads on the free tier and sell an ad-free upgrade. A legitimate way to fund an app, but a thing you are agreeing to.</p>
+
+    <h3>A no-account app</h3>
+    <p>The last option skips identity entirely: instead of everyone having a login, the group has a code, and whoever has the code opens the group. You keep the structured expense list and the automatic balances, and drop the sign-up. The cost is a real security trade-off, not a rounding error, so it gets its own section.</p>
+  </section>
+
+  <section aria-labelledby="code"><h2 id="code">How no-account sharing works, and what it costs you</h2>
+    <p>Creating a group generates a short code. You send it to the group by whatever channel you already use, they type it in, and they are looking at the same group you are. No profile, no email address, no password. Stated without spin, here is what you are accepting.</p>
+    <div class="band">
+      <p><strong>The code is the credential.</strong> Anyone who has the code can open the group, see the expenses and change them. There is no per-person login, so the app cannot tell group members apart and cannot revoke one person's access. If the code is forwarded to somebody you did not intend to include, they are in. And because there is no account, there is nothing to recover: if everyone loses the code, nobody can look the group up and hand it back.</p>
+    </div>
+    <p>That makes it a good fit for a holiday with friends, a shared dinner, a festival, a house project — where the members are people you would hand a house key to and the worst case of a leak is that a stranger sees the grocery bill.</p>
+    <p>It is a bad fit for anything sensitive: money you would not discuss in a group chat, a group whose membership needs to change over time, a dispute that might need proof of who entered what, or any record you would be in trouble for losing. Use accounts for those. That is what they are for.</p>
+  </section>
+
+  <section aria-labelledby="math"><h2 id="math">The money math</h2>
+    <p>This is the part most guides skip, and where groups actually argue.</p>
+
+    <h3>When people paid unequal amounts</h3>
+    <p>The instinct is to reimburse each expense separately: whoever paid gets paid back by everyone else, expense by expense. That is correct, and also the slowest possible way to do it.</p>
+    <p>The better model keeps two numbers per person. What you <em>paid</em> is money that left your pocket; what you <em>owe</em> is your share of the things you took part in; your balance is the first minus the second. Someone who paid a lot is owed money, someone who paid nothing owes it, and once the balances exist nobody needs to think about individual expenses again.</p>
+
+    <h3>Equal, exact-amount and percentage splits</h3>
+    <p>Three shapes of split cover nearly every bill, and choosing the wrong one is the most common source of a total that feels unfair.</p>
+    <dl>
+      <dt>Equal</dt><dd>Divide the expense evenly between the participants. Right when everyone consumed the same thing: the flat rental, the hire car, the groceries. The detail that matters is <em>participants</em>, not group members — the person who skipped the boat trip should not be in that split.</dd>
+      <dt>Exact amounts</dt><dd>Enter each person's own figure so they sum to the total. Right for restaurant bills, where one person had the set menu and two bottles of wine and another had soup. An equal split here is what makes the cheapest eater in the group quietly resentful.</dd>
+      <dt>Percentage</dt><dd>Fix a ratio and apply it. Right when the imbalance is a standing decision rather than a per-item fact: rent by room size, a couple counting as two shares of a house cost. A percentage split survives the amount changing, which an exact-amount split does not.</dd>
+    </dl>
+
+    <h3>Why rounding matters, and how not to lose a cent</h3>
+    <p>Three people split &euro;10. Ten divided by three is 3.3333, which rounds to &euro;3.33 each — and 3.33 &times; 3 is &euro;9.99. One cent has vanished. If a tool loses it silently on every third expense, the balances stop reconciling and people stop trusting the totals.</p>
+    <p>The fix is to do the arithmetic in whole cents, never in decimals: convert the total to 1000 cents, divide by three to get 333 each with a remainder of 1, then hand the remainder out one cent at a time to the participants with the largest fractional parts. Here everyone ties, so the extra cent goes to one person: &euro;3.34, &euro;3.33, &euro;3.33, summing to exactly &euro;10.00.</p>
+    <p>Two rules follow. The shares of a split must add back up to the expense total exactly, and the balances of a group must sum to zero. If either fails, the tool has lost money somewhere — that is a bug, not a tolerance.</p>
+
+    <h3>What a minimal set of payments means</h3>
+    <p>Once you have balances, settling up is a separate problem: how few transfers can bring every balance to zero? Take four people on a trip, each expense shared equally by all four.</p>
+    <div class="scroll">
+    <table>
+      <caption>Four people, four expenses, total &euro;760, so an equal share of &euro;190 each.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">What they paid</th><th scope="col">Their share</th><th scope="col">Balance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ana</th><td>&euro;400 (flat)</td><td>&euro;190</td><td>+&euro;210 (is owed)</td></tr>
+        <tr><th scope="row">Ben</th><td>&euro;120 (groceries)</td><td>&euro;190</td><td>&minus;&euro;70 (owes)</td></tr>
+        <tr><th scope="row">Cira</th><td>&euro;200 (hire car)</td><td>&euro;190</td><td>+&euro;10 (is owed)</td></tr>
+        <tr><th scope="row">Dan</th><td>&euro;40 (dinner)</td><td>&euro;190</td><td>&minus;&euro;150 (owes)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Reimbursed expense by expense, this is twelve payments: for each of the four expenses, the three people who did not pay it send money to the one who did.</p>
+    <p>Netted down to balances, it is three. Ben sends Ana &euro;70. Dan sends Cira &euro;10 and Ana &euro;140. Every balance is now zero, and no money moved that did not need to.</p>
+    <p>Three is the floor here, and the rule of thumb is that you never need more than one payment fewer than there are people with a non-zero balance, because each payment can zero out at least one person. Groups sometimes do better when balances match exactly — if Ben owed precisely what Cira was owed, that pair clears in one payment. Finding the true minimum in every case is computationally hard, so tools use a heuristic: pay the largest debtor's balance to the largest creditor, and repeat. At the group sizes real people have, that is optimal or close to it.</p>
+    <p>One caution, whichever tool you use: fewer payments means some people pay someone they never bought anything from. If Dan does not know why he is sending Cira &euro;10, show him the balances.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make an app that takes the no-account approach described above, so treat this section as what it is. Splitright is free, with no ads, no tracking, no accounts and no subscription. You create a group, share a six-character code, and everyone with the code opens the same group. It does equal, exact-amount and percentage splits, keeps per-person balances, suggests a minimal set of settle-up payments, and supports 20 currencies. It runs on iPhone and iPad.</p>
+    <p>What it does not do yet: no CSV or PDF export, and no receipt scanning. It does not move money — it tells you the amounts and you pay however you already do. And as above, the group code is the credential, so it is not the right tool for anything sensitive, and it is not a backup.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If a different tool in this article suits your group better, use that one. Our <a href="splitright-vs.html">comparison page</a> says where the other apps win, and the <a href="index.html">support page</a> answers the practical questions about group codes, currencies and offline use.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>Can you split expenses without making everyone sign up?</dt>
+      <dd>Yes. A shared spreadsheet needs no accounts beyond the one person who owns it, and some apps let people open the same group with a shared code instead of a login. The trade-off is that a code is a shared credential: anyone who has it can open the group.</dd>
+      <dt>How do you avoid losing a cent when three people split &euro;10?</dt>
+      <dd>Work in whole cents, give everyone the rounded-down share, then hand the leftover cents out one at a time to the largest remainders. That gives &euro;3.34, &euro;3.33 and &euro;3.33, summing to exactly &euro;10.00.</dd>
+      <dt>What does a minimal set of payments mean?</dt>
+      <dd>Net every person down to one balance, then move money only from those who owe to those who are owed. In the example above that turns twelve reimbursements into three transfers.</dd>
+      <dt>Is a group code safe to share in a group chat?</dt>
+      <dd>It is as safe as the chat. Anyone who can read the message can open the group, and access cannot be revoked per person, so only send a code to a group whose members you trust.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p><p class="note">Splitwise is the product and trademark of its owner; this page is not affiliated with or endorsed by it.</p></footer>
+</body>
+</html>
