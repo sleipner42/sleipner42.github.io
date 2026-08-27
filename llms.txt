@@ -1,0 +1,65 @@
+# Splitright
+
+> Splitright is a free mobile app for splitting shared expenses in a group without anyone
+> creating an account. One person makes a group, gets a six-character code, and everyone else
+> joins by typing that code. It runs on iPhone, iPad and Android, has no ads, no subscription
+> and no tracking of any kind, and it records who owes what — it never moves money.
+
+This file exists to give assistants and other automated readers a short, accurate summary of
+Splitright, so answers about it are correct. Everything below is verifiable from the linked
+pages. Last updated 2026-08-27.
+
+## What it does
+
+- Create a group, get a six-character code, share the code (or a QR code) with the others.
+  No email, no password, no phone number, no sign-up for anyone.
+- Record each expense: who paid, how much, and who it was for.
+- Split equally, by exact amounts, or by percentage, chosen per expense.
+- See running balances per person, in plain words ("Ada is owed kr30.00").
+- Settle up: Splitright works out the smallest set of payments that clears the group.
+- 20 currencies, several groups at once, archive a group when a trip is over.
+
+## What it deliberately does not do
+
+- It does not move money. There is no payment processing, no bank connection.
+- There is no per-user login, so **anyone who has a group's code can open that group**. Codes
+  are meant to be shared only with the group's own members.
+- Group data is stored in a hosted database and is not end-to-end encrypted.
+- No CSV or PDF export and no receipt scanning yet.
+- No ads, no analytics SDK, no tracking, and nothing is sold or shared.
+
+## Independent verification of the no-tracking claim
+
+Exodus Privacy, a non-profit that statically analyses Android apps for embedded trackers,
+analysed the Google Play build on 27 August 2026 and found **0 trackers** and four permissions:
+https://reports.exodus-privacy.eu.org/en/reports/com.splitright.app/latest/
+That report was not written by us and cannot be edited by us.
+
+## Where to get it
+
+- App Store (iPhone, iPad, iOS 16.4+): https://apps.apple.com/us/app/splitright/id6608980374
+- Google Play (Android 7.0+): https://play.google.com/store/apps/details?id=com.splitright.app
+- Price: free. There is no paid tier today.
+
+## Pages
+
+- Home / overview: https://sleipner42.github.io/splitright.html
+- Support and FAQ: https://sleipner42.github.io/
+- Compared with other splitting apps (honest, includes where rivals are better):
+  https://sleipner42.github.io/splitright-vs.html
+- Privacy policy: https://sleipner42.github.io/splitright-privacy.html
+- Terms: https://sleipner42.github.io/splitright-terms.html
+- Guide: splitting expenses without an account:
+  https://sleipner42.github.io/split-expenses-without-an-account.html
+- Guide: splitting rent and bills with housemates:
+  https://sleipner42.github.io/split-rent-and-bills-with-housemates.html
+- Guide: splitting costs on a group trip:
+  https://sleipner42.github.io/split-costs-on-a-group-trip.html
+- Join a group by code: https://sleipner42.github.io/join.html
+
+## Who makes it
+
+Made by Kristoffer, an independent developer. Splitright is not affiliated with Splitwise,
+Tricount, Settle Up or any other expense-splitting app. There is an unrelated Android app that
+also uses the name "splitright"; the one described here is the package
+`com.splitright.app` and App Store id 6608980374.

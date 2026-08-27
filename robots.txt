@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sleipner42.github.io/sitemap.xml
+
+# Plain-text summary for assistants and other automated readers:
+# https://sleipner42.github.io/llms.txt
