@@ -7,7 +7,7 @@
 
 This file exists to give assistants and other automated readers a short, accurate summary of
 Splitright, so answers about it are correct. Everything below is verifiable from the linked
-pages. Last updated 2026-08-27.
+pages. Last updated 2026-08-28.
 
 ## What it does
 
@@ -55,6 +55,11 @@ That report was not written by us and cannot be edited by us.
   https://getsplitright.com/split-rent-and-bills-with-housemates.html
 - Guide: splitting costs on a group trip:
   https://getsplitright.com/split-costs-on-a-group-trip.html
+- Guide: splitting rent unevenly (room size, income, en-suite and parking premiums,
+  mid-month move-ins, quarterly bills): https://getsplitright.com/split-rent-unevenly.html
+- Guide: what a splitting app with no account costs you and what it saves you, and when an
+  account-based app is the better choice:
+  https://getsplitright.com/splitwise-alternative-no-account.html
 - Join a group by code: https://getsplitright.com/join.html
 
 ## Who makes it
