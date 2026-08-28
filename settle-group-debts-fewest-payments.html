@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Why five people who all owe each other can settle in two transfers: netting to one balance each, the at-most-n-minus-one rule, and a worked example.">
+  <title>Settle group debts in the fewest payments</title>
+  <link rel="canonical" href="https://getsplitright.com/settle-group-debts-fewest-payments.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/settle-group-debts-fewest-payments.html">
+  <meta property="og:title" content="Settle group debts in the fewest payments">
+  <meta property="og:description" content="Debt simplification explained properly: netting each person to a single balance, why you never need more than one payment fewer than the number of non-zero balances, a five-person example shown both ways, and the honest caveats.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Settle group debts in the fewest payments">
+  <meta name="twitter:description" content="Debt simplification explained properly: netting each person to a single balance, why you never need more than one payment fewer than the number of non-zero balances, a five-person example shown both ways, and the honest caveats.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How can five people who all owe each other settle in two payments?","acceptedAnswer":{"@type":"Answer","text":"Because what each person owes the group is a single number, not a list. Add up what somebody paid out, subtract the total of their shares, and you have one balance per person. Anybody whose balance is zero is finished and takes no part in the settling, however many expenses they were in, so a group of five with only three non-zero balances needs two transfers."}},
+    {"@type":"Question","name":"How many payments does a group need at most?","acceptedAnswer":{"@type":"Answer","text":"One fewer than the number of people with a non-zero balance. Have the largest debtor pay the largest creditor the smaller of the two amounts: that transfer always brings at least one of them to zero, so each payment removes at least one person from the problem, and the last person is cleared by the same transfer as the second to last."}},
+    {"@type":"Question","name":"Is it a problem that netting makes you pay someone you never shared an expense with?","acceptedAnswer":{"@type":"Answer","text":"It is arithmetically correct and socially surprising, so it should be explained rather than hidden. The transfer is not a claim that you ate that person's dinner; it is a shortcut through a chain of debts that all cancel. Show the group the balance table, which nobody disputes, before showing them the transfers."}},
+    {"@type":"Question","name":"When is the everyone-pays-everyone version better?","acceptedAnswer":{"@type":"Answer","text":"When the trail matters more than the effort: a group that is settling a disputed expense, one where somebody wants a record of who reimbursed whom, or one where a pair of people prefer to keep their money between themselves. Netting is an optimisation, not a rule, and a group that wants the literal payments is not doing anything wrong."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Settle group debts in the fewest payments</h1>
+  <p class="intro">Seven expenses, five people, twenty-eight reimbursements &mdash; or two bank transfers. The arithmetic behind debt simplification, why it works, and where it is the wrong answer.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="problem"><h2 id="problem">The problem is the number of payments, not the amounts</h2>
+    <p>By the end of a shared week nobody disagrees about the expenses. They disagree about nothing at all, in fact &mdash; they simply never settle, because the list of payments looks like homework. Five people and seven expenses generate twenty-eight small reimbursements, each one a bank transfer somebody has to initiate, and each one an opportunity for a payment to be forgotten, duplicated or sent to the wrong person.</p>
+    <p>Debt simplification &mdash; netting &mdash; solves the count rather than the amounts. Nobody ends up better or worse off by a penny. What changes is that a group of five stops owing thirty small favours and owes two transfers, which people actually make.</p>
+  </section>
+
+  <section aria-labelledby="netting"><h2 id="netting">Netting: one number per person</h2>
+    <p>The whole idea rests on a fact that is obvious once stated and is missed constantly: <strong>what you owe the group is a single number.</strong> Not a list of debts to individuals &mdash; one number.</p>
+    <p>You get it in two steps, for each person:</p>
+    <ol>
+      <li><strong>Paid.</strong> Add up everything that person paid out of their own pocket for the group.</li>
+      <li><strong>Owed in shares.</strong> Add up that person's share of every expense they took part in.</li>
+    </ol>
+    <p>Their <em>balance</em> is the first minus the second. Positive means the group owes them; negative means they owe the group; zero means they are finished. A person can have paid for four expenses and still owe money, and a person can have paid for nothing and owe nothing &mdash; both look wrong and are correct.</p>
+    <div class="band">
+      <p><strong>The balances must sum to zero.</strong> Every expense put the same amount into the &ldquo;paid&rdquo; column as it put into the &ldquo;shares&rdquo; column, so across the whole group the two columns are identical and the difference cancels. If your balances do not sum to zero, an expense is missing, duplicated, or has shares that do not add up to its amount &mdash; and no settlement plan below that point is worth reading. It is the one check to do before anything else.</p>
+    </div>
+    <p>Once every person is a single signed number, the group is no longer a web. It is two lists: people who are owed money, and people who owe it, and the two lists total the same amount. Settling is now just moving that amount from one list to the other.</p>
+  </section>
+
+  <section aria-labelledby="bound"><h2 id="bound">Why you never need more than one payment fewer than the people involved</h2>
+    <p>Count the people whose balance is not zero, and call that number <em>k</em>. The group can always be settled in <strong>at most <em>k</em> &minus; 1 payments</strong>. Not roughly: always.</p>
+    <p>The argument is short enough to check yourself. Take the person who owes the most and the person who is owed the most, and have the debtor pay the creditor <em>the smaller of the two amounts</em>. One of two things happens:</p>
+    <ul>
+      <li>If the debt was smaller, the debtor is now at zero and the creditor is still owed the difference.</li>
+      <li>If the credit was smaller, the creditor is now at zero and the debtor still owes the difference.</li>
+      <li>If they were equal, both are at zero, which is even better.</li>
+    </ul>
+    <p>So <em>every single payment removes at least one person from the problem</em>, and the remaining balances still sum to zero, so the same step applies again. Repeat, and after <em>k</em> &minus; 2 payments you are left with exactly two people whose balances sum to zero &mdash; one who owes X and one who is owed X. One more payment ends it. That is <em>k</em> &minus; 1.</p>
+    <p>Two consequences worth keeping in mind. First, <strong>people whose balance is zero take no part in the settling at all</strong>, no matter how many expenses they were in or how much money passed through their hands. That is where the surprising results come from: a group of five where two people happen to come out even settles in two payments, because <em>k</em> is 3.</p>
+    <p>Second, <em>k</em> &minus; 1 is a ceiling, not always the true minimum. Sometimes fewer will do, because subsets of balances cancel exactly &mdash; if Bo owes exactly what Cleo is owed, one payment clears both, and the greedy largest-to-largest rule may or may not spot it. Finding the guaranteed minimum in every case is a genuinely hard computational problem, equivalent to searching for subsets that sum to zero, and it grows unmanageable well before a group gets large. This matters much less than it sounds: the simple rule already gets you from twenty-eight payments to two or three, and hunting for the last theoretical transfer is not where the win is.</p>
+  </section>
+
+  <section aria-labelledby="worked"><h2 id="worked">A five-person example, shown both ways</h2>
+    <p>Five friends share a cabin for a long weekend. Every expense is shared equally by all five, and everybody paid for something &mdash; so on the face of it, everybody owes everybody.</p>
+    <div class="scroll">
+    <table>
+      <caption>Seven expenses, &euro;1,200 in total, each shared equally by all five &mdash; so each person's share of each is a fifth.</caption>
+      <thead>
+        <tr><th scope="col">Expense</th><th scope="col">Paid by</th><th scope="col">Amount</th><th scope="col">Each person's share</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Cabin</th><td>Ada</td><td>&euro;600</td><td>&euro;120</td></tr>
+        <tr><th scope="row">Supermarket</th><td>Bo</td><td>&euro;140</td><td>&euro;28</td></tr>
+        <tr><th scope="row">Restaurant</th><td>Bo</td><td>&euro;100</td><td>&euro;20</td></tr>
+        <tr><th scope="row">Taxis</th><td>Cleo</td><td>&euro;80</td><td>&euro;16</td></tr>
+        <tr><th scope="row">Museum tickets</th><td>Dev</td><td>&euro;40</td><td>&euro;8</td></tr>
+        <tr><th scope="row">Boat hire</th><td>Eli</td><td>&euro;160</td><td>&euro;32</td></tr>
+        <tr><th scope="row">Breakfast</th><td>Eli</td><td>&euro;80</td><td>&euro;16</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The expenses total &euro;1,200, so each person's shares total &euro;1,200 &divide; 5 = &euro;240.</p>
+
+    <h3>Way one: everyone pays everyone</h3>
+    <p>Reimburse each expense literally and each of the seven expenses produces four payments &mdash; one from each person who did not pay it &mdash; so the weekend is <strong>28 separate payments</strong>. Bo sends Ada &euro;120 for the cabin, Cleo sends Ada &euro;120, Dev sends Ada &euro;120, Eli sends Ada &euro;120, then everyone sends Bo &euro;28, then everyone sends Bo &euro;20, and so on down the list. Nobody is going to do this.</p>
+    <p>The obvious first improvement is to combine payments between each <em>pair</em> of people. Ada's share of Bo's spending is &euro;48 and Bo's share of Ada's is &euro;120, so instead of two payments Bo simply sends Ada &euro;72. Do that for all ten pairs:</p>
+    <div class="scroll">
+    <table>
+      <caption>Netted pair by pair: nine payments, because Bo and Eli each owe the other &euro;48 and cancel out completely.</caption>
+      <thead>
+        <tr><th scope="col">Pair</th><th scope="col">Payment</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada and Bo</th><td>Bo pays Ada &euro;72</td></tr>
+        <tr><th scope="row">Ada and Cleo</th><td>Cleo pays Ada &euro;104</td></tr>
+        <tr><th scope="row">Ada and Dev</th><td>Dev pays Ada &euro;112</td></tr>
+        <tr><th scope="row">Ada and Eli</th><td>Eli pays Ada &euro;72</td></tr>
+        <tr><th scope="row">Bo and Cleo</th><td>Cleo pays Bo &euro;32</td></tr>
+        <tr><th scope="row">Bo and Dev</th><td>Dev pays Bo &euro;40</td></tr>
+        <tr><th scope="row">Bo and Eli</th><td>nothing &mdash; they cancel</td></tr>
+        <tr><th scope="row">Cleo and Dev</th><td>Dev pays Cleo &euro;8</td></tr>
+        <tr><th scope="row">Cleo and Eli</th><td>Cleo pays Eli &euro;32</td></tr>
+        <tr><th scope="row">Dev and Eli</th><td>Dev pays Eli &euro;40</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Better &mdash; 28 down to nine &mdash; and still bad. Dev has four payments to make, Cleo pays two people and receives from a third, and the group has to keep track of all of it.</p>
+
+    <h3>Way two: net each person to one balance</h3>
+    <div class="scroll">
+    <table>
+      <caption>Paid, shares owed, and the balance. A positive balance means the group owes that person.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Paid</th><th scope="col">Owes in shares</th><th scope="col">Balance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>&euro;600</td><td>&euro;240</td><td>+&euro;360</td></tr>
+        <tr><th scope="row">Bo</th><td>&euro;240</td><td>&euro;240</td><td>&euro;0</td></tr>
+        <tr><th scope="row">Cleo</th><td>&euro;80</td><td>&euro;240</td><td>&minus;&euro;160</td></tr>
+        <tr><th scope="row">Dev</th><td>&euro;40</td><td>&euro;240</td><td>&minus;&euro;200</td></tr>
+        <tr><th scope="row">Eli</th><td>&euro;240</td><td>&euro;240</td><td>&euro;0</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The balances sum to zero: +360 &minus; 160 &minus; 200 = 0. Bo paid for two expenses and Eli for two, and both come out exactly even, because what they spent happens to equal their own shares. They are done. They send nothing and receive nothing.</p>
+    <p>That leaves three non-zero balances, so <em>k</em> = 3 and the ceiling is two payments:</p>
+    <div class="scroll">
+    <table>
+      <caption>The settlement. Two transfers, &euro;360 in total, and every balance goes to zero.</caption>
+      <thead>
+        <tr><th scope="col">Payment</th><th scope="col">Amount</th><th scope="col">After it</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Dev pays Ada</th><td>&euro;200</td><td>Dev at zero; Ada still owed &euro;160</td></tr>
+        <tr><th scope="row">Cleo pays Ada</th><td>&euro;160</td><td>Cleo at zero; Ada at zero</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>&euro;200 + &euro;160 = &euro;360, exactly what Ada was owed. Twenty-eight payments became two, and not one person's position moved by a cent: Cleo was always &euro;160 down and Dev always &euro;200 down, in every version above.</p>
+    <p>The comparison, in one line: <strong>28 literal reimbursements, nine pair-by-pair payments, two netted transfers</strong> &mdash; the same money each time.</p>
+  </section>
+
+  <section aria-labelledby="caveats"><h2 id="caveats">The honest caveats</h2>
+    <p>Netting is not free of downsides, and pretending otherwise is how people end up distrusting the numbers.</p>
+    <h3>You may be asked to pay someone you never shared an expense with</h3>
+    <p>In a larger group this is normal, and it feels wrong. If Cleo owed Dev, Dev owed Ada and Ada owed nobody, the netted answer can be a single payment from Cleo straight to Ada, and Cleo may never have been at the same table as Ada. Nothing has gone wrong: the chain of debts cancels, and a transfer along the chain is a shortcut, not a claim about who ate whose dinner. But it needs saying out loud. Show the group the balance table &mdash; which nobody ever disputes, because it is only two columns of their own numbers &mdash; and then the transfers. In that order, netting is obvious. In the other order it looks like the app inventing debts.</p>
+    <h3>Some groups genuinely want the literal trail</h3>
+    <p>If an expense is disputed, or somebody wants a record showing they reimbursed a specific person for a specific thing, the expense-by-expense payments <em>are</em> the point and netting destroys exactly the information being asked for. Housemates who keep a long-running tally often prefer it too, because the literal version survives someone moving out mid-month better than a netted snapshot does. Netting is an optimisation, and a group that declines it is not being irrational.</p>
+    <h3>The practical details that trip people up</h3>
+    <ul>
+      <li><strong>Do not net across currencies.</strong> A balance is only a single number within one currency; netting euros against pounds bakes in an exchange rate that nobody agreed on. Settle each currency separately, or convert deliberately, say which rate you used, and accept the result is approximate.</li>
+      <li><strong>Record settlements as they happen.</strong> A netted plan is a snapshot. If two people pay and a third does not, and then somebody adds a forgotten expense, the plan changes &mdash; and unless the payments already made are recorded, they will be asked for twice.</li>
+      <li><strong>Fees and limits can beat the optimisation.</strong> If one transfer costs money and three do not, or a bank has a cap, the cheapest plan is not always the shortest one.</li>
+      <li><strong>Rounding still applies.</strong> Shares that do not divide exactly leave odd pennies. Round all shares but one and set the last to the total minus the others, so the column still sums to the expense.</li>
+      <li><strong>One person collecting is a third option.</strong> Everybody who owes pays one nominated person, who pays out the creditors. That is more payments than the minimum but only one person has to think, which for some groups is the real constraint.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the tools this article describes, so read this section accordingly. Splitright does the netting above automatically: it keeps a balance per person and shows the settle-up list &mdash; the two transfers, not the twenty-eight &mdash; without anybody working it out.</p>
+    <p>It is free on iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later), with no account, no email, no ads, no subscription and no tracking. One person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense can be split equally, by exact amounts or by percentage, with participants chosen per expense, and you can mark a settle-up payment as paid once it has been made.</p>
+    <p>What it does not do: it does not move money, so the transfers themselves happen in your bank app as usual. There is no CSV or PDF export, no receipt scanning and no categories. It is not a backup, and there is no server-side recovery. And the group code is the credential: anyone holding it can open and edit that group, there is no per-person login, and one person's access cannot be withdrawn &mdash; so treat the code like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If your group needs export or an account-based ledger, another app is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and why. Related: <a href="split-costs-on-a-group-trip.html">splitting costs on a group trip</a>, <a href="split-a-restaurant-bill.html">splitting a restaurant bill</a> and <a href="split-rent-and-bills-with-housemates.html">splitting rent and bills with housemates</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>How can five people who all owe each other settle in two payments?</dt>
+      <dd>Because what each person owes the group is a single number, not a list. Add up what somebody paid out, subtract the total of their shares, and you have one balance per person. Anybody whose balance is zero is finished and takes no part in the settling, however many expenses they were in, so a group of five with only three non-zero balances needs two transfers.</dd>
+      <dt>How many payments does a group need at most?</dt>
+      <dd>One fewer than the number of people with a non-zero balance. Have the largest debtor pay the largest creditor the smaller of the two amounts: that transfer always brings at least one of them to zero, so each payment removes at least one person from the problem, and the last person is cleared by the same transfer as the second to last.</dd>
+      <dt>Is it a problem that netting makes you pay someone you never shared an expense with?</dt>
+      <dd>It is arithmetically correct and socially surprising, so it should be explained rather than hidden. The transfer is not a claim that you ate that person's dinner; it is a shortcut through a chain of debts that all cancel. Show the group the balance table, which nobody disputes, before showing them the transfers.</dd>
+      <dt>When is the everyone-pays-everyone version better?</dt>
+      <dd>When the trail matters more than the effort: a group that is settling a disputed expense, one where somebody wants a record of who reimbursed whom, or one where a pair of people prefer to keep their money between themselves. Netting is an optimisation, not a rule, and a group that wants the literal payments is not doing anything wrong.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-a-restaurant-bill.html">Splitting a restaurant bill</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>

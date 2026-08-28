@@ -60,7 +60,22 @@ That report was not written by us and cannot be edited by us.
 - Guide: what a splitting app with no account costs you and what it saves you, and when an
   account-based app is the better choice:
   https://getsplitright.com/splitwise-alternative-no-account.html
+- Guide: splitting a restaurant or bar bill when people ordered differently (itemised vs
+  even, service and tax in proportion, shared bottles, rounding):
+  https://getsplitright.com/split-a-restaurant-bill.html
+- Guide: settling group debts in the fewest payments (netting to one balance per person,
+  the at-most-k-minus-1 rule, a five-person example, and the caveats):
+  https://getsplitright.com/settle-group-debts-fewest-payments.html
+- Swedish-language page (svenska): dela utgifter i en grupp utan konto, with SEK examples:
+  https://getsplitright.com/sv/dela-utgifter.html
 - Join a group by code: https://getsplitright.com/join.html
+
+## Languages
+
+The app interface is English today. A complete Swedish translation, and amounts formatted
+with the device's own locale and currency, are in version 1.5, submitted to the App Store and
+Google Play in September 2026. The website is in English apart from one Swedish page,
+https://getsplitright.com/sv/dela-utgifter.html
 
 ## Who makes it
 

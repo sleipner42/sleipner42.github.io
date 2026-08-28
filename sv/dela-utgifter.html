@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Så delar ni utgifter i en grupp utan konto: en kod i stället för inloggning, räkneexempel i kronor, avrundning &mdash; och vad appen inte gör.">
+  <title>Dela utgifter i en grupp &ndash; utan konto</title>
+  <link rel="canonical" href="https://getsplitright.com/sv/dela-utgifter.html">
+  <link rel="alternate" hreflang="sv" href="https://getsplitright.com/sv/dela-utgifter.html">
+  <link rel="alternate" hreflang="en" href="https://getsplitright.com/splitright.html">
+  <link rel="alternate" hreflang="x-default" href="https://getsplitright.com/splitright.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:url" content="https://getsplitright.com/sv/dela-utgifter.html">
+  <meta property="og:title" content="Dela utgifter i en grupp &ndash; utan konto">
+  <meta property="og:description" content="En sextecknad kod i stället för konto och inloggning: så delar ni resan, middagen eller kollektivet, med räkneexempel i kronor och en ärlig lista över vad appen inte gör.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dela utgifter i en grupp &ndash; utan konto">
+  <meta name="twitter:description" content="En sextecknad kod i stället för konto och inloggning: så delar ni resan, middagen eller kollektivet, med räkneexempel i kronor och en ärlig lista över vad appen inte gör.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"sv","mainEntity":[
+    {"@type":"Question","name":"Behöver alla i gruppen skapa ett konto?","acceptedAnswer":{"@type":"Answer","text":"Nej. En person skapar gruppen och får en kod på sex tecken. Alla andra skriver in koden och ser samma grupp. Ingen e-postadress, inget lösenord, ingen inloggning — men koden fungerar då också som gruppens lösenord, så den ska bara skickas till dem som ska vara med."}},
+    {"@type":"Question","name":"Vad händer om vi tappar koden?","acceptedAnswer":{"@type":"Answer","text":"Då kommer ingen in i gruppen igen. Eftersom det inte finns några konton finns det ingen e-postadress att skicka en återställning till, och vi kan inte identifiera vem som ägde gruppen. Spara koden någonstans där den finns kvar när chatten har skrollat i väg."}},
+    {"@type":"Question","name":"Hur får man beloppen att summera till totalen?",
+      "acceptedAnswer":{"@type":"Answer","text":"Alla belopp utom ett avrundas, och det sista sätts till totalen minus de andra. 100 kr på tre blir 33,33 kr, 33,33 kr och 33,34 kr. Någon får öret — bestäm vem i stället för att ändra totalen, och låt det rotera nästa gång."}},
+    {"@type":"Question","name":"Flyttar appen pengar, till exempel via Swish?","acceptedAnswer":{"@type":"Answer","text":"Nej. Splitright räknar ut vem som ska betala vad och håller reda på saldona. Själva betalningen gör ni som ni redan gör, i bankappen eller med Swish, och därefter kan betalningen markeras som gjord i gruppen."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Dela utgifter i en grupp</h1>
+  <p class="intro">En kod på sex tecken i stället för konto och inloggning &mdash; för fjällresan, kollektivet eller middagen. Med räkneexempel i kronor och en rak lista över vad appen inte gör.</p>
+  <p><a href="../splitright.html" hreflang="en">In English: what Splitright does</a></p>
+</header>
+<main>
+  <section aria-labelledby="problemet"><h2 id="problemet">Det är inte matematiken som brukar gå fel</h2>
+    <p>De flesta grupper klarar räknandet. Det som går fel är att ingen skriver ner något. Någon lägger ut för stugan i februari, någon annan handlar mat på fredagen, tre personer delar en taxi, och på söndagen har alla en vag känsla av att det jämnade ut sig. Det gjorde det nästan aldrig.</p>
+    <p>Det andra som går fel är verktyget. Ett kalkylblad kräver att någon underhåller det. En chatt tappar summorna så fort tråden har skrollat vidare. Och en app där alla först måste skapa konto stannar exakt där: en av sex hinner inte, och då finns hela gruppen bara hos de fem andra.</p>
+    <p>Den här sidan handlar om det tredje alternativet &mdash; en delad grupp som alla kommer åt med en kod &mdash; vad det löser, hur räknandet ser ut, och vad det faktiskt kostar er i utbyte.</p>
+  </section>
+
+  <section aria-labelledby="koden"><h2 id="koden">Så fungerar det med en kod</h2>
+    <p>En person skapar gruppen och får en kod på sex tecken. Alla andra skriver in koden i appen och ser samma grupp: samma utgifter, samma saldon, uppdaterat för alla. Det finns ingen e-postadress, inget lösenord och ingen inloggning, vilket är hela poängen &mdash; ni kan starta gruppen vid bordet på trettio sekunder.</p>
+    <div class="band">
+      <p><strong>Koden är gruppens lösenord.</strong> Den som har koden kan öppna gruppen, läsa allt i den och ändra i den. Det finns ingen personlig inloggning, så vi kan inte se skillnad på en medlem och någon annan som har fått koden vidarebefordrad &mdash; och en enskild persons åtkomst kan inte tas bort i efterhand. Skicka koden i gruppchatten, inte i ett offentligt inlägg.</p>
+    </div>
+    <p>Ett praktiskt råd: spara koden någonstans där den finns kvar om ett halvår. Den som tappar koden kommer inte in i gruppen igen, och eftersom det inte finns några konton finns det ingen adress att skicka en återställning till.</p>
+  </section>
+
+  <section aria-labelledby="tre-satt"><h2 id="tre-satt">Tre sätt att dela en utgift</h2>
+    <p>Nästan allt går att räkna med tre varianter, och de ska väljas per utgift &mdash; inte en gång för hela resan.</p>
+    <ul>
+      <li><strong>Lika.</strong> Standardvalet. Beloppet delas på dem som var med. Maten på fredagen, hyran för stugan, bensinen.</li>
+      <li><strong>Exakta belopp.</strong> När siffrorna redan är bestämda: en hyra på 3&nbsp;200 kr som ska delas 1&nbsp;400 / 1&nbsp;000 / 800, eller en restaurangnota där var och en betalar sitt. Exakta belopp summerar alltid till totalen, vilket procent inte gör utan avrundning.</li>
+      <li><strong>Andelar eller procent.</strong> När fördelningen är ett förhållande snarare än belopp: ett par som räknas som två andelar, ett rum som är dubbelt så stort som ett annat.</li>
+    </ul>
+    <p>Det viktigaste är ändå inte vilket sätt ni väljer, utan <strong>vilka som står som deltagare</strong>. Liftkortet delas bara av dem som åkte. Vinen bara av dem som drack. En utgift som bara några delade ska ligga i samma lista som allt annat, med en kortare deltagarlista &mdash; aldrig i en egen sidoräkning som ingen stämmer av.</p>
+  </section>
+
+  <section aria-labelledby="exempel"><h2 id="exempel">Räkneexempel: fyra personer, en fjällhelg</h2>
+    <p>Anna, Björn, Cecilia och David hyr en stuga. Alla fyra delar stugan, maten och bensinen. Liftkorten delas bara av de tre som åkte skidor &mdash; Björn stannade i stugan.</p>
+    <div class="scroll">
+    <table>
+      <caption>Fyra utgifter, 8&nbsp;000 kr totalt.</caption>
+      <thead>
+        <tr><th scope="col">Utgift</th><th scope="col">Betalade</th><th scope="col">Belopp</th><th scope="col">Delas av</th><th scope="col">Per person</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Stugan</th><td>Anna</td><td>3&nbsp;200 kr</td><td>Alla fyra</td><td>800 kr</td></tr>
+        <tr><th scope="row">Mat</th><td>Björn</td><td>1&nbsp;240 kr</td><td>Alla fyra</td><td>310 kr</td></tr>
+        <tr><th scope="row">Liftkort</th><td>Cecilia</td><td>2&nbsp;100 kr</td><td>Anna, Cecilia, David</td><td>700 kr</td></tr>
+        <tr><th scope="row">Bensin</th><td>David</td><td>1&nbsp;460 kr</td><td>Alla fyra</td><td>365 kr</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Varje person får två tal: vad de har lagt ut, och summan av sina egna andelar. Saldot är det första minus det andra.</p>
+    <div class="scroll">
+    <table>
+      <caption>Saldon. Plus betyder att gruppen är skyldig personen pengar.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Har lagt ut</th><th scope="col">Egna andelar</th><th scope="col">Saldo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Anna</th><td>3&nbsp;200 kr</td><td>2&nbsp;175 kr (800 + 310 + 700 + 365)</td><td>+1&nbsp;025 kr</td></tr>
+        <tr><th scope="row">Björn</th><td>1&nbsp;240 kr</td><td>1&nbsp;475 kr (800 + 310 + 365)</td><td>&minus;235 kr</td></tr>
+        <tr><th scope="row">Cecilia</th><td>2&nbsp;100 kr</td><td>2&nbsp;175 kr</td><td>&minus;75 kr</td></tr>
+        <tr><th scope="row">David</th><td>1&nbsp;460 kr</td><td>2&nbsp;175 kr</td><td>&minus;715 kr</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Kontrollen som aldrig ska hoppas över: saldona ska summera till noll. 1&nbsp;025 &minus; 235 &minus; 75 &minus; 715 = 0. Gör de inte det har en utgift blivit dubbel, glömd, eller fått andelar som inte summerar till beloppet &mdash; och då är allt nedanför fel.</p>
+    <p>Bara Anna ska ha pengar, så de tre andra betalar henne: David 715 kr, Björn 235 kr och Cecilia 75 kr. Det blir 1&nbsp;025 kr, precis vad Anna ligger ute med, och alla saldon blir noll. Tre överföringar i stället för de elva som en utgift-för-utgift-avräkning hade gett.</p>
+    <p>Två saker i tabellen är värda att peka på, för de brukar kännas felaktiga. Cecilia betalade liftkorten och är <em>ändå</em> skyldig pengar, eftersom hennes egna andelar är större än de 2&nbsp;100 kr hon lade ut. Och David, som betalade näst mest, betalar mest av alla i slutet &mdash; av samma skäl. En avräkning är ingen bedömning av vem som var generös; den är bara den kortaste vägen till noll. Samma resonemang, med fem personer och två överföringar, finns i vår engelska guide om att <a href="../settle-group-debts-fewest-payments.html" hreflang="en">göra upp med så få betalningar som möjligt</a>.</p>
+  </section>
+
+  <section aria-labelledby="avrundning"><h2 id="avrundning">Avrundning: någon får öret</h2>
+    <p>100 kr delat på tre är 33,3333&hellip; kr, vilket ingen kan betala. Avrundas alla tre till 33,33 kr betalar gruppen 99,99 kr och ett öre saknas. Det finns ingen delning av 100 kr i tre lika betalbara belopp &mdash; det är inget fel i räkningen, det är vad division av pengar innebär.</p>
+    <p>Regeln är enkel: <strong>avrunda alla andelar utom en, och sätt den sista till totalen minus de andra.</strong> 33,33 + 33,33 + 33,34 = 100,00. Bestäm vem som tar öret, låt det rotera nästa gång, och ändra aldrig totalen för att räkningen ska bli snygg &mdash; notan är fortfarande 100 kr.</p>
+    <p>På en delad nota med servicetillägg gäller samma sak, med ett tillägg: ett procentuellt tillägg ska fördelas i samma proportion som det uppstod, inte lika per person. Det räknas igenom i vår engelska guide om att <a href="../split-a-restaurant-bill.html" hreflang="en">dela en restaurangnota</a>.</p>
+  </section>
+
+  <section aria-labelledby="appen"><h2 id="appen">Vad Splitright är</h2>
+    <p>Vi gör en av de appar som den här sidan beskriver, så läs avsnittet med det i minnet. Splitright är gratis för iPhone och iPad (iOS 16.4 och senare) och Android (7.0 och senare). Inget konto, ingen e-post, inget lösenord. Ingen reklam, ingen prenumeration, inga köp i appen i den här versionen, och ingen spårning.</p>
+    <p>Ni skapar en grupp, delar koden, och lägger in utgifterna: vem som betalade, hur mycket, och vilka den gällde. Varje utgift delas lika, med andelar eller med exakta belopp. Appen visar saldona i klartext, föreslår de få betalningar som gör gruppen kvitt, hanterar flera grupper samtidigt och kan arkivera en grupp när resan är slut.</p>
+    <p>Att påståendet om spårning inte bara är vårt: <strong>Exodus Privacy</strong>, en fransk ideell förening som analyserar Android-appar efter inbyggda spårare, granskade Play-versionen den 27 augusti 2026 och hittade <strong>noll spårare</strong> och fyra behörigheter. Rapporten är skriven av dem, inte av oss, och vi kan inte ändra den: <a href="https://reports.exodus-privacy.eu.org/en/reports/com.splitright.app/latest/">rapporten för com.splitright.app</a>.</p>
+    <h3>Svenska och kronor</h3>
+    <p>Appen är översatt till svenska, hela gränssnittet. Översättningen ingår i version 1.5, som lämnas in till App Store och Google Play i september 2026 &mdash; tidigare versioner visas på engelska. Samma version visar belopp med telefonens eget språk och valutaformat, alltså <em>171,75 kr</em> och inte <em>kr171.75</em> som förr, och känner igen drygt fyrtio valutor i stället för tjugo. Kronor har alltid gått att välja; det som var fel var hur beloppen skrevs.</p>
+  </section>
+
+  <section aria-labelledby="inte"><h2 id="inte">Vad appen inte gör</h2>
+    <p>Det här är hela listan, samlad på ett ställe, för det är billigare att läsa den nu än att upptäcka den mitt i en resa.</p>
+    <ul>
+      <li><strong>Den flyttar inga pengar.</strong> Ingen bankkoppling, ingen Swish-integration. Ni får beloppen och betalar som ni redan gör.</li>
+      <li><strong>Koden är lösenordet.</strong> Ingen personlig inloggning, ingen möjlighet att ta bort en enskild persons åtkomst, och namnen i gruppen är etiketter &mdash; inte verifierade identiteter.</li>
+      <li><strong>Ingen återställning.</strong> Tappar ni koden finns ingen e-postadress att skicka en ny till, och vi kan inte avgöra vem gruppen tillhörde.</li>
+      <li><strong>Ingen egen historik som följer med.</strong> Det finns inget personligt konto, så byter ni telefon följer inte era gamla grupper med automatiskt &mdash; det gör bara koderna ni har sparat.</li>
+      <li><strong>Inte krypterat från ände till ände.</strong> Det ni delar ligger i en databas hos Firebase i regionen europe-west1 (Belgien). Det är inte samma sak som &rdquo;bara på telefonen&rdquo;, och vi säger inte att det är det. Vad som lagras står i <a href="../splitright-privacy.html" hreflang="en">integritetsinformationen</a>.</li>
+      <li><strong>Ingen backup.</strong> Behåll det ni verkligen inte får tappa på fler ställen än här.</li>
+      <li><strong>Ingen export, ingen kvittoskanning</strong>, inga kategorier eller diagram, ingen webbversion och inga återkommande utgifter.</li>
+    </ul>
+    <p>Behöver ni export, kvittobilder eller ett konto som binder ihop era grupper över åren är en annan app det bättre svaret. Vår <a href="../splitright-vs.html" hreflang="en">jämförelse med andra appar</a> säger vilka, och var de är bättre än vi.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/se/app/splitright-split-expenses/id6608980374">Hämta för iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Ladda ner på Google Play</a></li>
+      <li><a href="../index.html" hreflang="en">Support och vanliga frågor</a></li>
+    </ul>
+    <p class="note">Frågor eller rättelser: skriv till <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a>. Supporten svarar på svenska och engelska.</p>
+  </section>
+
+  <section aria-labelledby="fragor"><h2 id="fragor">Vanliga frågor</h2>
+    <dl>
+      <dt>Behöver alla i gruppen skapa ett konto?</dt>
+      <dd>Nej. En person skapar gruppen och får en kod på sex tecken. Alla andra skriver in koden och ser samma grupp. Ingen e-postadress, inget lösenord, ingen inloggning &mdash; men koden fungerar då också som gruppens lösenord, så den ska bara skickas till dem som ska vara med.</dd>
+      <dt>Vad händer om vi tappar koden?</dt>
+      <dd>Då kommer ingen in i gruppen igen. Eftersom det inte finns några konton finns det ingen e-postadress att skicka en återställning till, och vi kan inte identifiera vem som ägde gruppen. Spara koden någonstans där den finns kvar när chatten har skrollat i väg.</dd>
+      <dt>Hur får man beloppen att summera till totalen?</dt>
+      <dd>Alla belopp utom ett avrundas, och det sista sätts till totalen minus de andra. 100 kr på tre blir 33,33 kr, 33,33 kr och 33,34 kr. Någon får öret &mdash; bestäm vem i stället för att ändra totalen, och låt det rotera nästa gång.</dd>
+      <dt>Flyttar appen pengar, till exempel via Swish?</dt>
+      <dd>Nej. Splitright räknar ut vem som ska betala vad och håller reda på saldona. Själva betalningen gör ni som ni redan gör, i bankappen eller med Swish, och därefter kan betalningen markeras som gjord i gruppen.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="../splitright.html" hreflang="en">About Splitright (in English)</a> &middot; <a href="../split-a-restaurant-bill.html" hreflang="en">Splitting a restaurant bill</a> &middot; <a href="../settle-group-debts-fewest-payments.html" hreflang="en">Settling debts in the fewest payments</a> &middot; <a href="../splitright-vs.html" hreflang="en">Compared with other apps</a> &middot; <a href="../index.html" hreflang="en">Support</a> &middot; <a href="../splitright-privacy.html" hreflang="en">Privacy information</a> &middot; <a href="../splitright-terms.html" hreflang="en">Terms and acceptable use</a> &middot; Kontakt <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>

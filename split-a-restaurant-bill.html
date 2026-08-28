@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to split a restaurant bill when people ordered differently: itemised or even, service and tax in proportion, shared wine, and the rounding problem.">
+  <title>How to split a restaurant bill fairly</title>
+  <link rel="canonical" href="https://getsplitright.com/split-a-restaurant-bill.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/split-a-restaurant-bill.html">
+  <meta property="og:title" content="How to split a restaurant bill fairly">
+  <meta property="og:description" content="Itemised versus even splits, service and tax apportioned in proportion rather than equally, shared starters and bottles of wine, the person who only had tap water, and two worked examples that add up exactly.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to split a restaurant bill fairly">
+  <meta name="twitter:description" content="Itemised versus even splits, service and tax apportioned in proportion rather than equally, shared starters and bottles of wine, the person who only had tap water, and two worked examples that add up exactly.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Should a service charge be split equally or in proportion?","acceptedAnswer":{"@type":"Answer","text":"In proportion to what each person is paying for. A service charge is a percentage of the bill, so charging everyone the same amount of it moves money from the people who ordered least to the people who ordered most. Multiply each person's own food and drink total by the same percentage, then check that the rounded amounts still add up to the service charge on the bill."}},
+    {"@type":"Question","name":"How do you split a shared starter or a bottle of wine?","acceptedAnswer":{"@type":"Answer","text":"Treat it as its own small expense with its own participants. The bottle is divided between the people who drank from it, the starters between the people who ate them, and neither figure touches anybody else's share. That is the whole reason an itemised split works at a table where one person is not drinking."}},
+    {"@type":"Question","name":"What about the person who only had tap water?","acceptedAnswer":{"@type":"Answer","text":"Under an even split they are paying for other people's wine, which is the single most common reason a table falls out over a bill. Either itemise the drinks and split only the food evenly, or agree the even split out loud before anybody orders, so the person who is not drinking can choose."}},
+    {"@type":"Question","name":"What do you do when the shares do not add up to the total?","acceptedAnswer":{"@type":"Answer","text":"Somebody takes the odd penny, and you decide who rather than pretending it is not there. Round every share but one, then set the last share to the bill total minus all the others, so the column sums to the printed total exactly. Rotate who absorbs it next time and never adjust the total to make the arithmetic tidy."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>How to split a restaurant bill fairly</h1>
+  <p class="intro">Four people, three of them drinking, one set menu, a 12.5% service charge and a bill that has to come out to the penny &mdash; without anybody doing mental arithmetic at the table.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="two-ways"><h2 id="two-ways">There are only two honest ways to split a bill</h2>
+    <p>Everything else is a variation. You either divide the bill evenly, or you work out what each person actually ordered and divide the shared items between the people who shared them. Both are defensible; the mistake is drifting between them halfway down the receipt.</p>
+    <h3>The even split</h3>
+    <p>Fast, sociable, and correct often enough. If everybody ordered roughly the same kind of thing, the differences are pennies and the arithmetic costs less than the conversation. An even split is also the polite default when the table is a celebration rather than an expense.</p>
+    <p>It fails in one specific situation: when consumption is genuinely uneven. Two bottles of wine on a table where one person is not drinking is not a rounding difference, it is a transfer of about the price of a main course. So is a table where two people had three courses and one had a bowl of soup.</p>
+    <h3>The itemised split</h3>
+    <p>Slower, and worth it exactly when the even split would be unfair. Each person pays for what they ordered, each shared item is divided between the people who shared it, and the percentage add-ons follow the same proportions. Done properly it takes a couple of minutes and there is nothing left to argue about, because every number can be pointed at on the receipt.</p>
+    <div class="band">
+      <p><strong>Decide which one before you order, not after the bill arrives.</strong> Once the food is eaten, whichever method costs a particular person more looks like that person's opinion rather than a rule, and the person who is disadvantaged by it can no longer choose differently. One sentence when the menus come round &mdash; &ldquo;shall we just split it evenly?&rdquo; &mdash; prevents almost all of this.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="service"><h2 id="service">Service and tax go in proportion, not equally</h2>
+    <p>This is the part that most tables get wrong, and it is worth being precise about because it is the one place where the intuitive answer is arithmetically unfair.</p>
+    <p>A service charge is a percentage of the bill. If four people ordered &pound;30.50, &pound;35.00, &pound;40.00 and &pound;32.50 of food and drink, the 12.5% service on that bill was generated in those proportions. Splitting the service charge equally between the four charges the &pound;30.50 person for service on food they did not order and refunds the &pound;40.00 person part of the service on food they did. It is the same error as splitting the food equally after agreeing to itemise, just smaller and better hidden.</p>
+    <p>The rule is one line: <strong>multiply each person's own subtotal by the same percentage</strong>. Nobody needs to know anybody else's number to check their own.</p>
+    <p>Sales tax added at the end of the bill, as it is in much of the United States, behaves identically: it is a percentage, so it belongs on each person's own subtotal at the same rate. Where tax is already inside the menu prices, as in the United Kingdom, there is nothing to apportion &mdash; you have already split it, because it was inside every figure you split.</p>
+    <p>Two honest caveats. First, a discretionary service charge is discretionary: if somebody wants to tip differently, that is a separate conversation to have with the whole table before the card comes out, not a private adjustment to their own share. Second, if a fixed cover charge or a booking fee appears &mdash; a flat amount per person rather than a percentage &mdash; that one <em>is</em> equal per head, because that is literally how it was charged.</p>
+  </section>
+
+  <section aria-labelledby="shared"><h2 id="shared">Shared plates, bottles and the person on tap water</h2>
+    <p>Treat every shared item as its own small expense with its own list of participants. The bottle of wine is divided between the people who drank from it; the starters that went in the middle of the table are divided between the people who ate them; a side that two people picked at is divided between those two. None of those figures touch anybody else's share, which is exactly the point.</p>
+    <p>Some practical judgements that save time:</p>
+    <ul>
+      <li><strong>Bottles.</strong> Divide by the drinkers, not by the glasses. Counting glasses is the point at which a dinner becomes an audit, and the person who had one more glass than average is not the problem you are solving.</li>
+      <li><strong>Starters to share.</strong> Divide between everyone who was eating them, including the person who took one bite. Fractional appetite is not measurable and the amounts are small.</li>
+      <li><strong>The last-minute round of coffees.</strong> Its own item, its own participants. It is the single most commonly forgotten line, because it arrives after everyone has mentally closed the bill.</li>
+      <li><strong>The tap-water person.</strong> Under an even split they subsidise the drinks, and this is the most common reason a table sours over money. Either itemise the drinks and split the food evenly &mdash; a good compromise that keeps most of the speed &mdash; or agree the even split out loud in advance so they can choose to order differently.</li>
+    </ul>
+    <h3>The set menu</h3>
+    <p>A set menu is the easiest bill there is, and people still complicate it. The menu price is per person, so it is equal per head by construction: four at &pound;42 is &pound;168 and there is nothing to itemise. Everything <em>outside</em> the set menu &mdash; drinks, supplements for a particular dish, the cheese course somebody added &mdash; is a separate item split between the people who had it. Do not try to work out that one person's plate was worth less than the set price. You did not buy the plates, you bought the menu.</p>
+  </section>
+
+  <section aria-labelledby="worked-itemised"><h2 id="worked-itemised">Worked example 1: itemised, with service in proportion</h2>
+    <p>Four people. Ana, Ben and Cira shared a bottle of wine; Dan drank tap water. Everyone shared the starters. Service is 12.5%, and tax is inside the menu prices.</p>
+    <div class="scroll">
+    <table>
+      <caption>What was ordered. Food and drink subtotal &pound;138.00.</caption>
+      <thead>
+        <tr><th scope="col">Item</th><th scope="col">Amount</th><th scope="col">Shared by</th><th scope="col">Each</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ana's main</th><td>&pound;18.00</td><td>Ana</td><td>&pound;18.00</td></tr>
+        <tr><th scope="row">Ben's main</th><td>&pound;22.50</td><td>Ben</td><td>&pound;22.50</td></tr>
+        <tr><th scope="row">Cira's main</th><td>&pound;27.50</td><td>Cira</td><td>&pound;27.50</td></tr>
+        <tr><th scope="row">Dan's main</th><td>&pound;28.00</td><td>Dan</td><td>&pound;28.00</td></tr>
+        <tr><th scope="row">Starters to share</th><td>&pound;18.00</td><td>All four</td><td>&pound;4.50</td></tr>
+        <tr><th scope="row">Bottle of wine</th><td>&pound;24.00</td><td>Ana, Ben, Cira</td><td>&pound;8.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Add up each person's own items to get their subtotal, then multiply that subtotal by 12.5% for their share of the service charge.</p>
+    <div class="scroll">
+    <table>
+      <caption>Each person's subtotal, their 12.5% of it, and what they pay. Bill total &pound;155.25.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Own items</th><th scope="col">Subtotal</th><th scope="col">Service at 12.5%</th><th scope="col">Pays</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ana</th><td>18.00 + 4.50 + 8.00</td><td>&pound;30.50</td><td>&pound;3.81</td><td>&pound;34.31</td></tr>
+        <tr><th scope="row">Ben</th><td>22.50 + 4.50 + 8.00</td><td>&pound;35.00</td><td>&pound;4.38</td><td>&pound;39.38</td></tr>
+        <tr><th scope="row">Cira</th><td>27.50 + 4.50 + 8.00</td><td>&pound;40.00</td><td>&pound;5.00</td><td>&pound;45.00</td></tr>
+        <tr><th scope="row">Dan</th><td>28.00 + 4.50</td><td>&pound;32.50</td><td>&pound;4.06</td><td>&pound;36.56</td></tr>
+        <tr><th scope="row">Total</th><td></td><td>&pound;138.00</td><td>&pound;17.25</td><td>&pound;155.25</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Check it, because a bill split that has not been checked is a guess: 30.50 + 35.00 + 40.00 + 32.50 = &pound;138.00, the subtotal on the receipt. The service column is 3.81 + 4.38 + 5.00 + 4.06 = &pound;17.25, which is 12.5% of &pound;138.00 exactly. And 34.31 + 39.38 + 45.00 + 36.56 = &pound;155.25, which is the total the restaurant is charging. Nothing has been invented and nothing is missing.</p>
+    <p>Notice what proportional service did. Split equally, the service charge would have been &pound;4.31 each: Ana would have paid 50p more than she generated and Cira 69p less. Small money, but it is the same unfairness the itemised split was chosen to avoid, so there is no reason to reintroduce it in the last column.</p>
+    <p>Notice Dan as well. He ordered the most expensive main course and still pays less than Cira, because he had no wine. That is the itemised split working correctly, and it is worth saying out loud at the table &mdash; people expect the person with the priciest dish to pay the most.</p>
+  </section>
+
+  <section aria-labelledby="worked-even"><h2 id="worked-even">Worked example 2: a set menu, an even split, and the rounding problem</h2>
+    <p>Six people, a set menu at &pound;42 a head, two bottles of wine everybody drank, and 10% service.</p>
+    <div class="scroll">
+    <table>
+      <caption>Six at a set menu. Bill total &pound;352.00.</caption>
+      <thead>
+        <tr><th scope="col">Line</th><th scope="col">Working</th><th scope="col">Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Set menu</th><td>6 &times; &pound;42.00</td><td>&pound;252.00</td></tr>
+        <tr><th scope="row">Wine</th><td>2 bottles, shared by all six</td><td>&pound;68.00</td></tr>
+        <tr><th scope="row">Subtotal</th><td></td><td>&pound;320.00</td></tr>
+        <tr><th scope="row">Service</th><td>10% of &pound;320.00</td><td>&pound;32.00</td></tr>
+        <tr><th scope="row">Total</th><td></td><td>&pound;352.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Every line here is shared by all six, so the even split is also the itemised split, and there is no argument to have. But &pound;352.00 &divide; 6 = &pound;58.6666&hellip;, which is not an amount anybody can pay.</p>
+    <p>Round it to &pound;58.67 and six people pay &pound;352.02: the table has handed over 2p more than the bill. Round it down to &pound;58.66 and the total is &pound;351.96, 4p short, and somebody has to make it up. There is no split of &pound;352.00 into six equal payable amounts. This is not a flaw in your arithmetic; it is what dividing money by six means.</p>
+    <p>So decide who absorbs it, deliberately:</p>
+    <ol>
+      <li>Round every share but one: five people at &pound;58.67, which is &pound;293.35.</li>
+      <li>Set the last share to the total minus the others: &pound;352.00 &minus; &pound;293.35 = <strong>&pound;58.65</strong>.</li>
+      <li>Check: 293.35 + 58.65 = &pound;352.00. The column sums to the printed total, which is the only test that matters.</li>
+    </ol>
+    <p>Three rules go with that. Rotate who takes the odd pennies rather than always giving them to the organiser. Never adjust the total to make the division tidy &mdash; the restaurant is charging &pound;352.00 whatever you do to your own column. And do not round to the nearest pound for convenience unless you have said so: rounding six shares up to &pound;59 collects &pound;354.00 and quietly turns 2p of arithmetic into &pound;2.00 of extra tip.</p>
+    <p>If you are settling by card, one person paying the whole bill and being paid back is nearly always better than six card payments, and it makes the rounding question yours rather than the restaurant's. What it costs is that one person is out of pocket until everybody pays, which is a real cost and should not always fall on the same person.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the tools this article describes, so read this section accordingly. Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later) with no accounts, no ads, no subscription and no tracking: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. That matters at a table, because the alternative is talking four people through a sign-up while a waiter waits.</p>
+    <p>For a bill, the useful part is that each expense has its own participants and its own split mode. The bottle of wine goes in shared by three, the starters by four, each main course by one person as an exact amount, and the totals stay to the penny because exact amounts always add up to the total while percentages have to be rounded. It keeps a running balance per person and suggests the smallest set of payments that clears it, which is what you want when one card paid for everything.</p>
+    <p>What it does not do: it will not read your receipt &mdash; there is no receipt scanning &mdash; and it will not work out the service apportionment in this article for you, so that arithmetic is still yours. There is no tip calculator, no CSV or PDF export and no categories. It does not move money: it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anyone holding it can open and edit the group, there is no per-person login, and one person's access cannot be withdrawn, so treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If you want receipt photos or an export, another app is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and why. Related: <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a>, <a href="split-costs-on-a-group-trip.html">splitting costs on a group trip</a> and <a href="split-expenses-without-an-account.html">splitting expenses without making anyone sign up</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>Should a service charge be split equally or in proportion?</dt>
+      <dd>In proportion to what each person is paying for. A service charge is a percentage of the bill, so charging everyone the same amount of it moves money from the people who ordered least to the people who ordered most. Multiply each person's own food and drink total by the same percentage, then check that the rounded amounts still add up to the service charge on the bill.</dd>
+      <dt>How do you split a shared starter or a bottle of wine?</dt>
+      <dd>Treat it as its own small expense with its own participants. The bottle is divided between the people who drank from it, the starters between the people who ate them, and neither figure touches anybody else's share. That is the whole reason an itemised split works at a table where one person is not drinking.</dd>
+      <dt>What about the person who only had tap water?</dt>
+      <dd>Under an even split they are paying for other people's wine, which is the single most common reason a table falls out over a bill. Either itemise the drinks and split only the food evenly, or agree the even split out loud before anybody orders, so the person who is not drinking can choose.</dd>
+      <dt>What do you do when the shares do not add up to the total?</dt>
+      <dd>Somebody takes the odd penny, and you decide who rather than pretending it is not there. Round every share but one, then set the last share to the bill total minus all the others, so the column sums to the printed total exactly. Rotate who absorbs it next time and never adjust the total to make the arithmetic tidy.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>
