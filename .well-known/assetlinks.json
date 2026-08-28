@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.splitright.app",
+      "sha256_cert_fingerprints":
+        ["8B:42:EF:56:9D:82:44:EC:C1:F0:95:DD:1D:9C:1E:9F:C0:40:6B:67:02:66:0F:EB:E7:7F:BC:BF:0C:55:22:65"]
+    }
+  }
+]
