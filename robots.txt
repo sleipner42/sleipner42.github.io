@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sleipner42.github.io/sitemap.xml
+Sitemap: https://getsplitright.com/sitemap.xml
 
 # Plain-text summary for assistants and other automated readers:
-# https://sleipner42.github.io/llms.txt
+# https://getsplitright.com/llms.txt
