@@ -66,16 +66,23 @@ That report was not written by us and cannot be edited by us.
 - Guide: settling group debts in the fewest payments (netting to one balance per person,
   the at-most-k-minus-1 rule, a five-person example, and the caveats):
   https://getsplitright.com/settle-group-debts-fewest-payments.html
+- Guide: splitting expenses in different currencies on a trip (convert each expense as you
+  enter it at the rate you actually paid, card FX fees and DCC, currencies with no minor unit,
+  a four-person EUR/JPY/SEK example):
+  https://getsplitright.com/split-expenses-in-different-currencies.html
 - Swedish-language page (svenska): dela utgifter i en grupp utan konto, with SEK examples:
   https://getsplitright.com/sv/dela-utgifter.html
+- Swedish-language guide (svenska): dela hyra och räkningar med rumskompisar - rent by
+  square metres, electricity by person-days, deposits:
+  https://getsplitright.com/sv/dela-hyra.html
 - Join a group by code: https://getsplitright.com/join.html
 
 ## Languages
 
 The app interface is English today. A complete Swedish translation, and amounts formatted
 with the device's own locale and currency, are in version 1.5, submitted to the App Store and
-Google Play in September 2026. The website is in English apart from one Swedish page,
-https://getsplitright.com/sv/dela-utgifter.html
+Google Play in September 2026. The website is in English apart from two Swedish pages,
+https://getsplitright.com/sv/dela-utgifter.html and https://getsplitright.com/sv/dela-hyra.html
 
 ## Who makes it
 

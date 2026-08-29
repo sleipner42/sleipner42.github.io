@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to split expenses in different currencies on a trip: one group currency, convert each expense as you enter it at the rate you actually paid, and decline DCC.">
+  <title>How to split expenses in different currencies</title>
+  <link rel="canonical" href="https://getsplitright.com/split-expenses-in-different-currencies.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/split-expenses-in-different-currencies.html">
+  <meta property="og:title" content="How to split expenses in different currencies">
+  <meta property="og:description" content="Why converting at settle-up time gives a different answer from converting as you spend, which rate is the honest one, card fees and DCC, currencies with no decimals, and a four-person trip in euros, yen and kronor that nets down to three transfers.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to split expenses in different currencies">
+  <meta name="twitter:description" content="Why converting at settle-up time gives a different answer from converting as you spend, which rate is the honest one, card fees and DCC, currencies with no decimals, and a four-person trip in euros, yen and kronor that nets down to three transfers.">
+<style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+  
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Should you convert an expense when you enter it or when you settle up?","acceptedAnswer":{"@type":"Answer","text":"When you enter it. A rate moves every day, so converting a pile of foreign amounts at settle-up time values them at a rate nobody in the group was ever charged, and the difference lands entirely on whoever happened to pay in the foreign currency. Convert each expense once, at the rate that expense actually cost, and the number stops moving."}},
+    {"@type":"Question","name":"Which exchange rate should you use?","acceptedAnswer":{"@type":"Answer","text":"The one on your own card statement: the amount your bank actually took, divided by the amount on the receipt. That figure already contains the network rate for that day and any fee your issuer added, so it is what the expense cost rather than what a mid-market quote says it should have cost. If the statement has not landed yet, use a mid-market rate as a placeholder and correct it later."}},
+    {"@type":"Question","name":"Should you accept when a card machine offers to charge you in your own currency?","acceptedAnswer":{"@type":"Answer","text":"No. That offer is dynamic currency conversion, and the rate is set by the merchant's payment provider rather than by your card network, typically several per cent worse. Always choose to be charged in the local currency and let your own card do the conversion. On a card terminal that means declining the home-currency option, and online it means paying in the currency the seller prices in."}},
+    {"@type":"Question","name":"How do you split an amount in a currency that has no decimal places?","acceptedAnswer":{"@type":"Answer","text":"Split it in whole units and give the leftover unit to one named person rather than inventing fractions that cannot be paid. Japanese yen, Korean won and Icelandic krona have no minor unit at all, and a few currencies such as the Kuwaiti and Tunisian dinar have three, so the amount you can actually transfer depends on the currency. Round every share but one and set the last to the total minus the others."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>How to split expenses in different currencies</h1>
+  <p class="intro">Four people, three currencies and one card statement that disagrees with everybody's memory. The fix is a single decision made before the trip, and it is not the one most groups make.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <section aria-labelledby="one-currency"><h2 id="one-currency">Pick one group currency, and pick it first</h2>
+    <p>A trip that crosses a border collects amounts in whatever currency the till was in. Somebody books the flat in euros, somebody buys rail passes in yen, somebody pays for the last hotel night in kronor, and the group ends up with three columns of numbers that cannot be added together. There is no arithmetic that rescues that at the end; you have to decide up front what unit the group keeps score in.</p>
+    <p>Choose the currency most of the group is actually paid in and holds money in, not the currency of the destination. The point of the group currency is that the final transfers are made in it, and people should not have to convert again to pay each other. A group of four Europeans in Tokyo keeps score in euros; a group of Swedes keeps score in kronor even if every receipt for a fortnight says yen.</p>
+    <p>Then convert every expense into that currency <strong>as you record it</strong>, and never store a mixture. Everything else in this article follows from those two sentences.</p>
+    <div class="band">
+      <p><strong>Say it out loud on day one.</strong> &ldquo;We are counting in euros, and whoever pays converts from their own statement.&rdquo; It takes ten seconds and it removes the only genuinely contentious part of a multi-currency trip &mdash; the moment when one person's conversion makes them better off than another's.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="when"><h2 id="when">Converting as you spend and converting at settle-up are different sums</h2>
+    <p>This is the part that surprises people, so it is worth being precise. Suppose you keep the receipts in their original currencies and convert the whole pile at the end, using the rate on the day you settle. That is not a tidier version of converting each expense &mdash; it is a different calculation with a different answer, and the gap goes to some people and comes out of others.</p>
+    <p>Take the yen spending from the worked example below: &yen;195,250 in total, which cost the people who paid for it &euro;1,176.00 on their statements. If the yen weakens over the following month, so that by settle-up day one euro buys &yen;175, that same &yen;195,250 is now valued at &euro;1,115.71. The group is about to divide &euro;60.29 less than it spent. The money did not go anywhere: it was simply taken off the balance of the people who fronted the yen, because they are the only ones whose outlay was revalued.</p>
+    <p>Move the rate the other way and the unfairness reverses &mdash; the yen payers gain a windfall paid for by everyone else. Neither direction is a rounding artefact. A month of ordinary currency movement is a few per cent, and a few per cent of a trip's accommodation is real money.</p>
+    <p>There is a deeper reason to convert early. An expense's cost is a fact that stopped changing the moment the card was charged; it is history, and history should not be re-priced. A balance that quietly changes every time you open the app is not a record of anything, and nobody can check it against a statement.</p>
+    <p>There is a respectable opposite view, and it is worth stating fairly: keep every expense in the currency it was actually paid in, because the receipt amount is the only figure with no assumptions inside it, and settle each currency on its own. That is what our <a href="split-costs-on-a-group-trip.html">group-trip guide</a> recommends, and it is right that a converted figure is a derived number. The two positions reconcile in one habit: <strong>write the original amount down as well.</strong> Put &ldquo;&yen;102,000&rdquo; in the description, keep the scoreboard in one currency, and you have both the checkable fact and a balance that adds up.</p>
+    <p>The one exception is a genuine group fund: if everybody put &euro;200 into a shared pot at the start and the pot spent yen, the pot's own conversions are the truth and nobody needs to convert anything personally. That works, but it is a different scheme &mdash; and someone still has to reconcile what is left in the pot at the end.</p>
+  </section>
+
+  <section aria-labelledby="which-rate"><h2 id="which-rate">The right rate is the one on your own statement</h2>
+    <p>People reach for whatever rate a search engine shows, which is the mid-market rate &mdash; the midpoint between the buying and selling prices in the wholesale market. Nobody spending money on holiday is charged that. It is a useful reference and a bad accounting input.</p>
+    <p>The honest rate is the one you can prove: <strong>the amount your bank took, divided by the amount printed on the receipt</strong>. If the receipt says &yen;102,000 and the statement line says &euro;612.00, then that expense cost &euro;612.00 and the rate you paid was &yen;166.67 to the euro, whatever any published table says. That single division already contains the card network's rate for that day, your issuer's margin, and any foreign transaction fee charged on the same line.</p>
+    <p>Three practical notes follow from using statements:</p>
+    <ul>
+      <li><strong>Two people at the same table can be charged different amounts</strong> for the same split bill, because their banks convert differently. That is not an error to reconcile away. Each person records what their own card was charged.</li>
+      <li><strong>The statement lags.</strong> A card transaction abroad often takes two or three days to settle, and the final figure can differ slightly from the amount your banking app showed as pending. Enter a mid-market estimate on the day so the expense is not forgotten, then correct it once the real line appears &mdash; and correct it before the group settles, not after.</li>
+      <li><strong>Cash is simpler and needs a note.</strong> If you took &yen;30,000 out of an ATM and the withdrawal cost you &euro;186.50 including the fee, your rate for spending that cash is &yen;160.86 to the euro. Write the rate down once and use it for everything you spend from that envelope.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="fees"><h2 id="fees">Card fees, and the machine that offers to charge you in your own currency</h2>
+    <p>Two different costs get muddled together here, and only one of them is worth arguing about.</p>
+    <p>The first is your own card's foreign transaction fee, typically nothing on a travel-focused card and up to about 3% on an ordinary one. You cannot avoid it once you are standing at the till, and because it is on your statement line it is already inside the rate you calculated above. Nothing more to do: the person who paid absorbed it, the group divided it, and that is correct because it was part of the cost of the thing.</p>
+    <p>The second is <strong>dynamic currency conversion</strong>, and it is worth being blunt. When a card terminal asks &ldquo;would you like to pay in your own currency?&rdquo; &mdash; or a hotel bill arrives already converted, or an online checkout helpfully switches to your home currency &mdash; the conversion is being done by the merchant's payment provider, not by your card network. The provider sets the rate and keeps the margin, and it is routinely several per cent worse than what your own bank would have given you. The screen often shows the marked-up rate in small print next to a large, reassuring home-currency total.</p>
+    <div class="band">
+      <p><strong>Always decline.</strong> Choose to be charged in the local currency and let your own card convert. On a terminal, that is the option that is not pre-selected; online, it means paying in the currency the seller prices in. If a receipt shows a home-currency amount you did not ask for, you were converted twice over, and it is worth asking the merchant to void and re-run the transaction while you are still standing there.</p>
+    </div>
+    <p>For the group's records, none of this changes the method. Record what your statement says. But a member who accepts DCC on a big shared booking has quietly made the whole group pay a few per cent more, so it belongs in the same day-one conversation as the choice of group currency.</p>
+  </section>
+
+  <section aria-labelledby="rounding"><h2 id="rounding">Rounding, and the currencies that have no pennies</h2>
+    <p>Converting introduces fractions, and fractions have to land somewhere payable. Two separate problems hide in that sentence.</p>
+    <h3>Different currencies have different smallest units</h3>
+    <p>Most currencies divide into hundredths, so two decimal places is the reflex. It is not universal. Japanese yen, Korean won and Icelandic krona have no minor unit at all: &yen;1 is the smallest amount that exists, and &yen;1,000.50 is not a quantity of money. At the other end, the Kuwaiti, Bahraini and Tunisian dinars divide into thousandths, so three decimal places is correct and rounding to two loses real value. A handful of currencies, such as the Hungarian forint, are quoted in everyday life without decimals even though the standard gives them two &mdash; so if you are keeping score in forint, agree which convention you are using.</p>
+    <p>The rule to carry: <strong>split in the smallest unit the currency actually has</strong>. Three people splitting &yen;10,000 pay &yen;3,333, &yen;3,333 and &yen;3,334. Writing &yen;3,333.33 produces a number nobody can transfer and a total that no longer matches the bill.</p>
+    <h3>Somebody takes the odd unit</h3>
+    <p>Divide any total by three and you will usually be left over. The discipline is the same in every currency and it is one sentence: round every share but one, then set the last share to the total minus all the others. &euro;70.00 between three is &euro;23.33, &euro;23.33 and &euro;23.34, which sums to exactly &euro;70.00. Decide who takes the extra cent rather than pretending it is not there, rotate it, and never adjust the total to make the division tidy.</p>
+    <p>Round once, too. If you convert an expense to two decimals and then split it, the shares add back up to the converted total. If you split the foreign amount first and convert each share separately, you get four independently rounded numbers that do not add up to anything in particular. Convert, then split.</p>
+  </section>
+
+  <section aria-labelledby="worked"><h2 id="worked">Worked example: four people, euros, yen and kronor</h2>
+    <p>Anna, Bj&ouml;rn, Chlo&eacute; and Dai fly from Amsterdam to Japan and come home through Stockholm. The group currency is the euro. Every expense was converted once, by the person who paid, from their own card statement &mdash; which is why the implied rates differ slightly between days.</p>
+    <div class="scroll">
+    <table>
+      <caption>Six expenses, each converted at the rate actually paid. Trip total &euro;2,374.00.</caption>
+      <thead>
+        <tr><th scope="col">Expense</th><th scope="col">Paid by</th><th scope="col">On the receipt</th><th scope="col">On the statement</th><th scope="col">Implied rate</th><th scope="col">Shared by</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Flat in Tokyo, 5 nights</th><td>Anna</td><td>&yen;102,000</td><td>&euro;612.00</td><td>&yen;166.67 / &euro;1</td><td>All four</td></tr>
+        <tr><th scope="row">Rail passes</th><td>Bj&ouml;rn</td><td>&yen;67,500</td><td>&euro;408.00</td><td>&yen;165.44 / &euro;1</td><td>All four</td></tr>
+        <tr><th scope="row">Dinner in Kyoto</th><td>Chlo&eacute;</td><td>&yen;25,750</td><td>&euro;156.00</td><td>&yen;165.06 / &euro;1</td><td>All four</td></tr>
+        <tr><th scope="row">Flights</th><td>Dai</td><td>&euro;728.00</td><td>&euro;728.00</td><td>&mdash;</td><td>All four</td></tr>
+        <tr><th scope="row">Hotel in Stockholm</th><td>Anna</td><td>4,640 kr</td><td>&euro;400.00</td><td>11.60 kr / &euro;1</td><td>All four</td></tr>
+        <tr><th scope="row">Airport taxi</th><td>Bj&ouml;rn</td><td>812 kr</td><td>&euro;70.00</td><td>11.60 kr / &euro;1</td><td>Anna, Bj&ouml;rn, Dai</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Chlo&eacute; took the train to the airport, so the taxi is shared by three: &euro;70.00 &divide; 3 is &euro;23.33, &euro;23.33 and &euro;23.34, with Dai taking the extra cent. Everything else is shared by four and divides exactly.</p>
+    <div class="scroll">
+    <table>
+      <caption>What each person paid, what they owed, and the difference. Both columns total &euro;2,374.00.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Paid out</th><th scope="col">Own shares</th><th scope="col">Balance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Anna</th><td>&euro;1,012.00</td><td>&euro;599.33</td><td>is owed &euro;412.67</td></tr>
+        <tr><th scope="row">Bj&ouml;rn</th><td>&euro;478.00</td><td>&euro;599.33</td><td>owes &euro;121.33</td></tr>
+        <tr><th scope="row">Chlo&eacute;</th><td>&euro;156.00</td><td>&euro;576.00</td><td>owes &euro;420.00</td></tr>
+        <tr><th scope="row">Dai</th><td>&euro;728.00</td><td>&euro;599.34</td><td>is owed &euro;128.66</td></tr>
+        <tr><th scope="row">Total</th><td>&euro;2,374.00</td><td>&euro;2,374.00</td><td>&euro;0.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Check the arithmetic before trusting it, because a settle-up nobody checked is a guess. Anna paid &euro;612.00 + &euro;400.00 = &euro;1,012.00 and Bj&ouml;rn &euro;408.00 + &euro;70.00 = &euro;478.00, so the paid column is 1,012.00 + 478.00 + 156.00 + 728.00 = &euro;2,374.00, which is the trip total. Anna's shares are 153.00 + 102.00 + 39.00 + 182.00 + 100.00 + 23.33 = &euro;599.33, and the four share figures come to 599.33 + 599.33 + 576.00 + 599.34 = &euro;2,374.00 as well. The balances are 412.67 &minus; 121.33 &minus; 420.00 + 128.66 = &euro;0.00. <strong>Balances that do not sum to zero mean the record is wrong, not that the group is complicated.</strong></p>
+    <p>Now clear it with as few payments as possible. Largest debtor pays largest creditor, repeatedly:</p>
+    <ol>
+      <li>Chlo&eacute; pays Anna <strong>&euro;412.67</strong>, which settles Anna completely and leaves Chlo&eacute; owing &euro;7.33.</li>
+      <li>Chlo&eacute; pays Dai <strong>&euro;7.33</strong>, which settles Chlo&eacute;.</li>
+      <li>Bj&ouml;rn pays Dai <strong>&euro;121.33</strong>, which settles them both.</li>
+    </ol>
+    <p>Three transfers, all in euros, totalling 412.67 + 7.33 + 121.33 = &euro;541.33 &mdash; exactly the sum of the two positive balances. Four people with non-zero balances always settle in at most three payments, and the reasoning behind that bound is set out in our guide to <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a>.</p>
+    <p>Two things to notice. Chlo&eacute; paid for a dinner and still owes the most, because she paid least relative to her own share &mdash; a balance is not a verdict on generosity. And nobody has to touch yen or kronor to settle: the currencies were dealt with at the moment each expense was recorded, which is the entire benefit of doing it then.</p>
+  </section>
+
+  <section aria-labelledby="habits"><h2 id="habits">Habits that keep a multi-currency trip honest</h2>
+    <ul>
+      <li><strong>Photograph the receipt, then record the amount the same day.</strong> Foreign amounts are the ones people misremember by a factor of ten, and yen especially.</li>
+      <li><strong>Note the original amount in the description.</strong> &ldquo;Flat, &yen;102,000&rdquo; costs nothing to type and makes the euro figure checkable a month later.</li>
+      <li><strong>One person, one card, for the big shared bookings.</strong> Fewer conversions and fewer fees, at the price of that person being out of pocket &mdash; a real cost, so it should not always be the same person.</li>
+      <li><strong>Never net across currencies.</strong> If you keep two separate currency columns, settle each one on its own terms rather than offsetting a yen debt against a euro credit at a made-up rate.</li>
+      <li><strong>Settle soon after the trip.</strong> The longer the wait, the more the rate you eventually use diverges from the rates you actually paid, and the more the awkward conversations cost.</li>
+      <li><strong>Decline DCC every time</strong>, and tell the group you are doing it, so the person who accepted it at a hotel desk knows why it mattered.</li>
+    </ul>
+    <p>None of this needs an app. A spreadsheet with a column for the original amount, a column for the rate and a column for the group currency does the job, and it is the honest place to start if your group already keeps one. What an app saves you is the maintenance and the arithmetic &mdash; see also our guides to <a href="split-costs-on-a-group-trip.html">splitting costs on a group trip</a> and <a href="split-a-restaurant-bill.html">splitting a restaurant bill</a>, and to <a href="split-expenses-without-an-account.html">splitting expenses without making anyone sign up</a>.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the tools this article describes, so read this section accordingly. Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later) with no accounts, no ads, no subscription and no tracking: one person creates a group, shares a six-character code, and everybody with the code opens the same group from their own phone.</p>
+    <p>For a trip like the one above it does the two things that matter. It supports a wide range of currencies and uses each one's correct minor unit from the ISO 4217 standard, so yen amounts are whole yen and euro amounts are cents, and it keeps its running balances in whole minor units rather than in fractions &mdash; so a column of shares always sums back to the expense total. Then it nets the balances and suggests the smallest set of transfers, which is how the three payments above were found.</p>
+    <p>Being straight about the conversion, because it is the subject of this page: <strong>Splitright does not convert an expense for you as you enter it.</strong> You type the amount in the currency you want that expense recorded in, so the recommendation in this article &mdash; work out the figure from your own statement and enter that &mdash; is something you do yourself. Expenses can also be kept in different currencies, in which case balances are tracked separately per currency. The settle-up screen has an optional toggle that converts everything into one chosen currency so a group can roughly square up now, and it does that with <em>today's</em> rate from a third-party rate service (fxratesapi.com), which is convenient and will not match anyone's card statement. That is exactly the settle-up-time conversion this article argues against, so treat it as a convenience rather than as the record, and prefer one group currency entered from statements.</p>
+    <p>What it does not do at all: no receipt scanning, no CSV or PDF export, no categories, and it does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anybody holding it can open and edit the group, there is no per-person login, and one member's access cannot be withdrawn, so treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If you want automatic per-expense conversion or receipt photos, another app is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and where they beat us. Questions: <a href="index.html">support and FAQ</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>Should you convert an expense when you enter it or when you settle up?</dt>
+      <dd>When you enter it. A rate moves every day, so converting a pile of foreign amounts at settle-up time values them at a rate nobody in the group was ever charged, and the difference lands entirely on whoever happened to pay in the foreign currency. Convert each expense once, at the rate that expense actually cost, and the number stops moving.</dd>
+      <dt>Which exchange rate should you use?</dt>
+      <dd>The one on your own card statement: the amount your bank actually took, divided by the amount on the receipt. That figure already contains the network rate for that day and any fee your issuer added, so it is what the expense cost rather than what a mid-market quote says it should have cost. If the statement has not landed yet, use a mid-market rate as a placeholder and correct it later.</dd>
+      <dt>Should you accept when a card machine offers to charge you in your own currency?</dt>
+      <dd>No. That offer is dynamic currency conversion, and the rate is set by the merchant's payment provider rather than by your card network, typically several per cent worse. Always choose to be charged in the local currency and let your own card do the conversion. On a card terminal that means declining the home-currency option, and online it means paying in the currency the seller prices in.</dd>
+      <dt>How do you split an amount in a currency that has no decimal places?</dt>
+      <dd>Split it in whole units and give the leftover unit to one named person rather than inventing fractions that cannot be paid. Japanese yen, Korean won and Icelandic krona have no minor unit at all, and a few currencies such as the Kuwaiti and Tunisian dinar have three, so the amount you can actually transfer depends on the currency. Round every share but one and set the last to the total minus the others.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="split-a-restaurant-bill.html">Splitting a restaurant bill</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+</body>
+</html>
