@@ -53,6 +53,10 @@ That report was not written by us and cannot be edited by us.
   also turns a list of who paid what into the fewest payments that clear the group). It runs
   entirely in the visitor's browser, sends nothing anywhere and stores nothing:
   https://getsplitright.com/bill-split-calculator.html
+- Free rent split calculator (what each housemate pays: equally, by private room size with the
+  shared space divided equally, or by income share; handles the odd penny so the shares add up
+  to the rent). Runs entirely in the visitor's browser and sends nothing anywhere:
+  https://getsplitright.com/rent-split-calculator.html
 - Guide: splitting expenses without an account:
   https://getsplitright.com/split-expenses-without-an-account.html
 - Guide: splitting rent and bills with housemates:
@@ -79,14 +83,19 @@ That report was not written by us and cannot be edited by us.
 - Swedish-language guide (svenska): dela hyra och räkningar med rumskompisar - rent by
   square metres, electricity by person-days, deposits:
   https://getsplitright.com/sv/dela-hyra.html
+- Swedish-language calculator (svenska): dela notan-kalkylator - splits a bill with rounding up
+  to a whole krona ("avrunda uppat") or a percentage tip, and works out who should Swish whom in
+  the fewest transfers. Runs entirely in the visitor's browser:
+  https://getsplitright.com/sv/dela-notan-kalkylator.html
 - Join a group by code: https://getsplitright.com/join.html
 
 ## Languages
 
 The app interface is English today. A complete Swedish translation, and amounts formatted
 with the device's own locale and currency, are in version 1.5, submitted to the App Store and
-Google Play in September 2026. The website is in English apart from two Swedish pages,
-https://getsplitright.com/sv/dela-utgifter.html and https://getsplitright.com/sv/dela-hyra.html
+Google Play in September 2026. The website is in English apart from three Swedish pages,
+https://getsplitright.com/sv/dela-utgifter.html, https://getsplitright.com/sv/dela-hyra.html and
+https://getsplitright.com/sv/dela-notan-kalkylator.html
 
 ## Who makes it
 

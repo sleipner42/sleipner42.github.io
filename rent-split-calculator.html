@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free rent split calculator: divide the rent equally, by room size with the shared space split evenly, or by income. Shares always add up to the rent exactly.">
+  <title>Rent split calculator: what each housemate pays</title>
+  <link rel="canonical" href="https://getsplitright.com/rent-split-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/rent-split-calculator.html">
+  <meta property="og:title" content="Rent split calculator: what each housemate pays">
+  <meta property="og:description" content="Work out how much rent each housemate pays: equally, by private room size with the shared space split evenly, or by income. Fold in the bills, and see exactly who takes the odd penny.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rent split calculator: what each housemate pays">
+  <meta name="twitter:description" content="Work out how much rent each housemate pays: equally, by private room size with the shared space split evenly, or by income. Fold in the bills, and see exactly who takes the odd penny.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+    .privacy{background:var(--wash);border-left:4px solid var(--brand);padding:.9rem 1.1rem;border-radius:0 12px 12px 0;margin:2rem 0}.tool{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0;background:#fbfdfe}.jsnote{background:var(--wash);border-radius:10px;padding:.85rem 1rem;margin:0;max-width:none}.grid{display:grid;gap:.9rem 1.25rem;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}.field{margin:0;display:flex;flex-direction:column;gap:.3rem;max-width:none}.field.narrow{max-width:22rem}label{font-weight:650;font-size:.95rem}input,select,button{font:inherit;color:inherit}input[type=text],input[type=number],select{padding:.6rem .7rem;border:1px solid var(--line);border-radius:9px;background:#fff;min-width:0;width:100%}.checkfield{flex-direction:row;align-items:center;gap:.55rem;margin-top:1rem}.checkfield input{width:1.15rem;height:1.15rem}.checkfield label{font-weight:400}.quickrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0 0;max-width:none}.quicklabel{font-weight:650;font-size:.95rem}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem .95rem;font-weight:650;color:var(--brand);cursor:pointer}.chip:hover,.chip:focus-visible{background:var(--wash)}.chip[disabled]{opacity:.45;cursor:default}.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,8rem) auto;align-items:center;gap:.5rem;margin-bottom:.6rem}.out{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1rem}.out h3{margin-top:1.2rem}.res{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;margin:0 0 1rem}.res dt{margin-top:0;font-weight:650}.res dd{margin:0;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.lead{margin:.5rem 0}.warn{color:#8a3b00;font-weight:650;margin:.25rem 0}.moves{margin:.4rem 0}.moves li{font-weight:650;font-variant-numeric:tabular-nums}[hidden]{display:none!important}@media(max-width:560px){.row{grid-template-columns:auto minmax(0,1fr)}.row .rm{grid-column:1/-1;justify-self:start}}
+    fieldset.methods{border:1px solid var(--line);border-radius:10px;margin:0 0 1.1rem;padding:.3rem .9rem .7rem}legend{font-weight:650;font-size:.95rem;padding:0 .35rem}.methods .checkfield{margin-top:.4rem}.rrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,9rem);align-items:center;gap:.5rem;margin-bottom:.6rem}@media(max-width:560px){.rrow{grid-template-columns:auto minmax(0,1fr)}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How much rent should each roommate pay?","acceptedAnswer":{"@type":"Answer","text":"There is no single right answer, but there is a defensible default: each person pays for their own private room and an equal share of everything the household uses together. Work out the rent per square metre of the whole home, charge each person for the area of their own room at that rate, then divide the cost of the shared area equally. Equal shares are the right answer when the rooms are genuinely comparable, and splitting by income is a choice the household can make rather than a rule."}},
+    {"@type":"Question","name":"Why not just divide the rent by the size of each bedroom?","acceptedAnswer":{"@type":"Answer","text":"Because that charges people for the kitchen, the bathroom and the living room in proportion to their bedrooms, and nobody uses the kitchen in proportion to their bedroom. Dividing the whole rent by bedroom area alone makes the big room pay for a share of the shared space it does not have. Charge the private rooms by area and split the shared area equally instead."}},
+    {"@type":"Question","name":"Is splitting rent by income fair?","acceptedAnswer":{"@type":"Answer","text":"It is a household choice, not a fairness rule. Nobody is entitled to know what anyone else earns, the shares move every time someone changes job, and the person paying more does not get more room for it. Some households, especially couples and long-standing shares, choose it deliberately and are happy with it. If you do use it, agree in writing when it gets reviewed."}},
+    {"@type":"Question","name":"Is anything I type into this calculator sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator is a few lines of JavaScript inside the page itself, so the rent, the room sizes and any incomes you type stay in your browser and are worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing is stored between visits. Close the tab and it is gone."}},
+    {"@type":"Question","name":"How do the shares add up to the rent exactly?","acceptedAnswer":{"@type":"Answer","text":"Every share is rounded down to a whole penny first, which leaves a few pennies short of the rent. Those leftover pennies are handed out one each to the people whose exact share was cut by the most, so the column adds up to the rent to the penny. The calculator names who takes an extra penny rather than quietly rounding the rent itself up or down."}},
+    {"@type":"Question","name":"Should the bills be split the same way as the rent?","acceptedAnswer":{"@type":"Answer","text":"Usually not. A bigger room is worth more rent, but it does not use more broadband, so the calculator splits the shared bills equally by default and lets you switch that off. The honest exception is heating and electricity in a house where people are away for long stretches, which is better split by person-days than by anything to do with the rooms."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Rent split calculator</h1>
+  <p class="intro">Work out what each housemate pays: equally, by private room size with the shared space split evenly, or by income. Fold the shared bills in, and see exactly who takes the odd penny so the shares add up to the rent.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <p class="privacy"><strong>Nothing you type here is sent anywhere.</strong> There is no tracking on this site, no cookies and no analytics: the calculation runs inside your browser, on your device, and the rent, room sizes and incomes are forgotten when you close the tab.</p>
+
+  <section aria-labelledby="calc"><h2 id="calc">Split the rent</h2>
+    <p>Pick one method, put in the monthly rent and the people, and read off what each person pays. The three methods answer three different questions, and the middle one is the method our <a href="split-rent-and-bills-with-housemates.html">housemates guide</a> recommends for rooms of different sizes.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote1">This calculator needs JavaScript, which is switched off in your browser. Nothing is broken &mdash; all three methods are written out in full under <a href="#by-hand">how to do it by hand</a>, and each one is a few steps of arithmetic you can do on any phone calculator.</p>
+      <div class="toolbody" id="tool1" hidden>
+        <fieldset class="methods" id="r-methods">
+          <legend>Method</legend>
+          <p class="field checkfield"><input type="radio" name="r-method" id="m-equal" value="equal">
+            <label for="m-equal">Equally &mdash; everyone pays the same</label></p>
+          <p class="field checkfield"><input type="radio" name="r-method" id="m-area" value="area" checked>
+            <label for="m-area">By room size &mdash; own room by area, shared space split equally</label></p>
+          <p class="field checkfield"><input type="radio" name="r-method" id="m-income" value="income">
+            <label for="m-income">By income share</label></p>
+        </fieldset>
+        <div class="grid">
+          <p class="field"><label for="r-rent">Total monthly rent</label>
+            <input type="text" id="r-rent" inputmode="decimal" autocomplete="off" value="1920.00"></p>
+          <p class="field"><label for="r-bills">Shared monthly bills (optional)</label>
+            <input type="text" id="r-bills" inputmode="decimal" autocomplete="off" value="0"></p>
+          <p class="field"><label for="r-currency">Currency</label>
+            <select id="r-currency">
+              <option value="GBP">GBP &mdash; pound (&pound;)</option>
+              <option value="EUR">EUR &mdash; euro (&euro;)</option>
+              <option value="USD">USD &mdash; US dollar ($)</option>
+              <option value="SEK">SEK &mdash; Swedish krona (kr)</option>
+              <option value="CHF">CHF &mdash; Swiss franc</option>
+              <option value="INR">INR &mdash; Indian rupee (&#8377;)</option>
+              <option value="JPY">JPY &mdash; yen (&#165;), no minor unit</option>
+              <option value="KRW">KRW &mdash; won (&#8361;), no minor unit</option>
+              <option value="ISK">ISK &mdash; Icelandic krona, no minor unit</option>
+            </select></p>
+          <p class="field"><label for="r-people">Number of people</label>
+            <select id="r-people">
+              <option value="2">2</option><option value="3" selected>3</option>
+              <option value="4">4</option><option value="5">5</option>
+              <option value="6">6</option><option value="7">7</option>
+              <option value="8">8</option>
+            </select></p>
+          <p class="field areaonly" id="f-unit"><label for="r-unit">Area measured in</label>
+            <select id="r-unit">
+              <option value="m">square metres</option>
+              <option value="ft">square feet</option>
+            </select></p>
+          <p class="field areaonly" id="f-floor"><label for="r-floor">Total floor area of the whole home</label>
+            <input type="text" id="r-floor" inputmode="decimal" autocomplete="off" value="90"></p>
+        </div>
+        <p class="field checkfield"><input type="checkbox" id="r-billsequal" checked>
+          <label for="r-billsequal">Split the shared bills equally, even when the rent is not</label></p>
+        <div id="r-rows"></div>
+        <div class="out" id="r-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="note">The currency choice only sets the symbol and the number of decimal places. There is no conversion and there are no exchange rates here. Areas are never converted either: measure every room in the same unit as the floor area.</p>
+  </section>
+
+  <section aria-labelledby="which"><h2 id="which">Which method to use</h2>
+    <p>Decide the method before anyone moves in, and write it down. Almost every rent argument between housemates is really an argument about which of these three questions the household agreed to answer.</p>
+    <div class="scroll">
+    <table>
+      <caption>The three methods, what each one assumes, and when it is the wrong one.</caption>
+      <thead>
+        <tr><th scope="col">Method</th><th scope="col">Assumes</th><th scope="col">Use it when</th><th scope="col">Avoid it when</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Equally</th><td>Everyone gets the same value out of the home</td><td>The rooms are genuinely comparable, or the household prefers simplicity to precision</td><td>One room is half the size of another, or somebody has an en-suite</td></tr>
+        <tr><th scope="row">By room size</th><td>Private space is priced, shared space is shared</td><td>Rooms differ noticeably in size and you can measure them</td><td>The rooms are the same size &mdash; you will produce a rounding argument for nothing</td></tr>
+        <tr><th scope="row">By income</th><td>The household has agreed to redistribute</td><td>Everyone volunteers the figure and everyone agrees to review it</td><td>Anyone is uncomfortable disclosing pay, or incomes change often</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Room size and income are not mutually exclusive in practice: plenty of households price the rooms by area and then let one person take the smallest room because they earn the least. That is the same thing as choosing who gets which room, and it is a much easier conversation than adjusting the arithmetic.</p>
+  </section>
+
+  <section aria-labelledby="by-hand"><h2 id="by-hand">How to do it by hand</h2>
+    <p>None of this needs a computer, and it is worth knowing the method so you can check any calculator, including ours. The one test that matters at the end of all three: <strong>add the shares up and see whether you get the rent.</strong></p>
+    <h3>Equally</h3>
+    <ol>
+      <li><strong>Add the rent and any shared bills together</strong> to get the amount the household has to produce this month.</li>
+      <li><strong>Divide by the number of people</strong> and round down to whole pennies. That is everybody's base share.</li>
+      <li><strong>Deal with what is left.</strong> Multiply the base share by the number of people and subtract it from the total. What remains is a few pennies, and one penny goes to each of that many people.</li>
+    </ol>
+    <h3>By room size, with the shared space split equally</h3>
+    <ol>
+      <li><strong>Measure each private room</strong> and find the total floor area of the whole home. Use one unit throughout &mdash; square metres or square feet, it makes no difference as long as it is the same one.</li>
+      <li><strong>Work out the shared area:</strong> total floor area minus all the private rooms added together. That is the kitchen, the bathroom, the hall and the living room.</li>
+      <li><strong>Work out the rent per unit of area:</strong> the rent divided by the total floor area.</li>
+      <li><strong>Charge each person for their own room</strong> at that rate, and <strong>add an equal share of the shared area</strong> at the same rate: the shared area divided by the number of people, times the rate.</li>
+      <li><strong>Round down and hand out the leftover pennies</strong> as in step 3 above, then check the shares add up to the rent.</li>
+    </ol>
+    <p>The common mistake is to skip straight to dividing the whole rent in proportion to bedroom area. That charges people for the kitchen in proportion to their bedrooms, which nobody would agree to if you said it out loud.</p>
+    <h3>By income share</h3>
+    <ol>
+      <li><strong>Add everybody's monthly income together.</strong></li>
+      <li><strong>Each person's share is the rent times their income divided by the household income.</strong></li>
+      <li><strong>Round down and hand out the leftover pennies</strong> as before.</li>
+    </ol>
+    <p>This is a household choice and not a fairness rule, and it is worth saying so plainly before anybody discloses a payslip. A common softer version is to split only the part of income above a personal floor &mdash; what people need for everything that is not rent &mdash; which is set out in <a href="split-rent-unevenly.html">splitting rent unevenly</a>.</p>
+  </section>
+
+  <section aria-labelledby="worked"><h2 id="worked">Two worked examples you can check</h2>
+    <h3>A 90 m&sup2; flat at &pound;1,920 for three, priced by room size</h3>
+    <p>The rooms are 16 m&sup2;, 12 m&sup2; and 10 m&sup2;, so the private space is 38 m&sup2; and the shared space is 90 &minus; 38 = 52 m&sup2;. The rent per square metre is &pound;1,920 &divide; 90 = &pound;21.3333, and each person's equal slice of the shared space is 52 &divide; 3 = 17.3333 m&sup2;.</p>
+    <div class="scroll">
+    <table>
+      <caption>Three people, &pound;1,920.00 rent, 90 m&sup2; total, 52 m&sup2; shared.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Own room</th><th scope="col">Plus shared slice</th><th scope="col">Charged for</th><th scope="col">Share</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>16 m&sup2;</td><td>17.3333 m&sup2;</td><td>33.3333 m&sup2;</td><td>&pound;711.11</td></tr>
+        <tr><th scope="row">Ben</th><td>12 m&sup2;</td><td>17.3333 m&sup2;</td><td>29.3333 m&sup2;</td><td>&pound;625.78</td></tr>
+        <tr><th scope="row">Cleo</th><td>10 m&sup2;</td><td>17.3333 m&sup2;</td><td>27.3333 m&sup2;</td><td>&pound;583.11</td></tr>
+        <tr><th scope="row">Total</th><td>38 m&sup2;</td><td>52 m&sup2;</td><td>90 m&sup2;</td><td>&pound;1,920.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Equal thirds would have been &pound;640.00 each, so pricing the rooms moves &pound;71.11 onto the big room and takes &pound;14.22 and &pound;56.89 off the other two. That is the entire effect of the method, and it is a number worth looking at before arguing about it: if it comes out at a few pounds, split equally and go to bed.</p>
+    <p>The three shares as calculated are &pound;711.111&hellip;, &pound;625.777&hellip; and &pound;583.111&hellip;. Rounded down they come to &pound;1,919.99, a penny short, so one person &mdash; Ben, whose exact share was cut by the most &mdash; pays &pound;625.78 and the column adds up to &pound;1,920.00 exactly.</p>
+    <h3>The same flat with &pound;150.00 of bills, split equally</h3>
+    <p>Broadband, water and electricity come to &pound;150.00 a month. A bigger room is worth more rent but it does not use more broadband, so the bills go in equally: &pound;50.00 each. Ada pays &pound;761.11, Ben &pound;675.78, Cleo &pound;633.11, and the four figures add up to &pound;2,070.00, which is the rent plus the bills to the penny.</p>
+    <p>Heating in a house where somebody is away half the month is the honest exception, and it is better split by person-days than by room size or by anything else: the method is in <a href="split-rent-and-bills-with-housemates.html">splitting rent and bills with housemates</a>.</p>
+  </section>
+
+  <section aria-labelledby="pitfalls"><h2 id="pitfalls">Four things this calculator will not do for you</h2>
+    <ul>
+      <li><strong>Price an en-suite, a balcony or a parking space.</strong> Those are premiums, and the way that works is that the person who has it pays the premium and it is rebated equally to everyone who does not, so the premium column sums to zero. Worked through in <a href="split-rent-unevenly.html">splitting rent unevenly</a>.</li>
+      <li><strong>Pro-rate a mid-month move-in.</strong> Use a daily rate on that person's own room share and the days in that actual month, not a flat half.</li>
+      <li><strong>Settle up who actually owes whom</strong> once one person has paid the whole thing to the landlord. That is a different calculation: the <a href="bill-split-calculator.html">bill split calculator</a> takes a list of who paid what and gives you the fewest payments that clear it.</li>
+      <li><strong>Tell you what the law says.</strong> This is practical arithmetic between housemates, not legal advice. On a joint tenancy you are each liable for the whole rent whatever you agreed internally, and an internal split is no defence against the landlord.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the apps that does this, so read this section accordingly. A calculator is the right tool for setting the rent split once. It is the wrong tool for the running month, where somebody buys the loo roll, somebody else pays the electricity bill and the balances drift.</p>
+    <p>Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later). There are no accounts, no ads, no subscription and no tracking: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense has its own participants and its own split mode &mdash; equally, by shares or by exact amounts &mdash; so once you have decided the rent shares here you can enter them as exact amounts and let the app keep the running balances.</p>
+    <p>What it does not do: it has no rent calculator of its own, no room-size or income logic, no receipt scanning, no CSV or PDF export and no categories. It does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anyone holding it can open and edit the group, there is no per-person login, and one person's access cannot be withdrawn, so treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">Free, no account and no ads. If you want receipt photos or an export, another app is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and why. P&aring; svenska: <a href="sv/dela-hyra.html" hreflang="sv" lang="sv">dela hyra och r&auml;kningar i kollektivet</a> och <a href="sv/dela-notan-kalkylator.html" hreflang="sv" lang="sv">dela notan-kalkylator</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>How much rent should each roommate pay?</dt>
+      <dd>There is no single right answer, but there is a defensible default: each person pays for their own private room and an equal share of everything the household uses together. Work out the rent per square metre of the whole home, charge each person for the area of their own room at that rate, then divide the cost of the shared area equally. Equal shares are the right answer when the rooms are genuinely comparable, and splitting by income is a choice the household can make rather than a rule.</dd>
+      <dt>Why not just divide the rent by the size of each bedroom?</dt>
+      <dd>Because that charges people for the kitchen, the bathroom and the living room in proportion to their bedrooms, and nobody uses the kitchen in proportion to their bedroom. Dividing the whole rent by bedroom area alone makes the big room pay for a share of the shared space it does not have. Charge the private rooms by area and split the shared area equally instead.</dd>
+      <dt>Is splitting rent by income fair?</dt>
+      <dd>It is a household choice, not a fairness rule. Nobody is entitled to know what anyone else earns, the shares move every time someone changes job, and the person paying more does not get more room for it. Some households, especially couples and long-standing shares, choose it deliberately and are happy with it. If you do use it, agree in writing when it gets reviewed.</dd>
+      <dt>Is anything I type into this calculator sent anywhere?</dt>
+      <dd>No. The calculator is a few lines of JavaScript inside the page itself, so the rent, the room sizes and any incomes you type stay in your browser and are worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing is stored between visits. Close the tab and it is gone.</dd>
+      <dt>How do the shares add up to the rent exactly?</dt>
+      <dd>Every share is rounded down to a whole penny first, which leaves a few pennies short of the rent. Those leftover pennies are handed out one each to the people whose exact share was cut by the most, so the column adds up to the rent to the penny. The calculator names who takes an extra penny rather than quietly rounding the rent itself up or down.</dd>
+      <dt>Should the bills be split the same way as the rent?</dt>
+      <dd>Usually not. A bigger room is worth more rent, but it does not use more broadband, so the calculator splits the shared bills equally by default and lets you switch that off. The honest exception is heating and electricity in a house where people are away for long stretches, which is better split by person-days than by anything to do with the rooms.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="bill-split-calculator.html">Bill split calculator</a> &middot; <a href="split-rent-and-bills-with-housemates.html">Splitting rent and bills with housemates</a> &middot; <a href="split-rent-unevenly.html">Splitting rent unevenly</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="sv/dela-hyra.html" hreflang="sv" lang="sv">Dela hyra (svenska)</a> &middot; <a href="sv/dela-notan-kalkylator.html" hreflang="sv" lang="sv">Dela notan-kalkylator (svenska)</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p><p class="note">This page is practical guidance between housemates, not legal advice.</p></footer>
+<script>
+/* Splitright rent split calculator.
+   Runs entirely in this page. It makes no network requests of any kind and
+   writes nothing to storage: no fetch, no XHR, no beacon, no cookies, no
+   localStorage. All money maths is done in integer minor units (pennies) and
+   all areas and incomes in integer hundredths, so the shares always add up to
+   the total exactly. */
+(function () {
+  'use strict';
+  var CUR = {
+    GBP: { sym: '\u00a3', dec: 2, post: false }, EUR: { sym: '\u20ac', dec: 2, post: false },
+    USD: { sym: '$', dec: 2, post: false },      SEK: { sym: ' kr', dec: 2, post: true },
+    CHF: { sym: ' CHF', dec: 2, post: true },    INR: { sym: '\u20b9', dec: 2, post: false },
+    JPY: { sym: '\u00a5', dec: 0, post: false }, KRW: { sym: '\u20a9', dec: 0, post: false },
+    ISK: { sym: ' kr', dec: 0, post: true }
+  };
+  var MAX_MONEY = 10000000, MAX_AREA = 10000000, MAX_INCOME = 100000000;
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---- parsing and formatting ------------------------------------------ */
+  function toMinor(raw, dec) {
+    var s = String(raw).replace(/[\s\u00a0]/g, '').replace(',', '.');
+    if (s === '' || s === '.' || !/^\d*(\.\d*)?$/.test(s)) { return null; }
+    var parts = s.split('.'), whole = parts[0] || '0', frac = parts[1] || '';
+    if (dec === 0) { return parseInt(whole, 10) + (frac && +frac.charAt(0) >= 5 ? 1 : 0); }
+    frac = (frac + '000000').slice(0, dec + 1);
+    var v = parseInt(whole + frac.slice(0, dec), 10);
+    return +frac.charAt(dec) >= 5 ? v + 1 : v;
+  }
+  function groups(s) {
+    var out = '', i, c = 0;
+    for (i = s.length - 1; i >= 0; i--) {
+      out = s.charAt(i) + out;
+      c++;
+      if (c % 3 === 0 && i > 0) { out = ',' + out; }
+    }
+    return out;
+  }
+  function money(minor, cur) {
+    var neg = minor < 0, abs = Math.abs(minor), body;
+    if (cur.dec === 0) { body = groups(String(abs)); } else {
+      var p = Math.pow(10, cur.dec), w = Math.floor(abs / p), f = String(abs % p);
+      while (f.length < cur.dec) { f = '0' + f; }
+      body = groups(String(w)) + '.' + f;
+    }
+    return (neg ? '\u2212' : '') + (cur.post ? body + cur.sym : cur.sym + body);
+  }
+  function area(hundredths) {
+    var w = Math.floor(hundredths / 100), f = String(hundredths % 100);
+    while (f.length < 2) { f = '0' + f; }
+    return f === '00' ? String(w) : w + '.' + f.replace(/0$/, '');
+  }
+  function el(tag, text, cls) {
+    var n = document.createElement(tag);
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    if (cls) { n.className = cls; }
+    return n;
+  }
+  function list(items) {
+    if (items.length === 1) { return items[0]; }
+    return items.slice(0, -1).join(', ') + ' and ' + items[items.length - 1];
+  }
+
+  /* MATHS-START */
+  /* Largest-remainder split of an integer total by integer weights. Returns
+     the shares plus the indices that took one extra minor unit. */
+  function weightedShares(total, weights) {
+    var n = weights.length, W = 0, i, base = [], rem = [], sum = 0;
+    for (i = 0; i < n; i++) { W += weights[i]; }
+    if (W <= 0) { return equalShares(total, n); }
+    for (i = 0; i < n; i++) {
+      var num = total * weights[i], q = Math.floor(num / W);
+      base.push(q); sum += q; rem.push({ i: i, r: num - q * W });
+    }
+    var left = total - sum;
+    rem.sort(function (a, b) { return b.r - a.r || a.i - b.i; });
+    var extra = [];
+    for (i = 0; i < left; i++) { base[rem[i].i] += 1; extra.push(rem[i].i); }
+    extra.sort(function (a, b) { return a - b; });
+    return { shares: base, extra: extra };
+  }
+  function equalShares(total, n) {
+    var base = Math.floor(total / n), left = total - base * n, out = [], extra = [], i;
+    for (i = 0; i < n; i++) { out.push(base + (i < left ? 1 : 0)); if (i < left) { extra.push(i); } }
+    return { shares: out, extra: extra };
+  }
+  /* Own room plus an equal share of the common area, expressed as integer
+     weights: room x people + common area. They sum to people x floor area. */
+  function areaWeights(rooms, floor) {
+    var n = rooms.length, priv = 0, i, w = [];
+    for (i = 0; i < n; i++) { priv += rooms[i]; }
+    if (floor < priv) { return null; }
+    var common = floor - priv;
+    for (i = 0; i < n; i++) { w.push(rooms[i] * n + common); }
+    return { weights: w, common: common, priv: priv };
+  }
+  /* Rent by the chosen weights, bills either equally or by the same weights. */
+  function splitRent(rent, bills, weights, billsEqual) {
+    var n = weights.length;
+    var r = weightedShares(rent, weights);
+    var b = bills === 0 ? equalShares(0, n)
+          : (billsEqual ? equalShares(bills, n) : weightedShares(bills, weights));
+    var totals = [], i;
+    for (i = 0; i < n; i++) { totals.push(r.shares[i] + b.shares[i]); }
+    return { rent: r, bills: b, totals: totals, grand: rent + bills };
+  }
+  /* MATHS-END */
+
+  /* ---- state and rows -------------------------------------------------- */
+  var METHODS = {
+    equal: { label: '', explain: 'Method: the rent and the bills are divided equally, so everybody pays the same.' },
+    area: { label: 'Room size', explain: '' },
+    income: { label: 'Monthly income', explain: 'Method: each person pays in proportion to their income. This is a household choice, not a fairness rule \u2014 nobody is obliged to disclose what they earn, and the person paying more does not get more room for it.' }
+  };
+  var UNIT = { m: { one: 'm\u00b2', name: 'square metre' }, ft: { one: 'sq ft', name: 'square foot' } };
+  var names = ['Ada', 'Ben', 'Cleo', 'Dev', 'Eli', 'Fay', 'Gus', 'Hana'];
+  var vals = { area: ['16', '12', '10', '11', '10', '9', '9', '8'],
+               income: ['2600', '2100', '1800', '2000', '2000', '1900', '1900', '1700'] };
+  function method() {
+    var r = document.querySelectorAll('input[name=r-method]'), i;
+    for (i = 0; i < r.length; i++) { if (r[i].checked) { return r[i].value; } }
+    return 'area';
+  }
+  var shown = 'area';
+  function readRows() {
+    var rows = $('r-rows').children, i;
+    for (i = 0; i < rows.length; i++) {
+      var ins = rows[i].getElementsByTagName('input');
+      names[i] = ins[0].value;
+      if (ins.length > 1 && shown !== 'equal') { vals[shown][i] = ins[1].value; }
+    }
+  }
+  function buildRows() {
+    var m = method(), n = parseInt($('r-people').value, 10), rows = $('r-rows'), i;
+    shown = m;
+    rows.textContent = '';
+    for (i = 0; i < n; i++) {
+      var wrap = el('p', null, 'field rrow'), nid = 'r-n' + i, vid = 'r-v' + i;
+      var nl = el('label', 'Name'); nl.htmlFor = nid;
+      var nIn = document.createElement('input');
+      nIn.type = 'text'; nIn.id = nid; nIn.autocomplete = 'off';
+      nIn.value = names[i] === undefined ? '' : names[i];
+      nIn.placeholder = 'Name';
+      wrap.appendChild(nl); wrap.appendChild(nIn);
+      if (m !== 'equal') {
+        var lab = METHODS[m].label + (m === 'area' ? ' (' + UNIT[$('r-unit').value].one + ')' : '');
+        var vl = el('label', lab); vl.htmlFor = vid;
+        var vIn = document.createElement('input');
+        vIn.type = 'text'; vIn.id = vid; vIn.inputMode = 'decimal'; vIn.autocomplete = 'off';
+        vIn.value = vals[m][i] === undefined ? '' : vals[m][i];
+        wrap.appendChild(vl); wrap.appendChild(vIn);
+      }
+      rows.appendChild(wrap);
+    }
+  }
+
+  /* ---- rendering ------------------------------------------------------- */
+  function render() {
+    var m = method(), cur = CUR[$('r-currency').value], out = $('r-out');
+    var n = parseInt($('r-people').value, 10);
+    var rent = toMinor($('r-rent').value, cur.dec);
+    var billsRaw = $('r-bills').value.trim();
+    var bills = billsRaw === '' ? 0 : toMinor(billsRaw, cur.dec);
+    var unit = UNIT[$('r-unit').value];
+    out.textContent = '';
+    $('f-unit').hidden = m !== 'area';
+    $('f-floor').hidden = m !== 'area';
+    function fail(msg) { out.appendChild(el('p', msg, 'warn')); }
+    if (rent === null || rent > MAX_MONEY) { fail('Enter the total monthly rent as a number.'); return; }
+    if (bills === null || bills > MAX_MONEY) { fail('Enter the shared bills as a number, or leave the box empty.'); return; }
+    if (rent + bills === 0) { fail('Enter a rent above zero.'); return; }
+    var i, weights = [], nm = [], rooms = [], aw = null, floor = 0;
+    var rows = $('r-rows').children;
+    for (i = 0; i < n; i++) {
+      var ins = rows[i].getElementsByTagName('input');
+      nm.push(ins[0].value.trim() || 'Person ' + (i + 1));
+      if (m === 'equal') { weights.push(1); continue; }
+      var v = toMinor(ins[1].value, 2);
+      if (m === 'area') {
+        if (v === null || v <= 0 || v > MAX_AREA) { fail('Give every room a size above zero, in ' + unit.one + '.'); return; }
+        rooms.push(v);
+      } else {
+        if (v === null || v > MAX_INCOME) { fail('Give every person an income as a number (zero is allowed).'); return; }
+        weights.push(v);
+      }
+    }
+    if (m === 'area') {
+      floor = toMinor($('r-floor').value, 2);
+      if (floor === null || floor <= 0 || floor > MAX_AREA) { fail('Enter the total floor area of the whole home in ' + unit.one + '.'); return; }
+      aw = areaWeights(rooms, floor);
+      if (aw === null) { fail('The rooms add up to more than the total floor area. Check the measurements.'); return; }
+      weights = aw.weights;
+    }
+    if (m === 'income') {
+      var sum = 0;
+      for (i = 0; i < n; i++) { sum += weights[i]; }
+      if (sum === 0) { fail('At least one person needs an income above zero, or use the equal split.'); return; }
+    }
+    var r = splitRent(rent, bills, weights, $('r-billsequal').checked);
+
+    if (m === 'area') {
+      out.appendChild(el('p', 'Method: each person pays for their own room and an equal share of the '
+        + area(aw.common) + ' ' + unit.one + ' of shared space \u2014 '
+        + area(Math.round(aw.common / n)) + ' ' + unit.one + ' each \u2014 at about '
+        + money(Math.round(rent * 100 / floor), cur) + ' per ' + unit.name + '.', 'lead'));
+    } else {
+      out.appendChild(el('p', METHODS[m].explain, 'lead'));
+    }
+    var dl = el('dl', null, 'res');
+    for (i = 0; i < n; i++) {
+      dl.appendChild(el('dt', nm[i]));
+      dl.appendChild(el('dd', money(r.totals[i], cur) + ' a month'
+        + (bills > 0 ? ' (rent ' + money(r.rent.shares[i], cur) + ' + bills '
+          + money(r.bills.shares[i], cur) + ')' : '')));
+    }
+    out.appendChild(dl);
+    out.appendChild(el('p', 'The ' + n + ' shares add up to ' + money(r.grand, cur)
+      + (bills > 0 ? ', which is the rent plus the bills' : '') + ', exactly.', 'lead'));
+    var takers = [];
+    for (i = 0; i < r.rent.extra.length; i++) { takers.push(nm[r.rent.extra[i]]); }
+    var bt = [];
+    for (i = 0; i < r.bills.extra.length; i++) { bt.push(nm[r.bills.extra[i]]); }
+    var minor = cur.dec === 0 ? 'unit' : 'penny', minors = cur.dec === 0 ? 'units' : 'pennies';
+    if (!takers.length && !bt.length) {
+      out.appendChild(el('p', 'It divides exactly, with nothing left over.', 'note'));
+    } else {
+      var msg = 'Rounding down leaves a little short of the total. ';
+      if (takers.length) {
+        msg += 'On the rent, ' + list(takers) + ' take' + (takers.length === 1 ? 's' : '')
+          + ' one extra ' + minor + ' \u2014 the '
+          + (takers.length === 1 ? 'share' : 'shares') + ' cut by the most when rounded down. ';
+      }
+      if (bt.length) {
+        msg += 'On the bills, ' + list(bt) + ' take' + (bt.length === 1 ? 's' : '')
+          + ' one extra ' + minor + '. ';
+      }
+      msg += 'Rotate who takes the odd ' + minors + ' next month rather than changing the total.';
+      out.appendChild(el('p', msg, 'note'));
+    }
+  }
+
+  function rebuild() { readRows(); buildRows(); render(); }
+
+  /* ---- wiring ---------------------------------------------------------- */
+  var radios = document.querySelectorAll('input[name=r-method]'), k;
+  for (k = 0; k < radios.length; k++) { radios[k].addEventListener('change', rebuild); }
+  $('r-people').addEventListener('change', rebuild);
+  $('r-unit').addEventListener('change', rebuild);
+  $('r-currency').addEventListener('change', render);
+  $('r-billsequal').addEventListener('change', render);
+  $('r-rent').addEventListener('input', render);
+  $('r-bills').addEventListener('input', render);
+  $('r-floor').addEventListener('input', render);
+  $('r-rows').addEventListener('input', render);
+  $('jsnote1').hidden = true;
+  $('tool1').hidden = false;
+  buildRows();
+  render();
+}());
+</script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dela notan och avrunda uppåt: räkna ut vad var och en ska betala, i jämna kronor eller med ören som stämmer, och vem som ska swisha vem med minsta antal överföringar.">
+  <title>Dela notan-kalkylator: avrunda uppåt och betala rätt</title>
+  <link rel="canonical" href="https://getsplitright.com/sv/dela-notan-kalkylator.html">
+  <link rel="alternate" hreflang="sv" href="https://getsplitright.com/sv/dela-notan-kalkylator.html">
+  <link rel="alternate" hreflang="en" href="https://getsplitright.com/bill-split-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://getsplitright.com/bill-split-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:url" content="https://getsplitright.com/sv/dela-notan-kalkylator.html">
+  <meta property="og:title" content="Dela notan-kalkylator: avrunda uppåt och betala rätt">
+  <meta property="og:description" content="Två kalkylatorer på en sida: dela notan med avrundning uppåt eller procentdricks, och räkna ut vem som ska swisha vem med minsta antal överföringar. Allt räknas i din egen webbläsare.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dela notan-kalkylator: avrunda uppåt och betala rätt">
+  <meta name="twitter:description" content="Två kalkylatorer på en sida: dela notan med avrundning uppåt eller procentdricks, och räkna ut vem som ska swisha vem med minsta antal överföringar. Allt räknas i din egen webbläsare.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+    .privacy{background:var(--wash);border-left:4px solid var(--brand);padding:.9rem 1.1rem;border-radius:0 12px 12px 0;margin:2rem 0}.tool{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0;background:#fbfdfe}.jsnote{background:var(--wash);border-radius:10px;padding:.85rem 1rem;margin:0;max-width:none}.grid{display:grid;gap:.9rem 1.25rem;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}.field{margin:0;display:flex;flex-direction:column;gap:.3rem;max-width:none}.field.narrow{max-width:22rem}label{font-weight:650;font-size:.95rem}input,select,button{font:inherit;color:inherit}input[type=text],input[type=number],select{padding:.6rem .7rem;border:1px solid var(--line);border-radius:9px;background:#fff;min-width:0;width:100%}.checkfield{flex-direction:row;align-items:center;gap:.55rem;margin-top:1rem}.checkfield input{width:1.15rem;height:1.15rem}.checkfield label{font-weight:400}.quickrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0 0;max-width:none}.quicklabel{font-weight:650;font-size:.95rem}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem .95rem;font-weight:650;color:var(--brand);cursor:pointer}.chip:hover,.chip:focus-visible{background:var(--wash)}.chip[disabled]{opacity:.45;cursor:default}.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,8rem) auto;align-items:center;gap:.5rem;margin-bottom:.6rem}.out{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1rem}.out h3{margin-top:1.2rem}.res{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;margin:0 0 1rem}.res dt{margin-top:0;font-weight:650}.res dd{margin:0;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.lead{margin:.5rem 0}.warn{color:#8a3b00;font-weight:650;margin:.25rem 0}.moves{margin:.4rem 0}.moves li{font-weight:650;font-variant-numeric:tabular-nums}[hidden]{display:none!important}@media(max-width:560px){.row{grid-template-columns:auto minmax(0,1fr)}.row .rm{grid-column:1/-1;justify-self:start}}
+    fieldset.methods{border:1px solid var(--line);border-radius:10px;margin:0 0 1.1rem;padding:.3rem .9rem .7rem}legend{font-weight:650;font-size:.95rem;padding:0 .35rem}.methods .checkfield{margin-top:.4rem}.methods .field.narrow{margin-top:.8rem}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"sv","mainEntity":[
+    {"@type":"Question","name":"Måste man ge dricks i Sverige?","acceptedAnswer":{"@type":"Answer","text":"Nej. Servispersonal har kollektivavtalad lön och dricks är frivilligt. Det vanliga är att avrunda uppåt till en jämn summa när man är nöjd — 1 337 kr blir 1 350 kr eller 1 400 kr — och att inte lägga på något alls på en lunch eller en fika. Procentdricks förekommer på finare middagar och i sällskap med gäster som är vana vid det, men det är inget som förväntas."}},
+    {"@type":"Question","name":"Hur får man delarna att summera till notan, öre för öre?","acceptedAnswer":{"@type":"Answer","text":"Dividera totalen med antalet personer och avrunda nedåt till hela ören. Multiplicera tillbaka och jämför med totalen: skillnaden är ett litet antal ören, och ett öre läggs på var och en av så många personer. Då stämmer kolumnen exakt. Någon betalar ett öre mer, och det är bättre att säga vem än att ändra totalen."}},
+    {"@type":"Question","name":"Hur räknar man ut vem som ska betala vem?","acceptedAnswer":{"@type":"Answer","text":"Lägg samman allt som har betalats av alla, dela med antalet personer och ge var och en ett saldo: betalat minus sin egen del. Saldona måste summera till exakt noll. Låt sedan den som har störst skuld betala den som har störst tillgodo, med det minsta av de två beloppen. Varje överföring gör minst en person klar, så en grupp med sex saldon som inte är noll behöver aldrig mer än fem swishar."}},
+    {"@type":"Question","name":"Skickas något jag skriver in här vidare?","acceptedAnswer":{"@type":"Answer","text":"Nej. Kalkylatorerna är några rader JavaScript inne i själva sidan, så alla belopp du skriver stannar i din webbläsare och räknas ut på din egen enhet. Det finns ingen statistikinsamling, ingen kaka, inget annonsskript och ingen förfrågan tillbaka till oss med dina siffror, och inget sparas mellan besöken. Stänger du fliken är det borta."}},
+    {"@type":"Question","name":"Kan kalkylatorn swisha pengarna åt oss?","acceptedAnswer":{"@type":"Answer","text":"Nej. Varken sidan eller appen flyttar pengar. Du får beloppen och namnen, och sedan swishar ni varandra som ni redan gör. Det finns ingen koppling till Swish, till bank-id eller till något betalsystem, och det ska inte finnas: en sida som räknar behöver inte veta vilka ni är."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Dela notan-kalkylator</h1>
+  <p class="intro">Räkna ut vad var och en ska betala när ni avrundar uppåt till en jämn summa, eller lägger på dricks i procent. Och när flera har lagt ut: vem ska swisha vem, med så få överföringar som möjligt. Gratis, utan konto, och allt räknas på din egen enhet.</p>
+  <p><a href="../splitright.html" hreflang="en">&larr; Till Splitrights startsida (på engelska)</a></p>
+</header>
+<main>
+  <p class="privacy"><strong>Inget du skriver in här skickas någonstans.</strong> Sidan har ingen spårning, inga kakor och ingen statistikinsamling: räkningen sker inne i din webbläsare, på din enhet, och siffrorna är borta när du stänger fliken.</p>
+
+  <section aria-labelledby="calc-nota"><h2 id="calc-nota">Dela notan</h2>
+    <p>Skriv in notan och hur många ni är. Välj att avrunda uppåt till en jämn summa &mdash; det vanliga sättet i Sverige &mdash; eller att lägga på dricks i procent. Du får totalen, vad var och en betalar och vem som tar det extra öret så att delarna summerar till totalen exakt.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote1">Den här kalkylatorn behöver JavaScript, som är avstängt i din webbläsare. Inget är trasigt &mdash; hela metoden står skriven under <a href="#for-hand">räkna för hand</a>, och det är fyra steg som går på vilken mobilkalkylator som helst.</p>
+      <div class="toolbody" id="tool1" hidden>
+        <div class="grid">
+          <p class="field"><label for="n-total">Notan</label>
+            <input type="text" id="n-total" inputmode="decimal" autocomplete="off" value="1337"></p>
+          <p class="field"><label for="n-people">Antal personer</label>
+            <input type="number" id="n-people" min="1" max="200" step="1" value="4"></p>
+          <p class="field"><label for="n-currency">Valuta</label>
+            <select id="n-currency">
+              <option value="SEK">SEK &mdash; svenska kronor (kr)</option>
+              <option value="NOK">NOK &mdash; norska kronor</option>
+              <option value="DKK">DKK &mdash; danska kronor</option>
+              <option value="EUR">EUR &mdash; euro (&euro;)</option>
+              <option value="USD">USD &mdash; US-dollar ($)</option>
+              <option value="ISK">ISK &mdash; isländska kronor, inga ören</option>
+            </select></p>
+        </div>
+        <fieldset class="methods" id="n-methods">
+          <legend>Dricks och avrundning</legend>
+          <p class="field checkfield"><input type="radio" name="n-method" id="n-m-round" value="round" checked>
+            <label for="n-m-round">Avrunda uppåt till en jämn summa</label></p>
+          <p class="field checkfield"><input type="radio" name="n-method" id="n-m-pct" value="pct">
+            <label for="n-m-pct">Lägg på dricks i procent</label></p>
+          <p class="field narrow roundonly" id="f-step"><label for="n-step">Avrunda uppåt till närmaste</label>
+            <select id="n-step">
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select></p>
+          <p class="field narrow pctonly" id="f-pct" hidden><label for="n-pct">Dricks i procent</label>
+            <input type="text" id="n-pct" inputmode="decimal" autocomplete="off" value="10"></p>
+          <p class="quickrow pctonly" id="n-quick" hidden><span class="quicklabel">Vanliga nivåer:</span>
+            <button type="button" class="chip" data-pct="0">0 %</button>
+            <button type="button" class="chip" data-pct="5">5 %</button>
+            <button type="button" class="chip" data-pct="10">10 %</button>
+            <button type="button" class="chip" data-pct="15">15 %</button>
+          </p>
+        </fieldset>
+        <p class="field checkfield"><input type="checkbox" id="n-even">
+          <label for="n-even">Avrunda dessutom varje persons del uppåt till jämna kronor</label></p>
+        <div class="out" id="n-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="note">Valutavalet styr bara symbolen och antalet decimaler. Här finns ingen växelkurs och ingen omräkning: skriv in belopp som redan är i samma valuta. Har ni betalat i flera valutor är <a href="../split-expenses-in-different-currencies.html" hreflang="en">guiden om utgifter i olika valutor</a> (på engelska) rätt ställe att börja.</p>
+  </section>
+
+  <section aria-labelledby="calc-vem"><h2 id="calc-vem">Vem ska betala vem</h2>
+    <p>Skriv upp alla och vad de faktiskt har lagt ut. Kalkylatorn summerar, ger var och en en lika stor del av summan och räknar ut det minsta antalet överföringar som nollar alla saldon &mdash; nästan alltid färre än att betala tillbaka varje utlägg för sig.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote2">Den här kalkylatorn behöver JavaScript, som är avstängt i din webbläsare. Metoden står steg för steg under <a href="#for-hand">räkna för hand</a>, och den längre förklaringen med beviset för antalet överföringar finns i <a href="../settle-group-debts-fewest-payments.html" hreflang="en">guiden om att göra upp med minsta antal betalningar</a> (på engelska).</p>
+      <div class="toolbody" id="tool2" hidden>
+        <p class="field narrow"><label for="v-currency">Valuta</label>
+          <select id="v-currency">
+            <option value="SEK">SEK &mdash; svenska kronor (kr)</option>
+            <option value="NOK">NOK &mdash; norska kronor</option>
+            <option value="DKK">DKK &mdash; danska kronor</option>
+            <option value="EUR">EUR &mdash; euro (&euro;)</option>
+            <option value="USD">USD &mdash; US-dollar ($)</option>
+            <option value="ISK">ISK &mdash; isländska kronor, inga ören</option>
+          </select></p>
+        <div id="v-rows"></div>
+        <p class="quickrow"><button type="button" class="chip" id="v-add">Lägg till person</button>
+          <span class="note" id="v-count"></span></p>
+        <div class="out" id="v-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="note">Beloppen är utlägg, inte skulder: skriv vad personen har betalat ur egen fickan, oavsett vem maten var till. Kalkylatorn delar summan lika. Ska delarna inte vara lika stora &mdash; olika stora rum, någon som var med två av fem kvällar &mdash; är det <a href="dela-hyra.html">dela hyra</a> och <a href="dela-utgifter.html">dela utgifter i en grupp</a> som gäller i stället.</p>
+  </section>
+
+  <section aria-labelledby="for-hand"><h2 id="for-hand">Räkna för hand</h2>
+    <p>Ingen av räkningarna behöver en dator, och det är värt att kunna metoden så att du kan kontrollera vilken app som helst, inklusive vår. Båda är fyra steg.</p>
+    <h3>Dela notan med avrundning uppåt</h3>
+    <ol>
+      <li><strong>Bestäm den jämna summan.</strong> Runda notan uppåt till närmaste tia, femtiolapp eller hundring &mdash; 1 337 kr blir 1 350 kr eller 1 400 kr. Det är hela dricksen, och den är frivillig.</li>
+      <li><strong>Dela den summan</strong> med antalet personer, inte notan. Avrunda nedåt till hela ören: det är allas grunddel.</li>
+      <li><strong>Ta hand om resten.</strong> Multiplicera grunddelen med antalet personer och dra bort från summan. Det som blir kvar är några ören, och ett öre går till var och en av så många personer.</li>
+      <li><strong>Vill ni ha jämna kronor</strong> &mdash; enklast att swisha &mdash; runda varje del uppåt till hel krona och räkna ut hur mycket mer än summan det blir. Det är ni som lägger på det, så det ska synas.</li>
+    </ol>
+    <p>Procentdricks räknas i stället så här: multiplicera notan med procenten, lägg på, och dela sedan totalen precis som i steg 2 och 3. Tio procent är notan med decimalkommat flyttat ett steg åt vänster, fem procent är hälften av det.</p>
+    <h3>Räkna ut vem som ska betala vem</h3>
+    <ol>
+      <li><strong>Summera allt som har lagts ut</strong> av alla, oavsett vem som betalade vad. Det är gruppens total.</li>
+      <li><strong>Dela totalen med antalet personer</strong> för att få allas egen del, med ören enligt steg 3 ovan.</li>
+      <li><strong>Ge var och en ett saldo:</strong> betalat minus sin egen del. Den som har lagt ut mer än sin del har pengar tillgodo och ett positivt saldo, den som har lagt ut mindre är skyldig. <strong>Summera alla saldon: de måste bli exakt noll.</strong> Blir de inte det har du räknat fel, och då är det ingen idé att fortsätta.</li>
+      <li><strong>Låt den med störst skuld betala den med störst tillgodo</strong>, det minsta av de två beloppen. Då blir minst en av dem klar. Stryk personen och gör om med dem som är kvar.</li>
+    </ol>
+    <p>Det sista steget är skälet till att antalet swishar blir så lågt: varje överföring gör minst en person klar, så en grupp med sex saldon som inte är noll behöver aldrig mer än fem överföringar, hur trasslig kvällen än var.</p>
+  </section>
+
+  <section aria-labelledby="exempel"><h2 id="exempel">Två räkneexempel du kan kontrollera</h2>
+    <h3>Nota på 1 337 kr för fyra, avrundad uppåt till närmaste 50 kr</h3>
+    <p>1 337 kr uppåt till närmaste femtiolapp är 1 350 kr, alltså 13 kr i avrundning. Delat på fyra blir det 337,50 kr var, och 4 &times; 337,50 kr = 1 350,00 kr exakt &mdash; inga ören blir över den här gången.</p>
+    <div class="scroll">
+    <table>
+      <caption>Fyra personer, nota 1 337 kr, avrundad uppåt till 1 350 kr.</caption>
+      <thead>
+        <tr><th scope="col">Rad</th><th scope="col">Räkning</th><th scope="col">Belopp</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Notan</th><td>som den står</td><td>1 337,00 kr</td></tr>
+        <tr><th scope="row">Avrundning uppåt</th><td>till närmaste 50 kr</td><td>13,00 kr</td></tr>
+        <tr><th scope="row">Att betala</th><td>1 337,00 + 13,00</td><td>1 350,00 kr</td></tr>
+        <tr><th scope="row">Per person</th><td>1 350,00 &divide; 4</td><td>337,50 kr</td></tr>
+        <tr><th scope="row">Summa delar</th><td>4 &times; 337,50</td><td>1 350,00 kr</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Kryssar ni dessutom i jämna kronor betalar alla 338 kr, vilket blir 1 352 kr &mdash; 2 kr mer än den avrundade summan och 15 kr mer än notan. Det är ett utmärkt sätt att lämna lite mer och ett dåligt sätt att dela pengar om ingen har kommit överens om det, så kalkylatorn skriver alltid ut hur mycket extra som samlas in.</p>
+    <p>Väljer ni i stället 10 % dricks blir det 133,70 kr och totalen 1 470,70 kr. Delat på fyra är det 367,675 kr, som ingen kan betala: två personer betalar 367,68 kr och två betalar 367,67 kr, och kolumnen summerar till 1 470,70 kr exakt. Det är hela örescharaden &mdash; den är aldrig mer än ett öre per person, och den försvinner inte av att man bortser från den.</p>
+    <h3>Fyra personer, 1 600 kr utlagt, tre swishar</h3>
+    <p>Under en helg lade Anna ut 840 kr, Björn ingenting, Cissi 260 kr och David 500 kr. Totalen är 1 600 kr, allas del är 400 kr, och saldona blir: Anna +440 kr, Björn &minus;400 kr, Cissi &minus;140 kr, David +100 kr. De summerar till noll, vilket är kontrollen som gör det meningsfullt att gå vidare.</p>
+    <div class="scroll">
+    <table>
+      <caption>Fyra personer, 1 600,00 kr utlagt, lika delar på 400,00 kr.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Lagt ut</th><th scope="col">Egen del</th><th scope="col">Saldo</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Anna</th><td>840,00 kr</td><td>400,00 kr</td><td>har 440,00 kr tillgodo</td></tr>
+        <tr><th scope="row">Björn</th><td>0,00 kr</td><td>400,00 kr</td><td>är skyldig 400,00 kr</td></tr>
+        <tr><th scope="row">Cissi</th><td>260,00 kr</td><td>400,00 kr</td><td>är skyldig 140,00 kr</td></tr>
+        <tr><th scope="row">David</th><td>500,00 kr</td><td>400,00 kr</td><td>har 100,00 kr tillgodo</td></tr>
+        <tr><th scope="row">Summa</th><td>1 600,00 kr</td><td>1 600,00 kr</td><td>0,00 kr</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Störst skuld har Björn med 400 kr och störst tillgodo har Anna med 440 kr, så Björn swishar Anna 400 kr och är klar. Anna har 40 kr kvar tillgodo, och nästa skuld är Cissis 140 kr, så Cissi swishar Anna 40 kr och Anna är klar. Cissi har 100 kr kvar att betala och David har 100 kr tillgodo, så Cissi swishar David 100 kr. Tre överföringar:</p>
+    <ul>
+      <li>Björn swishar Anna 400,00 kr</li>
+      <li>Cissi swishar Anna 40,00 kr</li>
+      <li>Cissi swishar David 100,00 kr</li>
+    </ul>
+    <p>Lägg märke till att Cissi betalar David fast de kanske inte delade ett enda utlägg. Det är helt normalt, och det är därför man visar saldotabellen först och överföringslistan sedan &mdash; annars låter det som ett räknefel. Resonemanget, och varför detta är ett tak snarare än ett bevisat minsta antal, står i <a href="../settle-group-debts-fewest-payments.html" hreflang="en">guiden om att göra upp med minsta antal betalningar</a> (på engelska).</p>
+  </section>
+
+  <section aria-labelledby="svenska-vanor"><h2 id="svenska-vanor">Tre svenska vanor som är värda att komma överens om</h2>
+    <ul>
+      <li><strong>Jämna kronor är till för mottagaren, inte för matematiken.</strong> Det är trevligare att swisha 340 kr än 337,52 kr, men om alla rundar uppåt var för sig samlas det in mer än notan. Bestäm den jämna summan för hela sällskapet i stället, och dela den.</li>
+      <li><strong>En person betalar och de andra swishar.</strong> Nästan alltid det praktiska svaret, och det som gör saldon meningsfulla: skriv upp vad var och en har lagt ut, gör upp en gång, inte utlägg för utlägg. Kortavgifter och delbetalning i kassan är sällan värt besväret.</li>
+      <li><strong>Åt ni väldigt olika, dela inte lika.</strong> En jämn delning flyttar pengar från den som tog en soppa till den som tog två glas vin, och serveringsavgift eller kuvertavgift ska hanteras var för sig. Då är det <a href="../split-a-restaurant-bill.html" hreflang="en">guiden om att dela en restaurangnota</a> (på engelska) som gäller, där en procentuell påslagning fördelas i proportion till vad var och en åt och en fast avgift per person delas lika.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Var Splitright passar in</h2>
+    <p>Vi gör en av apparna som gör det här, så läs det här avsnittet med det i minnet. En kalkylator är rätt verktyg för en nota. Den är fel verktyg för en helg där elva saker betalas av fyra personer, för då skriver du in hela listan på nytt varje gång någon köper en runda.</p>
+    <p>Splitright är en gratisapp för iPhone, iPad (iOS 16.4 och senare) och Android (7.0 och senare). Inga konton, inga annonser, ingen prenumeration och ingen spårning: en person skapar en grupp, delar en kod på sex tecken, och alla med koden öppnar samma grupp från sin egen telefon. Varje utlägg har egna deltagare och eget delningssätt &mdash; lika, i andelar eller exakta belopp &mdash; och appen håller löpande saldon och föreslår samma uppgörelse med minsta antal överföringar som den här sidan räknar ut.</p>
+    <p>Vad appen inte gör: den läser inga kvitton, har ingen export till CSV eller PDF, inga kategorier och räknar inte ut serveringsavgift i proportion. Den flyttar inga pengar &mdash; du får beloppen och swishar som ni redan gör. Den är inte en säkerhetskopia. Och koden <em>är</em> nyckeln: alla som har den kan öppna och ändra gruppen, det finns ingen personlig inloggning och ingens åtkomst kan tas bort, så behandla den som ett lösenord. Appens gränssnitt är på engelska i dagens butiksversion; den svenska översättningen och lokala belopp kommer i version 1.5.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Ladda ner till iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Hämta på Google Play</a></li>
+      <li><a href="dela-utgifter.html">Så fungerar det utan konto</a></li>
+    </ul>
+    <p class="note">Gratis, inget konto och inga annonser. Vill du ha kvittofoton eller export är en annan app det bättre svaret &mdash; vår <a href="../splitright-vs.html" hreflang="en">jämförelsesida</a> (på engelska) säger vilken och varför. Läs också <a href="dela-hyra.html">dela hyra och räkningar i kollektivet</a>. In English: <a href="../bill-split-calculator.html" hreflang="en" lang="en">bill split calculator</a>, <a href="../rent-split-calculator.html" hreflang="en" lang="en">rent split calculator</a> och <a href="../split-rent-unevenly.html" hreflang="en" lang="en">splitting rent unevenly</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Vanliga frågor</h2>
+    <dl>
+      <dt>Måste man ge dricks i Sverige?</dt>
+      <dd>Nej. Servispersonal har kollektivavtalad lön och dricks är frivilligt. Det vanliga är att avrunda uppåt till en jämn summa när man är nöjd &mdash; 1 337 kr blir 1 350 kr eller 1 400 kr &mdash; och att inte lägga på något alls på en lunch eller en fika. Procentdricks förekommer på finare middagar och i sällskap med gäster som är vana vid det, men det är inget som förväntas.</dd>
+      <dt>Hur får man delarna att summera till notan, öre för öre?</dt>
+      <dd>Dividera totalen med antalet personer och avrunda nedåt till hela ören. Multiplicera tillbaka och jämför med totalen: skillnaden är ett litet antal ören, och ett öre läggs på var och en av så många personer. Då stämmer kolumnen exakt. Någon betalar ett öre mer, och det är bättre att säga vem än att ändra totalen.</dd>
+      <dt>Hur räknar man ut vem som ska betala vem?</dt>
+      <dd>Lägg samman allt som har betalats av alla, dela med antalet personer och ge var och en ett saldo: betalat minus sin egen del. Saldona måste summera till exakt noll. Låt sedan den som har störst skuld betala den som har störst tillgodo, med det minsta av de två beloppen. Varje överföring gör minst en person klar, så en grupp med sex saldon som inte är noll behöver aldrig mer än fem swishar.</dd>
+      <dt>Skickas något jag skriver in här vidare?</dt>
+      <dd>Nej. Kalkylatorerna är några rader JavaScript inne i själva sidan, så alla belopp du skriver stannar i din webbläsare och räknas ut på din egen enhet. Det finns ingen statistikinsamling, ingen kaka, inget annonsskript och ingen förfrågan tillbaka till oss med dina siffror, och inget sparas mellan besöken. Stänger du fliken är det borta.</dd>
+      <dt>Kan kalkylatorn swisha pengarna åt oss?</dt>
+      <dd>Nej. Varken sidan eller appen flyttar pengar. Du får beloppen och namnen, och sedan swishar ni varandra som ni redan gör. Det finns ingen koppling till Swish, till bank-id eller till något betalsystem, och det ska inte finnas: en sida som räknar behöver inte veta vilka ni är.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="dela-utgifter.html">Dela utgifter i en grupp</a> &middot; <a href="dela-hyra.html">Dela hyra och räkningar</a> &middot; <a href="../bill-split-calculator.html" hreflang="en">Bill split calculator (in English)</a> &middot; <a href="../rent-split-calculator.html" hreflang="en">Rent split calculator (in English)</a> &middot; <a href="../split-rent-unevenly.html" hreflang="en">Splitting rent unevenly</a> &middot; <a href="../split-rent-and-bills-with-housemates.html" hreflang="en">Splitting rent and bills with housemates</a> &middot; <a href="../splitright.html" hreflang="en">About Splitright</a> &middot; <a href="../splitright-vs.html" hreflang="en">Compared with other apps</a> &middot; <a href="../index.html" hreflang="en">Support</a> &middot; <a href="../splitright-privacy.html" hreflang="en">Privacy information</a> &middot; <a href="../splitright-terms.html" hreflang="en">Terms and acceptable use</a> &middot; Kontakt <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+<script>
+/* Splitright: dela notan och räkna ut vem som ska betala vem.
+   Körs helt inne i den här sidan. Den gör inga nätverksanrop över huvud taget
+   och skriver ingenting till lagring: ingen fetch, ingen XHR, ingen beacon,
+   inga kakor, ingen localStorage. All pengaräkning sker i hela ören (heltal),
+   så delarna summerar alltid till totalen exakt. */
+(function () {
+  'use strict';
+  var CUR = {
+    SEK: { sym: ' kr', dec: 2, post: true },  NOK: { sym: ' kr', dec: 2, post: true },
+    DKK: { sym: ' kr', dec: 2, post: true },  EUR: { sym: ' \u20ac', dec: 2, post: true },
+    USD: { sym: '$', dec: 2, post: false },   ISK: { sym: ' kr', dec: 0, post: true }
+  };
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---- tolkning och formatering ---------------------------------------- */
+  function toMinor(raw, dec) {
+    var s = String(raw).replace(/[\s\u00a0]/g, '').replace(',', '.');
+    if (s === '' || s === '.' || !/^\d*(\.\d*)?$/.test(s)) { return null; }
+    var parts = s.split('.'), whole = parts[0] || '0', frac = parts[1] || '';
+    if (dec === 0) { return parseInt(whole, 10) + (frac && +frac.charAt(0) >= 5 ? 1 : 0); }
+    frac = (frac + '000000').slice(0, dec + 1);
+    var v = parseInt(whole + frac.slice(0, dec), 10);
+    return +frac.charAt(dec) >= 5 ? v + 1 : v;
+  }
+  function groups(s) {
+    var out = '', i, c = 0;
+    for (i = s.length - 1; i >= 0; i--) {
+      out = s.charAt(i) + out;
+      c++;
+      if (c % 3 === 0 && i > 0) { out = '\u00a0' + out; }
+    }
+    return out;
+  }
+  function money(minor, cur) {
+    var neg = minor < 0, abs = Math.abs(minor), body;
+    if (cur.dec === 0) { body = groups(String(abs)); } else {
+      var p = Math.pow(10, cur.dec), w = Math.floor(abs / p), f = String(abs % p);
+      while (f.length < cur.dec) { f = '0' + f; }
+      body = groups(String(w)) + ',' + f;
+    }
+    return (neg ? '\u2212' : '') + (cur.post ? body + cur.sym : cur.sym + body);
+  }
+  function plain(minor, cur) {
+    var w = cur.dec === 0 ? minor : Math.floor(minor / Math.pow(10, cur.dec));
+    var body = groups(String(w));
+    return cur.post ? body + cur.sym : cur.sym + body;
+  }
+  function el(tag, text, cls) {
+    var n = document.createElement(tag);
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    if (cls) { n.className = cls; }
+    return n;
+  }
+  function persons(n) { return n === 1 ? '1 person' : n + ' personer'; }
+
+  /* MATHS-START */
+  /* Avrunda uppåt till närmaste steg (båda i hela ören). */
+  function ceilTo(total, step) { return Math.ceil(total / step) * step; }
+  /* Dricks i procent, avrundad till hela ören. */
+  function tipOf(total, pct) { return Math.round(total * pct / 100); }
+  /* Lika delar med öresresten utdelad ett öre i taget. */
+  function equalShares(total, n) {
+    var base = Math.floor(total / n), left = total - base * n, out = [], extra = [], i;
+    for (i = 0; i < n; i++) { out.push(base + (i < left ? 1 : 0)); if (i < left) { extra.push(i); } }
+    return { shares: out, base: base, extra: extra };
+  }
+  /* Alla betalar samma belopp, avrundat uppåt till närmaste hela enhet. */
+  function roundUpShares(total, n, unit) {
+    var each = Math.ceil(total / n / unit) * unit, out = [], i;
+    for (i = 0; i < n; i++) { out.push(each); }
+    return { shares: out, base: each, extra: [], surplus: each * n - total };
+  }
+  /* Saldon och minsta antal överföringar: största skuld möter största tillgodo. */
+  function settle(paid) {
+    var total = paid.reduce(function (a, b) { return a + b; }, 0);
+    var eq = equalShares(total, paid.length);
+    var bal = paid.map(function (p, i) { return p - eq.shares[i]; });
+    var cr = [], db = [];
+    bal.forEach(function (b, i) {
+      if (b > 0) { cr.push({ i: i, v: b }); } else if (b < 0) { db.push({ i: i, v: -b }); }
+    });
+    var bigger = function (a, b) { return b.v - a.v || a.i - b.i; };
+    cr.sort(bigger); db.sort(bigger);
+    var moves = [], c = 0, d = 0;
+    while (c < cr.length && d < db.length) {
+      var amt = Math.min(cr[c].v, db[d].v);
+      if (amt > 0) { moves.push({ from: db[d].i, to: cr[c].i, amount: amt }); }
+      cr[c].v -= amt; db[d].v -= amt;
+      if (cr[c].v === 0) { c++; }
+      if (db[d].v === 0) { d++; }
+    }
+    return { total: total, shares: eq.shares, balances: bal, moves: moves };
+  }
+  /* MATHS-END */
+
+  /* ---- kalkylator 1: dela notan ---------------------------------------- */
+  function nMethod() { return $('n-m-pct').checked ? 'pct' : 'round'; }
+  function stepLabels() {
+    var cur = CUR[$('n-currency').value], opts = $('n-step').options, i;
+    for (i = 0; i < opts.length; i++) {
+      var v = parseInt(opts[i].value, 10) * Math.pow(10, cur.dec);
+      opts[i].textContent = plain(v, cur);
+    }
+  }
+  function renderBill() {
+    var cur = CUR[$('n-currency').value], out = $('n-out'), m = nMethod();
+    var total = toMinor($('n-total').value, cur.dec);
+    var n = parseInt($('n-people').value, 10);
+    var unit = Math.pow(10, cur.dec);
+    var pct = $('n-pct').value.replace(',', '.').trim();
+    pct = pct === '' ? 0 : Number(pct);
+    var step = parseInt($('n-step').value, 10) * unit;
+    out.textContent = '';
+    $('f-step').hidden = m !== 'round';
+    $('f-pct').hidden = m !== 'pct';
+    $('n-quick').hidden = m !== 'pct';
+    if (total === null || total > 100000000) { out.appendChild(el('p', 'Skriv notan som ett tal.', 'warn')); return; }
+    if (!(n >= 1 && n <= 200)) { out.appendChild(el('p', 'Skriv mellan 1 och 200 personer.', 'warn')); return; }
+    if (m === 'pct' && (!isFinite(pct) || pct < 0 || pct > 1000)) {
+      out.appendChild(el('p', 'Skriv dricksen som en procentsats mellan 0 och 1000.', 'warn')); return;
+    }
+    var added = m === 'round' ? ceilTo(total, step) - total : tipOf(total, pct);
+    var grand = total + added;
+    var r = $('n-even').checked ? roundUpShares(grand, n, unit) : equalShares(grand, n);
+    var dl = el('dl', null, 'res');
+    var row = function (k, v) { dl.appendChild(el('dt', k)); dl.appendChild(el('dd', v)); };
+    row('Notan', money(total, cur));
+    if (m === 'round') {
+      row('Avrundning uppåt till närmaste ' + plain(step, cur), money(added, cur));
+    } else {
+      row('Dricks, ' + pct + ' %', money(added, cur));
+    }
+    row('Att betala', money(grand, cur));
+    row('Per person', money(r.base, cur));
+    out.appendChild(dl);
+    if (r.surplus !== undefined && r.surplus > 0) {
+      out.appendChild(el('p', 'Alla ' + persons(n) + ' betalar samma jämna belopp, vilket samlar in '
+        + money(r.base * n, cur) + ' — det är ' + money(r.surplus, cur)
+        + ' mer än summan att betala. Se det som lite mer dricks, eller ge tillbaka det.', 'lead'));
+    } else if (r.extra.length === 0) {
+      out.appendChild(el('p', 'Det går jämnt upp: ' + persons(n) + ' å ' + money(r.base, cur)
+        + ' blir ' + money(grand, cur) + ', inget över.', 'lead'));
+    } else {
+      var k = r.extra.length, minor = cur.dec === 0 ? 'enhet' : '\u00f6re';
+      out.appendChild(el('p', persons(k) + ' betalar ett ' + minor + ' mer — '
+        + money(r.base + 1, cur) + ' i stället för ' + money(r.base, cur) + ' — så att delarna summerar till '
+        + money(grand, cur) + ' exakt. ' + persons(n - k) + ' betalar ' + money(r.base, cur)
+        + '. Låt det rotera vem som tar det extra öret nästa gång.', 'lead'));
+    }
+    if (m === 'round' && added === 0) {
+      out.appendChild(el('p', 'Notan är redan en jämn summa, så avrundningen lägger inte på något.', 'note'));
+    }
+  }
+
+  /* ---- kalkylator 2: vem ska betala vem -------------------------------- */
+  var MIN_ROWS = 2, MAX_ROWS = 12;
+  var seed = [['Anna', '840'], ['Bj\u00f6rn', '0'], ['Cissi', '260'], ['David', '500']];
+  function addRow(name, amount) {
+    var rows = $('v-rows'), i = rows.children.length;
+    if (i >= MAX_ROWS) { return; }
+    var wrap = el('p', null, 'field row'), id = 'v-n' + i, aid = 'v-a' + i;
+    var nl = el('label', 'Namn'); nl.htmlFor = id;
+    var nIn = document.createElement('input');
+    nIn.type = 'text'; nIn.id = id; nIn.autocomplete = 'off'; nIn.value = name || '';
+    nIn.placeholder = 'Namn';
+    var al = el('label', 'Lagt ut'); al.htmlFor = aid;
+    var aIn = document.createElement('input');
+    aIn.type = 'text'; aIn.id = aid; aIn.inputMode = 'decimal'; aIn.autocomplete = 'off';
+    aIn.value = amount === undefined ? '' : amount;
+    var rm = el('button', 'Ta bort', 'chip rm'); rm.type = 'button';
+    wrap.appendChild(nl); wrap.appendChild(nIn);
+    wrap.appendChild(al); wrap.appendChild(aIn);
+    wrap.appendChild(rm);
+    rows.appendChild(wrap);
+  }
+  function renderOwes() {
+    var cur = CUR[$('v-currency').value], out = $('v-out');
+    var rows = Array.prototype.slice.call($('v-rows').children);
+    $('v-count').textContent = rows.length + ' av ' + MAX_ROWS + ' personer';
+    out.textContent = '';
+    var names = [], paid = [], bad = false;
+    rows.forEach(function (r, i) {
+      var ins = r.getElementsByTagName('input');
+      names.push(ins[0].value.trim() || 'Person ' + (i + 1));
+      var v = ins[1].value.trim() === '' ? 0 : toMinor(ins[1].value, cur.dec);
+      if (v === null) { bad = true; }
+      paid.push(v || 0);
+      r.getElementsByTagName('button')[0].disabled = rows.length <= MIN_ROWS;
+    });
+    $('v-add').disabled = rows.length >= MAX_ROWS;
+    if (bad) { out.appendChild(el('p', 'Ett av beloppen är inte ett tal.', 'warn')); return; }
+    var r = settle(paid);
+    if (r.total === 0) { out.appendChild(el('p', 'Ingen har lagt ut något än, så ingen är skyldig någon.', 'lead')); return; }
+    out.appendChild(el('p', 'Totalt utlagt: ' + money(r.total, cur) + ' — '
+      + money(r.shares[0], cur) + ' var för ' + persons(paid.length) + '.', 'lead'));
+    var dl = el('dl', null, 'res');
+    r.balances.forEach(function (b, i) {
+      dl.appendChild(el('dt', names[i]));
+      dl.appendChild(el('dd', b === 0 ? 'jämnt, har lagt ut exakt sin del'
+        : (b > 0 ? 'har ' + money(b, cur) + ' tillgodo' : 'är skyldig ' + money(-b, cur))));
+    });
+    out.appendChild(dl);
+    if (!r.moves.length) { out.appendChild(el('p', 'Alla är kvitt redan. Inga överföringar behövs.', 'lead')); return; }
+    out.appendChild(el('h3', r.moves.length === 1 ? 'En överföring gör upp allt'
+      : r.moves.length + ' överföringar gör upp allt'));
+    var ul = el('ul', null, 'moves');
+    r.moves.forEach(function (m) {
+      ul.appendChild(el('li', names[m.from] + ' swishar ' + names[m.to] + ' ' + money(m.amount, cur)));
+    });
+    out.appendChild(ul);
+    out.appendChild(el('p', 'Saldona summerar till noll och de här överföringarna nollar alla.', 'note'));
+  }
+
+  /* ---- koppling -------------------------------------------------------- */
+  ['n-total', 'n-people', 'n-pct'].forEach(function (id) {
+    $(id).addEventListener('input', renderBill);
+  });
+  $('n-currency').addEventListener('change', function () { stepLabels(); renderBill(); });
+  $('n-step').addEventListener('change', renderBill);
+  $('n-even').addEventListener('change', renderBill);
+  $('n-m-round').addEventListener('change', renderBill);
+  $('n-m-pct').addEventListener('change', renderBill);
+  $('n-quick').addEventListener('click', function (e) {
+    var t = e.target.getAttribute && e.target.getAttribute('data-pct');
+    if (t === null || t === undefined) { return; }
+    $('n-pct').value = t;
+    renderBill();
+  });
+  seed.forEach(function (s) { addRow(s[0], s[1]); });
+  $('v-rows').addEventListener('input', renderOwes);
+  $('v-rows').addEventListener('click', function (e) {
+    if (e.target.classList && e.target.classList.contains('rm')
+        && $('v-rows').children.length > MIN_ROWS) {
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      renderOwes();
+    }
+  });
+  $('v-currency').addEventListener('change', renderOwes);
+  $('v-add').addEventListener('click', function () { addRow('', ''); renderOwes(); });
+  $('jsnote1').hidden = true; $('jsnote2').hidden = true;
+  $('tool1').hidden = false; $('tool2').hidden = false;
+  stepLabels();
+  renderBill();
+  renderOwes();
+}());
+</script>
+</body>
+</html>
