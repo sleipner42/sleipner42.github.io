@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free bill split calculator: work out the tip, the per-person share and the odd pennies, or see who owes who in the fewest payments. Runs in your browser.">
+  <title>Bill split calculator: tip, shares and who owes who</title>
+  <link rel="canonical" href="https://getsplitright.com/bill-split-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/bill-split-calculator.html">
+  <meta property="og:title" content="Bill split calculator: tip, shares and who owes who">
+  <meta property="og:description" content="Two free calculators on one page: split a bill with a tip and see exactly who takes the leftover penny, and turn a list of who paid what into the smallest set of payments that clears the group.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bill split calculator: tip, shares and who owes who">
+  <meta name="twitter:description" content="Two free calculators on one page: split a bill with a tip and see exactly who takes the leftover penny, and turn a list of who paid what into the smallest set of payments that clears the group.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+    .privacy{background:var(--wash);border-left:4px solid var(--brand);padding:.9rem 1.1rem;border-radius:0 12px 12px 0;margin:2rem 0}.tool{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0;background:#fbfdfe}.jsnote{background:var(--wash);border-radius:10px;padding:.85rem 1rem;margin:0;max-width:none}.grid{display:grid;gap:.9rem 1.25rem;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}.field{margin:0;display:flex;flex-direction:column;gap:.3rem;max-width:none}.field.narrow{max-width:22rem}label{font-weight:650;font-size:.95rem}input,select,button{font:inherit;color:inherit}input[type=text],input[type=number],select{padding:.6rem .7rem;border:1px solid var(--line);border-radius:9px;background:#fff;min-width:0;width:100%}.checkfield{flex-direction:row;align-items:center;gap:.55rem;margin-top:1rem}.checkfield input{width:1.15rem;height:1.15rem}.checkfield label{font-weight:400}.quickrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0 0;max-width:none}.quicklabel{font-weight:650;font-size:.95rem}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem .95rem;font-weight:650;color:var(--brand);cursor:pointer}.chip:hover,.chip:focus-visible{background:var(--wash)}.chip[disabled]{opacity:.45;cursor:default}.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,8rem) auto;align-items:center;gap:.5rem;margin-bottom:.6rem}.out{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1rem}.out h3{margin-top:1.2rem}.res{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;margin:0 0 1rem}.res dt{margin-top:0;font-weight:650}.res dd{margin:0;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.lead{margin:.5rem 0}.warn{color:#8a3b00;font-weight:650;margin:.25rem 0}.moves{margin:.4rem 0}.moves li{font-weight:650;font-variant-numeric:tabular-nums}[hidden]{display:none!important}@media(max-width:560px){.row{grid-template-columns:auto minmax(0,1fr)}.row .rm{grid-column:1/-1;justify-self:start}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is anything I type into this calculator sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculators are a few lines of JavaScript inside the page itself, so every figure you type stays in your browser and is worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing you type is stored between visits. Close the tab and it is gone."}},
+    {"@type":"Question","name":"How do you work out the tip and the share per person?","acceptedAnswer":{"@type":"Answer","text":"Multiply the bill by the tip percentage to get the tip, add it to the bill to get the grand total, then divide the grand total by the number of people. If it does not divide exactly, give everyone the rounded-down share and add one penny to as many people as there are pennies left over, so the shares add up to the grand total exactly."}},
+    {"@type":"Question","name":"Why does one person pay a penny more than everyone else?","acceptedAnswer":{"@type":"Answer","text":"Because most totals do not divide evenly and a penny cannot be cut in half. Three people splitting 10.00 have a share of 3.3333, and the only honest answer is 3.34 plus 3.33 plus 3.33. Somebody takes the odd penny, so the calculator names them rather than quietly rounding the total up or down. Rotate who it is next time."}},
+    {"@type":"Question","name":"What does the fewest payments calculator actually do?","acceptedAnswer":{"@type":"Answer","text":"It nets everyone down to a single balance, which is what they paid minus their own equal share of the total, and then repeatedly matches the largest creditor with the largest debtor. Every payment clears at least one person completely, so a group with a certain number of non-zero balances always settles in fewer payments than that number of people."}},
+    {"@type":"Question","name":"Does it handle currencies without pennies, like the yen?","acceptedAnswer":{"@type":"Answer","text":"Yes. The currency selector only changes the symbol and the number of decimal places, so the yen, the won and the Icelandic krona are worked out in whole units with no minor unit at all. It does no currency conversion of any kind and holds no exchange rates, so put in amounts that are already in one single currency."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Bill split calculator</h1>
+  <p class="intro">Split a bill with a tip and see who takes the odd penny, or turn a list of who paid what into the smallest set of payments that clears everybody. Free, no sign-up, and the arithmetic happens on your own device.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <p class="privacy"><strong>Nothing you type here is sent anywhere.</strong> There is no tracking on this site, no cookies and no analytics: the calculation runs inside your browser, on your device, and the numbers are forgotten when you close the tab.</p>
+
+  <section aria-labelledby="calc-bill"><h2 id="calc-bill">Split a bill</h2>
+    <p>Put in the bill total before the tip, how many people are paying, and the tip you want to leave. The calculator gives you the tip amount, the grand total, the share per person, and which people pay one extra penny so that the shares add up to the total exactly.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote1">This calculator needs JavaScript, which is switched off in your browser. Nothing is broken &mdash; the method is written out in full under <a href="#by-hand">how to do it by hand</a>, and it is four steps of arithmetic you can do on any phone calculator.</p>
+      <div class="toolbody" id="tool1" hidden>
+        <div class="grid">
+          <p class="field"><label for="b-total">Bill total, before the tip</label>
+            <input type="text" id="b-total" inputmode="decimal" autocomplete="off" value="87.40"></p>
+          <p class="field"><label for="b-people">Number of people</label>
+            <input type="number" id="b-people" min="1" max="200" step="1" value="5"></p>
+          <p class="field"><label for="b-currency">Currency</label>
+            <select id="b-currency">
+              <option value="GBP">GBP &mdash; pound (&pound;)</option>
+              <option value="EUR">EUR &mdash; euro (&euro;)</option>
+              <option value="USD">USD &mdash; US dollar ($)</option>
+              <option value="SEK">SEK &mdash; Swedish krona (kr)</option>
+              <option value="CHF">CHF &mdash; Swiss franc</option>
+              <option value="INR">INR &mdash; Indian rupee (&#8377;)</option>
+              <option value="JPY">JPY &mdash; yen (&#165;), no minor unit</option>
+              <option value="KRW">KRW &mdash; won (&#8361;), no minor unit</option>
+              <option value="ISK">ISK &mdash; Icelandic krona, no minor unit</option>
+            </select></p>
+          <p class="field"><label for="b-tip">Tip percentage</label>
+            <input type="text" id="b-tip" inputmode="decimal" autocomplete="off" value="15"></p>
+        </div>
+        <p class="quickrow" id="b-quick"><span class="quicklabel">Quick tip:</span>
+          <button type="button" class="chip" data-tip="0">0%</button>
+          <button type="button" class="chip" data-tip="5">5%</button>
+          <button type="button" class="chip" data-tip="10">10%</button>
+          <button type="button" class="chip" data-tip="15">15%</button>
+          <button type="button" class="chip" data-tip="20">20%</button>
+        </p>
+        <p class="field checkfield"><input type="checkbox" id="b-roundup">
+          <label for="b-roundup">Round each share up to the nearest whole unit</label></p>
+        <div class="out" id="b-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="note">The currency choice only sets the symbol and the number of decimal places. There is no conversion and there are no exchange rates here: enter amounts that are all in the same currency. If your group genuinely paid in several, read <a href="split-expenses-in-different-currencies.html">splitting expenses in different currencies</a> first.</p>
+  </section>
+
+  <section aria-labelledby="calc-owes"><h2 id="calc-owes">Who owes who</h2>
+    <p>List everyone and what they actually paid out. The calculator adds it up, gives everyone an equal share of that total, and then works out the smallest set of payments that clears every balance &mdash; usually far fewer than paying each other back one expense at a time.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote2">This calculator needs JavaScript, which is switched off in your browser. The netting method is written out step by step under <a href="#by-hand">how to do it by hand</a>, and the longer explanation with a proof of the payment count is in <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a>.</p>
+      <div class="toolbody" id="tool2" hidden>
+        <p class="field narrow"><label for="w-currency">Currency</label>
+          <select id="w-currency">
+            <option value="GBP">GBP &mdash; pound (&pound;)</option>
+            <option value="EUR">EUR &mdash; euro (&euro;)</option>
+            <option value="USD">USD &mdash; US dollar ($)</option>
+            <option value="SEK">SEK &mdash; Swedish krona (kr)</option>
+            <option value="CHF">CHF &mdash; Swiss franc</option>
+            <option value="INR">INR &mdash; Indian rupee (&#8377;)</option>
+            <option value="JPY">JPY &mdash; yen (&#165;), no minor unit</option>
+            <option value="KRW">KRW &mdash; won (&#8361;), no minor unit</option>
+            <option value="ISK">ISK &mdash; Icelandic krona, no minor unit</option>
+          </select></p>
+        <div id="w-rows"></div>
+        <p class="quickrow"><button type="button" class="chip" id="w-add">Add a person</button>
+          <span class="note" id="w-count"></span></p>
+        <div class="out" id="w-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="by-hand"><h2 id="by-hand">How to do it by hand</h2>
+    <p>Neither calculation needs a computer, and it is worth knowing the method so you can sanity-check any app, including ours. Both are four steps.</p>
+    <h3>Splitting a bill with a tip</h3>
+    <ol>
+      <li><strong>Work out the tip.</strong> Multiply the bill by the percentage. Ten per cent is the bill with the decimal point moved one place left; five per cent is half of that; twenty per cent is double it. Fifteen per cent is ten plus five.</li>
+      <li><strong>Add it on.</strong> Bill plus tip is the grand total, and that is the number that has to be divided &mdash; not the bill.</li>
+      <li><strong>Divide by the number of people</strong> and round <em>down</em> to whole pennies. That is everybody's base share.</li>
+      <li><strong>Deal with what is left.</strong> Multiply the base share by the number of people and subtract it from the grand total. Whatever remains is a small number of pennies, and one penny goes to each of that many people. Now the shares add up to the total exactly.</li>
+    </ol>
+    <h3>Working out who owes who</h3>
+    <ol>
+      <li><strong>Add up everything that was paid out</strong> by anybody, whoever paid it. That is the group total.</li>
+      <li><strong>Divide the total by the number of people</strong> to get each person's fair share, using step 4 above for the leftover pennies.</li>
+      <li><strong>Give everybody one balance:</strong> what they paid minus their own share. Somebody who paid more than their share is owed money and their balance is positive; somebody who paid less owes money. <strong>Add all the balances up: they must come to exactly zero.</strong> If they do not, you have mis-added something, and there is no point continuing.</li>
+      <li><strong>Match the biggest debtor to the biggest creditor</strong> and move the smaller of the two amounts between them. That clears at least one of them completely. Cross them off and repeat with whoever is left.</li>
+    </ol>
+    <p>That last step is why the payment count comes out so low: every payment finishes at least one person, so a group with six non-zero balances never needs more than five payments, however tangled the receipts were.</p>
+  </section>
+
+  <section aria-labelledby="worked"><h2 id="worked">Two worked examples you can check</h2>
+    <h3>A bill of &pound;87.40 for five people with a 15% tip</h3>
+    <p>Ten per cent of &pound;87.40 is &pound;8.74, and five per cent is &pound;4.37, so the tip is &pound;13.11. The grand total is &pound;87.40 + &pound;13.11 = &pound;100.51. Divided by five that is &pound;20.102, which nobody can pay, so the base share is &pound;20.10.</p>
+    <p>Five shares of &pound;20.10 come to &pound;100.50, which is one penny short of the total. So four people pay &pound;20.10 and one person pays &pound;20.11, and the column adds up to &pound;100.51 exactly. That is the whole of the leftover-pennies problem: it is never more than one minor unit each, and it never disappears by being ignored.</p>
+    <div class="scroll">
+    <table>
+      <caption>Five people, bill &pound;87.40, tip 15%, grand total &pound;100.51.</caption>
+      <thead>
+        <tr><th scope="col">Line</th><th scope="col">Working</th><th scope="col">Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Bill</th><td>as printed</td><td>&pound;87.40</td></tr>
+        <tr><th scope="row">Tip</th><td>15% of &pound;87.40</td><td>&pound;13.11</td></tr>
+        <tr><th scope="row">Grand total</th><td>&pound;87.40 + &pound;13.11</td><td>&pound;100.51</td></tr>
+        <tr><th scope="row">Base share</th><td>&pound;100.51 &divide; 5, rounded down</td><td>&pound;20.10</td></tr>
+        <tr><th scope="row">Leftover</th><td>&pound;100.51 &minus; (5 &times; &pound;20.10)</td><td>&pound;0.01</td></tr>
+        <tr><th scope="row">Shares</th><td>&pound;20.11 + four &times; &pound;20.10</td><td>&pound;100.51</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>If you switch on rounding each share up to the nearest pound, the five shares become &pound;21.00 and the table collects &pound;105.00 &mdash; &pound;4.49 more than the bill. That is a fine way to leave a bigger tip and a bad way to divide money if nobody has agreed to it, so the calculator always tells you how much extra it has collected.</p>
+    <h3>Four people, &pound;250.00 spent, and only three payments</h3>
+    <p>Over a weekend, Ada paid &pound;124.00, Ben paid &pound;45.50, Cleo paid nothing and Dev paid &pound;80.50. The group total is &pound;250.00, so each person's share is &pound;62.50 and the balances are: Ada +&pound;61.50, Ben &minus;&pound;17.00, Cleo &minus;&pound;62.50, Dev +&pound;18.00. Those add up to zero, which is the check that lets you carry on.</p>
+    <div class="scroll">
+    <table>
+      <caption>Four people, &pound;250.00 spent, equal shares of &pound;62.50.</caption>
+      <thead>
+        <tr><th scope="col">Person</th><th scope="col">Paid</th><th scope="col">Own share</th><th scope="col">Balance</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Ada</th><td>&pound;124.00</td><td>&pound;62.50</td><td>is owed &pound;61.50</td></tr>
+        <tr><th scope="row">Ben</th><td>&pound;45.50</td><td>&pound;62.50</td><td>owes &pound;17.00</td></tr>
+        <tr><th scope="row">Cleo</th><td>&pound;0.00</td><td>&pound;62.50</td><td>owes &pound;62.50</td></tr>
+        <tr><th scope="row">Dev</th><td>&pound;80.50</td><td>&pound;62.50</td><td>is owed &pound;18.00</td></tr>
+        <tr><th scope="row">Total</th><td>&pound;250.00</td><td>&pound;250.00</td><td>&pound;0.00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Biggest debtor is Cleo at &pound;62.50, biggest creditor is Ada at &pound;61.50, so Cleo pays Ada &pound;61.50 and Ada is finished. Cleo still owes &pound;1.00 and the biggest creditor left is Dev, so Cleo pays Dev &pound;1.00 and Cleo is finished. Ben owes &pound;17.00 and Dev is still owed &pound;17.00, so Ben pays Dev &pound;17.00 and everybody is at zero. Three payments:</p>
+    <ul>
+      <li>Cleo pays Ada &pound;61.50</li>
+      <li>Cleo pays Dev &pound;1.00</li>
+      <li>Ben pays Dev &pound;17.00</li>
+    </ul>
+    <p>Notice the small one. Cleo pays Dev a pound, which looks like a rounding artefact but is not: it is the remainder of Cleo's genuine debt after Ada was cleared. Notice also that Ben pays Dev even if they never shared a receipt &mdash; that is normal and it is why you show the balance table before the payment list. The reasoning, including why this is a ceiling rather than a provably minimal answer, is set out in <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a>.</p>
+  </section>
+
+  <section aria-labelledby="pitfalls"><h2 id="pitfalls">Three things this calculator will not do for you</h2>
+    <p>It divides a total evenly, which is the right answer surprisingly often and the wrong answer in three specific situations.</p>
+    <ul>
+      <li><strong>People ordered very differently.</strong> An even split moves money from the person who had soup to the person who had two bottles of wine, and a service charge split equally makes it worse. Itemise instead: <a href="split-a-restaurant-bill.html">how to split a restaurant bill</a> works through it, including why a percentage add-on is apportioned in proportion to each person's own subtotal and never per head.</li>
+      <li><strong>The shares should not be equal.</strong> Rooms of different sizes, a couple in one bed, a trip somebody joined for two nights of five. Those need weights rather than division: <a href="split-rent-unevenly.html">splitting rent unevenly</a> and <a href="split-costs-on-a-group-trip.html">splitting costs on a group trip</a> cover the two common cases.</li>
+      <li><strong>The money was not all in one currency.</strong> Never net across currencies and never revalue old spending at today's rate. Convert each expense as you record it, at the rate you actually paid: <a href="split-expenses-in-different-currencies.html">splitting expenses in different currencies</a>.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the apps that does this, so read this section accordingly. A calculator is the right tool for one bill; it is the wrong tool for a weekend where eleven things get paid for by four people, because you would be retyping the whole list every time somebody buys a round.</p>
+    <p>Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later). There are no accounts, no ads, no subscription and no tracking: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense has its own participants and its own split mode &mdash; equally, by shares or by exact amounts &mdash; and it keeps a running balance per person and suggests the same fewest-payments settlement this page calculates.</p>
+    <p>What it does not do: there is no receipt scanning, no CSV or PDF export and no categories, and it will not work out a proportional service charge for you. It does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anyone holding it can open and edit the group, there is no per-person login, and one person's access cannot be withdrawn, so treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If you want receipt photos or an export, another app is the better answer &mdash; our <a href="splitright-vs.html">comparison page</a> says which and why. Related: <a href="split-expenses-without-an-account.html">splitting expenses without making anyone sign up</a> and <a href="index.html">support</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>Is anything I type into this calculator sent anywhere?</dt>
+      <dd>No. The calculators are a few lines of JavaScript inside the page itself, so every figure you type stays in your browser and is worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing you type is stored between visits. Close the tab and it is gone.</dd>
+      <dt>How do you work out the tip and the share per person?</dt>
+      <dd>Multiply the bill by the tip percentage to get the tip, add it to the bill to get the grand total, then divide the grand total by the number of people. If it does not divide exactly, give everyone the rounded-down share and add one penny to as many people as there are pennies left over, so the shares add up to the grand total exactly.</dd>
+      <dt>Why does one person pay a penny more than everyone else?</dt>
+      <dd>Because most totals do not divide evenly and a penny cannot be cut in half. Three people splitting 10.00 have a share of 3.3333, and the only honest answer is 3.34 plus 3.33 plus 3.33. Somebody takes the odd penny, so the calculator names them rather than quietly rounding the total up or down. Rotate who it is next time.</dd>
+      <dt>What does the fewest payments calculator actually do?</dt>
+      <dd>It nets everyone down to a single balance, which is what they paid minus their own equal share of the total, and then repeatedly matches the largest creditor with the largest debtor. Every payment clears at least one person completely, so a group with a certain number of non-zero balances always settles in fewer payments than that number of people.</dd>
+      <dt>Does it handle currencies without pennies, like the yen?</dt>
+      <dd>Yes. The currency selector only changes the symbol and the number of decimal places, so the yen, the won and the Icelandic krona are worked out in whole units with no minor unit at all. It does no currency conversion of any kind and holds no exchange rates, so put in amounts that are already in one single currency.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-a-restaurant-bill.html">Splitting a restaurant bill</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+<script>
+/* Splitright bill split calculator.
+   Runs entirely in this page. It makes no network requests of any kind and
+   writes nothing to storage: no fetch, no XHR, no beacon, no cookies, no
+   localStorage. All money maths is done in integer minor units (pennies) so
+   the shares always add up to the total exactly. */
+(function () {
+  'use strict';
+  var CUR = {
+    GBP: { sym: '\u00a3', dec: 2, post: false }, EUR: { sym: '\u20ac', dec: 2, post: false },
+    USD: { sym: '$', dec: 2, post: false },      SEK: { sym: ' kr', dec: 2, post: true },
+    CHF: { sym: ' CHF', dec: 2, post: true },    INR: { sym: '\u20b9', dec: 2, post: false },
+    JPY: { sym: '\u00a5', dec: 0, post: false }, KRW: { sym: '\u20a9', dec: 0, post: false },
+    ISK: { sym: ' kr', dec: 0, post: true }
+  };
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---- parsing and formatting ------------------------------------------ */
+  function toMinor(raw, dec) {
+    var s = String(raw).replace(/[\s\u00a0]/g, '').replace(',', '.');
+    if (s === '' || s === '.' || !/^\d*(\.\d*)?$/.test(s)) { return null; }
+    var parts = s.split('.'), whole = parts[0] || '0', frac = parts[1] || '';
+    if (dec === 0) { return parseInt(whole, 10) + (frac && +frac.charAt(0) >= 5 ? 1 : 0); }
+    frac = (frac + '000000').slice(0, dec + 1);
+    var v = parseInt(whole + frac.slice(0, dec), 10);
+    return +frac.charAt(dec) >= 5 ? v + 1 : v;
+  }
+  function money(minor, cur) {
+    var neg = minor < 0, abs = Math.abs(minor), body;
+    if (cur.dec === 0) { body = String(abs); } else {
+      var p = Math.pow(10, cur.dec), w = Math.floor(abs / p), f = String(abs % p);
+      while (f.length < cur.dec) { f = '0' + f; }
+      body = w + '.' + f;
+    }
+    return (neg ? '\u2212' : '') + (cur.post ? body + cur.sym : cur.sym + body);
+  }
+  function el(tag, text, cls) {
+    var n = document.createElement(tag);
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    if (cls) { n.className = cls; }
+    return n;
+  }
+  function people(n) { return n === 1 ? '1 person' : n + ' people'; }
+  function pays(n) { return people(n) + (n === 1 ? ' pays' : ' pay'); }
+
+  /* ---- maths ----------------------------------------------------------- */
+  function splitBill(total, n, tipPct, unit, roundUp) {
+    var tip = Math.round(total * tipPct / 100), grand = total + tip, shares = [], i;
+    if (roundUp) {
+      var each = Math.ceil(grand / n / unit) * unit;
+      for (i = 0; i < n; i++) { shares.push(each); }
+      return { tip: tip, grand: grand, shares: shares, base: each, extra: 0,
+               surplus: each * n - grand };
+    }
+    var base = Math.floor(grand / n), extra = grand - base * n;
+    for (i = 0; i < n; i++) { shares.push(base + (i < extra ? 1 : 0)); }
+    return { tip: tip, grand: grand, shares: shares, base: base, extra: extra, surplus: 0 };
+  }
+  function equalShares(total, n) {
+    var base = Math.floor(total / n), rem = total - base * n, out = [], i;
+    for (i = 0; i < n; i++) { out.push(base + (i < rem ? 1 : 0)); }
+    return out;
+  }
+  function settle(paid) {
+    var total = paid.reduce(function (a, b) { return a + b; }, 0);
+    var shares = equalShares(total, paid.length);
+    var bal = paid.map(function (p, i) { return p - shares[i]; });
+    var cr = [], db = [];
+    bal.forEach(function (b, i) {
+      if (b > 0) { cr.push({ i: i, v: b }); } else if (b < 0) { db.push({ i: i, v: -b }); }
+    });
+    var bigger = function (a, b) { return b.v - a.v || a.i - b.i; };
+    cr.sort(bigger); db.sort(bigger);
+    var moves = [], c = 0, d = 0;
+    while (c < cr.length && d < db.length) {
+      var amt = Math.min(cr[c].v, db[d].v);
+      if (amt > 0) { moves.push({ from: db[d].i, to: cr[c].i, amount: amt }); }
+      cr[c].v -= amt; db[d].v -= amt;
+      if (cr[c].v === 0) { c++; }
+      if (db[d].v === 0) { d++; }
+    }
+    return { total: total, shares: shares, balances: bal, moves: moves };
+  }
+
+  /* ---- calculator 1: split a bill -------------------------------------- */
+  function renderBill() {
+    var cur = CUR[$('b-currency').value], out = $('b-out');
+    var total = toMinor($('b-total').value, cur.dec);
+    var n = parseInt($('b-people').value, 10);
+    var tip = $('b-tip').value.replace(',', '.').trim();
+    tip = tip === '' ? 0 : Number(tip);
+    out.textContent = '';
+    if (total === null) { out.appendChild(el('p', 'Enter the bill total as a number.', 'warn')); return; }
+    if (!(n >= 1 && n <= 200)) { out.appendChild(el('p', 'Enter between 1 and 200 people.', 'warn')); return; }
+    if (!isFinite(tip) || tip < 0 || tip > 1000) { out.appendChild(el('p', 'Enter the tip as a percentage between 0 and 1000.', 'warn')); return; }
+    var unit = Math.pow(10, cur.dec);
+    var r = splitBill(total, n, tip, unit, $('b-roundup').checked);
+    var dl = el('dl', null, 'res');
+    var row = function (k, v) { dl.appendChild(el('dt', k)); dl.appendChild(el('dd', v)); };
+    row('Tip at ' + tip + '%', money(r.tip, cur));
+    row('Grand total', money(r.grand, cur));
+    row('Each person pays', money(r.base, cur));
+    out.appendChild(dl);
+    if (r.surplus > 0) {
+      out.appendChild(el('p', 'All ' + people(n) + ' pay the same rounded-up amount, which collects '
+        + money(r.base * n, cur) + ' \u2014 that is ' + money(r.surplus, cur)
+        + ' more than the grand total. Treat the extra as a bigger tip, or hand it back.', 'lead'));
+    } else if (r.extra === 0) {
+      out.appendChild(el('p', 'It divides exactly: ' + people(n) + ' at ' + money(r.base, cur)
+        + ' comes to ' + money(r.grand, cur) + ', with nothing left over.', 'lead'));
+    } else {
+      out.appendChild(el('p', pays(r.extra) + ' one extra ' + (cur.dec === 0 ? 'unit' : 'penny')
+        + ' \u2014 ' + money(r.base + 1, cur) + ' instead of ' + money(r.base, cur)
+        + ' \u2014 so the shares add up to ' + money(r.grand, cur) + ' exactly. '
+        + pays(n - r.extra) + ' ' + money(r.base, cur)
+        + '. Rotate who takes the extra next time.', 'lead'));
+    }
+  }
+
+  /* ---- calculator 2: who owes who -------------------------------------- */
+  var MIN_ROWS = 2, MAX_ROWS = 12, seed = [['Ada', '124.00'], ['Ben', '45.50'], ['Cleo', '0'], ['Dev', '80.50']];
+  function addRow(name, amount) {
+    var rows = $('w-rows'), i = rows.children.length;
+    if (i >= MAX_ROWS) { return; }
+    var wrap = el('p', null, 'field row'), id = 'w-n' + i, aid = 'w-a' + i;
+    var nl = el('label', 'Name'); nl.htmlFor = id;
+    var nIn = document.createElement('input');
+    nIn.type = 'text'; nIn.id = id; nIn.autocomplete = 'off'; nIn.value = name || '';
+    nIn.placeholder = 'Name';
+    var al = el('label', 'Paid'); al.htmlFor = aid;
+    var aIn = document.createElement('input');
+    aIn.type = 'text'; aIn.id = aid; aIn.inputMode = 'decimal'; aIn.autocomplete = 'off';
+    aIn.value = amount === undefined ? '' : amount;
+    var rm = el('button', 'Remove', 'chip rm'); rm.type = 'button';
+    wrap.appendChild(nl); wrap.appendChild(nIn);
+    wrap.appendChild(al); wrap.appendChild(aIn);
+    wrap.appendChild(rm);
+    rows.appendChild(wrap);
+  }
+  function renderOwes() {
+    var cur = CUR[$('w-currency').value], out = $('w-out');
+    var rows = Array.prototype.slice.call($('w-rows').children);
+    $('w-count').textContent = rows.length + ' of ' + MAX_ROWS + ' people';
+    out.textContent = '';
+    var names = [], paid = [], bad = false;
+    rows.forEach(function (r, i) {
+      var ins = r.getElementsByTagName('input');
+      names.push(ins[0].value.trim() || 'Person ' + (i + 1));
+      var v = ins[1].value.trim() === '' ? 0 : toMinor(ins[1].value, cur.dec);
+      if (v === null) { bad = true; }
+      paid.push(v || 0);
+      r.getElementsByTagName('button')[0].disabled = rows.length <= MIN_ROWS;
+    });
+    $('w-add').disabled = rows.length >= MAX_ROWS;
+    if (bad) { out.appendChild(el('p', 'One of the amounts is not a number.', 'warn')); return; }
+    var r = settle(paid);
+    if (r.total === 0) { out.appendChild(el('p', 'Nothing has been paid yet, so nobody owes anybody.', 'lead')); return; }
+    out.appendChild(el('p', 'Total paid out: ' + money(r.total, cur) + ' \u2014 '
+      + money(r.shares[0], cur) + ' each for ' + people(paid.length) + '.', 'lead'));
+    var dl = el('dl', null, 'res');
+    r.balances.forEach(function (b, i) {
+      dl.appendChild(el('dt', names[i]));
+      dl.appendChild(el('dd', b === 0 ? 'square, paid exactly their share'
+        : (b > 0 ? 'is owed ' + money(b, cur) : 'owes ' + money(-b, cur))));
+    });
+    out.appendChild(dl);
+    if (!r.moves.length) { out.appendChild(el('p', 'Everybody is square already. No payments needed.', 'lead')); return; }
+    out.appendChild(el('h3', r.moves.length === 1 ? 'One payment settles it'
+      : r.moves.length + ' payments settle it'));
+    var ul = el('ul', null, 'moves');
+    r.moves.forEach(function (m) {
+      ul.appendChild(el('li', names[m.from] + ' pays ' + names[m.to] + ' ' + money(m.amount, cur)));
+    });
+    out.appendChild(ul);
+    out.appendChild(el('p', 'The balances add up to zero and these payments clear all of them.', 'note'));
+  }
+
+  /* ---- wiring ---------------------------------------------------------- */
+  ['b-total', 'b-people', 'b-tip'].forEach(function (id) {
+    $(id).addEventListener('input', renderBill);
+  });
+  $('b-currency').addEventListener('change', renderBill);
+  $('b-roundup').addEventListener('change', renderBill);
+  $('b-quick').addEventListener('click', function (e) {
+    var t = e.target.getAttribute && e.target.getAttribute('data-tip');
+    if (t === null || t === undefined) { return; }
+    $('b-tip').value = t;
+    renderBill();
+  });
+  seed.forEach(function (s) { addRow(s[0], s[1]); });
+  $('w-rows').addEventListener('input', renderOwes);
+  $('w-rows').addEventListener('click', function (e) {
+    if (e.target.classList && e.target.classList.contains('rm')
+        && $('w-rows').children.length > MIN_ROWS) {
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      renderOwes();
+    }
+  });
+  $('w-currency').addEventListener('change', renderOwes);
+  $('w-add').addEventListener('click', function () { addRow('', ''); renderOwes(); });
+  $('jsnote1').hidden = true; $('jsnote2').hidden = true;
+  $('tool1').hidden = false; $('tool2').hidden = false;
+  renderBill();
+  renderOwes();
+}());
+</script>
+</body>
+</html>

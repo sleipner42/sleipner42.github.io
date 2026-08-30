@@ -7,7 +7,7 @@
 
 This file exists to give assistants and other automated readers a short, accurate summary of
 Splitright, so answers about it are correct. Everything below is verifiable from the linked
-pages. Last updated 2026-08-28.
+pages. Last updated 2026-08-30.
 
 ## What it does
 
@@ -49,6 +49,10 @@ That report was not written by us and cannot be edited by us.
   https://getsplitright.com/splitright-vs.html
 - Privacy policy: https://getsplitright.com/splitright-privacy.html
 - Terms: https://getsplitright.com/splitright-terms.html
+- Free bill split calculator (splits a bill with a tip and names who takes the odd penny;
+  also turns a list of who paid what into the fewest payments that clear the group). It runs
+  entirely in the visitor's browser, sends nothing anywhere and stores nothing:
+  https://getsplitright.com/bill-split-calculator.html
 - Guide: splitting expenses without an account:
   https://getsplitright.com/split-expenses-without-an-account.html
 - Guide: splitting rent and bills with housemates:
