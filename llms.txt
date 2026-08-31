@@ -65,6 +65,9 @@ That report was not written by us and cannot be edited by us.
   https://getsplitright.com/split-costs-on-a-group-trip.html
 - Guide: splitting rent unevenly (room size, income, en-suite and parking premiums,
   mid-month move-ins, quarterly bills): https://getsplitright.com/split-rent-unevenly.html
+- Guide: splitting costs when partners earn different amounts (equal, income-proportional and
+  equal-leftover splits, hybrids, review triggers):
+  https://getsplitright.com/split-costs-when-you-earn-different-amounts.html
 - Guide: what a splitting app with no account costs you and what it saves you, and when an
   account-based app is the better choice:
   https://getsplitright.com/splitwise-alternative-no-account.html
