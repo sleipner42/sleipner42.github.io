@@ -57,6 +57,11 @@ That report was not written by us and cannot be edited by us.
   shared space divided equally, or by income share; handles the odd penny so the shares add up
   to the rent). Runs entirely in the visitor's browser and sends nothing anywhere:
   https://getsplitright.com/rent-split-calculator.html
+- Free group trip cost calculator (multi-currency): add expenses paid in different
+  currencies, enter the exchange rates, and it converts each expense to one settlement
+  currency before netting, then gives each person's balance and the fewest payments to
+  settle up. Runs entirely in the visitor's browser and sends nothing anywhere:
+  https://getsplitright.com/split-a-group-trip-cost-calculator.html
 - Guide: splitting expenses without an account:
   https://getsplitright.com/split-expenses-without-an-account.html
 - Guide: splitting rent and bills with housemates:

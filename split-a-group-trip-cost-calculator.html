@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free multi-currency group trip calculator: enter expenses paid in different currencies, add the exchange rates, and see each person's balance and the fewest payments to settle up.">
+  <title>Group trip cost calculator: multiple currencies, one settle-up</title>
+  <link rel="canonical" href="https://getsplitright.com/split-a-group-trip-cost-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Splitright">
+  <meta property="og:url" content="https://getsplitright.com/split-a-group-trip-cost-calculator.html">
+  <meta property="og:title" content="Group trip cost calculator: multiple currencies, one settle-up">
+  <meta property="og:description" content="Enter expenses paid in different currencies on a group trip, add the exchange rates, and this free calculator converts each one before netting, then works out who pays whom in the fewest payments.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Group trip cost calculator: multiple currencies, one settle-up">
+  <meta name="twitter:description" content="Enter expenses paid in different currencies on a group trip, add the exchange rates, and this free calculator converts each one before netting, then works out who pays whom in the fewest payments.">
+  <style>
+    :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+    .privacy{background:var(--wash);border-left:4px solid var(--brand);padding:.9rem 1.1rem;border-radius:0 12px 12px 0;margin:2rem 0}.tool{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0;background:#fbfdfe}.jsnote{background:var(--wash);border-radius:10px;padding:.85rem 1rem;margin:0;max-width:none}.grid{display:grid;gap:.9rem 1.25rem;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}.field{margin:0;display:flex;flex-direction:column;gap:.3rem;max-width:none}.field.narrow{max-width:22rem}label{font-weight:650;font-size:.95rem}input,select,button{font:inherit;color:inherit}input[type=text],input[type=number],select{padding:.6rem .7rem;border:1px solid var(--line);border-radius:9px;background:#fff;min-width:0;width:100%}select[multiple]{padding:.35rem}.checkfield{flex-direction:row;align-items:center;gap:.55rem;margin-top:1rem}.checkfield input{width:1.15rem;height:1.15rem}.checkfield label{font-weight:400}.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem .95rem;font-weight:650;color:var(--brand);cursor:pointer}.chip:hover,.chip:focus-visible{background:var(--wash)}.chip[disabled]{opacity:.45;cursor:default}.out{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1rem}.out h3{margin-top:1.2rem}.res{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;margin:0 0 1rem}.res dt{margin-top:0;font-weight:650}.res dd{margin:0;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.lead{margin:.5rem 0}.warn{color:#8a3b00;font-weight:650;margin:.25rem 0}.moves{margin:.4rem 0}.moves li{font-weight:650;font-variant-numeric:tabular-nums}[hidden]{display:none!important}
+    .prow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;margin-bottom:.5rem}.exp{border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;margin:1rem 0;background:#fff}.exp .grid{gap:.7rem 1rem}.shareby{margin-top:.7rem}.explist{margin:.3rem 0 1rem;padding:0;list-style:none}.explist li{max-width:none;padding:.4rem 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--muted)}.explist li:first-child{border-top:0}.ratebox{background:var(--wash);border-radius:10px;padding:.9rem 1rem;margin:1rem 0}.ratebox .grid{gap:.6rem 1rem}.notop{margin-top:0}@media(max-width:560px){.prow{grid-template-columns:minmax(0,1fr)}.prow .rm{justify-self:start}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is anything I type into this calculator sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator is a few lines of JavaScript inside the page itself, so every expense, name and rate you type stays in your browser and is worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing you type is stored between visits. Close the tab and it is gone."}},
+    {"@type":"Question","name":"Why convert each expense before netting, instead of converting the final totals?","acceptedAnswer":{"@type":"Answer","text":"Because a currency bucket can hold expenses entered weeks apart, and by the time you settle up there is no single rate left that is honest for the whole bucket. Converting each expense to the settlement currency as it is entered, at the rate that applied then, keeps every figure tied to something that actually happened. Converting a big netted total at whatever rate happens to apply on settle-up day prices old spending at today's exchange rate, which nobody was actually charged."}},
+    {"@type":"Question","name":"How does the calculator make sure the shares always add up exactly?","acceptedAnswer":{"@type":"Answer","text":"Every expense is converted to a whole number of minor units (pennies, cents, or whole yen) in the settlement currency first. That converted total is then divided among the people sharing it using largest-remainder allocation: everyone gets the rounded-down share, and the leftover minor units go one each to as many people as there are units left, so the shares always sum to the converted total exactly. Balances are built only from these exact figures, so they always sum to exactly zero."}},
+    {"@type":"Question","name":"What does the fewest-payments settlement actually do?","acceptedAnswer":{"@type":"Answer","text":"It repeatedly matches whoever is owed the most with whoever owes the most, and moves the smaller of the two amounts between them. That clears at least one person completely every time, so a group with a certain number of non-zero balances always settles in fewer payments than that number of people, however many currencies were involved along the way."}},
+    {"@type":"Question","name":"Where do I get the exchange rates to type in?","acceptedAnswer":{"@type":"Answer","text":"Use the rate that actually applied when you paid: the amount that landed on your card statement divided by the amount on the receipt, or the rate the exchange desk gave you in cash. The calculator does no currency lookups of any kind and holds no live rates, so a rate you have not typed in yourself is a rate it cannot know."}}
+  ]}
+  </script>
+</head>
+<body>
+<header>
+  <p class="tag">Splitright</p>
+  <h1>Group trip cost calculator</h1>
+  <p class="intro">Add up a trip where people paid in more than one currency, work out each person's balance in whichever currency you want to settle in, and see the fewest payments that clear the group. Free, no sign-up, and the arithmetic happens on your own device.</p>
+  <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
+</header>
+<main>
+  <p class="privacy"><strong>Nothing you type here is sent anywhere.</strong> There is no tracking on this site, no cookies and no analytics: the calculation runs inside your browser, on your device, and the names, amounts and rates are forgotten when you close the tab.</p>
+  <section aria-labelledby="calc-trip"><h2 id="calc-trip">Work out who owes who, across currencies</h2>
+    <p>Add the people on the trip, then every expense with the currency it was actually paid in and who paid and shared it. Pick the currency you want to settle up in, and give the calculator the exchange rate for every other currency used &mdash; the rate you were actually charged, not today's rate. It converts each expense to the settlement currency first, then works out balances and the fewest payments to clear them.</p>
+    <div class="tool">
+      <p class="jsnote" id="jsnote1">This calculator needs JavaScript, which is switched off in your browser. Nothing is broken &mdash; the method is written out in full under <a href="#by-hand">how to do it by hand</a>, and the <a href="#worked">worked example</a> below shows every figure.</p>
+      <div class="toolbody" id="tool1" hidden>
+
+        <h3>People on the trip</h3>
+        <div id="t-people"></div>
+        <p><button type="button" class="chip" id="t-addperson">Add a person</button> <span class="note" id="t-pcount"></span></p>
+
+        <h3>Settle up in</h3>
+        <p class="field narrow"><label for="t-settle">Settlement currency</label>
+          <select id="t-settle">
+            <option value="GBP">GBP &mdash; pound (&pound;)</option>
+            <option value="EUR">EUR &mdash; euro (&euro;)</option>
+            <option value="USD">USD &mdash; US dollar ($)</option>
+            <option value="JPY">JPY &mdash; yen (&#165;), no minor unit</option>
+            <option value="THB">THB &mdash; baht (&#3647;)</option>
+            <option value="AUD">AUD &mdash; Australian dollar (A$)</option>
+            <option value="NZD">NZD &mdash; New Zealand dollar (NZ$)</option>
+            <option value="CAD">CAD &mdash; Canadian dollar (C$)</option>
+            <option value="CHF">CHF &mdash; Swiss franc</option>
+            <option value="SEK">SEK &mdash; Swedish krona (kr)</option>
+            <option value="NOK">NOK &mdash; Norwegian krone (kr)</option>
+            <option value="DKK">DKK &mdash; Danish krone (kr)</option>
+            <option value="MXN">MXN &mdash; Mexican peso (MX$)</option>
+            <option value="INR">INR &mdash; Indian rupee (&#8377;)</option>
+            <option value="SGD">SGD &mdash; Singapore dollar (S$)</option>
+            <option value="HKD">HKD &mdash; Hong Kong dollar (HK$)</option>
+            <option value="ZAR">ZAR &mdash; South African rand (R)</option>
+          </select></p>
+
+        <h3>Expenses</h3>
+        <div id="t-expenses"></div>
+        <p><button type="button" class="chip" id="t-addexpense">Add an expense</button> <span class="note" id="t-ecount"></span></p>
+
+        <div class="ratebox" id="t-ratebox" hidden>
+          <h3 class="notop">Exchange rates into the settlement currency</h3>
+          <p class="note">Use the rate you were actually charged &mdash; the amount on your card statement divided by the amount on the receipt &mdash; not a live rate looked up later.</p>
+          <div class="grid" id="t-rates"></div>
+        </div>
+
+        <div class="out" id="t-out" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby="by-hand"><h2 id="by-hand">How to do it by hand</h2>
+    <p>The whole method is five steps, and the order of the first two is the part people get wrong.</p>
+    <ol>
+      <li><strong>Pick one settlement currency</strong> &mdash; the one you want the final answer in. It does not have to be the currency most of the trip was spent in.</li>
+      <li><strong>Convert every expense to the settlement currency on its own, before anything else.</strong> Use the rate you were actually charged for that expense: the amount on your card statement divided by the amount on the receipt, or what the exchange desk gave you in cash. Do this expense by expense, not after adding a currency's expenses together, because a currency total can span days with different rates and there is no single honest rate left for the lump sum.</li>
+      <li><strong>Split each converted expense among the people who shared it, in whole minor units.</strong> Divide the converted total by the number of sharers and round down; that leaves a few minor units over, and one goes to each of that many people, so the shares add up to the converted total exactly.</li>
+      <li><strong>Give everybody one balance:</strong> everything they paid, converted, minus everything they owe, converted. <strong>Add all the balances up: they must come to exactly zero.</strong> If they do not, a conversion or a share was done after the total rather than before it, or a step of arithmetic is wrong.</li>
+      <li><strong>Match the biggest debtor to the biggest creditor</strong> and move the smaller of the two amounts between them. That clears at least one of them completely. Cross them off and repeat with whoever is left.</li>
+    </ol>
+    <p>Step 2 is the fix this page exists for. Converting a big netted currency total at whatever rate happens to apply on the day you settle up prices old spending at today's rate, which is not what anyone was actually charged, and the gap lands entirely on whoever fronted that currency. Converting expense by expense, at the rate that applied when it happened, avoids that regardless of how long the trip runs or how late you get around to settling up.</p>
+  </section>
+  <section aria-labelledby="worked"><h2 id="worked">Worked example</h2>
+    <p>Four people, three currencies, settling in pounds.</p>
+    <div class="scroll">
+      <table>
+        <caption>Expenses as entered</caption>
+        <thead><tr><th scope="col">Expense</th><th scope="col">Amount</th><th scope="col">Rate into GBP</th><th scope="col">Converted</th><th scope="col">Paid by</th><th scope="col">Shared by</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Villa deposit</th><td>&pound;400.00</td><td>&mdash;</td><td>&pound;400.00</td><td>Ada</td><td>All four</td></tr>
+          <tr><th scope="row">Groceries in Bangkok</th><td>3,215 THB</td><td>1 THB = &pound;0.022</td><td>&pound;70.73</td><td>Ben</td><td>All four</td></tr>
+          <tr><th scope="row">Ramen night in Osaka</th><td>8,399 JPY</td><td>1 JPY = &pound;0.0053</td><td>&pound;44.51</td><td>Cleo</td><td>All four</td></tr>
+          <tr><th scope="row">Taxi to the airport</th><td>&euro;45.01</td><td>1 EUR = &pound;0.86</td><td>&pound;38.71</td><td>Dev</td><td>Ada, Ben, Dev &mdash; Cleo had already left</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Trip total, all converted to pounds: &pound;554.95.</p>
+    <div class="scroll">
+      <table>
+        <caption>Each expense split among its sharers, largest-remainder rounding</caption>
+        <thead><tr><th scope="col">Expense</th><th scope="col">Ada</th><th scope="col">Ben</th><th scope="col">Cleo</th><th scope="col">Dev</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Villa deposit</th><td>&pound;100.00</td><td>&pound;100.00</td><td>&pound;100.00</td><td>&pound;100.00</td></tr>
+          <tr><th scope="row">Groceries</th><td>&pound;17.69</td><td>&pound;17.68</td><td>&pound;17.68</td><td>&pound;17.68</td></tr>
+          <tr><th scope="row">Ramen</th><td>&pound;11.13</td><td>&pound;11.13</td><td>&pound;11.13</td><td>&pound;11.12</td></tr>
+          <tr><th scope="row">Taxi</th><td>&pound;12.91</td><td>&pound;12.90</td><td>&pound;0.00</td><td>&pound;12.90</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>&pound;70.73 does not split four ways exactly: &pound;17.68 &times; 4 is &pound;70.72, a penny short, so that one extra penny goes to the first person on the sharer list &mdash; here, Ada. The same thing happens on the &pound;44.51 ramen bill, which is a penny short three ways rather than one, so three of the four people take the extra penny and only Dev does not. Every row still sums exactly to its converted total.</p>
+    <div class="scroll">
+      <table>
+        <caption>Balance: paid minus owed, in pounds</caption>
+        <thead><tr><th scope="col">Person</th><th scope="col">Paid</th><th scope="col">Owes (their shares)</th><th scope="col">Balance</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ada</th><td>&pound;400.00</td><td>&pound;141.73</td><td>+&pound;258.27</td></tr>
+          <tr><th scope="row">Ben</th><td>&pound;70.73</td><td>&pound;141.71</td><td>&minus;&pound;70.98</td></tr>
+          <tr><th scope="row">Cleo</th><td>&pound;44.51</td><td>&pound;128.81</td><td>&minus;&pound;84.30</td></tr>
+          <tr><th scope="row">Dev</th><td>&pound;38.71</td><td>&pound;141.70</td><td>&minus;&pound;102.99</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>&pound;258.27 &minus; &pound;70.98 &minus; &pound;84.30 &minus; &pound;102.99 = &pound;0.00. The four balances always sum to exactly zero, because every expense's shares sum to exactly that expense's converted total, whatever the rate did to the pennies. Settling in the fewest payments matches the biggest debtor to the biggest creditor each time: Dev pays Ada &pound;102.99, then Cleo pays Ada &pound;84.30, then Ben pays Ada &pound;70.98 &mdash; three payments for four people, which is the fewest possible once three of them owe money.</p>
+  </section>
+  <section aria-labelledby="pitfalls"><h2 id="pitfalls">Mistakes that quietly move money between people</h2>
+    <ul>
+      <li><strong>Netting across currencies.</strong> Never offset a yen debt against a euro credit at a made-up rate. Keep every expense's own currency in mind until it is deliberately converted, and convert it into one currency before comparing it with anything else &mdash; not by eye.</li>
+      <li><strong>Converting the settle-up total instead of each expense.</strong> A currency's running total can contain spending from the first day of the trip and the last, at different rates, so there is no single rate left that is fair to apply to the lump sum. Convert as each expense goes in.</li>
+      <li><strong>Using today's rate for a receipt from three weeks ago.</strong> Exchange rates move. The rate that matters is the one you were actually charged, which is fixed the moment the transaction clears, not whatever a live rate service says when you finally sit down to settle up.</li>
+      <li><strong>Accepting dynamic currency conversion at the terminal.</strong> When a card machine abroad offers to charge you in your home currency, decline it: that conversion is done by the merchant's payment provider at a worse rate than your own card network would give you, and it hides the actual foreign amount from the receipt.</li>
+    </ul>
+    <p>For a single-currency bill, the <a href="bill-split-calculator.html">bill split calculator</a> and <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a> cover the same netting idea without the currency conversion step. The full discussion of which rate to use and why is in <a href="split-expenses-in-different-currencies.html">splitting expenses in different currencies</a>, and the wider trip-planning context &mdash; deposits, sub-groups, chasing people afterwards &mdash; is in <a href="split-costs-on-a-group-trip.html">splitting costs on a group trip</a>.</p>
+  </section>
+
+  <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
+    <p>We make one of the apps that does this, so read this section accordingly. This calculator is the right tool for totting up a trip after the fact; it is the wrong tool for a two-week trip with forty receipts in three currencies, because you would be retyping the whole list every time somebody buys a round.</p>
+    <p>Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later). There are no accounts, no ads, no subscription and no tracking: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense supports 43 currencies with the correct number of decimal places for each one, and can be split equally, by weighted shares (2:1, 3:1 and so on) or by exact amounts. When an expense is entered in a currency other than the group's usual one, Splitright captures the exchange rate at that moment and stores it with the expense, so the figure does not drift if you settle up weeks later &mdash; the same convert-before-netting order this page's calculator uses, not a live rate applied retroactively to old spending.</p>
+    <p>What it does not do: there is no receipt scanning, no CSV or PDF export and no categories, and it holds no live market data beyond that captured, per-expense rate. It does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anyone holding it can open and edit the group, there is no per-person login, and one person's access cannot be withdrawn, so treat it like a password.</p>
+    <ul class="actions">
+      <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
+      <li><a class="btn" href="https://play.google.com/store/apps/details?id=com.splitright.app">Get it on Google Play</a></li>
+      <li><a href="splitright.html">See everything Splitright does</a></li>
+    </ul>
+    <p class="note">If you want automatic per-expense conversion in your pocket rather than typing rates into a calculator, that is exactly what the app is for &mdash; our <a href="splitright-vs.html">comparison page</a> says where other apps beat us too. Related: <a href="split-expenses-in-different-currencies.html">splitting expenses in different currencies</a> and <a href="index.html">support</a>.</p>
+  </section>
+
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
+    <dl>
+      <dt>Is anything I type into this calculator sent anywhere?</dt>
+      <dd>No. The calculator is a few lines of JavaScript inside the page itself, so every expense, name and rate you type stays in your browser and is worked out on your own device. There is no analytics, no cookie, no advertising script and no request back to us carrying your numbers, and nothing you type is stored between visits. Close the tab and it is gone.</dd>
+      <dt>Why convert each expense before netting, instead of converting the final totals?</dt>
+      <dd>Because a currency bucket can hold expenses entered weeks apart, and by the time you settle up there is no single rate left that is honest for the whole bucket. Converting each expense to the settlement currency as it is entered, at the rate that applied then, keeps every figure tied to something that actually happened. Converting a big netted total at whatever rate happens to apply on settle-up day prices old spending at today's exchange rate, which nobody was actually charged.</dd>
+      <dt>How does the calculator make sure the shares always add up exactly?</dt>
+      <dd>Every expense is converted to a whole number of minor units (pennies, cents, or whole yen) in the settlement currency first. That converted total is then divided among the people sharing it using largest-remainder allocation: everyone gets the rounded-down share, and the leftover minor units go one each to as many people as there are units left, so the shares always sum to the converted total exactly. Balances are built only from these exact figures, so they always sum to exactly zero.</dd>
+      <dt>What does the fewest-payments settlement actually do?</dt>
+      <dd>It repeatedly matches whoever is owed the most with whoever owes the most, and moves the smaller of the two amounts between them. That clears at least one person completely every time, so a group with a certain number of non-zero balances always settles in fewer payments than that number of people, however many currencies were involved along the way.</dd>
+      <dt>Where do I get the exchange rates to type in?</dt>
+      <dd>Use the rate that actually applied when you paid: the amount that landed on your card statement divided by the amount on the receipt, or the rate the exchange desk gave you in cash. The calculator does no currency lookups of any kind and holds no live rates, so a rate you have not typed in yourself is a rate it cannot know.</dd>
+    </dl>
+  </section>
+</main>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="bill-split-calculator.html">Bill split calculator</a> &middot; <a href="rent-split-calculator.html">Rent split calculator</a> &middot; <a href="split-expenses-in-different-currencies.html">Splitting expenses in different currencies</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
+<script>
+/* Splitright group trip calculator (multi-currency).
+   No network calls, no storage, nothing kept after the tab closes. */
+(function () {
+  'use strict';
+  var jsnote = document.getElementById('jsnote1'), tool = document.getElementById('tool1');
+  if (!tool) { return; }
+  jsnote.hidden = true; tool.hidden = false;
+
+  /* MATHS-START */
+  var CUR = {
+    GBP: { sym: '\u00a3', dec: 2, post: false }, EUR: { sym: '\u20ac', dec: 2, post: false },
+    USD: { sym: '$', dec: 2, post: false },      JPY: { sym: '\u00a5', dec: 0, post: false },
+    THB: { sym: '\u0e3f', dec: 2, post: false }, AUD: { sym: 'A$', dec: 2, post: false },
+    NZD: { sym: 'NZ$', dec: 2, post: false },    CAD: { sym: 'C$', dec: 2, post: false },
+    CHF: { sym: ' CHF', dec: 2, post: true },    SEK: { sym: ' kr', dec: 2, post: true },
+    NOK: { sym: ' kr', dec: 2, post: true },     DKK: { sym: ' kr', dec: 2, post: true },
+    MXN: { sym: 'MX$', dec: 2, post: false },    INR: { sym: '\u20b9', dec: 2, post: false },
+    SGD: { sym: 'S$', dec: 2, post: false },     HKD: { sym: 'HK$', dec: 2, post: false },
+    ZAR: { sym: 'R', dec: 2, post: false }
+  };
+
+  function toMinor(raw, dec) {
+    var s = String(raw).replace(/[\s\u00a0]/g, '').replace(',', '.');
+    if (s === '' || s === '.' || !/^\d*(\.\d*)?$/.test(s)) { return null; }
+    var parts = s.split('.'), whole = parts[0] || '0', frac = parts[1] || '';
+    if (dec === 0) { return parseInt(whole, 10) + (frac && +frac.charAt(0) >= 5 ? 1 : 0); }
+    frac = (frac + '000000').slice(0, dec + 1);
+    var v = parseInt(whole + frac.slice(0, dec), 10);
+    return +frac.charAt(dec) >= 5 ? v + 1 : v;
+  }
+
+  function parseRate(raw) {
+    var s = String(raw).replace(/[\s\u00a0]/g, '').replace(',', '.');
+    if (!/^\d*(\.\d+)?$/.test(s) || s === '' || s === '.') { return null; }
+    var v = parseFloat(s);
+    return isFinite(v) && v > 0 ? v : null;
+  }
+
+  /* Convert an integer amount in minor units of the source currency into an
+     integer amount in minor units of the settlement currency, using a
+     decimal rate expressed as "1 source unit = rate settlement units". The
+     same currency needs no rate and no rounding at all. */
+  function convertToSettlement(amountMinor, srcCode, srcDec, setCode, setDec, rate) {
+    if (srcCode === setCode) { return amountMinor; }
+    var srcUnit = Math.pow(10, srcDec), setUnit = Math.pow(10, setDec);
+    var settlementMajor = (amountMinor / srcUnit) * rate;
+    return Math.round(settlementMajor * setUnit);
+  }
+
+  /* Largest-remainder split of an integer total, equally among the people
+     flagged true in `flags` (everyone else gets zero). Returns the
+     full-length shares array plus which flagged people took one extra
+     minor unit. */
+  function equalShares(total, flags) {
+    var n = flags.length, idx = [], i;
+    for (i = 0; i < n; i++) { if (flags[i]) { idx.push(i); } }
+    var k = idx.length, shares = new Array(n).fill(0), extra = [];
+    if (k === 0) { return { shares: shares, extra: extra }; }
+    var base = Math.floor(total / k), left = total - base * k;
+    for (i = 0; i < k; i++) {
+      shares[idx[i]] = base + (i < left ? 1 : 0);
+      if (i < left) { extra.push(idx[i]); }
+    }
+    return { shares: shares, extra: extra };
+  }
+
+  /* Converts every expense to the settlement currency first, then splits
+     that converted total by largest remainder among its sharers, and only
+     then nets payer credits against sharer debits. Converting before
+     netting (not after) is what keeps this exact and keeps old spending
+     from drifting to today's rate. */
+  function computeTrip(expenses, setCode, setDec, numPeople) {
+    var balances = new Array(numPeople).fill(0), perExpense = [], i, j;
+    for (i = 0; i < expenses.length; i++) {
+      var e = expenses[i];
+      var conv = convertToSettlement(e.amountMinor, e.currency, e.srcDec, setCode, setDec, e.rate);
+      var es = equalShares(conv, e.sharerFlags);
+      balances[e.payerIndex] += conv;
+      for (j = 0; j < numPeople; j++) { balances[j] -= es.shares[j]; }
+      perExpense.push({ converted: conv, shares: es.shares, extra: es.extra });
+    }
+    return { balances: balances, perExpense: perExpense };
+  }
+
+  /* Greedy largest-creditor/largest-debtor settlement of a balances array
+     that sums to zero. Every payment clears at least one person, so it
+     never needs more than (non-zero balances - 1) payments. */
+  function settleBalances(balances) {
+    var cr = [], db = [], i;
+    for (i = 0; i < balances.length; i++) {
+      if (balances[i] > 0) { cr.push({ i: i, v: balances[i] }); }
+      else if (balances[i] < 0) { db.push({ i: i, v: -balances[i] }); }
+    }
+    var bigger = function (a, b) { return b.v - a.v || a.i - b.i; };
+    cr.sort(bigger); db.sort(bigger);
+    var moves = [], c = 0, d = 0;
+    while (c < cr.length && d < db.length) {
+      var amt = Math.min(cr[c].v, db[d].v);
+      if (amt > 0) { moves.push({ from: db[d].i, to: cr[c].i, amount: amt }); }
+      cr[c].v -= amt; db[d].v -= amt;
+      if (cr[c].v === 0) { c++; }
+      if (db[d].v === 0) { d++; }
+    }
+    return moves;
+  }
+  /* MATHS-END */
+
+  var CUR_ORDER = ['GBP','EUR','USD','JPY','THB','AUD','NZD','CAD','CHF','SEK','NOK','DKK','MXN','INR','SGD','HKD','ZAR'];
+  var CUR_LABEL = {
+    GBP: 'GBP \u2014 pound', EUR: 'EUR \u2014 euro', USD: 'USD \u2014 US dollar', JPY: 'JPY \u2014 yen',
+    THB: 'THB \u2014 baht', AUD: 'AUD \u2014 Australian dollar', NZD: 'NZD \u2014 New Zealand dollar',
+    CAD: 'CAD \u2014 Canadian dollar', CHF: 'CHF \u2014 Swiss franc', SEK: 'SEK \u2014 Swedish krona',
+    NOK: 'NOK \u2014 Norwegian krone', DKK: 'DKK \u2014 Danish krone', MXN: 'MXN \u2014 Mexican peso',
+    INR: 'INR \u2014 Indian rupee', SGD: 'SGD \u2014 Singapore dollar', HKD: 'HKD \u2014 Hong Kong dollar',
+    ZAR: 'ZAR \u2014 South African rand'
+  };
+  var PEOPLE_MIN = 2, PEOPLE_MAX = 8, EXP_MIN = 1, EXP_MAX = 14;
+  var rateVals = {}; /* code -> last-typed rate string, kept even if the currency drops out and comes back */
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls) { var n = document.createElement(tag); if (cls) { n.className = cls; } return n; }
+  function groups(n) { var s = String(n); return s.replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function money(minor, code) {
+    var c = CUR[code], neg = minor < 0, m = Math.abs(minor);
+    var whole = c.dec ? Math.floor(m / Math.pow(10, c.dec)) : m;
+    var text = groups(whole);
+    if (c.dec) { text += '.' + String(m % Math.pow(10, c.dec)).padStart(c.dec, '0'); }
+    text = c.post ? text + c.sym : c.sym + text;
+    return (neg ? '\u2212' : '') + text;
+  }
+
+  function setOptions(select, labels) {
+    while (select.firstChild) { select.removeChild(select.firstChild); }
+    labels.forEach(function (label, i) {
+      var o = el('option'); o.value = String(i); o.textContent = label; select.appendChild(o);
+    });
+  }
+
+  /* --- people --- */
+  var peopleWrap = $('t-people'), nextPersonId = 0;
+  function personRow(name) {
+    var row = el('div', 'field prow'); row.dataset.pid = String(nextPersonId++);
+    var input = el('input'); input.type = 'text'; input.value = name; input.setAttribute('aria-label', 'Person name');
+    input.maxLength = 30;
+    var rm = el('button', 'chip rm'); rm.type = 'button'; rm.textContent = 'Remove';
+    rm.addEventListener('click', function () {
+      if (peopleWrap.children.length <= PEOPLE_MIN) { return; }
+      row.remove(); onPeopleChanged();
+    });
+    row.appendChild(input); row.appendChild(rm);
+    return row;
+  }
+  function peopleNames() {
+    return Array.prototype.map.call(peopleWrap.children, function (row, i) {
+      var v = row.querySelector('input').value.trim();
+      return v || ('Person ' + (i + 1));
+    });
+  }
+  $('t-addperson').addEventListener('click', function () {
+    if (peopleWrap.children.length >= PEOPLE_MAX) { return; }
+    peopleWrap.appendChild(personRow(''));
+    onPeopleChanged();
+  });
+  peopleWrap.addEventListener('input', function () { onPeopleChanged(); });
+
+  /* --- expenses --- */
+  var expWrap = $('t-expenses'), nextExpId = 0;
+  function expenseRow(desc, amount, currency, payerIdx, sharerIdxs) {
+    var card = el('div', 'exp'); card.dataset.eid = String(nextExpId++);
+    var grid = el('div', 'grid');
+
+    var f1 = el('p', 'field'); var l1 = el('label'); l1.textContent = 'Description';
+    var descInput = el('input'); descInput.type = 'text'; descInput.maxLength = 60; descInput.value = desc;
+    f1.appendChild(l1); f1.appendChild(descInput);
+
+    var f2 = el('p', 'field'); var l2 = el('label'); l2.textContent = 'Amount';
+    var amtInput = el('input'); amtInput.type = 'text'; amtInput.inputMode = 'decimal'; amtInput.value = amount;
+    amtInput.className = 'amt';
+    f2.appendChild(l2); f2.appendChild(amtInput);
+
+    var f3 = el('p', 'field'); var l3 = el('label'); l3.textContent = 'Currency';
+    var curSel = el('select'); curSel.className = 'cur';
+    setOptions(curSel, CUR_ORDER.map(function (c) { return CUR_LABEL[c]; }));
+    curSel.selectedIndex = Math.max(0, CUR_ORDER.indexOf(currency));
+    f3.appendChild(l3); f3.appendChild(curSel);
+
+    var f4 = el('p', 'field'); var l4 = el('label'); l4.textContent = 'Paid by';
+    var paySel = el('select'); paySel.className = 'payer';
+    f4.appendChild(l4); f4.appendChild(paySel);
+
+    grid.appendChild(f1); grid.appendChild(f2); grid.appendChild(f3); grid.appendChild(f4);
+
+    var f5 = el('p', 'field shareby'); var l5 = el('label'); l5.textContent = 'Shared by (select everyone who split this one)';
+    var shareSel = el('select'); shareSel.className = 'sharers'; shareSel.multiple = true; shareSel.size = 4;
+    f5.appendChild(l5); f5.appendChild(shareSel);
+
+    var rm = el('p'); var rmBtn = el('button', 'chip rm'); rmBtn.type = 'button'; rmBtn.textContent = 'Remove this expense';
+    rmBtn.addEventListener('click', function () {
+      if (expWrap.children.length <= EXP_MIN) { return; }
+      card.remove(); onExpensesStructureChanged();
+    });
+    rm.appendChild(rmBtn);
+
+    card.appendChild(grid); card.appendChild(f5); card.appendChild(rm);
+    card.dataset.wantPayer = String(payerIdx);
+    card.dataset.wantSharers = sharerIdxs.join(',');
+    return card;
+  }
+
+  function refreshRowPeopleOptions(card, names) {
+    var paySel = card.querySelector('.payer'), shareSel = card.querySelector('.sharers');
+    var prevPayer = paySel.options.length ? paySel.value : card.dataset.wantPayer;
+    setOptions(paySel, names);
+    var pn = Number(prevPayer);
+    paySel.value = (pn >= 0 && pn < names.length) ? String(pn) : '0';
+    var prevSel = shareSel.options.length
+      ? Array.prototype.filter.call(shareSel.options, function (o) { return o.selected; }).map(function (o) { return o.value; })
+      : card.dataset.wantSharers.split(',');
+    setOptions(shareSel, names);
+    Array.prototype.forEach.call(shareSel.options, function (o) { o.selected = prevSel.indexOf(o.value) !== -1; });
+  }
+
+  function syncAllRowOptions() {
+    var names = peopleNames();
+    Array.prototype.forEach.call(expWrap.children, function (card) { refreshRowPeopleOptions(card, names); });
+  }
+
+  $('t-addexpense').addEventListener('click', function () {
+    if (expWrap.children.length >= EXP_MAX) { return; }
+    var n = peopleNames().length;
+    var all = []; for (var i = 0; i < n; i++) { all.push(String(i)); }
+    var card = expenseRow('', '', 'GBP', 0, all);
+    expWrap.appendChild(card);
+    refreshRowPeopleOptions(card, peopleNames());
+    onExpensesStructureChanged();
+  });
+  expWrap.addEventListener('input', function () { rebuildRates(); render(); });
+  expWrap.addEventListener('change', function (e) {
+    if (e.target.classList.contains('cur')) { rebuildRates(); }
+    render();
+  });
+
+  function onPeopleChanged() {
+    syncAllRowOptions();
+    $('t-pcount').textContent = peopleWrap.children.length >= PEOPLE_MAX ? '(maximum 8 people)' : '';
+    $('t-addperson').disabled = peopleWrap.children.length >= PEOPLE_MAX;
+    rebuildRates(); render();
+  }
+  function onExpensesStructureChanged() {
+    $('t-ecount').textContent = expWrap.children.length >= EXP_MAX ? '(maximum 14 expenses)' : '';
+    $('t-addexpense').disabled = expWrap.children.length >= EXP_MAX;
+    rebuildRates(); render();
+  }
+
+  /* --- exchange rates --- */
+  var rateBox = $('t-ratebox'), rateWrap = $('t-rates');
+  $('t-settle').addEventListener('change', function () { rebuildRates(); render(); });
+
+  function usedCurrencies() {
+    var seen = {}, list = [];
+    Array.prototype.forEach.call(expWrap.children, function (card) {
+      var code = CUR_ORDER[card.querySelector('.cur').selectedIndex];
+      if (!seen[code]) { seen[code] = true; list.push(code); }
+    });
+    return list;
+  }
+  function rebuildRates() {
+    var setCode = $('t-settle').value;
+    Array.prototype.forEach.call(rateWrap.querySelectorAll('input'), function (inp) { rateVals[inp.dataset.code] = inp.value; });
+    while (rateWrap.firstChild) { rateWrap.removeChild(rateWrap.firstChild); }
+    var codes = usedCurrencies().filter(function (c) { return c !== setCode; });
+    codes.forEach(function (code) {
+      var f = el('p', 'field narrow'); var l = el('label'); l.textContent = '1 ' + code + ' = ? ' + setCode;
+      var inp = el('input'); inp.type = 'text'; inp.inputMode = 'decimal'; inp.dataset.code = code;
+      inp.value = rateVals.hasOwnProperty(code) ? rateVals[code] : '';
+      inp.addEventListener('input', function () { rateVals[code] = inp.value; render(); });
+      f.appendChild(l); f.appendChild(inp); rateWrap.appendChild(f);
+    });
+    rateBox.hidden = codes.length === 0;
+  }
+
+  /* --- render --- */
+  function render() {
+    var out = $('t-out');
+    var names = peopleNames(), n = names.length;
+    var setCode = $('t-settle').value, setDec = CUR[setCode].dec;
+    var warnings = [], expenses = [];
+
+    Array.prototype.forEach.call(expWrap.children, function (card, idx) {
+      var desc = card.querySelector('input[type=text]').value.trim() || ('Expense ' + (idx + 1));
+      var amtRaw = card.querySelector('.amt').value;
+      var code = CUR_ORDER[card.querySelector('.cur').selectedIndex];
+      var dec = CUR[code].dec;
+      var amountMinor = toMinor(amtRaw, dec);
+      if (amountMinor === null || amountMinor <= 0) { warnings.push('Enter a positive amount for "' + desc + '".'); return; }
+      var payerIndex = Number(card.querySelector('.payer').value);
+      var shareSel = card.querySelector('.sharers');
+      var sharerFlags = names.map(function (_, i) { return false; });
+      var any = false;
+      Array.prototype.forEach.call(shareSel.selectedOptions, function (o) { sharerFlags[Number(o.value)] = true; any = true; });
+      if (!any) { warnings.push('Pick at least one person who shared "' + desc + '".'); return; }
+      var rate = 1;
+      if (code !== setCode) {
+        rate = parseRate(rateVals[code]);
+        if (rate === null) { warnings.push('Enter the exchange rate for ' + code + ' (1 ' + code + ' = ? ' + setCode + ').'); return; }
+      }
+      expenses.push({ desc: desc, amountMinor: amountMinor, currency: code, srcDec: dec, rate: rate, payerIndex: payerIndex, sharerFlags: sharerFlags });
+    });
+
+    while (out.firstChild) { out.removeChild(out.firstChild); }
+    if (warnings.length) {
+      var seen = {};
+      warnings.forEach(function (w) { if (!seen[w]) { seen[w] = true; var p = el('p', 'warn'); p.textContent = w; out.appendChild(p); } });
+      return;
+    }
+    if (!expenses.length) { return; }
+
+    var result = computeTrip(expenses, setCode, setDec, n);
+
+    var h3a = el('h3'); h3a.textContent = 'Converted expenses';
+    var list = el('ul', 'explist');
+    expenses.forEach(function (e, i) {
+      var li = el('li');
+      var origText = e.currency === setCode ? '' : ' (' + money(e.amountMinor, e.currency) + ')';
+      li.textContent = e.desc + ': ' + money(result.perExpense[i].converted, setCode) + origText + ', paid by ' + names[e.payerIndex];
+      list.appendChild(li);
+    });
+    out.appendChild(h3a); out.appendChild(list);
+
+    var h3b = el('h3'); h3b.textContent = 'Balances in ' + setCode;
+    var dl = el('dl', 'res');
+    names.forEach(function (name, i) {
+      var b = result.balances[i];
+      var dt = el('dt'); dt.textContent = name;
+      var dd = el('dd');
+      dd.textContent = b === 0 ? (money(0, setCode) + ' \u2014 all square') : (b > 0 ? ('is owed ' + money(b, setCode)) : ('owes ' + money(-b, setCode)));
+      dl.appendChild(dt); dl.appendChild(dd);
+    });
+    out.appendChild(h3b); out.appendChild(dl);
+
+    var moves = settleBalances(result.balances);
+    var h3c = el('h3'); h3c.textContent = 'Settle up in ' + moves.length + (moves.length === 1 ? ' payment' : ' payments');
+    out.appendChild(h3c);
+    if (moves.length) {
+      var ol = el('ol', 'moves');
+      moves.forEach(function (m) {
+        var li = el('li'); li.textContent = names[m.from] + ' pays ' + names[m.to] + ' ' + money(m.amount, setCode);
+        ol.appendChild(li);
+      });
+      out.appendChild(ol);
+    } else {
+      var p = el('p'); p.textContent = 'Already settled \u2014 every balance is zero.'; out.appendChild(p);
+    }
+  }
+
+  /* --- seed with a worked example so the tool is useful straight away --- */
+  ['Ada', 'Ben', 'Cleo', 'Dev'].forEach(function (name) { peopleWrap.appendChild(personRow(name)); });
+  rateVals = { THB: '0.022', JPY: '0.0053', EUR: '0.86' };
+  expWrap.appendChild(expenseRow('Villa deposit', '400.00', 'GBP', 0, ['0', '1', '2', '3']));
+  expWrap.appendChild(expenseRow('Groceries in Bangkok', '3215', 'THB', 1, ['0', '1', '2', '3']));
+  expWrap.appendChild(expenseRow('Ramen night in Osaka', '8399', 'JPY', 2, ['0', '1', '2', '3']));
+  expWrap.appendChild(expenseRow('Taxi to the airport', '45.01', 'EUR', 3, ['0', '1', '3']));
+  syncAllRowOptions();
+  rebuildRates();
+  render();
+})();
+</script>
+</body>
+</html>
