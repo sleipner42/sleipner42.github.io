@@ -3,131 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="What 119 real expense-splitting groups from our own app's data actually look like: how many ever record an expense, how long they last, and what that means for your own group.">
+  <meta name="description" content="A snapshot of 119 stored Splitright groups: member-name counts, stored expenses and expense-date spans, with the limits of what these numbers can tell us.">
   <title>What 119 real expense-splitting groups look like</title>
   <link rel="canonical" href="https://getsplitright.com/what-expense-splitting-groups-look-like.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Splitright">
   <meta property="og:url" content="https://getsplitright.com/what-expense-splitting-groups-look-like.html">
   <meta property="og:title" content="What 119 real expense-splitting groups look like">
-  <meta property="og:description" content="How many groups ever record an expense, how long the ones that work actually last, and what a bookkeeper with three or four non-users looks like in the data.">
+  <meta property="og:description" content="A snapshot of 119 stored Splitright groups: member-name counts, stored expenses and expense-date spans, with the limits of what these numbers can tell us.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="What 119 real expense-splitting groups look like">
-  <meta name="twitter:description" content="How many groups ever record an expense, how long the ones that work actually last, and what a bookkeeper with three or four non-users looks like in the data.">
+  <meta name="twitter:description" content="A snapshot of 119 stored Splitright groups: member-name counts, stored expenses and expense-date spans, with the limits of what these numbers can tell us.">
   <style>
     :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
   
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Do most expense-splitting groups actually record an expense?","acceptedAnswer":{"@type":"Answer","text":"In our data, 56% of groups recorded at least one expense and 44% never did. So a majority get used at least once, but a large minority are created and then abandoned before a single cost goes in."}},
-    {"@type":"Question","name":"How long does a typical expense-splitting group stay active?","acceptedAnswer":{"@type":"Answer","text":"Briefly. Across the 54 groups with at least two dated expenses, the median time between the first and last expense was 2 days, and 44% of them logged every expense on a single day. Most groups are built around one event \u2014 a trip, a dinner, a weekend \u2014 and stop the moment that event ends."}},
-    {"@type":"Question","name":"How many people are actually using the app versus just being added to a group?","acceptedAnswer":{"@type":"Answer","text":"Far fewer than the member count suggests. 407 member slots in our data correspond to roughly 30 real users, because a member is a name typed into a group, not a person who installed anything. A typical group is one person doing the bookkeeping for three or four people who never touch the app."}},
-    {"@type":"Question","name":"Is recurring group use, like a shared flat, common?","acceptedAnswer":{"@type":"Answer","text":"No, it is the exception. Most groups that work are short-lived because the thing they were tracking \u2014 a trip, a dinner \u2014 ended. Only a minority of groups, the ones with ten or more expenses, look like ongoing arrangements such as a flatshare, and even those eventually stop."}}
-  ]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many groups contain an expense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the 2 September 2026 snapshot, 67 of 119 stored groups (56%) contained at least one expense; 52 (44%) contained none. This does not tell us whether an empty group previously contained expenses that were deleted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical expense-splitting group stay active?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This snapshot cannot establish that. Among 54 groups with at least two parseable expense dates, the median earliest-to-latest date span was 2 days. Expense dates are chosen by users, not visit or entry timestamps, so this is not a measure of group lifetime or retention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do 407 member slots mean 407 app users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A member slot is a name someone adds to a group. One person can add multiple names, and the same person can appear in several groups. These records do not establish the number of unique app users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do groups with many expenses represent recurring use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. Nineteen groups contained at least 10 expenses, but expense count alone cannot distinguish a busy trip from a recurring arrangement such as a shared flat."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
 <header>
   <p class="tag">Splitright</p>
   <h1>What 119 real expense-splitting groups look like</h1>
-  <p class="intro">Not a survey, not an industry report &mdash; the actual, anonymised shape of every group ever created in one small app, read straight from the database.</p>
+  <p class="intro">Not a survey or a retention study: an aggregate snapshot of 119 groups stored in our own expense-splitting app.</p>
   <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
 </header>
 <main>
+  <p class="note"><strong>Correction, 4 September 2026:</strong> An earlier version described expense-date spans as group lifetimes and inferred user counts and return visits. Those claims were not supported by this snapshot. The article below separates stored records from behaviour we cannot measure.</p>
   <section aria-labelledby="caveat"><h2 id="caveat">What this is, and what it is not</h2>
-    <p>This page describes the production data behind Splitright, our own expense-splitting app, read on 2 September 2026: 119 groups, 407 member slots, 742 expenses, built up by roughly 30 real users since the app launched. That is a small number. It is not a representative sample of how people split expenses in general, it is not a market survey, and nobody should quote these figures as if they described the whole category. Treat everything below as a set of observations about one app's early users, not a statistic about the world.</p>
-    <p>We are publishing it anyway because the shape of the data is more interesting, and more useful to anyone who splits costs with other people, than the sales pitch we would otherwise be writing. Every number here is aggregate: there are no group names, codes, member names or expense descriptions in what follows, and none have been invented.</p>
+    <p>On 2 September 2026, Splitright's production database contained 119 groups, 407 member-name slots and 742 expenses. These are aggregate counts from one small app, not a representative sample of how people split costs in general.</p>
+    <p>This is a snapshot of retained records, not every group or expense ever created. Deleted records are absent. We cannot establish how many unique people created the groups, how often they opened the app, or which groups were tests rather than real arrangements. No group names, codes, member names or expense descriptions are published here.</p>
   </section>
-
-  <section aria-labelledby="member-slots"><h2 id="member-slots">A &ldquo;member&rdquo; is a name, not a person</h2>
-    <p>The single most important structural fact about this data is one that is easy to misread. In Splitright, a group member is a name that somebody typed in when adding a person to a group &mdash; it does not mean that person installed the app, opened it, or even knows a group exists for them. The 407 member slots in our data correspond to roughly 30 actual users.</p>
-    <p>So the ordinary shape of a Splitright group is one person, the organiser, doing the bookkeeping for three or four other people who never touch the app at all. That is not a flaw in the data; it is exactly how the app is meant to work &mdash; no account needed, no sign-up required of anyone but the organiser &mdash; but it means every &ldquo;members per group&rdquo; figure below counts named participants, not installs.</p>
+  <section aria-labelledby="member-slots"><h2 id="member-slots">A member slot is a name, not an installation</h2>
+    <p>In Splitright, someone can add names for everyone sharing a cost without those people installing the app. The same person can also appear in multiple groups. So 407 member slots do not mean 407 users, and two names in a group do not prove that an invitation was sent or accepted.</p>
+    <p>One organiser can do the bookkeeping, or several people can open a group using its code. Neither the organiser nor the other participants need an account. The member list alone does not tell us which pattern a group follows.</p>
   </section>
-
   <section aria-labelledby="who-joins"><h2 id="who-joins">Group size: mean 3.42, median 3</h2>
-    <p>Across all 119 groups, the mean number of members is 3.42 and the median is 3. Most groups are a small handful of people, which fits the app's obvious use cases: a dinner, a weekend away, a shared flat.</p>
-    <div class="scroll">
-    <table>
-      <caption>Group size across all 119 groups.</caption>
-      <thead>
-        <tr><th scope="col">Measure</th><th scope="col">Value</th></tr>
-      </thead>
+    <p>The stored groups are generally small. These figures describe the member-name lists at the snapshot date, not necessarily their size when first created.</p>
+    <div class="scroll"><table>
+      <caption>Member-name counts across 119 stored groups.</caption>
+      <thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Mean members per group</th><td>3.42</td></tr>
-        <tr><th scope="row">Median members per group</th><td>3</td></tr>
-        <tr><th scope="row">Groups with 2 or more members</th><td>76%</td></tr>
-        <tr><th scope="row">Groups with exactly 1 member</th><td>22 groups</td></tr>
-        <tr><th scope="row">Groups with no members at all</th><td>7 groups</td></tr>
+        <tr><th scope="row">Mean member slots per group</th><td>3.42</td></tr>
+        <tr><th scope="row">Median member slots per group</th><td>3</td></tr>
+        <tr><th scope="row">Groups with 2 or more member slots</th><td>90 groups (76%)</td></tr>
+        <tr><th scope="row">Groups with exactly 1 member slot</th><td>22 groups</td></tr>
+        <tr><th scope="row">Groups with no member slots</th><td>7 groups</td></tr>
       </tbody>
-    </table>
-    </div>
-    <p>The 22 single-member groups and 7 empty ones are worth naming honestly: they are groups that were created and then left, sometimes before anyone else was even added. That is a normal thing to happen when creating a group costs nothing and takes a few seconds &mdash; some fraction of any free tool's usage is people trying it once and moving on.</p>
+    </table></div>
   </section>
-
-  <section aria-labelledby="ever-used"><h2 id="ever-used">Whether a group ever records an expense is close to a coin toss</h2>
-    <p>Of the 119 groups, 52 (44%) never recorded a single expense. The remaining 67 (56%) recorded at least one. So slightly more groups than not do get used for their actual purpose, but a large minority &mdash; more than two in five &mdash; are created and then abandoned before a single cost goes in.</p>
-    <p>Among the 67 groups that did record at least one expense, usage is uneven rather than evenly spread:</p>
-    <div class="scroll">
-    <table>
-      <caption>How much the 67 active groups (at least one expense) actually get used.</caption>
-      <thead>
-        <tr><th scope="col">Expense count</th><th scope="col">Groups</th></tr>
-      </thead>
+  <section aria-labelledby="ever-used"><h2 id="ever-used">56% of stored groups contain an expense</h2>
+    <p>Of 119 groups, 67 (56%) contained at least one expense and 52 (44%) contained none. That is a useful description of the database, but it is not a conversion rate from opening the app to adding an expense, or proof that the empty groups were abandoned.</p>
+    <div class="scroll"><table>
+      <caption>Stored-expense counts among the 67 groups containing expenses. The 10-or-more row is a subset of the 3-or-more row.</caption>
+      <thead><tr><th scope="col">Expense count</th><th scope="col">Groups</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Only 1 or 2 expenses, ever</th><td>19 groups</td></tr>
+        <tr><th scope="row">1 or 2 expenses</th><td>19 groups</td></tr>
         <tr><th scope="row">3 or more expenses</th><td>48 groups</td></tr>
         <tr><th scope="row">10 or more expenses</th><td>19 groups</td></tr>
-        <tr><th scope="row">Largest single group</th><td>117 expenses</td></tr>
+        <tr><th scope="row">Maximum stored expenses in one group</th><td>117 expenses</td></tr>
       </tbody>
-    </table>
-    </div>
-    <p>Groups with at least one expense average 4.34 members, noticeably larger than the 3.42 average across all groups. Groups that never record anything tend to be smaller, which is consistent with the ordinary explanation: a group of one or two people is more likely to be a test, or a plan that never happened, than a group of four or five who had an actual event to split.</p>
+    </table></div>
+    <p>Twenty-one of the 22 single-member groups contained no expenses. That gives us a reason to test clearer guidance about adding people before splitting costs. It does not prove why those groups are empty, or that changing a button will cause people to use them.</p>
   </section>
-
-  <section aria-labelledby="lifespan"><h2 id="lifespan">Most active groups live for about two days</h2>
-    <p>Of the 54 active groups where at least two expenses carry dates, 24 of them (44%) logged every single expense on one calendar day. The median time between a group's first and last expense, across all 54, is 2 days.</p>
-    <div class="band">
-      <p>This is the clearest pattern in the whole dataset: a Splitright group is usually built around a single event, not an ongoing arrangement. A dinner, a trip, a weekend &mdash; the group exists for as long as the event does, the expenses go in during or just after it, and then the group is never touched again because there is nothing left to track. That is not the app failing to retain people; it is the group succeeding at the one thing it was created for and then correctly having no further use.</p>
-    </div>
-    <p>Recurring use &mdash; the kind you would expect from a shared flat paying rent and bills every month &mdash; is rarer than the marketing image of an expense-splitting app suggests. It exists: the 19 groups with 10 or more expenses, and especially the one group with 117, look like ongoing arrangements rather than single events. But they are a minority, and even they will end eventually when the flatshare or the arrangement ends.</p>
+  <section aria-labelledby="lifespan"><h2 id="lifespan">Expense-date spans are not group lifetimes</h2>
+    <p>Among the 54 groups with at least two parseable expense dates, the median span between earliest and latest dates was 2 days, and the maximum was 329 days. In 24 of those groups (44%), the expense dates fell on the same calendar day.</p>
+    <div class="band"><p><strong>The distinction matters:</strong> an expense date is chosen by the person entering it. Someone can enter last week's costs today or return tomorrow to edit them. These figures do not tell us when expenses were entered, how many sessions occurred, how long a group remained in use, or whether anyone returned to the app.</p></div>
+    <p>A trip can produce many expenses; a recurring arrangement can produce few. Expense counts and date spans alone cannot classify the purpose of a group or establish retention.</p>
   </section>
-
-  <section aria-labelledby="volume"><h2 id="volume">Volume over time, without dressing it up</h2>
-    <p>Monthly expense volume peaked at 151 in October 2024 and has run at roughly 5&ndash;7 a month through 2026. We are not presenting the October 2024 figure as growth, because it is not: it is a single month's peak, almost certainly driven by a handful of active groups logging many expenses at once, and the months since have settled to a much lower, steadier rate.</p>
-    <p>One fact from 2026 is worth stating plainly because it argues against reading anything optimistic into month-to-month numbers: all 8 groups that were active in 2026 were created in 2026. None of the groups from 2024 or 2025 came back. Whatever those earlier groups were for, it finished, and the people in them did not return to start something new. Each month's activity is coming from a fresh, small set of groups, not from an accumulating base of returning users.</p>
-  </section>
-
-  <section aria-labelledby="conclusions"><h2 id="conclusions">What this actually tells you</h2>
-    <p>Put the pieces together and a consistent, unglamorous picture emerges. Most groups that get created do eventually get used for a real expense &mdash; 56% is a majority, if a slim one. But a substantial minority, 44%, die before that ever happens. Of the groups that do work, most are short-lived, not because the app loses them but because the thing they were tracking &mdash; a trip, a dinner, a weekend &mdash; had a natural end, and the group's job finished when the event did. Recurring, ongoing use is real but uncommon: most groups are not a flatshare paying rent every month, they are one occasion, logged over a day or two, then left alone.</p>
-    <p>Two practical takeaways follow from that, for anyone splitting costs in a group, whichever tool they use:</p>
+  <section aria-labelledby="conclusions"><h2 id="conclusions">What we can usefully take from this</h2>
+    <p>The snapshot shows a mix of empty groups and groups containing many expenses. It suggests questions for improving the app, but it does not answer why people start or stop using it. We are treating clearer first-step guidance as a hypothesis to evaluate, not as a proven remedy.</p>
+    <p>For people sharing costs, our practical advice is independent of these statistics:</p>
     <ul>
-      <li><strong>Log the first expense immediately, not later.</strong> Given how many groups in this data never record anything at all, the gap between creating a group and actually using it is where most groups die. If you create the group, add the first cost there and then, before the momentum of &ldquo;we should really track this&rdquo; disappears.</li>
-      <li><strong>If one person is doing the bookkeeping, make sure everyone else actually sees the result.</strong> Given that a typical group here is one organiser and several people who never open the app, the running balance only does its job if it is shared somewhere everyone reads &mdash; screenshotted into the group chat, read aloud, whatever works &mdash; because the people who are meant to pay are, structurally, the ones least likely to be looking at the app themselves.</li>
-      <li><strong>Agree the splitting method before the event, not after.</strong> This is not something the data proves on its own, but it follows from how compressed these groups are: with a median lifespan of two days and 44% of active groups logging everything on a single day, there is no time to renegotiate who owes what once the event is under way. Decide up front.</li>
+      <li><strong>Add everyone whose costs you are splitting.</strong> They do not all need to install the app, but the member list should match the people included in the calculation.</li>
+      <li><strong>Record costs when it is convenient and check the dates.</strong> The date should describe the expense, not serve as a hidden measure of when you used the app.</li>
+      <li><strong>Share the result and agree the split.</strong> If one person handles the bookkeeping, make sure the others can review what they owe and how it was calculated.</li>
     </ul>
   </section>
-
-  <section aria-labelledby="splitright"><h2 id="splitright">Where this data came from</h2>
-    <p>This is our own production data, from Splitright, a free app for iPhone, iPad and Android that lets a group split costs with no account and no sign-up: one person creates a group, shares a six-character code, and anyone with the code can open it from their own phone. It is a small app with roughly 30 users so far, which is exactly why we think the honest version of this data is more useful published than kept to ourselves &mdash; there is no story here about explosive growth, just a reasonably clear picture of how a handful of real groups actually behave.</p>
+  <section aria-labelledby="splitright"><h2 id="splitright">About Splitright</h2>
+    <p>This is our own app's data. Splitright is a free expense-splitting app for iPhone, iPad and Android, with no account or sign-up required. One person creates a group and can share its six-character code so others can open it from their phones.</p>
     <p class="getlinks"><a href="https://apps.apple.com/us/app/splitright-split-expenses/id6608980374">Get Splitright for iPhone and iPad</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.splitright.app">Get Splitright for Android</a></p>
-    <ul class="actions">
-      <li><a href="splitright.html">See everything Splitright does</a></li>
-    </ul>
+    <ul class="actions"><li><a href="splitright.html">See everything Splitright does</a></li></ul>
   </section>
-
-  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2>
-    <dl>
-      <dt>Do most expense-splitting groups actually record an expense?</dt>
-      <dd>In our data, 56% of groups recorded at least one expense and 44% never did. So a majority get used at least once, but a large minority are created and then abandoned before a single cost goes in.</dd>
-      <dt>How long does a typical expense-splitting group stay active?</dt>
-      <dd>Briefly. Across the 54 groups with at least two dated expenses, the median time between the first and last expense was 2 days, and 44% of them logged every expense on a single day. Most groups are built around one event &mdash; a trip, a dinner, a weekend &mdash; and stop the moment that event ends.</dd>
-      <dt>How many people are actually using the app versus just being added to a group?</dt>
-      <dd>Far fewer than the member count suggests. 407 member slots in our data correspond to roughly 30 real users, because a member is a name typed into a group, not a person who installed anything. A typical group is one person doing the bookkeeping for three or four people who never touch the app.</dd>
-      <dt>Is recurring group use, like a shared flat, common?</dt>
-      <dd>No, it is the exception. Most groups that work are short-lived because the thing they were tracking &mdash; a trip, a dinner &mdash; ended. Only a minority of groups, the ones with ten or more expenses, look like ongoing arrangements such as a flatshare, and even those eventually stop.</dd>
-    </dl>
-  </section>
+  <section aria-labelledby="faq"><h2 id="faq">Common questions</h2><dl>
+    <dt>How many groups contain an expense?</dt>
+    <dd>In the 2 September 2026 snapshot, 67 of 119 stored groups (56%) contained at least one expense; 52 (44%) contained none. This does not tell us whether an empty group previously contained expenses that were deleted.</dd>
+    <dt>How long does a typical expense-splitting group stay active?</dt>
+    <dd>This snapshot cannot establish that. Among 54 groups with at least two parseable expense dates, the median earliest-to-latest date span was 2 days. Expense dates are chosen by users, not visit or entry timestamps, so this is not a measure of group lifetime or retention.</dd>
+    <dt>Do 407 member slots mean 407 app users?</dt>
+    <dd>No. A member slot is a name someone adds to a group. One person can add multiple names, and the same person can appear in several groups. These records do not establish the number of unique app users.</dd>
+    <dt>Do groups with many expenses represent recurring use?</dt>
+    <dd>Not necessarily. Nineteen groups contained at least 10 expenses, but expense count alone cannot distinguish a busy trip from a recurring arrangement such as a shared flat.</dd>
+  </dl></section>
 </main>
 <footer><p>Splitright</p><p><a href="bill-split-calculator.html">Bill split calculator</a> &middot; <a href="splitright.html">About Splitright</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="split-costs-on-a-group-trip.html">Splitting costs on a group trip</a> &middot; <a href="split-expenses-without-an-account.html">Splitting expenses without accounts</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p></footer>
 </body>
