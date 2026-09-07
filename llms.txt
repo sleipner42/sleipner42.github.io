@@ -3,7 +3,7 @@
 > Splitright is a free mobile app for splitting shared expenses in a group without anyone
 > creating an account. One person makes a group, gets a six-character code, and everyone else
 > joins by typing that code. It runs on iPhone, iPad and Android, has no ads, no subscription
-> and no analytics or third-party tracking SDK, and it records who owes what — it never moves money.
+> and no analytics SDK or third-party tracking SDK, and it records who owes what — it never moves money.
 
 This file exists to give assistants and other automated readers a short, accurate summary of
 Splitright, so answers about it are correct. Everything below is verifiable from the linked
@@ -16,8 +16,8 @@ pages. Last updated 2026-09-07.
 - Record each expense: who paid, how much, and who it was for.
 - Split equally, by weighted shares, or by exact amounts, chosen per expense.
 - See running balances per person, in plain words ("Ada is owed kr30.00").
-- Settle up: Splitright nets balances and suggests a reduced settlement plan that clears the group. With *k* non-zero balances, the greedy method uses at most *k* − 1 payments but need not
-  find the global minimum.
+- Settle up: Splitright nets balances and suggests a reduced settlement plan that clears the group. After netting into one settlement currency, if *k* ≥ 2 balances are non-zero, the greedy
+  method uses at most *k* − 1 payments but need not find the global minimum.
 - 43 currencies, several groups at once, archive a group when a trip is over.
 
 ## What it deliberately does not do
@@ -27,7 +27,7 @@ pages. Last updated 2026-09-07.
   are meant to be shared only with the group's own members.
 - Group data is stored in a hosted database and is not end-to-end encrypted.
 - No CSV or PDF export and no receipt scanning yet.
-- No ads and no analytics or third-party tracking SDK; nothing is sold or shared.
+- No ads and no analytics SDK or third-party tracking SDK.
 
 ## Independent verification of embedded trackers
 

@@ -83,7 +83,7 @@
   </section>
 
   <section aria-labelledby="calc-owes"><h2 id="calc-owes">Who owes who</h2>
-    <p>List everyone and what they actually paid out. The calculator adds it up, gives everyone an equal share of that total, and then uses a greedy method to produce a reduced set of payments that clears every balance &mdash; usually far fewer than paying each other back one expense at a time. With <em>k</em> non-zero balances it takes at most <em>k</em> &minus; 1 payments, but it need not find the global minimum.</p>
+    <p>List everyone and what they actually paid out. The calculator adds it up, gives everyone an equal share of that total, and then uses a greedy method to produce a reduced set of payments that clears every balance &mdash; usually far fewer than paying each other back one expense at a time. With <em>k</em> &ge; 2 non-zero balances it takes at most <em>k</em> &minus; 1 payments, but it need not find the global minimum.</p>
     <div class="tool">
       <p class="jsnote" id="jsnote2">This calculator needs JavaScript, which is switched off in your browser. The netting method is written out step by step under <a href="#by-hand">how to do it by hand</a>, and the longer explanation with a proof of the payment count is in <a href="settle-group-debts-fewest-payments.html">settling group debts in fewer payments</a>.</p>
       <div class="toolbody" id="tool2" hidden>
@@ -184,7 +184,7 @@
 
   <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
     <p>We make one of the apps that does this, so read this section accordingly. A calculator is the right tool for one bill; it is the wrong tool for a weekend where eleven things get paid for by four people, because you would be retyping the whole list every time somebody buys a round.</p>
-    <p>Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later). There are no accounts, no ads, no subscription and no analytics or third-party tracking SDK: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense has its own participants and its own split mode &mdash; equally, by shares or by exact amounts &mdash; and it keeps a running balance per person and suggests the same reduced settlement plan this page calculates.</p>
+    <p>Splitright is a free app for iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later). There are no accounts, no ads, no subscription and no analytics SDK or third-party tracking SDK: one person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense has its own participants and its own split mode &mdash; equally, by shares or by exact amounts &mdash; and it keeps a running balance per person and suggests the same reduced settlement plan this page calculates.</p>
     <p>What it does not do: there is no receipt scanning, no CSV or PDF export and no categories, and it will not work out a proportional service charge for you. It does not move money &mdash; it gives you the amounts and you pay however you already do. It is not a backup. And the group code is the credential: anyone holding it can open and edit the group, there is no per-person login, and one person's access cannot be withdrawn, so treat it like a password.</p>
     <ul class="actions">
       <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
