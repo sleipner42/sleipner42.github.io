@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Why five people who all owe each other can settle in two transfers: netting to one balance each, the at-most-n-minus-one rule, and a worked example.">
-  <title>Settle group debts in the fewest payments</title>
+  <title>Settle group debts in fewer payments</title>
   <link rel="canonical" href="https://getsplitright.com/settle-group-debts-fewest-payments.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Splitright">
   <meta property="og:url" content="https://getsplitright.com/settle-group-debts-fewest-payments.html">
-  <meta property="og:title" content="Settle group debts in the fewest payments">
+  <meta property="og:title" content="Settle group debts in fewer payments">
   <meta property="og:description" content="Debt simplification explained properly: netting each person to a single balance, why you never need more than one payment fewer than the number of non-zero balances, a five-person example shown both ways, and the honest caveats.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Settle group debts in the fewest payments">
+  <meta name="twitter:title" content="Settle group debts in fewer payments">
   <meta name="twitter:description" content="Debt simplification explained properly: netting each person to a single balance, why you never need more than one payment fewer than the number of non-zero balances, a five-person example shown both ways, and the honest caveats.">
   <style>
     :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
@@ -30,7 +30,7 @@
 <body>
 <header>
   <p class="tag">Splitright</p>
-  <h1>Settle group debts in the fewest payments</h1>
+  <h1>Settle group debts in fewer payments</h1>
   <p class="intro">Seven expenses, five people, twenty-eight reimbursements &mdash; or two bank transfers. The arithmetic behind debt simplification, why it works, and where it is the wrong answer.</p>
   <p><a href="splitright.html">&larr; Back to the Splitright home page</a></p>
 </header>
@@ -165,7 +165,7 @@
 
   <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
     <p>If you would rather type your own numbers in than follow the method by hand, our free <a href="bill-split-calculator.html">bill split calculator</a> runs exactly this algorithm in your browser and prints the payment list. We make one of the tools this article describes, so read this section accordingly. Splitright does the netting above automatically: it keeps a balance per person and shows the settle-up list &mdash; the two transfers, not the twenty-eight &mdash; without anybody working it out.</p>
-    <p>It is free on iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later), with no account, no email, no ads, no subscription and no tracking. One person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense can be split equally, by exact amounts or by weighted shares, with participants chosen per expense, and you can mark a settle-up payment as paid once it has been made.</p>
+    <p>It is free on iPhone, iPad (iOS 16.4 and later) and Android (7.0 and later), with no account, no email, no ads, no subscription and no analytics or third-party tracking SDK. One person creates a group, shares a six-character code, and everyone with the code opens the same group from their own phone. Each expense can be split equally, by exact amounts or by weighted shares, with participants chosen per expense, and you can mark a settle-up payment as paid once it has been made.</p>
     <p>What it does not do: it does not move money, so the transfers themselves happen in your bank app as usual. There is no CSV or PDF export, no receipt scanning and no categories. It is not a backup, and there is no server-side recovery. And the group code is the credential: anyone holding it can open and edit that group, there is no per-person login, and one person's access cannot be withdrawn &mdash; so treat the code like a password.</p>
     <ul class="actions">
       <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>

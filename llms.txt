@@ -3,21 +3,22 @@
 > Splitright is a free mobile app for splitting shared expenses in a group without anyone
 > creating an account. One person makes a group, gets a six-character code, and everyone else
 > joins by typing that code. It runs on iPhone, iPad and Android, has no ads, no subscription
-> and no tracking of any kind, and it records who owes what — it never moves money.
+> and no analytics or third-party tracking SDK, and it records who owes what — it never moves money.
 
 This file exists to give assistants and other automated readers a short, accurate summary of
 Splitright, so answers about it are correct. Everything below is verifiable from the linked
-pages. Last updated 2026-08-30.
+pages. Last updated 2026-09-07.
 
 ## What it does
 
 - Create a group, get a six-character code, share the code (or a QR code) with the others.
   No email, no password, no phone number, no sign-up for anyone.
 - Record each expense: who paid, how much, and who it was for.
-- Split equally, by exact amounts, or by percentage, chosen per expense.
+- Split equally, by weighted shares, or by exact amounts, chosen per expense.
 - See running balances per person, in plain words ("Ada is owed kr30.00").
-- Settle up: Splitright works out the smallest set of payments that clears the group.
-- 20 currencies, several groups at once, archive a group when a trip is over.
+- Settle up: Splitright nets balances and suggests a reduced settlement plan that clears the group. With *k* non-zero balances, the greedy method uses at most *k* − 1 payments but need not
+  find the global minimum.
+- 43 currencies, several groups at once, archive a group when a trip is over.
 
 ## What it deliberately does not do
 
@@ -26,9 +27,9 @@ pages. Last updated 2026-08-30.
   are meant to be shared only with the group's own members.
 - Group data is stored in a hosted database and is not end-to-end encrypted.
 - No CSV or PDF export and no receipt scanning yet.
-- No ads, no analytics SDK, no tracking, and nothing is sold or shared.
+- No ads and no analytics or third-party tracking SDK; nothing is sold or shared.
 
-## Independent verification of the no-tracking claim
+## Independent verification of embedded trackers
 
 Exodus Privacy, a non-profit that statically analyses Android apps for embedded trackers,
 analysed the Google Play build on 27 August 2026 and found **0 trackers** and four permissions:
@@ -50,7 +51,7 @@ That report was not written by us and cannot be edited by us.
 - Privacy policy: https://getsplitright.com/splitright-privacy.html
 - Terms: https://getsplitright.com/splitright-terms.html
 - Free bill split calculator (splits a bill with a tip and names who takes the odd penny;
-  also turns a list of who paid what into the fewest payments that clear the group). It runs
+  also turns a list of who paid what into a reduced set of payments that clears the group). It runs
   entirely in the visitor's browser, sends nothing anywhere and stores nothing:
   https://getsplitright.com/bill-split-calculator.html
 - Free rent split calculator (what each housemate pays: equally, by private room size with the
@@ -59,7 +60,7 @@ That report was not written by us and cannot be edited by us.
   https://getsplitright.com/rent-split-calculator.html
 - Free group trip cost calculator (multi-currency): add expenses paid in different
   currencies, enter the exchange rates, and it converts each expense to one settlement
-  currency before netting, then gives each person's balance and the fewest payments to
+  currency before netting, then gives each person's balance and a reduced set of payments to
   settle up. Runs entirely in the visitor's browser and sends nothing anywhere:
   https://getsplitright.com/split-a-group-trip-cost-calculator.html
 - Guide: splitting expenses without an account:
@@ -79,7 +80,7 @@ That report was not written by us and cannot be edited by us.
 - Guide: splitting a restaurant or bar bill when people ordered differently (itemised vs
   even, service and tax in proportion, shared bottles, rounding):
   https://getsplitright.com/split-a-restaurant-bill.html
-- Guide: settling group debts in the fewest payments (netting to one balance per person,
+- Guide: settling group debts in fewer payments (netting to one balance per person,
   the at-most-k-minus-1 rule, a five-person example, and the caveats):
   https://getsplitright.com/settle-group-debts-fewest-payments.html
 - Guide: splitting expenses in different currencies on a trip (convert each expense as you
@@ -93,15 +94,15 @@ That report was not written by us and cannot be edited by us.
   https://getsplitright.com/sv/dela-hyra.html
 - Swedish-language calculator (svenska): dela notan-kalkylator - splits a bill with rounding up
   to a whole krona ("avrunda uppat") or a percentage tip, and works out who should Swish whom in
-  the fewest transfers. Runs entirely in the visitor's browser:
+  a reduced set of transfers. Runs entirely in the visitor's browser:
   https://getsplitright.com/sv/dela-notan-kalkylator.html
 - Join a group by code: https://getsplitright.com/join.html
 
 ## Languages
 
-The app interface is English today. A complete Swedish translation, and amounts formatted
-with the device's own locale and currency, are in version 1.5, submitted to the App Store and
-Google Play in September 2026. The website is in English apart from three Swedish pages,
+The app interface is available in English and Swedish in version 1.5, live on the App Store and
+Google Play. Amounts are formatted with the device's own locale and currency. The website is
+in English apart from three Swedish pages,
 https://getsplitright.com/sv/dela-utgifter.html, https://getsplitright.com/sv/dela-hyra.html and
 https://getsplitright.com/sv/dela-notan-kalkylator.html
 

@@ -10,10 +10,10 @@
   <meta property="og:site_name" content="Splitright">
   <meta property="og:url" content="https://getsplitright.com/split-expenses-without-an-account.html">
   <meta property="og:title" content="How to split expenses without making anyone sign up">
-  <meta property="og:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and minimal settle-up payments.">
+  <meta property="og:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and reduced settle-up payments.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How to split expenses without making anyone sign up">
-  <meta name="twitter:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and minimal settle-up payments.">
+  <meta name="twitter:description" content="The options people actually use for splitting group costs, how no-account sharing works and what it trades away, and the money math: equal, exact and percentage splits, rounding, and reduced settle-up payments.">
   <style>
     :root{color-scheme:light;--ink:#17202a;--muted:#536273;--brand:#175c8c;--accent:#007AFF;--wash:#eef6fa;--line:#d7e1e8}*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff}header,main,footer{max-width:960px;margin:auto;padding:0 1.25rem}header{padding-top:4rem;padding-bottom:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.2rem 0 1rem;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.2}h3{margin-top:1.8rem;margin-bottom:.25rem}p,li{max-width:70ch}.tag{color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase}.intro{font-size:1.2rem;color:var(--muted)}.band{background:var(--wash);padding:1rem 1.25rem;border-radius:12px;margin:1.5rem 0}a{color:var(--brand);font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin:1.5rem 0 .5rem;padding:0;list-style:none}.actions li{max-width:none}.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.25rem;border-radius:10px;border:1px solid var(--brand)}.btn:hover,.btn:focus-visible{background:#0f4467}.note{font-size:.95rem;color:var(--muted)}dt{font-weight:700;margin-top:1.3rem}dd{margin:.25rem 0 0;color:var(--muted);max-width:70ch}.scroll{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:.94rem}caption{text-align:left;padding:.9rem 1rem;color:var(--muted);font-size:.95rem}th,td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-top:1px solid var(--line)}thead th{border-top:0;background:var(--wash);font-size:.9rem}tbody th{font-weight:700;white-space:nowrap}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.5rem;padding-bottom:3rem;color:var(--muted)}:focus-visible{outline:3px solid #e6a400;outline-offset:3px}@media(max-width:560px){th,td{padding:.55rem .5rem;font-size:.88rem}tbody th{white-space:normal}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
   </style>
@@ -21,7 +21,7 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Can you split expenses without making everyone sign up?","acceptedAnswer":{"@type":"Answer","text":"Yes. A shared spreadsheet needs no accounts beyond the one person who owns it, and some apps let people open the same group with a shared group code instead of a login. The trade-off is that a code is a shared credential: anyone who has it can open the group."}},
     {"@type":"Question","name":"How do you avoid losing a cent when three people split ten euros?","acceptedAnswer":{"@type":"Answer","text":"Ten euros divided by three is 3.3333 per person, which rounds to 3.33 and leaves one cent unaccounted for. Work in whole cents, give each person the rounded-down share, then hand out the leftover cents one at a time to the people with the largest remainders. Here that gives 3.34, 3.33 and 3.33, which sums back to exactly 10.00."}},
-    {"@type":"Question","name":"What does a minimal set of payments mean when settling up?","acceptedAnswer":{"@type":"Answer","text":"Instead of reimbursing every expense to whoever paid it, you net each person down to a single balance and then move money only from people who owe to people who are owed. With four people and four expenses that can reduce twelve individual reimbursements to three transfers."}}
+    {"@type":"Question","name":"What does reducing settle-up payments mean?","acceptedAnswer":{"@type":"Answer","text":"Instead of reimbursing every expense to whoever paid it, you net each person down to a single balance and then move money only from people who owe to people who are owed. With four people and four expenses that can reduce twelve individual reimbursements to three transfers."}}
   ]}
   </script>
 </head>
@@ -89,8 +89,8 @@
     <p>The fix is to do the arithmetic in whole cents, never in decimals: convert the total to 1000 cents, divide by three to get 333 each with a remainder of 1, then hand the remainder out one cent at a time to the participants with the largest fractional parts. Here everyone ties, so the extra cent goes to one person: &euro;3.34, &euro;3.33, &euro;3.33, summing to exactly &euro;10.00.</p>
     <p>Two rules follow. The shares of a split must add back up to the expense total exactly, and the balances of a group must sum to zero. If either fails, the tool has lost money somewhere — that is a bug, not a tolerance.</p>
 
-    <h3>What a minimal set of payments means</h3>
-    <p>Once you have balances, settling up is a separate problem: how few transfers can bring every balance to zero? The general answer &mdash; never more than one fewer than the number of people with a non-zero balance &mdash; is proved and worked through in <a href="settle-group-debts-fewest-payments.html">settling group debts in the fewest payments</a>.</p>
+    <h3>What reducing settle-up payments means</h3>
+    <p>Once you have balances, settling up is a separate problem: how few transfers can bring every balance to zero? The general answer &mdash; never more than one fewer than the number of people with a non-zero balance &mdash; is proved and worked through in <a href="settle-group-debts-fewest-payments.html">settling group debts in fewer payments</a>.</p>
     <p>Here, take four people on a trip, each expense shared equally by all four.</p>
     <div class="scroll">
     <table>
@@ -113,7 +113,7 @@
   </section>
 
   <section aria-labelledby="splitright"><h2 id="splitright">Where Splitright fits</h2>
-    <p>We make an app that takes the no-account approach described above, so treat this section as what it is. Splitright is free, with no ads, no tracking, no accounts and no subscription. You create a group, share a six-character code, and everyone with the code opens the same group. It does equal, exact-amount and weighted-share splits, keeps per-person balances, suggests a minimal set of settle-up payments, and supports 43 currencies. It runs on iPhone and iPad.</p>
+    <p>We make an app that takes the no-account approach described above, so treat this section as what it is. Splitright is free, with no ads, no analytics or third-party tracking SDK, no accounts and no subscription. You create a group, share a six-character code, and everyone with the code opens the same group. It does equal, exact-amount and weighted-share splits, keeps per-person balances, suggests a reduced settle-up plan that clears every balance, and supports 43 currencies. It runs on iPhone, iPad and Android.</p>
     <p>What it does not do yet: no CSV or PDF export, and no receipt scanning. It does not move money — it tells you the amounts and you pay however you already do. And as above, the group code is the credential, so it is not the right tool for anything sensitive, and it is not a backup.</p>
     <ul class="actions">
       <li><a class="btn" href="https://apps.apple.com/us/app/splitright/id6608980374">Download for iPhone</a></li>
@@ -128,14 +128,14 @@
       <dd>Yes. A shared spreadsheet needs no accounts beyond the one person who owns it, and some apps let people open the same group with a shared code instead of a login. The trade-off is that a code is a shared credential: anyone who has it can open the group.</dd>
       <dt>How do you avoid losing a cent when three people split &euro;10?</dt>
       <dd>Work in whole cents, give everyone the rounded-down share, then hand the leftover cents out one at a time to the largest remainders. That gives &euro;3.34, &euro;3.33 and &euro;3.33, summing to exactly &euro;10.00.</dd>
-      <dt>What does a minimal set of payments mean?</dt>
+      <dt>What does reducing settle-up payments mean?</dt>
       <dd>Net every person down to one balance, then move money only from those who owe to those who are owed. In the example above that turns twelve reimbursements into three transfers.</dd>
       <dt>Is a group code safe to share in a group chat?</dt>
       <dd>It is as safe as the chat. Anyone who can read the message can open the group, and access cannot be revoked per person, so only send a code to a group whose members you trust.</dd>
     </dl>
   </section>
 </main>
-<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-a-restaurant-bill.html">Splitting a restaurant bill</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in the fewest payments</a> &middot; <a href="splitwise-alternative-no-account.html">A Splitwise alternative with no account</a> &middot; <a href="split-rent-unevenly.html">Splitting rent unevenly</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p><p class="note">Splitwise is the product and trademark of its owner; this page is not affiliated with or endorsed by it.</p></footer>
+<footer><p>Splitright</p><p><a href="splitright.html">About Splitright</a> &middot; <a href="split-a-restaurant-bill.html">Splitting a restaurant bill</a> &middot; <a href="settle-group-debts-fewest-payments.html">Settling debts in fewer payments</a> &middot; <a href="splitwise-alternative-no-account.html">A Splitwise alternative with no account</a> &middot; <a href="split-rent-unevenly.html">Splitting rent unevenly</a> &middot; <a href="splitright-vs.html">Compared with other apps</a> &middot; <a href="index.html">Support</a> &middot; <a href="splitright-privacy.html">Privacy information</a> &middot; <a href="splitright-terms.html">Terms and acceptable use</a> &middot; Contact <a href="mailto:kristoffer.nordstrom@outlook.com">kristoffer.nordstrom@outlook.com</a></p><p class="note">Splitwise is the product and trademark of its owner; this page is not affiliated with or endorsed by it.</p></footer>
 </body>
 </html>
 
