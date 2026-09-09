@@ -331,10 +331,13 @@
 
   /* ---- calculator 2: who owes who -------------------------------------- */
   var MIN_ROWS = 2, MAX_ROWS = 12, seed = [['Ada', '124.00'], ['Ben', '45.50'], ['Cleo', '0'], ['Dev', '80.50']];
+  var nextRowId = 0;
   function addRow(name, amount) {
-    var rows = $('w-rows'), i = rows.children.length;
-    if (i >= MAX_ROWS) { return; }
-    var wrap = el('p', null, 'field row'), id = 'w-n' + i, aid = 'w-a' + i;
+    var rows = $('w-rows');
+    if (rows.children.length >= MAX_ROWS) { return null; }
+    var id = 'w-n' + nextRowId, aid = 'w-a' + nextRowId;
+    nextRowId++;
+    var wrap = el('p', null, 'field row');
     var nl = el('label', 'Name'); nl.htmlFor = id;
     var nIn = document.createElement('input');
     nIn.type = 'text'; nIn.id = id; nIn.autocomplete = 'off'; nIn.value = name || '';
@@ -348,6 +351,7 @@
     wrap.appendChild(al); wrap.appendChild(aIn);
     wrap.appendChild(rm);
     rows.appendChild(wrap);
+    return nIn;
   }
   function renderOwes() {
     var cur = CUR[$('w-currency').value], out = $('w-out');
@@ -357,7 +361,12 @@
     var names = [], paid = [], bad = false;
     rows.forEach(function (r, i) {
       var ins = r.getElementsByTagName('input');
-      names.push(ins[0].value.trim() || 'Person ' + (i + 1));
+      var person = ins[0].value.trim() || 'Person ' + (i + 1);
+      names.push(person);
+      var rowNumber = i + 1;
+      ins[0].setAttribute('aria-label', 'Name for ' + person + ', person ' + rowNumber);
+      ins[1].setAttribute('aria-label', 'Amount paid by ' + person + ', person ' + rowNumber);
+      r.getElementsByTagName('button')[0].setAttribute('aria-label', 'Remove ' + person + ', person ' + rowNumber);
       var v = ins[1].value.trim() === '' ? 0 : toMinor(ins[1].value, cur.dec);
       if (v === null) { bad = true; }
       paid.push(v || 0);
@@ -404,12 +413,18 @@
   $('w-rows').addEventListener('click', function (e) {
     if (e.target.classList && e.target.classList.contains('rm')
         && $('w-rows').children.length > MIN_ROWS) {
-      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      var row = e.target.parentNode, next = row.nextElementSibling || row.previousElementSibling;
+      $('w-rows').removeChild(row);
       renderOwes();
+      if (next) { next.getElementsByTagName('input')[0].focus(); }
     }
   });
   $('w-currency').addEventListener('change', renderOwes);
-  $('w-add').addEventListener('click', function () { addRow('', ''); renderOwes(); });
+  $('w-add').addEventListener('click', function () {
+    var nameInput = addRow('', '');
+    renderOwes();
+    if (nameInput) { nameInput.focus(); }
+  });
   $('jsnote1').hidden = true; $('jsnote2').hidden = true;
   $('tool1').hidden = false; $('tool2').hidden = false;
   renderBill();

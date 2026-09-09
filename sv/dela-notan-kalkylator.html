@@ -377,10 +377,13 @@
   /* ---- kalkylator 2: vem ska betala vem -------------------------------- */
   var MIN_ROWS = 2, MAX_ROWS = 12;
   var seed = [['Anna', '840'], ['Bj\u00f6rn', '0'], ['Cissi', '260'], ['David', '500']];
+  var nextRowId = 0;
   function addRow(name, amount) {
-    var rows = $('v-rows'), i = rows.children.length;
-    if (i >= MAX_ROWS) { return; }
-    var wrap = el('p', null, 'field row'), id = 'v-n' + i, aid = 'v-a' + i;
+    var rows = $('v-rows');
+    if (rows.children.length >= MAX_ROWS) { return null; }
+    var id = 'v-n' + nextRowId, aid = 'v-a' + nextRowId;
+    nextRowId++;
+    var wrap = el('p', null, 'field row');
     var nl = el('label', 'Namn'); nl.htmlFor = id;
     var nIn = document.createElement('input');
     nIn.type = 'text'; nIn.id = id; nIn.autocomplete = 'off'; nIn.value = name || '';
@@ -394,6 +397,7 @@
     wrap.appendChild(al); wrap.appendChild(aIn);
     wrap.appendChild(rm);
     rows.appendChild(wrap);
+    return nIn;
   }
   function renderOwes() {
     var cur = CUR[$('v-currency').value], out = $('v-out');
@@ -403,7 +407,12 @@
     var names = [], paid = [], bad = false;
     rows.forEach(function (r, i) {
       var ins = r.getElementsByTagName('input');
-      names.push(ins[0].value.trim() || 'Person ' + (i + 1));
+      var person = ins[0].value.trim() || 'Person ' + (i + 1);
+      names.push(person);
+      var rowNumber = i + 1;
+      ins[0].setAttribute('aria-label', 'Namn för ' + person + ', person ' + rowNumber);
+      ins[1].setAttribute('aria-label', 'Lagt ut av ' + person + ', person ' + rowNumber);
+      r.getElementsByTagName('button')[0].setAttribute('aria-label', 'Ta bort ' + person + ', person ' + rowNumber);
       var v = ins[1].value.trim() === '' ? 0 : toMinor(ins[1].value, cur.dec);
       if (v === null) { bad = true; }
       paid.push(v || 0);
@@ -453,12 +462,18 @@
   $('v-rows').addEventListener('click', function (e) {
     if (e.target.classList && e.target.classList.contains('rm')
         && $('v-rows').children.length > MIN_ROWS) {
-      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      var row = e.target.parentNode, next = row.nextElementSibling || row.previousElementSibling;
+      $('v-rows').removeChild(row);
       renderOwes();
+      if (next) { next.getElementsByTagName('input')[0].focus(); }
     }
   });
   $('v-currency').addEventListener('change', renderOwes);
-  $('v-add').addEventListener('click', function () { addRow('', ''); renderOwes(); });
+  $('v-add').addEventListener('click', function () {
+    var nameInput = addRow('', '');
+    renderOwes();
+    if (nameInput) { nameInput.focus(); }
+  });
   $('jsnote1').hidden = true; $('jsnote2').hidden = true;
   $('tool1').hidden = false; $('tool2').hidden = false;
   stepLabels();

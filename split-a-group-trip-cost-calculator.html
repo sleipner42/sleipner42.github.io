@@ -307,10 +307,10 @@
     return (neg ? '\u2212' : '') + text;
   }
 
-  function setOptions(select, labels) {
+  function setOptions(select, labels, values) {
     while (select.firstChild) { select.removeChild(select.firstChild); }
     labels.forEach(function (label, i) {
-      var o = el('option'); o.value = String(i); o.textContent = label; select.appendChild(o);
+      var o = el('option'); o.value = String(values ? values[i] : i); o.textContent = label; select.appendChild(o);
     });
   }
 
@@ -323,7 +323,9 @@
     var rm = el('button', 'chip rm'); rm.type = 'button'; rm.textContent = 'Remove';
     rm.addEventListener('click', function () {
       if (peopleWrap.children.length <= PEOPLE_MIN) { return; }
+      var next = row.nextElementSibling || row.previousElementSibling;
       row.remove(); onPeopleChanged();
+      if (next) { next.querySelector('input').focus(); }
     });
     row.appendChild(input); row.appendChild(rm);
     return row;
@@ -336,8 +338,10 @@
   }
   $('t-addperson').addEventListener('click', function () {
     if (peopleWrap.children.length >= PEOPLE_MAX) { return; }
-    peopleWrap.appendChild(personRow(''));
+    var row = personRow('');
+    peopleWrap.appendChild(row);
     onPeopleChanged();
+    row.querySelector('input').focus();
   });
   peopleWrap.addEventListener('input', function () { onPeopleChanged(); });
 
@@ -375,26 +379,40 @@
     var rm = el('p'); var rmBtn = el('button', 'chip rm'); rmBtn.type = 'button'; rmBtn.textContent = 'Remove this expense';
     rmBtn.addEventListener('click', function () {
       if (expWrap.children.length <= EXP_MIN) { return; }
+      var next = card.nextElementSibling || card.previousElementSibling;
       card.remove(); onExpensesStructureChanged();
+      if (next) { next.querySelector('input').focus(); }
     });
     rm.appendChild(rmBtn);
 
     card.appendChild(grid); card.appendChild(f5); card.appendChild(rm);
-    card.dataset.wantPayer = String(payerIdx);
-    card.dataset.wantSharers = sharerIdxs.join(',');
+    [[l1, descInput, 'description'], [l2, amtInput, 'amount'], [l3, curSel, 'currency'],
+      [l4, paySel, 'payer'], [l5, shareSel, 'sharers']].forEach(function (field) {
+      field[1].id = 't-exp-' + card.dataset.eid + '-' + field[2];
+      field[0].htmlFor = field[1].id;
+    });
+    var ids = personIds();
+    card.dataset.wantPayer = ids[payerIdx] || '';
+    card.dataset.wantSharers = sharerIdxs.map(function (index) { return ids[Number(index)]; }).filter(function (id) { return id !== undefined; }).join(',');
     return card;
+  }
+
+  function personIds() {
+    return Array.prototype.map.call(peopleWrap.children, function (row) { return row.dataset.pid; });
   }
 
   function refreshRowPeopleOptions(card, names) {
     var paySel = card.querySelector('.payer'), shareSel = card.querySelector('.sharers');
     var prevPayer = paySel.options.length ? paySel.value : card.dataset.wantPayer;
-    setOptions(paySel, names);
-    var pn = Number(prevPayer);
-    paySel.value = (pn >= 0 && pn < names.length) ? String(pn) : '0';
+    var ids = personIds();
+    setOptions(paySel, names, ids);
+    var missing = el('option'); missing.value = ''; missing.textContent = 'Choose who paid';
+    paySel.insertBefore(missing, paySel.firstChild);
+    paySel.value = ids.indexOf(prevPayer) !== -1 ? prevPayer : '';
     var prevSel = shareSel.options.length
       ? Array.prototype.filter.call(shareSel.options, function (o) { return o.selected; }).map(function (o) { return o.value; })
       : card.dataset.wantSharers.split(',');
-    setOptions(shareSel, names);
+    setOptions(shareSel, names, ids);
     Array.prototype.forEach.call(shareSel.options, function (o) { o.selected = prevSel.indexOf(o.value) !== -1; });
   }
 
@@ -411,6 +429,7 @@
     expWrap.appendChild(card);
     refreshRowPeopleOptions(card, peopleNames());
     onExpensesStructureChanged();
+    card.querySelector('input').focus();
   });
   expWrap.addEventListener('input', function () { rebuildRates(); render(); });
   expWrap.addEventListener('change', function (e) {
@@ -419,6 +438,12 @@
   });
 
   function onPeopleChanged() {
+    var names = peopleNames();
+    Array.prototype.forEach.call(peopleWrap.children, function (row, index) {
+      row.querySelector('input').setAttribute('aria-label', 'Person name ' + (index + 1));
+      row.querySelector('button').setAttribute('aria-label', 'Remove ' + names[index] + ' (person ' + (index + 1) + ')');
+      row.querySelector('button').disabled = peopleWrap.children.length <= PEOPLE_MIN;
+    });
     syncAllRowOptions();
     $('t-pcount').textContent = peopleWrap.children.length >= PEOPLE_MAX ? '(maximum 8 people)' : '';
     $('t-addperson').disabled = peopleWrap.children.length >= PEOPLE_MAX;
@@ -427,12 +452,19 @@
   function onExpensesStructureChanged() {
     $('t-ecount').textContent = expWrap.children.length >= EXP_MAX ? '(maximum 14 expenses)' : '';
     $('t-addexpense').disabled = expWrap.children.length >= EXP_MAX;
+    Array.prototype.forEach.call(expWrap.children, function (card) { card.querySelector('button').disabled = expWrap.children.length <= EXP_MIN; });
     rebuildRates(); render();
   }
 
   /* --- exchange rates --- */
   var rateBox = $('t-ratebox'), rateWrap = $('t-rates');
-  $('t-settle').addEventListener('change', function () { rebuildRates(); render(); });
+  $('t-settle').addEventListener('change', function () {
+    // Every manually entered rate is relative to the previous settlement currency.
+    // Clear both the cache and old controls before rebuilding; never relabel stale rates.
+    rateVals = {};
+    rateWrap.textContent = '';
+    rebuildRates(); render();
+  });
 
   function usedCurrencies() {
     var seen = {}, list = [];
@@ -450,6 +482,7 @@
     codes.forEach(function (code) {
       var f = el('p', 'field narrow'); var l = el('label'); l.textContent = '1 ' + code + ' = ? ' + setCode;
       var inp = el('input'); inp.type = 'text'; inp.inputMode = 'decimal'; inp.dataset.code = code;
+      inp.id = 't-rate-' + code; l.htmlFor = inp.id;
       inp.value = rateVals.hasOwnProperty(code) ? rateVals[code] : '';
       inp.addEventListener('input', function () { rateVals[code] = inp.value; render(); });
       f.appendChild(l); f.appendChild(inp); rateWrap.appendChild(f);
@@ -460,22 +493,29 @@
   /* --- render --- */
   function render() {
     var out = $('t-out');
-    var names = peopleNames(), n = names.length;
+    var names = peopleNames(), n = names.length, ids = personIds();
     var setCode = $('t-settle').value, setDec = CUR[setCode].dec;
     var warnings = [], expenses = [];
 
     Array.prototype.forEach.call(expWrap.children, function (card, idx) {
       var desc = card.querySelector('input[type=text]').value.trim() || ('Expense ' + (idx + 1));
+      card.setAttribute('role', 'group');
+      card.setAttribute('aria-label', 'Expense ' + (idx + 1) + ': ' + desc);
+      card.querySelector('button').setAttribute('aria-label', 'Remove this expense: ' + desc + ' (expense ' + (idx + 1) + ')');
       var amtRaw = card.querySelector('.amt').value;
       var code = CUR_ORDER[card.querySelector('.cur').selectedIndex];
       var dec = CUR[code].dec;
       var amountMinor = toMinor(amtRaw, dec);
       if (amountMinor === null || amountMinor <= 0) { warnings.push('Enter a positive amount for "' + desc + '".'); return; }
-      var payerIndex = Number(card.querySelector('.payer').value);
+      var payerIndex = ids.indexOf(card.querySelector('.payer').value);
+      if (payerIndex < 0) { warnings.push('Choose who paid for "' + desc + '"; its previous payer may have been removed.'); return; }
       var shareSel = card.querySelector('.sharers');
       var sharerFlags = names.map(function (_, i) { return false; });
       var any = false;
-      Array.prototype.forEach.call(shareSel.selectedOptions, function (o) { sharerFlags[Number(o.value)] = true; any = true; });
+      Array.prototype.forEach.call(shareSel.selectedOptions, function (o) {
+        var index = ids.indexOf(o.value);
+        if (index >= 0) { sharerFlags[index] = true; any = true; }
+      });
       if (!any) { warnings.push('Pick at least one person who shared "' + desc + '".'); return; }
       var rate = 1;
       if (code !== setCode) {
@@ -538,9 +578,8 @@
   expWrap.appendChild(expenseRow('Groceries in Bangkok', '3215', 'THB', 1, ['0', '1', '2', '3']));
   expWrap.appendChild(expenseRow('Ramen night in Osaka', '8399', 'JPY', 2, ['0', '1', '2', '3']));
   expWrap.appendChild(expenseRow('Taxi to the airport', '45.01', 'EUR', 3, ['0', '1', '3']));
-  syncAllRowOptions();
-  rebuildRates();
-  render();
+  onPeopleChanged();
+  onExpensesStructureChanged();
 })();
 </script>
 </body>
