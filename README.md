@@ -1,10 +1,12 @@
 # Support för Skolschema Be On Time
 
-Den här sidan beskriver den ombyggda versionen 3.0.0, som ännu inte är allmänt släppt. Äldre versioner kan ha andra funktioner.
+Den här sidan beskriver den ombyggda versionen 3.0.0 från Build 3, som ännu inte är allmänt släppt. Äldre versioner kan ha andra funktioner.
+
+[Integritetspolicy](PRIVACY.md)
 
 ## Kontakta oss
 
-Mejla [cornelis@andonvending.com](mailto:cornelis@andonvending.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS-version och vilka steg som ledde till problemet.
+Mejla [kristoffer.nordstrom@outlook.com](mailto:kristoffer.nordstrom@outlook.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS-version och vilka steg som ledde till problemet.
 
 Skicka inte personnummer, lösenord, BankID-uppgifter eller en elevs privata schema. Om en skärmbild behövs, dölj namn, schemaidentifierare och andra personuppgifter först.
 
@@ -17,7 +19,7 @@ Skicka inte personnummer, lösenord, BankID-uppgifter eller en elevs privata sch
 
 Funktionen använder Skola24s tjänst, inte demonstrationsdata. Skolan måste tillåta offentlig visning av klasser. Skolor som kräver inloggning, personnummer eller BankID stöds inte i denna version. Be On Time är en fristående app och är inte ansluten till Skola24.
 
-**Viktigt:** Den nya offentliga hämtningen är ännu inte färdigverifierad genom hela flödet på iPhone. Kontrollera lektionstider mot skolans ordinarie schema. Ett valt klasschema sparas bara medan appen är igång, inte mellan appstarter.
+**Viktigt:** Den nya offentliga hämtningen är ännu inte färdigverifierad genom hela flödet på iPhone. Kontrollera lektionstider mot skolans ordinarie schema. Om du slår på **Kom ihåg** sparas skolans och klassens tekniska val lokalt mellan appstarter. Nästa gång väljer du själv att öppna det sparade klasschemat. Hela schemat sparas inte för offlinevisning. Stäng av funktionen eller välj **Glöm sparat klassval** för att ta bort valet.
 
 ## Varför visas en demonstrationsvecka?
 
@@ -34,7 +36,7 @@ Appen börjar med en tydligt märkt **syntetisk demo**. Det är påhittade lekti
 
 ## Funktioner som inte ingår
 
-Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, BankID, sparade schemaval mellan appstarter, widgets, påminnelser eller smartalarm. Gamla inställningar migreras inte automatiskt. Vissa av dessa val kan synas som otillgängliga i den aktuella förhandsversionen.
+Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, BankID, widgets, påminnelser eller smartalarm. Gamla inställningar migreras inte automatiskt. Vissa av dessa val kan synas som otillgängliga i den aktuella förhandsversionen.
 
 ## Om hämtningen misslyckas
 
