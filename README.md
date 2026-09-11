@@ -1,6 +1,6 @@
 # Support för Skolschema Be On Time
 
-Den här sidan beskriver den ombyggda versionen 3.0.0 från Build 3, som ännu inte är allmänt släppt. Äldre versioner kan ha andra funktioner.
+Den här sidan gäller den ombyggda versionen 3.0.0. Äldre versioner kan ha andra funktioner.
 
 [Integritetspolicy](PRIVACY.md)
 
@@ -36,7 +36,7 @@ Appen börjar med en tydligt märkt **syntetisk demo**. Det är påhittade lekti
 
 ## Funktioner som inte ingår
 
-Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, BankID, widgets, påminnelser eller smartalarm. Gamla inställningar migreras inte automatiskt. Vissa av dessa val kan synas som otillgängliga i den aktuella förhandsversionen.
+Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, BankID, widgets, påminnelser eller smartalarm. Gamla inställningar migreras inte automatiskt. Vissa av dessa val kan synas som otillgängliga i den aktuella versionen.
 
 ## Om hämtningen misslyckas
 
