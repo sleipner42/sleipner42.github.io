@@ -32,6 +32,18 @@ Växla mellan **Schema** och **Original** för att se appens lektionsvy eller sk
 
 Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdateringar via Expo EAS Update när appen startar. Det kan ge förbättringar utan en ny installation från App Store. Uppdateringstjänstens tekniska uppgifter beskrivs i [integritetspolicyn](PRIVACY.md).
 
+### Om något inte fungerar i 3.0.1
+
+**Jag hittar inte skolan.** Prova en kortare del av skolans namn. Skolregistret kan sakna en skola eller innehålla ett äldre namn. Använd skolans ordinarie schemalänk om skolan inte går att hitta. Vid kontakt med oss räcker skolans namn och den offentliga schemalänken — skicka inte elevuppgifter.
+
+**Skolan finns, men ingen klass går att öppna.** Att skolan finns i sökningen betyder inte att den tillåter offentlig schemavisning. Kontrollera internetanslutningen och försök igen senare. Skolan kan ha ändrat sin publicering. Använd skolans ordinarie schema om appen inte kan hämta uppgifterna; försök inte kringgå inloggning eller andra åtkomstbegränsningar.
+
+**Original går inte att visa.** Prova vyn **Schema**. Skolans publicering avgör vilka uppgifter som kan hämtas. Om tider saknas eller verkar fel ska du kontrollera dem mot skolans ordinarie schema.
+
+**Mitt Schema-ID försvann efter att appen startades om.** Det är avsiktligt: Schema-ID och elev-ID används bara under den aktuella sessionen. Ett offentligt klassval kan däremot sparas på enheten för nästa appstart.
+
+**Hur får jag en kompatibel koduppdatering?** Från build 11 söker appen efter uppdateringar när den startar med internetanslutning. En hämtad uppdatering kan börja användas först nästa gång appen startas om. En ny appversion eller en ändring av appens inbyggda delar kan fortfarande kräva en uppdatering via TestFlight eller App Store. Radera inte appen för att försöka tvinga fram en koduppdatering.
+
 ## Kontakta oss
 
 Mejla [kristoffer.nordstrom@outlook.com](mailto:kristoffer.nordstrom@outlook.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS-version och vilka steg som ledde till problemet.
