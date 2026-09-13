@@ -28,7 +28,7 @@ Appen har inga egna användarkonton, annonser eller egna analysfunktioner. Den e
 
 ### Ändamål och rättslig grund
 
-Uppgifter används för att visa det schema du väljer, spara ditt klassval på enheten och besvara supportfrågor. För den personuppgiftsbehandling vi ansvarar för stöder vi oss på vårt berättigade intresse av att tillhandahålla dessa användarvalda funktioner och ge support. Behandlingen begränsas till dessa ändamål och du kan invända genom att kontakta oss. Att du använder appen ger oss inte rätt att använda uppgifter för andra ändamål. Skolan och Skola24 ansvarar för sin egen behandling enligt sina roller och uppgifter; den här policyn ersätter inte deras information.
+Uppgifter används för att visa det schema du väljer, spara ditt klassval på enheten, leverera kompatibla appuppdateringar och besvara supportfrågor. För den personuppgiftsbehandling vi ansvarar för stöder vi oss på vårt berättigade intresse av att tillhandahålla appens funktioner, hålla appen fungerande och ge support. Behandlingen begränsas till dessa ändamål och du kan invända genom att kontakta oss. Att du använder appen ger oss inte rätt att använda uppgifter för andra ändamål. Skolan och Skola24 ansvarar för sin egen behandling enligt sina roller och uppgifter; den här policyn ersätter inte deras information.
 
 ### Support och lagringstid
 
@@ -40,7 +40,7 @@ Från och med version 3.0.1 (build 11) söker appen automatiskt efter tillgängl
 
 ### Externa tjänster
 
-Skola24 och skolan kan hantera förfrågningar, schemauppgifter och anslutningsloggar enligt sina egna regler. Be On Time har inte fastställt en särskild lagringstid för anonyma API-loggar och lovar inte att dessa raderas när du glömmer ett klassval. Kontakta skolan om ett publicerat schema behöver rättas eller tas bort. När du själv öppnar en extern länk hanterar den webbplatsen vanlig webbtrafik enligt sin information. Länkar öppnas inte automatiskt. Be On Time är en fristående app, inte ansluten till eller godkänd av Skola24.
+Skola24 och skolan kan hantera förfrågningar, schemauppgifter och anslutningsloggar enligt sina egna regler. Be On Time har inte fastställt en särskild lagringstid för Skola24s API- och anslutningsloggar och lovar inte att dessa raderas när du glömmer ett klassval. Kontakta skolan om ett publicerat schema behöver rättas eller tas bort. När du själv öppnar en extern länk hanterar den webbplatsen vanlig webbtrafik enligt sin information. Länkar öppnas inte automatiskt. Be On Time är en fristående app, inte ansluten till eller godkänd av Skola24.
 
 ### Dina rättigheter
 
