@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.1 — kommande, ännu inte distribuerad.** Avsnittet [3.0.1 — kommande](#301--kommande) gäller från och med att version 3.0.1 finns tillgänglig. Senast uppdaterad 11 september 2026.
+**Be On Time 3.0.1 — kommande, ännu inte distribuerad.** Avsnittet [3.0.1 — kommande](#301--kommande) gäller från och med att version 3.0.1 finns tillgänglig. Senast uppdaterad 13 september 2026.
 
 **Be On Time 3.0.0 — nuvarande distribuerade version.** Avsnittet [3.0.0 — historisk policy för den distribuerade versionen](#300--historisk-policy-för-den-distribuerade-versionen) är den publicerade 3.0.0-policyn (från Build 3). Det beskriver den versionens tidigare PDF-funktion och manuella sparande av klassval och ska inte läsas som en beskrivning av den kommande 3.0.1.
 
@@ -24,7 +24,7 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton, annonser eller analysfunktioner. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen gör inga automatiska schemahämtningar i bakgrunden. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton, annonser eller egna analysfunktioner. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen gör inga automatiska schemahämtningar i bakgrunden. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
 ### Ändamål och rättslig grund
 
@@ -33,6 +33,10 @@ Uppgifter används för att visa det schema du väljer, spara ditt klassval på 
 ### Support och lagringstid
 
 Support och integritetsfrågor hanteras via kristoffer.nordstrom@outlook.com. Om du mejlar tar vi emot din e-postadress och det innehåll du själv väljer att skicka. Meddelanden används för att hantera ärendet och behålls så länge de behövs för det, för uppföljning eller för att uppfylla tillämpliga rättsliga skyldigheter. Skicka inte personnummer, lösenord, BankID-uppgifter eller en elevs privata schema. Dölj personuppgifter i skärmbilder. E-post hanteras genom Microsoft Outlook; Microsoft beskriver sin behandling, geografiska hantering och överföringsskydd i sin integritetsinformation på privacy.microsoft.com. Vi lovar inte att supportmejl enbart behandlas inom Sverige eller EU.
+
+### Appuppdateringar
+
+Från och med version 3.0.1 (build 11) söker appen automatiskt efter tillgängliga appuppdateringar när den öppnas och hämtar vid behov programkod och tillhörande filer från Expos EAS Update-tjänst. För att tjänsten ska kunna välja en kompatibel uppdatering skickas vanlig anslutningsinformation, såsom IP-adress, samt teknisk information om appen och enheten, bland annat operativsystem/plattform, appens Expo-projektidentifierare, uppdateringskanal och runtime-version. Begäran innehåller också en slumpmässig klientidentifierare som lagras på enheten av uppdateringskomponenten, samt kan innehålla tekniska uppdateringsidentifierare och uppgifter om ett tidigare uppdateringsfel. Expo kan behandla sådan information för att leverera uppdateringen och följa dess funktion. Appens uppdateringskod lägger inte till ditt schema, sparade klassval eller vald PDF i uppdateringsförfrågningarna. Se även Expos integritetsinformation på https://expo.dev/privacy.
 
 ### Externa tjänster
 
