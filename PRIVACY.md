@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.1 — kommande, ännu inte distribuerad.** Avsnittet [3.0.1 — kommande](#301--kommande) gäller från och med att version 3.0.1 finns tillgänglig. Senast uppdaterad 13 september 2026.
+**Be On Time 3.0.1 — tillgänglig i TestFlight, kommande App Store-version.** Avsnittet [3.0.1 — kommande](#301--kommande) gäller användning av version 3.0.1 i TestFlight och när den blir offentligt tillgänglig i App Store. Senast uppdaterad 13 september 2026.
 
 **Be On Time 3.0.0 — nuvarande distribuerade version.** Avsnittet [3.0.0 — historisk policy för den distribuerade versionen](#300--historisk-policy-för-den-distribuerade-versionen) är den publicerade 3.0.0-policyn (från Build 3). Det beskriver den versionens tidigare PDF-funktion och manuella sparande av klassval och ska inte läsas som en beskrivning av den kommande 3.0.1.
 
