@@ -18,11 +18,11 @@ Be On Time hjälper dig att se skolans schema.
 2. Välj skolan. Appen kontrollerar då om den går att använda just nu.
 3. Välj en tillgänglig klass eller, om skolan stöder det, ange Schema-ID eller elev-ID.
 4. Se dagens schema och svep mellan dagar, eller öppna veckovyn. Vrid telefonen för en kompakt veckoöversikt. Dra ned för att uppdatera.
-5. Byt skola eller klass under Inställningar när du behöver.
+5. Byt skola eller klass under Inställningar när du behöver. Välj Glöm sparat schema där för att ta bort sparat klass- eller ID-val och schemacache.
 
 Vilka klasser och sätt att öppna ett schema som visas beror på skolans publicering i Skola24. Appens inbyggda skolregister är en hjälp för sökningen, inte ett löfte om att varje skola eller klass alltid är tillgänglig. Appen behöver internetanslutning när du väljer skola och hämtar eller uppdaterar schema.
 
-En vald offentlig klass sparas automatiskt som ett tekniskt klassval på enheten och används för att hämta klasschemat när appen startar. Hela veckoschemat sparas inte för offlinevisning. Ett Schema-ID eller elev-ID används bara under den aktuella sessionen och sparas inte som ett klassval eller efter en omstart.
+En vald offentlig klass sparas automatiskt som ett tekniskt klassval på enheten och används för att hämta klasschemat när appen startar. Med den senaste koduppdateringen kan tidigare hämtade offentliga klassveckor sparas lokalt, visas direkt vid omstart och uppdateras när nätverk finns. Bara hämtade veckor finns tillgängliga utan nätverk; kontrollera alltid ändringar mot skolans ordinarie schema. Ett stött Schema-ID eller elev-ID och dess senast hämtade vecka sparas separat på enheten. ID-valet återanvänds efter omstart tills du byter schema eller väljer Glöm sparat schema. Bara en sparad ID-vecka som matchar aktuell vecka och år och är högst 21 dagar gammal visas utan nätverk; annars hämtas rätt vecka med ditt sparade ID. Originalvyn behöver fortfarande nätverk efter omstart.
 
 Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time har inga egna konton, annonser eller köp i appen och är en fristående app, inte ansluten till eller godkänd av Skola24.
 
@@ -40,7 +40,7 @@ Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdater
 
 **Original går inte att visa.** Prova vyn **Schema**. Skolans publicering avgör vilka uppgifter som kan hämtas. Om tider saknas eller verkar fel ska du kontrollera dem mot skolans ordinarie schema.
 
-**Mitt Schema-ID försvann efter att appen startades om.** Det är avsiktligt: Schema-ID och elev-ID används bara under den aktuella sessionen. Ett offentligt klassval kan däremot sparas på enheten för nästa appstart.
+**Kommer appen ihåg mitt Schema-ID?** Ja, från den senaste koduppdateringen för build 11 sparas stödda Schema-ID och elev-ID på enheten tillsammans med ett veckoschema. Ett ID som angavs före uppdateringen behöver väljas igen en gång för att sparas. Ta bort det med Glöm sparat schema i Inställningar. Uppgifterna är inte undantagna från enhetsbackup; se integritetspolicyn.
 
 **Hur får jag en kompatibel koduppdatering?** Från build 11 söker appen efter uppdateringar när den startar med internetanslutning. En hämtad uppdatering kan börja användas först nästa gång appen startas om. En ny appversion eller en ändring av appens inbyggda delar kan fortfarande kräva en uppdatering via TestFlight eller App Store. Radera inte appen för att försöka tvinga fram en koduppdatering.
 
