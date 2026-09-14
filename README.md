@@ -28,7 +28,7 @@ Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time h
 
 ### Originalschema och uppdateringar
 
-Växla mellan **Schema** och **Original** för att se appens lektionsvy eller skolans originalschema anpassat till skärmen, där skolan gör det tillgängligt. Original är inte en PDF-import. Nyligen hämtade originalvyer kan återanvändas tillfälligt i appens minne; de sparas inte som ett offlinearkiv.
+Växla mellan **Schema** och **Original** för att se appens lektionsvy eller skolans originalschema anpassat till skärmen, där skolan gör det tillgängligt. Original är inte en PDF-import. Från koduppdateringen för build 11 den 13 september 2026 kan hämtade originalvyer även sparas lokalt på enheten och visas utan nätverk när ett giltigt underlag för valt schema och visningsstorlek finns. Högst åtta underlag och sammanlagt 512 KiB sparas; underlag äldre än 21 dagar återanvänds inte. En ny dag eller visningsstorlek kan behöva nätverk, och sparade uppgifter kan vara inaktuella. Glöm sparat schema tar bort Originalcachen. Läs om schematext, lagring, säkerhetskopior och radering i [integritetspolicyn](PRIVACY.md).
 
 Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdateringar via Expo EAS Update när appen startar. Det kan ge förbättringar utan en ny installation från App Store. Uppdateringstjänstens tekniska uppgifter beskrivs i [integritetspolicyn](PRIVACY.md).
 
