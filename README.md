@@ -2,7 +2,7 @@
 
 ## Vilken version använder du?
 
-**Be On Time 3.0.1 — finns i TestFlight och är kommande App Store-version.** Informationen under [Hjälp för 3.0.1](#301--testflight-och-kommande-app-store-version) gäller build 12 och build 11 med den senaste kompatibla koduppdateringen. I build 12 finns det beskrivna sparandet direkt i appen och kräver ingen koduppdatering vid första start.
+**Be On Time 3.0.1 — finns i TestFlight för iPhone och iPad, är kommande App Store-version och är kandidat för Google Play på Android.** Androidversionen är ännu inte offentlig. Informationen under [Hjälp för 3.0.1](#301--testflight-och-kommande-app-store-version) gäller iOS build 12 och build 11 med den senaste kompatibla koduppdateringen samt Android 3.0.1 när den publiceras. I iOS build 12 finns det beskrivna sparandet direkt i appen och kräver ingen koduppdatering vid första start.
 
 **Be On Time 3.0.0 — nuvarande App Store-version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
 
@@ -32,7 +32,9 @@ Växla mellan **Schema** och **Original** för att se appens lektionsvy eller sk
 
 Valet mellan **Schema** och **Original** sparas lokalt mellan appstarter och koduppdateringar. Byt läge med väljaren längst ned på skärmen.
 
-Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdateringar via Expo EAS Update när appen startar. Det kan ge förbättringar utan en ny installation från App Store. Uppdateringstjänstens tekniska uppgifter beskrivs i [integritetspolicyn](PRIVACY.md).
+Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdateringar via Expo EAS Update när appen startar. Det kan ge förbättringar utan en ny installation från App Store. Uppdateringstjänstens tekniska uppgifter beskrivs i [integritetspolicyn](PRIVACY.md). På Android kan kompatibla koduppdateringar på samma sätt hämtas utan en ny installation från Google Play.
+
+På Android är säkerhetskopiering av appdata avstängd i appens konfiguration. Det är inte ett löfte om kryptering eller om radering av äldre eller externa kopior utanför appens kontroll.
 
 ### Om något inte fungerar i 3.0.1
 
@@ -44,13 +46,13 @@ Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdater
 
 **Måste jag välja skola igen efter en koduppdatering?** Ett sparat klass- eller ID-val och markeringen att du redan har kommit igång ligger kvar på enheten när appen får en koduppdatering. Om veckans schema inte kan hämtas kan du försöka igen utan att börja om. ID-val som gjordes innan lokal ID-lagring infördes behöver dock väljas en gång för att kunna sparas. Radering av appen eller ett uttryckligt Glöm sparat schema tar bort det lokala valet.
 
-**Kommer appen ihåg mitt Schema-ID?** Ja, från den senaste koduppdateringen för build 11 sparas stödda Schema-ID och elev-ID på enheten tillsammans med ett veckoschema. Ett ID som angavs före uppdateringen behöver väljas igen en gång för att sparas. Ta bort det med Glöm sparat schema i Inställningar. Uppgifterna är inte undantagna från enhetsbackup; se integritetspolicyn.
+**Kommer appen ihåg mitt Schema-ID?** Ja, från den senaste koduppdateringen för build 11 sparas stödda Schema-ID och elev-ID på enheten tillsammans med ett veckoschema. Ett ID som angavs före uppdateringen behöver väljas igen en gång för att sparas. Ta bort det med Glöm sparat schema i Inställningar. På iOS är uppgifterna inte undantagna från enhetsbackup; se integritetspolicyn.
 
 **Hur får jag en kompatibel koduppdatering?** Från build 11 söker appen efter uppdateringar när den startar med internetanslutning. En hämtad uppdatering kan börja användas först nästa gång appen startas om. En ny appversion eller en ändring av appens inbyggda delar kan fortfarande kräva en uppdatering via TestFlight eller App Store. Radera inte appen för att försöka tvinga fram en koduppdatering.
 
 ## Kontakta oss
 
-Mejla [kristoffer.nordstrom@outlook.com](mailto:kristoffer.nordstrom@outlook.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS-version och vilka steg som ledde till problemet.
+Mejla [kristoffer.nordstrom@outlook.com](mailto:kristoffer.nordstrom@outlook.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS- eller Android-version och vilka steg som ledde till problemet.
 
 Skicka inte personnummer, lösenord, BankID-uppgifter eller en elevs privata schema. Om en skärmbild behövs, dölj namn, schemaidentifierare och andra personuppgifter först.
 
