@@ -2,7 +2,7 @@
 
 ## Vilken version använder du?
 
-**Be On Time 3.0.1 — finns i TestFlight och är kommande App Store-version.** Informationen under [Hjälp för 3.0.1](#301--testflight-och-kommande-app-store-version) beskriver version 3.0.1 från build 11.
+**Be On Time 3.0.1 — finns i TestFlight och är kommande App Store-version.** Informationen under [Hjälp för 3.0.1](#301--testflight-och-kommande-app-store-version) gäller build 12 och build 11 med den senaste kompatibla koduppdateringen. I build 12 finns det beskrivna sparandet direkt i appen och kräver ingen koduppdatering vid första start.
 
 **Be On Time 3.0.0 — nuvarande App Store-version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
 
@@ -29,6 +29,8 @@ Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time h
 ### Originalschema och uppdateringar
 
 Växla mellan **Schema** och **Original** för att se appens lektionsvy eller skolans originalschema anpassat till skärmen, där skolan gör det tillgängligt. Original är inte en PDF-import. Från koduppdateringen för build 11 den 13 september 2026 kan hämtade originalvyer även sparas lokalt på enheten och visas utan nätverk när ett giltigt underlag för valt schema och visningsstorlek finns. Högst åtta underlag och sammanlagt 512 KiB sparas; underlag äldre än 21 dagar återanvänds inte. En ny dag eller visningsstorlek kan behöva nätverk, och sparade uppgifter kan vara inaktuella. Glöm sparat schema tar bort Originalcachen. Läs om schematext, lagring, säkerhetskopior och radering i [integritetspolicyn](PRIVACY.md).
+
+Valet mellan **Schema** och **Original** sparas lokalt mellan appstarter och koduppdateringar. Byt läge med väljaren längst ned på skärmen.
 
 Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdateringar via Expo EAS Update när appen startar. Det kan ge förbättringar utan en ny installation från App Store. Uppdateringstjänstens tekniska uppgifter beskrivs i [integritetspolicyn](PRIVACY.md).
 
@@ -87,5 +89,3 @@ Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, 
 ### Om hämtningen misslyckas
 
 Kontrollera värdnamnet och internetanslutningen. Skolan kan ha stängt av offentlig klassvisning eller använda en annan tjänst. Försök inte kringgå inloggning eller åtkomstbegränsningar. Använd skolans ordinarie schemalänk om uppgifterna inte går att hämta eller verkar felaktiga.
-
-Valet mellan Schema och Original sparas lokalt mellan appstarter och koduppdateringar; byt läge med väljaren ovanför schemat.
