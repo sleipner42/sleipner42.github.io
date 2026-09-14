@@ -87,3 +87,5 @@ Version 3.0.0 har ännu inte originalbilder av scheman, Schema-ID/personnummer, 
 ### Om hämtningen misslyckas
 
 Kontrollera värdnamnet och internetanslutningen. Skolan kan ha stängt av offentlig klassvisning eller använda en annan tjänst. Försök inte kringgå inloggning eller åtkomstbegränsningar. Använd skolans ordinarie schemalänk om uppgifterna inte går att hämta eller verkar felaktiga.
+
+Valet mellan Schema och Original sparas lokalt mellan appstarter och koduppdateringar; byt läge med väljaren ovanför schemat.
