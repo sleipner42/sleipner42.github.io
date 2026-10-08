@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Den frivilliga utökade statistiken nedan är förberedd för en kommande kompatibel koduppdatering på iOS; den finns inte i den nuvarande kodversionen och är avstängd som standard när den införs. Senast uppdaterad 7 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Den frivilliga utökade statistiken nedan infördes genom en kompatibel iOS-koduppdatering den 7 oktober 2026 och är avstängd som standard. Senast uppdaterad 7 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
@@ -46,7 +46,7 @@ Appen har inga egna användarkonton eller annonser. Den begränsade användnings
 
 Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Den här befintliga räknaren är separat från den frivilliga utökade statistiken nedan.
 
-### Frivillig användningsstatistik (kommande koduppdatering)
+### Frivillig användningsstatistik på iOS
 
 Utökad statistik är avstängd tills du själv väljer att delta. Den första utgåvan erbjuder detta val endast om du bekräftar att du är minst 16 år; vi samlar inte in födelsedatum. Du kan använda appen som vanligt utan att delta. Den rättsliga grunden för denna frivilliga behandling och för lagring/åtkomst till statistikidentifieraren är ditt samtycke.
 
