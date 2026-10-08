@@ -4,11 +4,11 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.1 — tillgänglig i TestFlight för iPhone och iPad, kommande App Store-version och kandidat för Google Play på Android.** Android 3.0.1 är ännu inte offentlig. Avsnittet [3.0.1 — kommande](#301--kommande) gäller användning av version 3.0.1 i TestFlight, när den blir offentligt tillgänglig i App Store och för Android när kandidaten distribueras. Senast uppdaterad 14 september 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Den frivilliga utökade statistiken nedan är förberedd för en kommande kompatibel koduppdatering på iOS; den finns inte i den nuvarande kodversionen och är avstängd som standard när den införs. Senast uppdaterad 7 oktober 2026.
 
-**Be On Time 3.0.0 — nuvarande distribuerade version.** Avsnittet [3.0.0 — historisk policy för den distribuerade versionen](#300--historisk-policy-för-den-distribuerade-versionen) är den publicerade 3.0.0-policyn (från Build 3). Det beskriver den versionens tidigare PDF-funktion och manuella sparande av klassval och ska inte läsas som en beskrivning av den kommande 3.0.1.
+**Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
-## 3.0.1 — kommande
+## 3.0.2 på iOS och 3.0.1 Android-kandidat
 
 ### Offentliga klasscheman
 
@@ -40,7 +40,21 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton, annonser eller egna analysfunktioner. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton eller annonser. Den begränsade användningsräkningen beskrivs nedan; frivillig utökad statistik införs först med en kompatibel koduppdatering och efter ditt aktiva val. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+
+### Begränsad räkning av schemahämtningar på iOS
+
+Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Den här befintliga räknaren är separat från den frivilliga utökade statistiken nedan.
+
+### Frivillig användningsstatistik (kommande koduppdatering)
+
+Utökad statistik är avstängd tills du själv väljer att delta. Den första utgåvan erbjuder detta val endast om du bekräftar att du är minst 16 år; vi samlar inte in födelsedatum. Du kan använda appen som vanligt utan att delta. Den rättsliga grunden för denna frivilliga behandling och för lagring/åtkomst till statistikidentifieraren är ditt samtycke.
+
+Efter samtycke skapar appen en slumpmässig identifierare för just den här appinstallationen. Den är inte IDFA, identifierForVendor, hårdvaru-ID, konto eller ditt schema-ID. Identifieraren skickas till vår server för statistik; databasen sparar en hash tillsammans med plattform, första och senaste statistikdag, samtyckets version och tid samt dagliga aktivitetstillfällen. Hashen gör inte uppgifterna anonyma: de är pseudonyma och kan koppla statistik från samma installation över dagar. Vi räknar appbesök, aktiva dagar, lyckade schemahämtningar, dag-/veckovyer och begränsade felhändelser samt appversion. Vi skickar inte skolval, klass, schemainnehåll, namn, elev-ID eller feltexter till statistikfunktionen. Vi kopplar inte identifieraren till Splitright eller andra datamängder och använder den inte för annonser.
+
+Statistiken används för att förstå användning och återkomst efter en respektive sju dagar och förbättra appen. Unika installationer är inte unika människor: flera enheter, återinstallation och ändrat samtycke kan påverka siffrorna. Rapporteringen omfattar endast deltagande installationer.
+
+Du kan återkalla samtycket och begära radering i Inställningar. Nya statistiksignaler stoppas direkt. Efter radering behålls endast en separat hash i 90 dagar för att hindra försenade signaler från att återupprätta statistik; den används inte för analys. Om internet saknas sparas en begäran om radering lokalt och skickas när anslutning finns; radering på servern är då inte omedelbar. Installationsanknutna uppgifter tas också bort efter 90 dagars inaktivitet genom regelbunden rensning. Summerade uppgifter som inte längre kan kopplas till installationen kan behållas. Serverdrift sker hos vår webbvärd Cloudflare, som behandlar anslutningsinformation som IP-adress för att leverera tjänsten; inga självständiga reklam- eller analysleverantörer får identifieraren. Lokal lagring kan ingå i enhetsbackup, så återställning från backup kan påverka vad en återinstallation raderar.
 
 ### Ändamål och rättslig grund
 
