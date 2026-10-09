@@ -40,7 +40,7 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton eller annonser. Den begränsade användningsräkningen beskrivs nedan; frivillig utökad statistik införs först med en kompatibel koduppdatering och efter ditt aktiva val. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton eller annonser. Endast den begränsade summerade användningsräkningen beskrivs nedan; identifierarbaserad statistik återkallas. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
 ### Begränsad räkning av schemahämtningar på iOS
 
