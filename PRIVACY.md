@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Den frivilliga utökade statistiken nedan infördes genom en kompatibel iOS-koduppdatering den 7 oktober 2026 och är avstängd som standard. Senast uppdaterad 7 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Identifierarbaserad statistik återkallas den 8 oktober 2026; en koduppdatering tar bort den. Senast uppdaterad 8 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
@@ -44,17 +44,11 @@ Appen har inga egna användarkonton eller annonser. Den begränsade användnings
 
 ### Begränsad räkning av schemahämtningar på iOS
 
-Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Den här befintliga räknaren är separat från den frivilliga utökade statistiken nedan.
+Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare.
 
-### Frivillig användningsstatistik på iOS
+### Ingen installationsidentifierare eller retention
 
-Utökad statistik är avstängd tills du själv väljer att delta. Den första utgåvan erbjuder detta val endast om du bekräftar att du är minst 16 år; vi samlar inte in födelsedatum. Du kan använda appen som vanligt utan att delta. Den rättsliga grunden för denna frivilliga behandling och för lagring/åtkomst till statistikidentifieraren är ditt samtycke.
-
-Efter samtycke skapar appen en slumpmässig identifierare för just den här appinstallationen. Den är inte IDFA, identifierForVendor, hårdvaru-ID, konto eller ditt schema-ID. Identifieraren skickas till vår server för statistik; databasen sparar en hash tillsammans med plattform, första och senaste statistikdag, samtyckets version och tid samt dagliga aktivitetstillfällen. Hashen gör inte uppgifterna anonyma: de är pseudonyma och kan koppla statistik från samma installation över dagar. Vi räknar appbesök, aktiva dagar, lyckade schemahämtningar, dag-/veckovyer och begränsade felhändelser samt appversion. Vi skickar inte skolval, klass, schemainnehåll, namn, elev-ID eller feltexter till statistikfunktionen. Vi kopplar inte identifieraren till Splitright eller andra datamängder och använder den inte för annonser.
-
-Statistiken används för att förstå användning och återkomst efter en respektive sju dagar och förbättra appen. Unika installationer är inte unika människor: flera enheter, återinstallation och ändrat samtycke kan påverka siffrorna. Rapporteringen omfattar endast deltagande installationer.
-
-Du kan återkalla samtycket och begära radering i Inställningar. Nya statistiksignaler stoppas direkt. Efter radering behålls endast en separat hash i 90 dagar för att hindra försenade signaler från att återupprätta statistik; den används inte för analys. Om internet saknas sparas en begäran om radering lokalt och skickas när anslutning finns; radering på servern är då inte omedelbar. Installationsanknutna uppgifter tas också bort efter 90 dagars inaktivitet genom regelbunden rensning. Summerade uppgifter som inte längre kan kopplas till installationen kan behållas. Serverdrift sker hos vår webbvärd Cloudflare, som behandlar anslutningsinformation som IP-adress för att leverera tjänsten; inga självständiga reklam- eller analysleverantörer får identifieraren. Lokal lagring kan ingå i enhetsbackup, så återställning från backup kan påverka vad en återinstallation raderar.
+Den frivilliga identifierarbaserade statistiken återkallas den 8 oktober 2026. Inhämtning stängs av på servern och en kompatibel koduppdatering tar bort inställningen och all identifierarbaserad insamling på iOS. Enheter kan behöva starta om för att hämta koduppdateringen. Funktionen ersätts inte med en daglig token eller någon annan identifierare. Vi redovisar inga retentionstal eller antal unika människor. Den begränsade summerade räknaren ovan finns kvar. Radering av de återkallade statistikuppgifterna verifieras separat; denna text påstår inte att en blockering i drift redan är löst.
 
 ### Ändamål och rättslig grund
 
