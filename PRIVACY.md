@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Identifierarbaserad statistik återkallas den 8 oktober 2026; en koduppdatering tar bort den. Senast uppdaterad 8 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 8 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
@@ -48,7 +48,7 @@ Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad 
 
 ### Ingen installationsidentifierare eller retention
 
-Den frivilliga identifierarbaserade statistiken återkallas den 8 oktober 2026. Inhämtning stängs av på servern och en kompatibel koduppdatering tar bort inställningen och all identifierarbaserad insamling på iOS. Enheter kan behöva starta om för att hämta koduppdateringen. Funktionen ersätts inte med en daglig token eller någon annan identifierare. Vi redovisar inga retentionstal eller antal unika människor. Den begränsade summerade räknaren ovan finns kvar. Radering av de återkallade statistikuppgifterna verifieras separat; denna text påstår inte att en blockering i drift redan är löst.
+Den frivilliga identifierarbaserade statistiken stängdes av den 8 oktober 2026. Servern avvisar sådana händelser och en publicerad kompatibel koduppdatering tar bort inställningen och all identifierarbaserad insamling på iOS. Enheter kan behöva starta om för att hämta koduppdateringen. Funktionen ersätts inte med en daglig token eller någon annan identifierare. Vi redovisar inga retentionstal eller antal unika människor. Den begränsade summerade räknaren ovan finns kvar. Kontroll före avstängningen visade inga identifierarbaserade observationer eller installationsposter. Radering kördes ändå, och de berörda tabellerna verifierades tomma efter avstängningen.
 
 ### Ändamål och rättslig grund
 
