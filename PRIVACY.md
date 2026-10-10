@@ -4,11 +4,11 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är kandidat för Google Play och ännu inte offentlig. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 8 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 9 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
-## 3.0.2 på iOS och 3.0.1 Android-kandidat
+## 3.0.2 på iOS och 3.0.1 på Android
 
 ### Offentliga klasscheman
 
