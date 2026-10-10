@@ -42,9 +42,9 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 Appen har inga egna användarkonton eller annonser. Endast den begränsade summerade användningsräkningen beskrivs nedan; identifierarbaserad statistik återkallas. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
-### Begränsad räkning av schemahämtningar på iOS
+### Begränsad räkning av schemahämtningar på iOS och Android
 
-Den nuvarande iOS-koduppdateringen skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare.
+De publicerade koduppdateringarna på iOS och Android skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare.
 
 ### Ingen installationsidentifierare eller retention
 
