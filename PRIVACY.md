@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 9 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 18 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
@@ -40,11 +40,11 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton eller annonser. Endast den begränsade summerade användningsräkningen beskrivs nedan; identifierarbaserad statistik återkallas. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton eller annonser. Endast den summerade användningsräkningen beskrivs nedan; identifierarbaserad statistik återkallas. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
-### Begränsad räkning av schemahämtningar på iOS och Android
+### Summerad räkning av appanvändning på iOS och Android
 
-De publicerade koduppdateringarna på iOS och Android skickar en begränsad signal efter en lyckad offentlig schemahämtning, högst en gång per app-process och UTC-dag. Signalen innehåller endast plattformen och händelsen schemahämtning. Servern sparar summerade antal per dag, inte en installationsidentifierare, skola, klass eller schemainnehåll. En dagmarkering i appens arbetsminne begränsar upprepade signaler; en omstart kan därför ge ytterligare en signal samma dag. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare.
+Appen skickar begränsade signaler när vissa saker händer: appen öppnas, en skolsökning påbörjas, en sökning ger ingen träff, en skola väljs och ett offentligt schema har hämtats. Signalen innehåller endast plattformen, händelsens namn och appens versionsnummer. Sökord, skola, klass och schemainnehåll skickas inte. Servern sparar summerade antal per dag, plattform, händelse och appversion, inte en installationsidentifierare. Schemahämtningen räknas högst en gång per app-process och UTC-dag; övriga händelser begränsas per app-process. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare. Händelserna utöver schemahämtning och versionsnumret lades till den 18 oktober 2026 via en koduppdatering på iOS.
 
 ### Ingen installationsidentifierare eller retention
 
