@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Identifierarbaserad statistik stängdes av den 8 oktober 2026; en publicerad koduppdatering tar bort den. Senast uppdaterad 18 oktober 2026.
+**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Frivillig användningsstatistik med slumpmässigt nummer finns från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". Senast uppdaterad 19 oktober 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
@@ -40,15 +40,19 @@ Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t sk
 
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton eller annonser. Endast den summerade användningsräkningen beskrivs nedan; identifierarbaserad statistik återkallas. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton eller annonser. Användningsräkningen och den frivilliga användningsstatistiken beskrivs nedan. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
 ### Summerad räkning av appanvändning på iOS och Android
 
 Appen skickar begränsade signaler när vissa saker händer: appen öppnas, en skolsökning påbörjas, en sökning ger ingen träff, en skola väljs och ett offentligt schema har hämtats. Signalen innehåller endast plattformen, händelsens namn och appens versionsnummer. Sökord, skola, klass och schemainnehåll skickas inte. Servern sparar summerade antal per dag, plattform, händelse och appversion, inte en installationsidentifierare. Schemahämtningen räknas högst en gång per app-process och UTC-dag; övriga händelser begränsas per app-process. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare. Händelserna utöver schemahämtning och versionsnumret lades till den 18 oktober 2026 via en koduppdatering på iOS.
 
-### Ingen installationsidentifierare eller retention
+### Frivillig användningsstatistik (endast om du väljer "Ja, dela")
 
-Den frivilliga identifierarbaserade statistiken stängdes av den 8 oktober 2026. Servern avvisar sådana händelser och en publicerad kompatibel koduppdatering tar bort inställningen och all identifierarbaserad insamling på iOS. Enheter kan behöva starta om för att hämta koduppdateringen. Funktionen ersätts inte med en daglig token eller någon annan identifierare. Vi redovisar inga retentionstal eller antal unika människor. Den begränsade summerade räknaren ovan finns kvar. Kontroll före avstängningen visade inga identifierarbaserade observationer eller installationsposter. Radering kördes ändå, och de berörda tabellerna verifierades tomma efter avstängningen.
+Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare.
+
+Om du väljer "Ja, dela" skapar appen ett slumpmässigt installationsnummer. Högst en gång per dag skickas numret, datum, plattform och appversion, så att vi kan räkna hur många som använder appen över tid (t.ex. om appen används igen nästa dag eller vecka). Numret är inte kopplat till ditt namn, din skola, ditt schema, sökord, ditt Apple- eller Google-konto eller din position. Servern sparar inte IP-adress eller enhetsinformation tillsammans med numret, men vår webbvärd kan tillfälligt behandla vanlig anslutningsinformation för att leverera tjänsten. Uppgifterna raderas automatiskt efter 90 dagar. Vi visar bara summerade antal, aldrig enskilda nummer.
+
+Du kan när som helst stänga av detta under Inställningar > "Dela anonym användningsstatistik". Då raderas numret i appen och appen ber servern radera uppgifterna som hör till numret. Saknas nätverk vid det tillfället raderas de senast efter 90 dagar.
 
 ### Ändamål och rättslig grund
 
