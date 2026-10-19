@@ -46,6 +46,10 @@ Appen har inga egna användarkonton eller annonser. Användningsräkningen och d
 
 Appen skickar begränsade signaler när vissa saker händer: appen öppnas, en skolsökning påbörjas, en sökning ger ingen träff, en skola väljs och ett offentligt schema har hämtats. Signalen innehåller endast plattformen, händelsens namn och appens versionsnummer. Sökord, skola, klass och schemainnehåll skickas inte. Servern sparar summerade antal per dag, plattform, händelse och appversion, inte en installationsidentifierare. Schemahämtningen räknas högst en gång per app-process och UTC-dag; övriga händelser begränsas per app-process. Vår webbvärd behandlar vanlig anslutningsinformation för att leverera tjänsten. Antalen är inte antal unika människor. Ingen installationsidentifierare skickas med denna räknare. Händelserna utöver schemahämtning och versionsnumret lades till den 18 oktober 2026 via en koduppdatering på iOS.
 
+### Uppskattning av dagliga användare utan identifierare
+
+För att uppskatta ungefär hur många enheter som använder appen per dag beräknar servern, när appen öppnas eller ett schema hämtas, ett envägsvärde (nyckelad hash) av anslutningens IP-adress och webbläsar-/appidentifiering (user-agent) tillsammans med en slumpmässig nyckel som byts ut varje dygn (UTC). IP-adressen och user-agent sparas inte. När dygnet är slut räknas antalet olika värden per plattform och därefter raderas både värdena och dygnets nyckel, normalt inom 24 timmar. Kvar finns endast ett antal per dag och plattform. Inget sparas eller skapas i telefonen för detta, och dagar kan inte kopplas ihop. Siffran är en grov uppskattning: flera elever på samma skolnätverk kan räknas som en.
+
 ### Frivillig användningsstatistik (endast om du väljer "Ja, dela")
 
 Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare.
