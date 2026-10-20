@@ -74,6 +74,12 @@ I version 3.0.1 söker appen automatiskt efter tillgängliga kompatibla koduppda
 
 På Android är säkerhetskopiering av appdata avstängd i appens konfiguration. Det är inte ett löfte om kryptering eller om radering av äldre eller externa kopior utanför appens kontroll. Glöm sparat schema tar bort appens aktuella lokala val och cache. Det skickar ingen raderingsbegäran till Skola24 eller Expo och påverkar inte deras anslutnings- eller felloggar.
 
+### Krasch- och felrapporter
+
+Från och med version 3.0.4 skickar appen tekniska krasch- och felrapporter till Sentry (Functional Software, Inc.) för att vi ska kunna hitta och rätta fel. Rapporterna behandlas i Sentrys EU-region (de.sentry.io). En rapport innehåller felets typ, ett rensat felmeddelande, programkodens anropsstack och grov teknisk information om app och enhet, såsom appversion, byggnummer och operativsystemsversion.
+
+Innan en rapport skickas rensas den i appen: skolnamn, klassnamn, söktext, citerade textstycken, långa sifferserier, e-postadresser och frågesträngar i adresser tas bort. Vi kopplar ingen användaridentifierare till rapporten, så den kan inte kopplas till appens valfria användningsstatistik. IP-adresser lagras inte hos Sentry. Schema-ID, elev-ID, personnummer, lösenord och schemainnehåll skickas inte. Rapporterna används enbart för felsökning, inte för annonsering, profilering eller spårning. Se Sentrys integritetsinformation på https://sentry.io/privacy/.
+
 ### Externa tjänster
 
 Skola24 och skolan kan hantera förfrågningar, schemauppgifter och anslutningsloggar enligt sina egna regler. Be On Time har inte fastställt en särskild lagringstid för Skola24s API- och anslutningsloggar och lovar inte att dessa raderas när du glömmer ett klassval. Kontakta skolan om ett publicerat schema behöver rättas eller tas bort. När du själv öppnar en extern länk hanterar den webbplatsen vanlig webbtrafik enligt sin information. Länkar öppnas inte automatiskt. Be On Time är en fristående app, inte ansluten till eller godkänd av Skola24.
