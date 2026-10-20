@@ -8,7 +8,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
 
-## 3.0.2 på iOS och 3.0.1 på Android
+## 3.0.4 på iOS och 3.0.1 på Android
 
 ### Offentliga klasscheman
 
