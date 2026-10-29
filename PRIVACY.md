@@ -52,7 +52,7 @@ För att uppskatta ungefär hur många enheter som använder appen per dag berä
 
 ### Frivillig användningsstatistik (endast om du väljer "Ja, dela")
 
-Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare.
+Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare. På Android ställs ingen sådan fråga och inget installationsnummer skapas; där används bara den summerade räkningen och krasch- och felrapporterna som beskrivs i det här dokumentet.
 
 Om du väljer "Ja, dela" skapar appen ett slumpmässigt installationsnummer. Högst en gång per dag skickas numret, datum, plattform och appversion, så att vi kan räkna hur många som använder appen över tid (t.ex. om appen används igen nästa dag eller vecka). Numret är inte kopplat till ditt namn, din skola, ditt schema, sökord, ditt Apple- eller Google-konto eller din position. Servern sparar inte IP-adress eller enhetsinformation tillsammans med numret, men vår webbvärd kan tillfälligt behandla vanlig anslutningsinformation för att leverera tjänsten. Uppgifterna raderas automatiskt efter 90 dagar. Vi visar bara summerade antal, aldrig enskilda nummer.
 
