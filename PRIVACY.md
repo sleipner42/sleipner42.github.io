@@ -50,6 +50,14 @@ Appen skickar begränsade signaler när vissa saker händer: appen öppnas (och 
 
 För att uppskatta ungefär hur många enheter som använder appen per dag beräknar servern, när appen öppnas eller ett schema hämtas, ett envägsvärde (nyckelad hash) av anslutningens IP-adress och webbläsar-/appidentifiering (user-agent) tillsammans med en slumpmässig nyckel som byts ut varje dygn (UTC). IP-adressen och user-agent sparas inte. När dygnet är slut räknas antalet olika värden per plattform och därefter raderas både värdena och dygnets nyckel, normalt inom 24 timmar. Kvar finns endast ett antal per dag och plattform. Inget sparas eller skapas i telefonen för detta, och dagar kan inte kopplas ihop. Siffran är en grov uppskattning: flera elever på samma skolnätverk kan räknas som en.
 
+### Frivillig feedback i appen (från koduppdateringen 2026-11-05)
+
+Du kan välja att skicka ett problem eller förslag via appens formulär. Endast den kategori och text du själv väljer skickas. Formuläret kräver inte namn, konto eller e-postadress och bifogar inte schema, skolval, skärmbilder, analys-ID eller annan automatisk appinformation. Skriv inte personuppgifter, skola, klass eller schema-ID. Fritext kan innehålla det du själv skriver; vi lovar därför inte att varje meddelande är anonymt.
+
+Feedback används för att förstå problem, förbättra appen och prioritera funktioner, med stöd av vårt berättigade intresse av att förbättra och ge support för appen. Det är frivilligt och inget skickas förrän du trycker på Skicka. Texten lagras separat från användningsstatistik hos vår driftleverantör Pion med Cloudflare som teknisk infrastruktur. Vi sparar inte IP-adress eller user-agent i feedbacktabellen och kopplar inte meddelanden till analys-ID. Vanlig anslutningsinformation behandlas av infrastrukturen för att leverera och skydda tjänsten. Feedback används inte för reklam eller spårning. Vi lovar inte att all driftbehandling sker enbart i Sverige eller EU.
+
+Meddelanden tas bort automatiskt inom 30 dagar. Du kan inte få ett personligt svar genom formuläret eftersom kontaktuppgifter inte efterfrågas. För kontakt eller frågor om rättigheter finns supportadressen nedan. Betygslänken öppnar App Store eller Google Play bara när du väljer den; butiken hanterar eventuell recension enligt sina villkor.
+
 ### Frivillig användningsstatistik (endast om du väljer "Ja, dela")
 
 Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare. På Android ställs ingen sådan fråga och inget installationsnummer skapas; där används bara den summerade räkningen och krasch- och felrapporterna som beskrivs i det här dokumentet.
