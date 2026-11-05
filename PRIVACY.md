@@ -4,11 +4,11 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.2 — nuvarande App Store-version för iPhone och iPad.** Android 3.0.1 är publicerad på Google Play sedan den 9 oktober 2026. Frivillig användningsstatistik med slumpmässigt nummer finns från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". Senast uppdaterad 19 oktober 2026.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 5 november 2026.
 
-**Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av 3.0.2.
+**Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av den nuvarande versionen.
 
-## 3.0.4 på iOS och 3.0.1 på Android
+## 3.0.6 på iOS och Android
 
 ### Offentliga klasscheman
 
@@ -86,7 +86,9 @@ På Android är säkerhetskopiering av appdata avstängd i appens konfiguration.
 
 Från och med version 3.0.4 skickar appen tekniska krasch- och felrapporter till Sentry (Functional Software, Inc.) för att vi ska kunna hitta och rätta fel. Rapporterna behandlas i Sentrys EU-region (de.sentry.io). En rapport innehåller felets typ, ett rensat felmeddelande, programkodens anropsstack och grov teknisk information om app och enhet, såsom appversion, byggnummer och operativsystemsversion.
 
-Innan en rapport skickas rensas den i appen: skolnamn, klassnamn, söktext, citerade textstycken, långa sifferserier, e-postadresser och frågesträngar i adresser tas bort. Vi kopplar ingen användaridentifierare till rapporten, så den kan inte kopplas till appens valfria användningsstatistik. IP-adresser lagras inte hos Sentry. Schema-ID, elev-ID, personnummer, lösenord och schemainnehåll skickas inte. Från den 27 oktober 2026 skickas även en kort rapport när en schemahämtning misslyckas utan att appen kraschar; den innehåller bara en feltypskod (till exempel nätverk eller dataformat), inte felmeddelandet, skolan, klassen eller adressen. Rapporterna används enbart för felsökning, inte för annonsering, profilering eller spårning. Se Sentrys integritetsinformation på https://sentry.io/privacy/.
+Rensningen nedan gäller rapporter från appens JavaScript-lager, inte rapporter som skapas direkt i den underliggande iOS- eller Android-koden. I den kompatibla koduppdateringen den 5 november 2026 stängs därför Sentrys inbyggda rapportering från den underliggande koden av; endast JavaScript-fel och uttryckliga felrapporter går genom appens rensning. En koduppdatering börjar gälla först när enheten har hämtat den och appen startats med uppdateringen. Äldre eller ännu inte uppdaterade installationer kan fungera annorlunda. Rapportering av systemnära krascher är inte verifierad.
+
+Innan en JavaScript-rapport skickas rensas den i appen: skolnamn, klassnamn, söktext, citerade textstycken, långa sifferserier, e-postadresser och frågesträngar i adresser tas bort. Vi kopplar ingen användaridentifierare till rapporten, så den kan inte kopplas till appens valfria användningsstatistik. För dessa rensade JavaScript-rapporter sätts IP-fältet till null för att Sentry inte ska lägga till en IP-adress i rapporten. Schema-ID, elev-ID, personnummer, lösenord och schemainnehåll skickas inte. Från den 27 oktober 2026 skickas även en kort rapport när en schemahämtning misslyckas utan att appen kraschar; den innehåller bara en feltypskod (till exempel nätverk eller dataformat), inte felmeddelandet, skolan, klassen eller adressen. Rapporterna används enbart för felsökning, inte för annonsering, profilering eller spårning. Se Sentrys integritetsinformation på https://sentry.io/privacy/.
 
 ### Externa tjänster
 

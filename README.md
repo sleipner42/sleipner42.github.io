@@ -2,13 +2,13 @@
 
 ## Vilken version använder du?
 
-**Be On Time 3.0.1 — finns i TestFlight för iPhone och iPad, är kommande App Store-version och är kandidat för Google Play på Android.** Androidversionen är ännu inte offentlig. Informationen under [Hjälp för 3.0.1](#301--testflight-och-kommande-app-store-version) gäller iOS build 12 och build 11 med den senaste kompatibla koduppdateringen samt Android 3.0.1 när den publiceras. I iOS build 12 finns det beskrivna sparandet direkt i appen och kräver ingen koduppdatering vid första start.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Hjälpen nedan beskriver den nuvarande appen med kompatibla koduppdateringar. En hämtad koduppdatering kan börja gälla först nästa gång appen startas om, och vissa förbättringar kan bli tillgängliga vid olika tidpunkter på iOS och Android.
 
-**Be On Time 3.0.0 — nuvarande App Store-version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
+**Be On Time 3.0.0 — historisk version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
 
 [Integritetspolicy](PRIVACY.md)
 
-## 3.0.1 — TestFlight och kommande App Store-version
+## Hjälp för den nuvarande appen
 
 Be On Time hjälper dig att se skolans schema.
 
@@ -36,7 +36,7 @@ Från version 3.0.1 build 11 kan appen automatiskt hämta kompatibla koduppdater
 
 På Android är säkerhetskopiering av appdata avstängd i appens konfiguration. Det är inte ett löfte om kryptering eller om radering av äldre eller externa kopior utanför appens kontroll.
 
-### Om något inte fungerar i 3.0.1
+### Om något inte fungerar
 
 **Jag hittar inte skolan.** Prova en kortare del av skolans namn. Skolregistret kan sakna en skola eller innehålla ett äldre namn. Använd skolans ordinarie schemalänk om skolan inte går att hitta. Vid kontakt med oss räcker skolans namn och den offentliga schemalänken — skicka inte elevuppgifter.
 
