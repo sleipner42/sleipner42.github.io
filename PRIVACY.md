@@ -4,11 +4,11 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 5 november 2026.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 6 november 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av den nuvarande versionen.
 
-## 3.0.6 på iOS och Android
+## 3.0.6 på iOS och Android samt 3.0.7 på iOS
 
 ### Offentliga klasscheman
 
@@ -38,9 +38,19 @@ Originalvyn kan sparas som normaliserade vektordata i en separat fil i appens do
 
 Om den valda skolan stöder det kan du ange ett Schema-ID eller elev-ID. ID:t skickas till Skola24 för att hämta det schema du väljer. Från koduppdateringen för build 11 den 13 september 2026 sparas det stödda ID:t, skolans tekniska val och det senast hämtade veckoschemat i en separat fil i appens dokumentområde på enheten. Filen rymmer ett ID-val med en veckobild av schemauppgifterna, högst 256 KiB, inklusive lektionstider, ämnen, salar och eventuella namn i schematexten. ID-valet finns kvar mellan appstarter tills du ersätter det eller väljer Glöm sparat schema i Inställningar. En sparad vecka återanvänds bara om den är högst 21 dagar gammal och motsvarar den aktuella begärda veckan och året. Annars används det sparade ID:t för att hämta rätt vecka, utan att du behöver ange det igen. Utgångna schemauppgifter kan ligga kvar i filen tills den ersätts eller raderas. Cachen kan vara inaktuell; appen försöker uppdatera via Skola24 när den används med nätverk. ID:t används inte i filnamn, cachenycklar, egna loggar eller analys. På iOS är filen inte undantagen från enhetsbackup; appens radering ändrar inte tidigare säkerhetskopior eller uppgifter hos skolan eller Skola24. Ange inte lösenord, BankID-uppgifter eller personnummer i fältet.
 
+### Frivillig widget i iOS-testversion 3.0.7
+
+Widgetstödet kräver iOS 17 eller senare och en version av appen med den nya widgetkomponenten. Du kan själv aktivera nästa lektion i Inställningar och lägga till widgeten på hemskärmen. Den är avstängd från början och visar bara tider om du inte separat väljer Visa lektionsdetaljer. Då kan även namn och andra personuppgifter i skolans schematext synas på hemskärmen.
+
+Appen delar en begränsad bild av den aktuella veckans redan hämtade tider, och bara efter ditt separata val även lektionsdetaljer och färg, med widgeten i ett lokalt App Group-område på enheten. Bilden använder en slumpmässig lokal valnyckel, inte Schema-ID, elev-ID eller skolans och klassens tekniska identifierare. Widgeten kontaktar inte Skola24 och spårar inte visningar. Uppgifterna gäller högst 24 timmar från hämtningen, aldrig längre än den aktuella veckan i svensk tid; öppna appen och uppdatera aktuella veckan för nya uppgifter. Andra veckor som du bläddrar till ersätter inte widgetens aktuella vecka.
+
+Byte av schema rensar tidigare widgetunderlag innan ett nytt delas. Avstängning och Glöm sparat schema stänger av delningen, tar bort underlaget och återställer detaljvalet till bara tider; en ändring som inte kan bekräftas visas som fel med möjlighet att försöka igen. iOS kan behålla en tidigare widgetbild efter en begränsning eller radering. Den delade filen är inte undantagen från enhetsbackup; radering ändrar inte tidigare säkerhetskopior. Radering i appen är inte ett löfte om omedelbar visuell radering från hemskärmen.
+
+När appen har bekräftat att du uttryckligen aktiverat widgeten kan en summerad händelse räknas med bara plattform, appversion och händelsetyp, enligt avsnittet om summerad räkning nedan. Det är aktiveringsåtgärder, inte unika personer, installerade widgetar eller visningar.
+
 ### Konton, annonser och bakgrund
 
-Appen har inga egna användarkonton eller annonser. Användningsräkningen och den frivilliga användningsstatistiken beskrivs nedan. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i denna version och appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
+Appen har inga egna användarkonton eller annonser. Användningsräkningen och den frivilliga användningsstatistiken beskrivs nedan. Den efterfrågar inte lösenord, personnummer eller BankID-uppgifter. Widgetar är inte integrerade i 3.0.6; det frivilliga widgetstödet i iOS-testversion 3.0.7 beskrivs ovan. Appen schemalägger inga schemahämtningar när den inte används. Vi använder inte appens uppgifter för reklamprofilering eller automatiserade beslut om dig.
 
 ### Summerad räkning av appanvändning på iOS och Android
 
