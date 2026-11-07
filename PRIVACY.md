@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 6 november 2026.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 7 november 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av den nuvarande versionen.
 
@@ -58,7 +58,7 @@ Appen skickar begränsade signaler när vissa saker händer: appen öppnas (och 
 
 ### Uppskattning av dagliga användare utan identifierare
 
-För att uppskatta ungefär hur många enheter som använder appen per dag beräknar servern, när appen öppnas eller ett schema hämtas, ett envägsvärde (nyckelad hash) av anslutningens IP-adress och webbläsar-/appidentifiering (user-agent) tillsammans med en slumpmässig nyckel som byts ut varje dygn (UTC). IP-adressen och user-agent sparas inte. När dygnet är slut räknas antalet olika värden per plattform och därefter raderas både värdena och dygnets nyckel, normalt inom 24 timmar. Kvar finns endast ett antal per dag och plattform. Inget sparas eller skapas i telefonen för detta, och dagar kan inte kopplas ihop. Siffran är en grov uppskattning: flera elever på samma skolnätverk kan räknas som en.
+För att uppskatta ungefär hur många enheter som använder appen per dag beräknar servern, när appen öppnas eller ett schema hämtas, ett envägsvärde (nyckelad hash) av anslutningens IP-adress och webbläsar-/appidentifiering (user-agent) tillsammans med en slumpmässig nyckel som byts ut varje dygn (UTC). IP-adressen och user-agent sparas inte. Efter dygnsskiftet räknas antalet olika värden per plattform och både värdena och dygnets nyckel raderas vid nästa berörda appöppning, schemahämtning eller förfrågan om dagsuppskattningen. Det är inte en tidsstyrd radering; utan sådana förfrågningar kan de finnas kvar längre än 24 timmar. Kvar finns endast ett antal per dag och plattform. Inget sparas eller skapas i telefonen för detta, och dagar kan inte kopplas ihop. Siffran är en grov uppskattning: flera elever på samma skolnätverk kan räknas som en.
 
 ### Frivillig feedback i appen (från koduppdateringen 2026-11-05)
 
@@ -67,6 +67,12 @@ Du kan välja att skicka ett problem eller förslag via appens formulär. Endast
 Feedback används för att förstå problem, förbättra appen och prioritera funktioner, med stöd av vårt berättigade intresse av att förbättra och ge support för appen. Det är frivilligt och inget skickas förrän du trycker på Skicka. Texten lagras separat från användningsstatistik hos vår driftleverantör Pion med Cloudflare som teknisk infrastruktur. Vi sparar inte IP-adress eller user-agent i feedbacktabellen och kopplar inte meddelanden till analys-ID. Vanlig anslutningsinformation behandlas av infrastrukturen för att leverera och skydda tjänsten. Feedback används inte för reklam eller spårning. Vi lovar inte att all driftbehandling sker enbart i Sverige eller EU.
 
 Meddelanden tas bort automatiskt inom 30 dagar. Du kan inte få ett personligt svar genom formuläret eftersom kontaktuppgifter inte efterfrågas. För kontakt eller frågor om rättigheter finns supportadressen nedan. Betygslänken öppnar App Store eller Google Play bara när du väljer den; butiken hanterar eventuell recension enligt sina villkor.
+
+### Frivillig delning av en länk till appen (iOS-koduppdatering 7 november 2026)
+
+Om du väljer Dela appen öppnas enhetens vanliga delningsfunktion med en fast beskrivning av appen och en länk till vår nedladdningssida. Vi bifogar inte skola, klass, schema, schema-ID, analys-ID eller kontaktuppgifter och läser inte dina kontakter. Du väljer själv om och till vem länken skickas; den valda tjänsten hanterar delningen enligt sina villkor. Appen får inte någon bekräftelse på att en mottagare har fått eller läst länken.
+
+Som del av den summerade räkningen ovan räknas på iOS även att Inställningar öppnas och att du trycker på Dela appen. Bara plattform, händelsens namn och appversion skickas, inte mottagare, meddelandeinnehåll eller delningens utfall. Att Inställningar öppnas bevisar inte att delningsknappen har varit synlig. Länken har den begränsade källkategorin share. Om någon öppnar den räknar webbplatsen sidförfrågningar per dag och källkategori, utan besöks-ID eller cookies; vanlig anslutningsinformation hanteras av driftleverantören. Antalet kan även innehålla länkförhandsvisningar och automatiska förfrågningar och visar inte mottagare eller appinstallationer. Se även webbplatsens integritetsinformation på https://skolschema-beontime.pion.dev/integritet.
 
 ### Frivillig användningsstatistik (endast om du väljer "Ja, dela")
 
