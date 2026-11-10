@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 7 november 2026.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 10 november 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av den nuvarande versionen.
 
@@ -100,7 +100,7 @@ På Android är säkerhetskopiering av appdata avstängd i appens konfiguration.
 
 ### Krasch- och felrapporter
 
-Från och med version 3.0.4 skickar appen tekniska krasch- och felrapporter till Sentry (Functional Software, Inc.) för att vi ska kunna hitta och rätta fel. Rapporterna behandlas i Sentrys EU-region (de.sentry.io). En rapport innehåller felets typ, ett rensat felmeddelande, programkodens anropsstack och grov teknisk information om app och enhet, såsom appversion, byggnummer och operativsystemsversion.
+Från och med version 3.0.4 skickar appen tekniska krasch- och felrapporter till Sentry (Functional Software, Inc.) för att vi ska kunna hitta och rätta fel. Rapporterna behandlas i Sentrys EU-region (de.sentry.io). En rapport innehåller felets typ, ett rensat felmeddelande, programkodens anropsstack och grov teknisk information om app och enhet, såsom plattform, appversion, byggnummer och operativsystemsversion.
 
 Rensningen nedan gäller rapporter från appens JavaScript-lager, inte rapporter som skapas direkt i den underliggande iOS- eller Android-koden. I den kompatibla koduppdateringen den 5 november 2026 stängs därför Sentrys inbyggda rapportering från den underliggande koden av; endast JavaScript-fel och uttryckliga felrapporter går genom appens rensning. En koduppdatering börjar gälla först när enheten har hämtat den och appen startats med uppdateringen. Äldre eller ännu inte uppdaterade installationer kan fungera annorlunda. Rapportering av systemnära krascher är inte verifierad.
 
