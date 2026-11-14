@@ -4,7 +4,7 @@ Be On Time drivs av Kristoffer Nordström, personuppgiftsansvarig för appens eg
 
 ## Vilken version gäller policyn?
 
-**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 10 november 2026.
+**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Policyn omfattar även kompatibla koduppdateringar och widgetstödet i iOS-testversion 3.0.7. Widgetstödet ingår inte i 3.0.6. Frivillig användningsstatistik med slumpmässigt nummer finns på iOS från den 19 oktober 2026 och är avstängd tills du väljer "Ja, dela". På Android används inte detta nummer. Senast uppdaterad 14 november 2026.
 
 **Be On Time 3.0.0 — historisk version.** Avsnittet om 3.0.0 nedan beskriver den äldre PDF-funktionen och ska inte läsas som en beskrivning av den nuvarande versionen.
 
@@ -78,7 +78,7 @@ Som del av den summerade räkningen ovan räknas på iOS även att Inställninga
 
 Från den 19 oktober 2026 frågar appen på iOS, efter att ett schema visats första gången, om du vill dela anonym användningsstatistik. Standard är av; inget nummer skapas innan du har svarat "Ja, dela". Väljer du "Nej tack" skapas inget nummer, och endast att ett svar gavs räknas summerat per dag utan identifierare. På Android ställs ingen sådan fråga och inget installationsnummer skapas; där används bara den summerade räkningen och krasch- och felrapporterna som beskrivs i det här dokumentet.
 
-Om du väljer "Ja, dela" skapar appen ett slumpmässigt installationsnummer. Högst en gång per dag skickas numret, datum, plattform och appversion, så att vi kan räkna hur många som använder appen över tid (t.ex. om appen används igen nästa dag eller vecka). Numret är inte kopplat till ditt namn, din skola, ditt schema, sökord, ditt Apple- eller Google-konto eller din position. Servern sparar inte IP-adress eller enhetsinformation tillsammans med numret, men vår webbvärd kan tillfälligt behandla vanlig anslutningsinformation för att leverera tjänsten. Uppgifterna raderas automatiskt efter 90 dagar. Vi visar bara summerade antal, aldrig enskilda nummer.
+Om du väljer "Ja, dela" skapar appen ett slumpmässigt installationsnummer. Kontrollen görs när du väljer att dela och när appen öppnas eller återgår till förgrunden. Appen skickar numret, plattform och appversion; servern registrerar datum och räknar högst en aktivitet per nummer och kalenderdag. Det hjälper oss att se om samma installation används igen nästa dag eller vecka. Antalen gäller installationer, inte personer; en ominstallation eller rensad appdata kan ge ett nytt nummer. Numret är inte kopplat till ditt namn, din skola, ditt schema, sökord, ditt Apple- eller Google-konto eller din position. Servern sparar inte IP-adress eller enhetsinformation tillsammans med numret, men vår webbvärd kan tillfälligt behandla vanlig anslutningsinformation för att leverera tjänsten. Uppgifterna raderas automatiskt efter 90 dagar. Vi visar bara summerade antal, aldrig enskilda nummer.
 
 Du kan när som helst stänga av detta under Inställningar > "Dela anonym användningsstatistik". Då raderas numret i appen och appen ber servern radera uppgifterna som hör till numret. Saknas nätverk vid det tillfället raderas de senast efter 90 dagar.
 
