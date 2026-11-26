@@ -2,7 +2,7 @@
 
 ## Vilken version använder du?
 
-**Be On Time 3.0.6 finns på App Store för iPhone och iPad samt på Google Play för Android.** Hjälpen nedan beskriver den nuvarande appen med kompatibla koduppdateringar. En hämtad koduppdatering kan börja gälla först nästa gång appen startas om, och vissa förbättringar kan bli tillgängliga vid olika tidpunkter på iOS och Android.
+**Be On Time finns på App Store för iPhone och iPad (3.0.6 och 3.0.7) samt på Google Play för Android (3.0.6).** Hjälpen nedan beskriver den nuvarande appen med kompatibla koduppdateringar. En hämtad koduppdatering kan börja gälla först nästa gång appen startas om, och vissa förbättringar kan bli tillgängliga vid olika tidpunkter på iOS och Android.
 
 **Be On Time 3.0.0 — historisk version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
 
@@ -25,6 +25,16 @@ Vilka klasser och sätt att öppna ett schema som visas beror på skolans public
 En vald offentlig klass sparas automatiskt som ett tekniskt klassval på enheten och används för att hämta klasschemat när appen startar. Med den senaste koduppdateringen kan tidigare hämtade offentliga klassveckor sparas lokalt, visas direkt vid omstart och uppdateras när nätverk finns. Bara hämtade veckor finns tillgängliga utan nätverk; kontrollera alltid ändringar mot skolans ordinarie schema. Ett stött Schema-ID eller elev-ID och dess senast hämtade vecka sparas separat på enheten. ID-valet återanvänds efter omstart tills du byter schema eller väljer Glöm sparat schema. Bara en sparad ID-vecka som matchar aktuell vecka och år och är högst 21 dagar gammal visas utan nätverk; annars hämtas rätt vecka med ditt sparade ID. Originalvyn kan också återanvända tidigare hämtade vektorunderlag efter omstart. När visningsstorleken är känd kan appen förbereda valt underlag samt närliggande dagar och veckor i bakgrunden medan appen används. En ännu inte hämtad dag eller en annan visningsstorlek kan behöva nätverk.
 
 Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time har inga egna konton, annonser eller köp i appen och är en fristående app, inte ansluten till eller godkänd av Skola24.
+
+### Widget på hemskärmen (iOS 3.0.7, iOS 17 eller senare)
+
+Från iOS-version 3.0.7 kan du på enheter med iOS 17 eller senare visa nästa lektion på hemskärmen:
+
+1. Öppna först ditt offentliga schema i appen.
+2. Öppna **Inställningar** och aktivera **Nästa lektion på hemskärmen**.
+3. Lägg till Be On Time från iOS widgetgalleri på hemskärmen.
+
+Widgeten visar bara tider som standard. Om du även vill se ämne, sal eller annan lektionstext väljer du separat **Visa lektionsdetaljer** i Inställningar. Widgeten använder en lokalt sparad bild av den aktuella veckans senast hämtade schema (giltig i högst 24 timmar och aldrig längre än aktuell vecka i svensk tid) och gör inga egna nätverksanrop. Öppna appen för att hämta eller uppdatera schemat. Om du stänger av widgeten eller väljer **Glöm sparat schema** stängs delningen av och det delade underlaget raderas; iOS styr dock när en tidigare visad widgetbild uppdateras på hemskärmen.
 
 ### Originalschema och uppdateringar
 
