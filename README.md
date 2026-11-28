@@ -26,9 +26,9 @@ En vald offentlig klass sparas automatiskt som ett tekniskt klassval på enheten
 
 Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time har inga egna konton, annonser eller köp i appen och är en fristående app, inte ansluten till eller godkänd av Skola24.
 
-### Widget på hemskärmen (iOS 3.0.7, iOS 17 eller senare)
+### Widget på hemskärmen (iOS 3.0.7 och senare, iOS 17 eller senare)
 
-Från iOS-version 3.0.7 kan du på enheter med iOS 17 eller senare visa nästa lektion på hemskärmen:
+Från iOS-version 3.0.7 kan du på enheter med iOS 17 eller senare visa nästa lektion på hemskärmen (i liten storlek samt, från version 3.0.8, även i medelstor storlek):
 
 1. Öppna först ditt offentliga schema i appen.
 2. Aktivera **Nästa lektion på hemskärmen** via kortet på schemaskärmen eller under **Inställningar**.
