@@ -31,10 +31,10 @@ Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time h
 Från iOS-version 3.0.7 kan du på enheter med iOS 17 eller senare visa nästa lektion på hemskärmen:
 
 1. Öppna först ditt offentliga schema i appen.
-2. Öppna **Inställningar** och aktivera **Nästa lektion på hemskärmen**.
+2. Aktivera **Nästa lektion på hemskärmen** via kortet på schemaskärmen eller under **Inställningar**.
 3. Lägg till Be On Time från iOS widgetgalleri på hemskärmen.
 
-Widgeten visar bara tider som standard. Om du även vill se ämne, sal eller annan lektionstext väljer du separat **Visa lektionsdetaljer** i Inställningar. Widgeten använder en lokalt sparad bild av den aktuella veckans senast hämtade schema (giltig i högst 24 timmar och aldrig längre än aktuell vecka i svensk tid) och gör inga egna nätverksanrop. Öppna appen för att hämta eller uppdatera schemat. Om du stänger av widgeten eller väljer **Glöm sparat schema** stängs delningen av och det delade underlaget raderas; iOS styr dock när en tidigare visad widgetbild uppdateras på hemskärmen.
+Vid aktivering väljer du om widgeten enbart ska visa lektionstider eller även lektionsdetaljer som ämne och sal (du kan när som helst ändra valet under **Inställningar**). Widgeten använder en lokalt sparad bild av den aktuella veckans senast hämtade schema (giltig i högst 24 timmar och aldrig längre än aktuell vecka i svensk tid) och gör inga egna nätverksanrop. Öppna appen för att hämta eller uppdatera schemat. Om du stänger av widgeten eller väljer **Glöm sparat schema** stängs delningen av och det delade underlaget raderas; iOS styr dock när en tidigare visad widgetbild uppdateras på hemskärmen.
 
 ### Originalschema och uppdateringar
 
@@ -62,7 +62,7 @@ På Android är säkerhetskopiering av appdata avstängd i appens konfiguration.
 
 ## Kontakta oss
 
-Mejla [kristoffer.nordstrom@outlook.com](mailto:kristoffer.nordstrom@outlook.com) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS- eller Android-version och vilka steg som ledde till problemet.
+Mejla [cornelis@andonvending.com](mailto:cornelis@andonvending.com?subject=Be%20On%20Time) och skriv **Be On Time** i ämnesraden. Ange appversion, iOS- eller Android-version och vilka steg som ledde till problemet.
 
 Skicka inte personnummer, lösenord, BankID-uppgifter eller en elevs privata schema. Om en skärmbild behövs, dölj namn, schemaidentifierare och andra personuppgifter först.
 
