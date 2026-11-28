@@ -108,7 +108,7 @@ https://getsplitright.com/sv/dela-notan-kalkylator.html
 
 ## Who makes it
 
-Made by Kristoffer, an independent developer. Splitright is not affiliated with Splitwise,
+Made by an independent developer. Splitright is not affiliated with Splitwise,
 Tricount, Settle Up or any other expense-splitting app. There is an unrelated Android app that
 also uses the name "splitright"; the one described here is the package
 `com.splitright.app` and App Store id 6608980374.
