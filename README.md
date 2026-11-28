@@ -6,7 +6,7 @@
 
 **Be On Time 3.0.0 — historisk version.** Informationen under [3.0.0 — historisk hjälp för den distribuerade versionen](#300--historisk-hjälp-för-den-distribuerade-versionen) beskriver den versionen, inklusive dess tidigare PDF-funktion och manuella sparande av klassval.
 
-[Integritetspolicy](PRIVACY.md)
+[Integritetspolicy](PRIVACY.md) · [Webbplats](https://skolschema-beontime.pion.dev) · [Skolkatalog](https://skolschema-beontime.pion.dev/skolor)
 
 ## Hjälp för den nuvarande appen
 
@@ -30,11 +30,11 @@ Ange aldrig lösenord, BankID-uppgifter eller personnummer i appen. Be On Time h
 
 Från iOS-version 3.0.7 kan du på enheter med iOS 17 eller senare visa nästa lektion på hemskärmen (i liten storlek samt, från version 3.0.8, även i medelstor storlek):
 
-1. Öppna först ditt offentliga schema i appen.
-2. Aktivera **Nästa lektion på hemskärmen** via kortet på schemaskärmen eller under **Inställningar**.
+1. Öppna ditt schema i appen. För ett offentligt klasschema på en ny installation förbereds det lokala widgetunderlaget direkt med endast lektionstider (för Schema-ID eller elev-ID aktiverar du widgeten själv).
+2. Välj om widgeten ska visa **endast tider** eller även **ämne och sal** via kortet på schemaskärmen eller under **Inställningar**.
 3. Lägg till Be On Time från iOS widgetgalleri på hemskärmen.
 
-Vid aktivering väljer du om widgeten enbart ska visa lektionstider eller även lektionsdetaljer som ämne och sal (du kan när som helst ändra valet under **Inställningar**). Widgeten använder en lokalt sparad bild av den aktuella veckans senast hämtade schema (giltig i högst 24 timmar och aldrig längre än aktuell vecka i svensk tid) och gör inga egna nätverksanrop. Öppna appen för att hämta eller uppdatera schemat. Om du stänger av widgeten eller väljer **Glöm sparat schema** stängs delningen av och det delade underlaget raderas; iOS styr dock när en tidigare visad widgetbild uppdateras på hemskärmen.
+Du kan när som helst ändra detaljnivå eller stänga av widgeten under **Inställningar**. Widgeten använder en lokalt sparad bild av den aktuella veckans senast hämtade schema (giltig i högst 24 timmar och aldrig längre än aktuell vecka i svensk tid) och gör inga egna nätverksanrop. Öppna appen för att hämta eller uppdatera schemat. Om du stänger av widgeten eller väljer **Glöm sparat schema** stängs delningen av och det delade underlaget raderas; iOS styr dock när en tidigare visad widgetbild uppdateras på hemskärmen.
 
 ### Originalschema och uppdateringar
 
